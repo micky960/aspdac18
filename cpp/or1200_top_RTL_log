@@ -1,0 +1,390 @@
+CREATING FOLDERS
+ATALANTA START
+ATALANTA END
+COMPUTING VALIDLIST
+0% node: n53370
+cur max sec: 1
+0.00278358% node: n53369
+cur max sec: 1
+0.00556715% node: n45888
+cur max sec: 1
+0.00835073% node: n34715
+cur max sec: 50
+0.0111343% node: n37283
+cur max sec: 50
+0.0139179% node: n42594
+cur max sec: 50
+0.0167015% node: n45490
+cur max sec: 50
+0.019485% node: n49242
+cur max sec: 50
+0.0222686% node: n42327
+cur max sec: 50
+0.0250522% node: n50794
+cur max sec: 50
+0.0278358% node: n43378
+cur max sec: 66
+0.0306193% node: n50275
+cur max sec: 66
+0.0334029% node: n34118
+cur max sec: 66
+0.0361865% node: n29766
+cur max sec: 66
+0.0389701% node: n46603
+cur max sec: 66
+0.0417537% node: n50856
+cur max sec: 66
+0.0445372% node: n40051
+cur max sec: 66
+0.0473208% node: n46612
+cur max sec: 69
+0.0501044% node: n45828
+cur max sec: 69
+0.052888% node: n50748
+cur max sec: 76
+0.0556715% node: n46491
+cur max sec: 76
+0.0584551% node: n49978
+cur max sec: 76
+0.0612387% node: n46437
+cur max sec: 76
+0.0640223% node: n50370
+cur max sec: 76
+0.0668058% node: n50368
+cur max sec: 76
+0.0695894% node: n46442
+cur max sec: 76
+0.072373% node: n46438
+cur max sec: 76
+0.0751566% node: n42055
+cur max sec: 76
+0.0779402% node: n46695
+cur max sec: 76
+0.0807237% node: n45530
+cur max sec: 76
+0.0835073% node: n36764
+cur max sec: 76
+0.0862909% node: n37034
+cur max sec: 76
+0.0890745% node: n42993
+cur max sec: 76
+0.091858% node: n29887
+cur max sec: 76
+0.0946416% node: n50044
+cur max sec: 76
+0.0974252% node: n44474
+cur max sec: 76
+0.100209% node: n34185
+cur max sec: 102
+0.102992% node: n46439
+cur max sec: 102
+0.105776% node: n43576
+cur max sec: 102
+0.108559% node: n50475
+cur max sec: 102
+0.111343% node: n32250
+cur max sec: 102
+0.114127% node: n50371
+cur max sec: 102
+0.11691% node: n44487
+cur max sec: 102
+0.119694% node: n50862
+cur max sec: 102
+0.122477% node: n50399
+cur max sec: 102
+0.125261% node: n46696
+cur max sec: 102
+0.128045% node: n50937
+cur max sec: 102
+0.130828% node: n37398
+cur max sec: 102
+0.133612% node: n31031
+cur max sec: 102
+0.136395% node: n50563
+cur max sec: 102
+0.139179% node: n50852
+cur max sec: 102
+0.141962% node: n31236
+cur max sec: 102
+0.144746% node: n32256
+cur max sec: 102
+0.14753% node: n32860
+cur max sec: 102
+0.150313% node: n29845
+cur max sec: 102
+0.153097% node: n28888
+cur max sec: 102
+0.15588% node: n37829
+cur max sec: 102
+0.158664% node: n46121
+cur max sec: 102
+0.161447% node: n46292
+cur max sec: 102
+0.164231% node: n43557
+cur max sec: 102
+0.167015% node: n41297
+cur max sec: 102
+0.169798% node: n42565
+cur max sec: 102
+0.172582% node: n29874
+cur max sec: 102
+0.175365% node: n33221
+cur max sec: 102
+0.178149% node: n43462
+cur max sec: 102
+0.180932% node: n42356
+cur max sec: 102
+0.183716% node: n36794
+cur max sec: 102
+0.1865% node: n37386
+cur max sec: 102
+0.189283% node: n36687
+cur max sec: 102
+0.192067% node: n36631
+cur max sec: 102
+0.19485% node: n29119
+cur max sec: 102
+0.197634% node: n46299
+cur max sec: 102
+0.200418% node: n48059
+cur max sec: 102
+0.203201% node: n50668
+cur max sec: 102
+0.205985% node: n51499
+cur max sec: 102
+0.208768% node: n51621
+cur max sec: 102
+0.211552% node: n42588
+cur max sec: 102
+0.214335% node: n29052
+cur max sec: 102
+0.217119% node: n51432
+cur max sec: 102
+0.219903% node: n42425
+cur max sec: 102
+0.222686% node: n51176
+cur max sec: 113
+0.22547% node: n42510
+cur max sec: 113
+0.228253% node: n51326
+cur max sec: 113
+0.231037% node: n47271
+cur max sec: 113
+0.23382% node: n40162
+cur max sec: 113
+0.236604% node: n40235
+cur max sec: 113
+0.239388% node: n41895
+cur max sec: 113
+0.242171% node: n41261
+cur max sec: 113
+0.244955% node: n41452
+cur max sec: 113
+0.247738% node: n41742
+cur max sec: 113
+0.250522% node: n51448
+cur max sec: 113
+0.253305% node: n30139
+cur max sec: 113
+0.256089% node: n37169
+cur max sec: 113
+0.258873% node: n36759
+cur max sec: 113
+0.261656% node: n39755
+cur max sec: 113
+0.26444% node: n39822
+cur max sec: 113
+0.267223% node: n51414
+cur max sec: 113
+0.270007% node: n51060
+cur max sec: 113
+0.272791% node: n43192
+cur max sec: 113
+0.275574% node: n51815
+cur max sec: 113
+0.278358% node: n29395
+cur max sec: 113
+0.281141% node: n47158
+cur max sec: 113
+0.283925% node: n40912
+cur max sec: 113
+0.286708% node: n42345
+cur max sec: 113
+0.289492% node: n42343
+cur max sec: 113
+0.292276% node: n41383
+cur max sec: 113
+0.295059% node: n41734
+cur max sec: 113
+0.297843% node: n36815
+cur max sec: 113
+0.300626% node: n36892
+cur max sec: 113
+0.30341% node: n36518
+cur max sec: 113
+0.306193% node: n39816
+cur max sec: 113
+0.308977% node: n47179
+cur max sec: 113
+0.311761% node: n51648
+cur max sec: 113
+0.314544% node: n51222
+cur max sec: 113
+0.317328% node: n42613
+cur max sec: 113
+0.320111% node: n42628
+cur max sec: 113
+0.322895% node: n42647
+cur max sec: 113
+0.325678% node: n42116
+cur max sec: 113
+0.328462% node: n51844
+cur max sec: 113
+0.331246% node: n51937
+cur max sec: 113
+0.334029% node: n36940
+cur max sec: 113
+0.336813% node: n36958
+cur max sec: 113
+0.339596% node: n39956
+cur max sec: 113
+0.34238% node: n5710
+cur max sec: 113
+0.345164% node: n5725
+cur max sec: 113
+0.347947% node: n28882
+cur max sec: 113
+0.350731% node: n51590
+cur max sec: 113
+0.353514% node: n51710
+cur max sec: 113
+0.356298% node: n51121
+cur max sec: 113
+0.359081% node: n51125
+cur max sec: 113
+0.361865% node: n51117
+cur max sec: 113
+0.364649% node: n51132
+cur max sec: 113
+0.367432% node: n51680
+cur max sec: 113
+0.370216% node: n39884
+cur max sec: 113
+0.372999% node: n28901
+cur max sec: 113
+0.375783% node: n28884
+cur max sec: 113
+0.378566% node: n37696
+cur max sec: 113
+0.38135% node: n51612
+cur max sec: 113
+0.384134% node: n28883
+cur max sec: 113
+0.386917% node: n28885
+cur max sec: 113
+0.389701% node: n22809
+cur max sec: 113
+0.392484% node: n28886
+cur max sec: 113
+0.395268% node: n28887
+cur max sec: 113
+0.398051% node: n28891
+cur max sec: 113
+0.400835% node: n33871
+cur max sec: 113
+0.403619% node: n28889
+cur max sec: 113
+0.406402% node: n28890
+cur max sec: 113
+0.409186% node: n51395
+cur max sec: 113
+0.411969% node: n28892
+cur max sec: 113
+0.414753% node: n28893
+cur max sec: 113
+0.417537% node: n29010
+cur max sec: 113
+0.42032% node: n28894
+cur max sec: 113
+0.423104% node: n29098
+cur max sec: 113
+0.425887% node: n39877
+cur max sec: 113
+0.428671% node: n41293
+cur max sec: 113
+0.431454% node: n28895
+cur max sec: 113
+0.434238% node: n36548
+cur max sec: 113
+0.437022% node: n48866
+cur max sec: 113
+0.439805% node: n48862
+cur max sec: 113
+0.442589% node: n48872
+cur max sec: 113
+0.445372% node: n51699
+cur max sec: 113
+0.448156% node: n51653
+cur max sec: 113
+0.450939% node: n48858
+cur max sec: 113
+0.453723% node: n51604
+cur max sec: 113
+0.456507% node: n51657
+cur max sec: 113
+0.45929% node: n28896
+cur max sec: 113
+0.462074% node: n38153
+cur max sec: 113
+0.464857% node: n28897
+cur max sec: 113
+0.467641% node: n28898
+cur max sec: 113
+0.470424% node: n38152
+cur max sec: 113
+0.473208% node: n39742
+cur max sec: 113
+0.475992% node: n28899
+cur max sec: 113
+0.478775% node: n51692
+cur max sec: 113
+0.481559% node: n38157
+cur max sec: 113
+0.484342% node: n39952
+cur max sec: 113
+0.487126% node: n42992
+cur max sec: 113
+0.48991% node: n40021
+cur max sec: 113
+0.492693% node: n28900
+cur max sec: 113
+0.495477% node: n28904
+cur max sec: 113
+0.49826% node: n28903
+cur max sec: 113
+0.501044% node: n39874
+cur max sec: 113
+0.503827% node: n39873
+cur max sec: 113
+0.506611% node: n39871
+cur max sec: 113
+0.509395% node: n28902
+cur max sec: 113
+0.512178% node: n29043
+cur max sec: 113
+0.514962% node: n42529
+cur max sec: 113
+0.517745% node: n28905
+cur max sec: 113
+0.520529% node: n42023
+cur max sec: 113
+0.523312% node: n53371
+cur max sec: 113
+0.526096% node: n29105
+cur max sec: 113
+0.52888% node: n28956
+% VALID: 0.00278358
+max sec: 129 node: n28956
+% COMPLETE 0 n28956:0, SEC 129
+OPT NODE: n28956 SEC:128 COST: 27
+ELAPSED TIME:	1597

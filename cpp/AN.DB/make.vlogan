@@ -1,0 +1,31 @@
+
+VLOGAN	= vlogan
+
+all :		_VCSgd_HESwJc_1.db \
+	_VCSgd_Ls6LDc_1.db \
+	_VCSgd_cKr8me_1.db \
+	_VCSgd_rZ8AU_1.db \
+	_VCSgd_A2EMJb_1.db \
+
+
+
+_VCSgd_HESwJc_1.db :	../../Results/CORTEX_M0/n7561/lockOnePatt_verilog.v 
+		${VLOGAN} ../../Results/CORTEX_M0/n7561/lockOnePatt_verilog.v
+
+
+_VCSgd_Ls6LDc_1.db :	../../Results/CORTEX_M0/n4686/lock_verilog.v 
+		${VLOGAN} ../../Results/CORTEX_M0/n4686/lock_verilog.v
+
+
+_VCSgd_cKr8me_1.db :	../../Results/c432/G414GAT/lock_verilog.v 
+		${VLOGAN} ../../Results/c432/G414GAT/lock_verilog.v
+
+
+_VCSgd_rZ8AU_1.db :	../../Results/b14_C/final/lock_verilog_U3200_B0.v 
+		${VLOGAN} ../../Results/b14_C/final/lock_verilog_U3200_B0.v
+
+
+_VCSgd_A2EMJb_1.db :	../../Results/c432/final/lock_verilog_G431GAT.v 
+		${VLOGAN} ../../Results/c432/final/lock_verilog_G431GAT.v
+
+

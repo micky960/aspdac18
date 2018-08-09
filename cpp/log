@@ -1,0 +1,39 @@
+	*******************************************************
+	*                                                     *
+	*          Welcome to atalanta (version 2.0)          *
+	*                                                     *
+	*               Dong S. Ha (ha@vt.edu)                *
+	*            Web: http://www.ee.vt.edu/ha             *
+	*  Virginia Polytechnic Institute & State University  *
+	*                                                     *
+	*******************************************************
+
+******   SUMMARY OF TEST PATTERN GENERATION RESULTS   ******
+1. Circuit structure
+   Name of the circuit                       : This_code_is_developed_by_Abhrajit_2018
+   Number of primary inputs                  : 9742
+   Number of primary outputs                 : 9735
+   Number of gates                           : 325317
+   Level of the circuit                      : 26
+
+2. ATPG parameters
+   Test pattern generation Mode              : DTPG + TC
+   Backtrack limit                           : 10
+   Initial random number generator seed      : 1529015168
+   Test pattern compaction Mode              : NONE 
+
+3. Test pattern generation results
+   Number of test patterns                   : 0
+   Fault coverage                            : -nan %
+   Number of collapsed faults                : 0
+   Number of identified redundant faults     : 0
+   Number of aborted faults                  : 0
+   Total number of backtrackings             : 0
+
+4. Memory used                               : 0.000 MB
+
+5. CPU time
+   Initialization                            : 1.800 Secs
+   Fault simulation                          : 0.017 Secs
+   FAN                                       : 0.000 Secs
+   Total                                     : 1.817 Secs
