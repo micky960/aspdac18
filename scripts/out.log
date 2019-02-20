@@ -1,0 +1,904 @@
+set design [getenv "DESIGN"]
+b14_C
+set compile_seqmap_propagate_constants     false
+false
+#set search_path [concat * $search_path]
+#sh rm -rf ./work/work_${design}
+#define_design_lib WORK -path ./work/work_${design}
+set target_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db}
+ /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db
+set link_library   { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db }
+ /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db 
+read_verilog -rtl ../../Results/${design}/final/${design}_eco.v
+Loading db file '/home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db'
+Loading db file '/opt/programs/synopsys/dc/libraries/syn/gtech.db'
+Loading db file '/opt/programs/synopsys/dc/libraries/syn/standard.sldb'
+  Loading link library 'sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c'
+  Loading link library 'gtech'
+Loading verilog file '/home/projects/aspdac18/Results/b14_C/final/b14_C_eco.v'
+Running PRESTO HDLC
+Compiling source file /home/projects/aspdac18/Results/b14_C/final/b14_C_eco.v
+Warning:  /home/projects/aspdac18/Results/b14_C/final/b14_C_eco.v:11187: the undeclared symbol 'N1' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  /home/projects/aspdac18/Results/b14_C/final/b14_C_eco.v:11188: the undeclared symbol 'N2' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  /home/projects/aspdac18/Results/b14_C/final/b14_C_eco.v:11189: the undeclared symbol 'N3' assumed to have the default net type, which is 'wire'. (VER-936)
+Presto compilation completed successfully.
+Current design is now '/home/projects/aspdac18/Results/b14_C/final/VDW_LEQ_129.db:VDW_LEQ_129'
+Loaded 5 designs.
+Current design is 'VDW_LEQ_129'.
+VDW_LEQ_129 nvm_10_N129 b14_C_eco b14_C _HMUX
+current_design $design
+Current design is 'b14_C'.
+{b14_C}
+set x 0
+0
+foreach_in_collection pqr [get_nets *key*] {
+  set net_name [get_attribute $pqr full_name]
+  set tie_net  [get_attribute [all_fanin -to  $net_name -flat] full_name]
+  set tie_net_split [split $tie_net "\*\*"]
+  set tie_net_val   [lindex $tie_net_split 2]
+  create_port key_${x}_${tie_net_val}
+  connect_net $net_name key_${x}_${tie_net_val}
+  set x [expr $x + 1]
+}
+Creating port 'key_0_logic_0' in design 'b14_C'.
+Connecting net 'key_10[128]' to port 'key_0_logic_0'.
+Creating port 'key_1_logic_0' in design 'b14_C'.
+Connecting net 'key_10[127]' to port 'key_1_logic_0'.
+Creating port 'key_2_logic_0' in design 'b14_C'.
+Connecting net 'key_10[126]' to port 'key_2_logic_0'.
+Creating port 'key_3_logic_1' in design 'b14_C'.
+Connecting net 'key_10[125]' to port 'key_3_logic_1'.
+Creating port 'key_4_logic_1' in design 'b14_C'.
+Connecting net 'key_10[124]' to port 'key_4_logic_1'.
+Creating port 'key_5_logic_1' in design 'b14_C'.
+Connecting net 'key_10[123]' to port 'key_5_logic_1'.
+Creating port 'key_6_logic_1' in design 'b14_C'.
+Connecting net 'key_10[122]' to port 'key_6_logic_1'.
+Creating port 'key_7_logic_1' in design 'b14_C'.
+Connecting net 'key_10[121]' to port 'key_7_logic_1'.
+Creating port 'key_8_logic_1' in design 'b14_C'.
+Connecting net 'key_10[120]' to port 'key_8_logic_1'.
+Creating port 'key_9_logic_1' in design 'b14_C'.
+Connecting net 'key_10[119]' to port 'key_9_logic_1'.
+Creating port 'key_10_logic_1' in design 'b14_C'.
+Connecting net 'key_10[118]' to port 'key_10_logic_1'.
+Creating port 'key_11_logic_1' in design 'b14_C'.
+Connecting net 'key_10[117]' to port 'key_11_logic_1'.
+Creating port 'key_12_logic_1' in design 'b14_C'.
+Connecting net 'key_10[116]' to port 'key_12_logic_1'.
+Creating port 'key_13_logic_0' in design 'b14_C'.
+Connecting net 'key_10[115]' to port 'key_13_logic_0'.
+Creating port 'key_14_logic_0' in design 'b14_C'.
+Connecting net 'key_10[114]' to port 'key_14_logic_0'.
+Creating port 'key_15_logic_0' in design 'b14_C'.
+Connecting net 'key_10[113]' to port 'key_15_logic_0'.
+Creating port 'key_16_logic_0' in design 'b14_C'.
+Connecting net 'key_10[112]' to port 'key_16_logic_0'.
+Creating port 'key_17_logic_0' in design 'b14_C'.
+Connecting net 'key_10[111]' to port 'key_17_logic_0'.
+Creating port 'key_18_logic_0' in design 'b14_C'.
+Connecting net 'key_10[110]' to port 'key_18_logic_0'.
+Creating port 'key_19_logic_0' in design 'b14_C'.
+Connecting net 'key_10[109]' to port 'key_19_logic_0'.
+Creating port 'key_20_logic_0' in design 'b14_C'.
+Connecting net 'key_10[108]' to port 'key_20_logic_0'.
+Creating port 'key_21_logic_0' in design 'b14_C'.
+Connecting net 'key_10[107]' to port 'key_21_logic_0'.
+Creating port 'key_22_logic_0' in design 'b14_C'.
+Connecting net 'key_10[106]' to port 'key_22_logic_0'.
+Creating port 'key_23_logic_0' in design 'b14_C'.
+Connecting net 'key_10[105]' to port 'key_23_logic_0'.
+Creating port 'key_24_logic_0' in design 'b14_C'.
+Connecting net 'key_10[104]' to port 'key_24_logic_0'.
+Creating port 'key_25_logic_0' in design 'b14_C'.
+Connecting net 'key_10[103]' to port 'key_25_logic_0'.
+Creating port 'key_26_logic_0' in design 'b14_C'.
+Connecting net 'key_10[102]' to port 'key_26_logic_0'.
+Creating port 'key_27_logic_0' in design 'b14_C'.
+Connecting net 'key_10[101]' to port 'key_27_logic_0'.
+Creating port 'key_28_logic_0' in design 'b14_C'.
+Connecting net 'key_10[100]' to port 'key_28_logic_0'.
+Creating port 'key_29_logic_0' in design 'b14_C'.
+Connecting net 'key_10[99]' to port 'key_29_logic_0'.
+Creating port 'key_30_logic_0' in design 'b14_C'.
+Connecting net 'key_10[98]' to port 'key_30_logic_0'.
+Creating port 'key_31_logic_1' in design 'b14_C'.
+Connecting net 'key_10[97]' to port 'key_31_logic_1'.
+Creating port 'key_32_logic_1' in design 'b14_C'.
+Connecting net 'key_10[96]' to port 'key_32_logic_1'.
+Creating port 'key_33_logic_1' in design 'b14_C'.
+Connecting net 'key_10[95]' to port 'key_33_logic_1'.
+Creating port 'key_34_logic_1' in design 'b14_C'.
+Connecting net 'key_10[94]' to port 'key_34_logic_1'.
+Creating port 'key_35_logic_1' in design 'b14_C'.
+Connecting net 'key_10[93]' to port 'key_35_logic_1'.
+Creating port 'key_36_logic_1' in design 'b14_C'.
+Connecting net 'key_10[92]' to port 'key_36_logic_1'.
+Creating port 'key_37_logic_1' in design 'b14_C'.
+Connecting net 'key_10[91]' to port 'key_37_logic_1'.
+Creating port 'key_38_logic_0' in design 'b14_C'.
+Connecting net 'key_10[90]' to port 'key_38_logic_0'.
+Creating port 'key_39_logic_1' in design 'b14_C'.
+Connecting net 'key_10[89]' to port 'key_39_logic_1'.
+Creating port 'key_40_logic_1' in design 'b14_C'.
+Connecting net 'key_10[88]' to port 'key_40_logic_1'.
+Creating port 'key_41_logic_0' in design 'b14_C'.
+Connecting net 'key_10[87]' to port 'key_41_logic_0'.
+Creating port 'key_42_logic_1' in design 'b14_C'.
+Connecting net 'key_10[86]' to port 'key_42_logic_1'.
+Creating port 'key_43_logic_0' in design 'b14_C'.
+Connecting net 'key_10[85]' to port 'key_43_logic_0'.
+Creating port 'key_44_logic_1' in design 'b14_C'.
+Connecting net 'key_10[84]' to port 'key_44_logic_1'.
+Creating port 'key_45_logic_1' in design 'b14_C'.
+Connecting net 'key_10[83]' to port 'key_45_logic_1'.
+Creating port 'key_46_logic_0' in design 'b14_C'.
+Connecting net 'key_10[82]' to port 'key_46_logic_0'.
+Creating port 'key_47_logic_0' in design 'b14_C'.
+Connecting net 'key_10[81]' to port 'key_47_logic_0'.
+Creating port 'key_48_logic_0' in design 'b14_C'.
+Connecting net 'key_10[80]' to port 'key_48_logic_0'.
+Creating port 'key_49_logic_1' in design 'b14_C'.
+Connecting net 'key_10[79]' to port 'key_49_logic_1'.
+Creating port 'key_50_logic_1' in design 'b14_C'.
+Connecting net 'key_10[78]' to port 'key_50_logic_1'.
+Creating port 'key_51_logic_0' in design 'b14_C'.
+Connecting net 'key_10[77]' to port 'key_51_logic_0'.
+Creating port 'key_52_logic_1' in design 'b14_C'.
+Connecting net 'key_10[76]' to port 'key_52_logic_1'.
+Creating port 'key_53_logic_0' in design 'b14_C'.
+Connecting net 'key_10[75]' to port 'key_53_logic_0'.
+Creating port 'key_54_logic_0' in design 'b14_C'.
+Connecting net 'key_10[74]' to port 'key_54_logic_0'.
+Creating port 'key_55_logic_0' in design 'b14_C'.
+Connecting net 'key_10[73]' to port 'key_55_logic_0'.
+Creating port 'key_56_logic_0' in design 'b14_C'.
+Connecting net 'key_10[72]' to port 'key_56_logic_0'.
+Creating port 'key_57_logic_0' in design 'b14_C'.
+Connecting net 'key_10[71]' to port 'key_57_logic_0'.
+Creating port 'key_58_logic_0' in design 'b14_C'.
+Connecting net 'key_10[70]' to port 'key_58_logic_0'.
+Creating port 'key_59_logic_0' in design 'b14_C'.
+Connecting net 'key_10[69]' to port 'key_59_logic_0'.
+Creating port 'key_60_logic_0' in design 'b14_C'.
+Connecting net 'key_10[68]' to port 'key_60_logic_0'.
+Creating port 'key_61_logic_0' in design 'b14_C'.
+Connecting net 'key_10[67]' to port 'key_61_logic_0'.
+Creating port 'key_62_logic_0' in design 'b14_C'.
+Connecting net 'key_10[66]' to port 'key_62_logic_0'.
+Creating port 'key_63_logic_0' in design 'b14_C'.
+Connecting net 'key_10[65]' to port 'key_63_logic_0'.
+Creating port 'key_64_logic_0' in design 'b14_C'.
+Connecting net 'key_10[64]' to port 'key_64_logic_0'.
+Creating port 'key_65_logic_0' in design 'b14_C'.
+Connecting net 'key_10[63]' to port 'key_65_logic_0'.
+Creating port 'key_66_logic_0' in design 'b14_C'.
+Connecting net 'key_10[62]' to port 'key_66_logic_0'.
+Creating port 'key_67_logic_0' in design 'b14_C'.
+Connecting net 'key_10[61]' to port 'key_67_logic_0'.
+Creating port 'key_68_logic_0' in design 'b14_C'.
+Connecting net 'key_10[60]' to port 'key_68_logic_0'.
+Creating port 'key_69_logic_0' in design 'b14_C'.
+Connecting net 'key_10[59]' to port 'key_69_logic_0'.
+Creating port 'key_70_logic_0' in design 'b14_C'.
+Connecting net 'key_10[58]' to port 'key_70_logic_0'.
+Creating port 'key_71_logic_1' in design 'b14_C'.
+Connecting net 'key_10[57]' to port 'key_71_logic_1'.
+Creating port 'key_72_logic_0' in design 'b14_C'.
+Connecting net 'key_10[56]' to port 'key_72_logic_0'.
+Creating port 'key_73_logic_0' in design 'b14_C'.
+Connecting net 'key_10[55]' to port 'key_73_logic_0'.
+Creating port 'key_74_logic_0' in design 'b14_C'.
+Connecting net 'key_10[54]' to port 'key_74_logic_0'.
+Creating port 'key_75_logic_0' in design 'b14_C'.
+Connecting net 'key_10[53]' to port 'key_75_logic_0'.
+Creating port 'key_76_logic_0' in design 'b14_C'.
+Connecting net 'key_10[52]' to port 'key_76_logic_0'.
+Creating port 'key_77_logic_0' in design 'b14_C'.
+Connecting net 'key_10[51]' to port 'key_77_logic_0'.
+Creating port 'key_78_logic_0' in design 'b14_C'.
+Connecting net 'key_10[50]' to port 'key_78_logic_0'.
+Creating port 'key_79_logic_0' in design 'b14_C'.
+Connecting net 'key_10[49]' to port 'key_79_logic_0'.
+Creating port 'key_80_logic_0' in design 'b14_C'.
+Connecting net 'key_10[48]' to port 'key_80_logic_0'.
+Creating port 'key_81_logic_0' in design 'b14_C'.
+Connecting net 'key_10[47]' to port 'key_81_logic_0'.
+Creating port 'key_82_logic_0' in design 'b14_C'.
+Connecting net 'key_10[46]' to port 'key_82_logic_0'.
+Creating port 'key_83_logic_0' in design 'b14_C'.
+Connecting net 'key_10[45]' to port 'key_83_logic_0'.
+Creating port 'key_84_logic_0' in design 'b14_C'.
+Connecting net 'key_10[44]' to port 'key_84_logic_0'.
+Creating port 'key_85_logic_0' in design 'b14_C'.
+Connecting net 'key_10[43]' to port 'key_85_logic_0'.
+Creating port 'key_86_logic_0' in design 'b14_C'.
+Connecting net 'key_10[42]' to port 'key_86_logic_0'.
+Creating port 'key_87_logic_0' in design 'b14_C'.
+Connecting net 'key_10[41]' to port 'key_87_logic_0'.
+Creating port 'key_88_logic_0' in design 'b14_C'.
+Connecting net 'key_10[40]' to port 'key_88_logic_0'.
+Creating port 'key_89_logic_0' in design 'b14_C'.
+Connecting net 'key_10[39]' to port 'key_89_logic_0'.
+Creating port 'key_90_logic_0' in design 'b14_C'.
+Connecting net 'key_10[38]' to port 'key_90_logic_0'.
+Creating port 'key_91_logic_0' in design 'b14_C'.
+Connecting net 'key_10[37]' to port 'key_91_logic_0'.
+Creating port 'key_92_logic_0' in design 'b14_C'.
+Connecting net 'key_10[36]' to port 'key_92_logic_0'.
+Creating port 'key_93_logic_0' in design 'b14_C'.
+Connecting net 'key_10[35]' to port 'key_93_logic_0'.
+Creating port 'key_94_logic_0' in design 'b14_C'.
+Connecting net 'key_10[34]' to port 'key_94_logic_0'.
+Creating port 'key_95_logic_0' in design 'b14_C'.
+Connecting net 'key_10[33]' to port 'key_95_logic_0'.
+Creating port 'key_96_logic_0' in design 'b14_C'.
+Connecting net 'key_10[32]' to port 'key_96_logic_0'.
+Creating port 'key_97_logic_0' in design 'b14_C'.
+Connecting net 'key_10[31]' to port 'key_97_logic_0'.
+Creating port 'key_98_logic_0' in design 'b14_C'.
+Connecting net 'key_10[30]' to port 'key_98_logic_0'.
+Creating port 'key_99_logic_0' in design 'b14_C'.
+Connecting net 'key_10[29]' to port 'key_99_logic_0'.
+Creating port 'key_100_logic_0' in design 'b14_C'.
+Connecting net 'key_10[28]' to port 'key_100_logic_0'.
+Creating port 'key_101_logic_0' in design 'b14_C'.
+Connecting net 'key_10[27]' to port 'key_101_logic_0'.
+Creating port 'key_102_logic_0' in design 'b14_C'.
+Connecting net 'key_10[26]' to port 'key_102_logic_0'.
+Creating port 'key_103_logic_0' in design 'b14_C'.
+Connecting net 'key_10[25]' to port 'key_103_logic_0'.
+Creating port 'key_104_logic_0' in design 'b14_C'.
+Connecting net 'key_10[24]' to port 'key_104_logic_0'.
+Creating port 'key_105_logic_0' in design 'b14_C'.
+Connecting net 'key_10[23]' to port 'key_105_logic_0'.
+Creating port 'key_106_logic_0' in design 'b14_C'.
+Connecting net 'key_10[22]' to port 'key_106_logic_0'.
+Creating port 'key_107_logic_0' in design 'b14_C'.
+Connecting net 'key_10[21]' to port 'key_107_logic_0'.
+Creating port 'key_108_logic_0' in design 'b14_C'.
+Connecting net 'key_10[20]' to port 'key_108_logic_0'.
+Creating port 'key_109_logic_0' in design 'b14_C'.
+Connecting net 'key_10[19]' to port 'key_109_logic_0'.
+Creating port 'key_110_logic_0' in design 'b14_C'.
+Connecting net 'key_10[18]' to port 'key_110_logic_0'.
+Creating port 'key_111_logic_0' in design 'b14_C'.
+Connecting net 'key_10[17]' to port 'key_111_logic_0'.
+Creating port 'key_112_logic_0' in design 'b14_C'.
+Connecting net 'key_10[16]' to port 'key_112_logic_0'.
+Creating port 'key_113_logic_1' in design 'b14_C'.
+Connecting net 'key_10[15]' to port 'key_113_logic_1'.
+Creating port 'key_114_logic_1' in design 'b14_C'.
+Connecting net 'key_10[14]' to port 'key_114_logic_1'.
+Creating port 'key_115_logic_1' in design 'b14_C'.
+Connecting net 'key_10[13]' to port 'key_115_logic_1'.
+Creating port 'key_116_logic_1' in design 'b14_C'.
+Connecting net 'key_10[12]' to port 'key_116_logic_1'.
+Creating port 'key_117_logic_1' in design 'b14_C'.
+Connecting net 'key_10[11]' to port 'key_117_logic_1'.
+Creating port 'key_118_logic_1' in design 'b14_C'.
+Connecting net 'key_10[10]' to port 'key_118_logic_1'.
+Creating port 'key_119_logic_1' in design 'b14_C'.
+Connecting net 'key_10[9]' to port 'key_119_logic_1'.
+Creating port 'key_120_logic_1' in design 'b14_C'.
+Connecting net 'key_10[8]' to port 'key_120_logic_1'.
+Creating port 'key_121_logic_1' in design 'b14_C'.
+Connecting net 'key_10[7]' to port 'key_121_logic_1'.
+Creating port 'key_122_logic_1' in design 'b14_C'.
+Connecting net 'key_10[6]' to port 'key_122_logic_1'.
+Creating port 'key_123_logic_0' in design 'b14_C'.
+Connecting net 'key_10[5]' to port 'key_123_logic_0'.
+Creating port 'key_124_logic_0' in design 'b14_C'.
+Connecting net 'key_10[4]' to port 'key_124_logic_0'.
+Creating port 'key_125_logic_0' in design 'b14_C'.
+Connecting net 'key_10[3]' to port 'key_125_logic_0'.
+Creating port 'key_126_logic_1' in design 'b14_C'.
+Connecting net 'key_10[2]' to port 'key_126_logic_1'.
+Creating port 'key_127_logic_0' in design 'b14_C'.
+Connecting net 'key_10[1]' to port 'key_127_logic_0'.
+Creating port 'key_128_logic_1' in design 'b14_C'.
+Connecting net 'key_10[0]' to port 'key_128_logic_1'.
+foreach_in_collection nvm_pins [get_pins nvm*/*] {
+  disconnect_net [all_connected $nvm_pins] $nvm_pins
+}
+Disconnecting net 'key_10[128]' from pin 'nvm_inst10/rdata[128]'.
+Disconnecting net 'key_10[127]' from pin 'nvm_inst10/rdata[127]'.
+Disconnecting net 'key_10[126]' from pin 'nvm_inst10/rdata[126]'.
+Disconnecting net 'key_10[125]' from pin 'nvm_inst10/rdata[125]'.
+Disconnecting net 'key_10[124]' from pin 'nvm_inst10/rdata[124]'.
+Disconnecting net 'key_10[123]' from pin 'nvm_inst10/rdata[123]'.
+Disconnecting net 'key_10[122]' from pin 'nvm_inst10/rdata[122]'.
+Disconnecting net 'key_10[121]' from pin 'nvm_inst10/rdata[121]'.
+Disconnecting net 'key_10[120]' from pin 'nvm_inst10/rdata[120]'.
+Disconnecting net 'key_10[119]' from pin 'nvm_inst10/rdata[119]'.
+Disconnecting net 'key_10[118]' from pin 'nvm_inst10/rdata[118]'.
+Disconnecting net 'key_10[117]' from pin 'nvm_inst10/rdata[117]'.
+Disconnecting net 'key_10[116]' from pin 'nvm_inst10/rdata[116]'.
+Disconnecting net 'key_10[115]' from pin 'nvm_inst10/rdata[115]'.
+Disconnecting net 'key_10[114]' from pin 'nvm_inst10/rdata[114]'.
+Disconnecting net 'key_10[113]' from pin 'nvm_inst10/rdata[113]'.
+Disconnecting net 'key_10[112]' from pin 'nvm_inst10/rdata[112]'.
+Disconnecting net 'key_10[111]' from pin 'nvm_inst10/rdata[111]'.
+Disconnecting net 'key_10[110]' from pin 'nvm_inst10/rdata[110]'.
+Disconnecting net 'key_10[109]' from pin 'nvm_inst10/rdata[109]'.
+Disconnecting net 'key_10[108]' from pin 'nvm_inst10/rdata[108]'.
+Disconnecting net 'key_10[107]' from pin 'nvm_inst10/rdata[107]'.
+Disconnecting net 'key_10[106]' from pin 'nvm_inst10/rdata[106]'.
+Disconnecting net 'key_10[105]' from pin 'nvm_inst10/rdata[105]'.
+Disconnecting net 'key_10[104]' from pin 'nvm_inst10/rdata[104]'.
+Disconnecting net 'key_10[103]' from pin 'nvm_inst10/rdata[103]'.
+Disconnecting net 'key_10[102]' from pin 'nvm_inst10/rdata[102]'.
+Disconnecting net 'key_10[101]' from pin 'nvm_inst10/rdata[101]'.
+Disconnecting net 'key_10[100]' from pin 'nvm_inst10/rdata[100]'.
+Disconnecting net 'key_10[99]' from pin 'nvm_inst10/rdata[99]'.
+Disconnecting net 'key_10[98]' from pin 'nvm_inst10/rdata[98]'.
+Disconnecting net 'key_10[97]' from pin 'nvm_inst10/rdata[97]'.
+Disconnecting net 'key_10[96]' from pin 'nvm_inst10/rdata[96]'.
+Disconnecting net 'key_10[95]' from pin 'nvm_inst10/rdata[95]'.
+Disconnecting net 'key_10[94]' from pin 'nvm_inst10/rdata[94]'.
+Disconnecting net 'key_10[93]' from pin 'nvm_inst10/rdata[93]'.
+Disconnecting net 'key_10[92]' from pin 'nvm_inst10/rdata[92]'.
+Disconnecting net 'key_10[91]' from pin 'nvm_inst10/rdata[91]'.
+Disconnecting net 'key_10[90]' from pin 'nvm_inst10/rdata[90]'.
+Disconnecting net 'key_10[89]' from pin 'nvm_inst10/rdata[89]'.
+Disconnecting net 'key_10[88]' from pin 'nvm_inst10/rdata[88]'.
+Disconnecting net 'key_10[87]' from pin 'nvm_inst10/rdata[87]'.
+Disconnecting net 'key_10[86]' from pin 'nvm_inst10/rdata[86]'.
+Disconnecting net 'key_10[85]' from pin 'nvm_inst10/rdata[85]'.
+Disconnecting net 'key_10[84]' from pin 'nvm_inst10/rdata[84]'.
+Disconnecting net 'key_10[83]' from pin 'nvm_inst10/rdata[83]'.
+Disconnecting net 'key_10[82]' from pin 'nvm_inst10/rdata[82]'.
+Disconnecting net 'key_10[81]' from pin 'nvm_inst10/rdata[81]'.
+Disconnecting net 'key_10[80]' from pin 'nvm_inst10/rdata[80]'.
+Disconnecting net 'key_10[79]' from pin 'nvm_inst10/rdata[79]'.
+Disconnecting net 'key_10[78]' from pin 'nvm_inst10/rdata[78]'.
+Disconnecting net 'key_10[77]' from pin 'nvm_inst10/rdata[77]'.
+Disconnecting net 'key_10[76]' from pin 'nvm_inst10/rdata[76]'.
+Disconnecting net 'key_10[75]' from pin 'nvm_inst10/rdata[75]'.
+Disconnecting net 'key_10[74]' from pin 'nvm_inst10/rdata[74]'.
+Disconnecting net 'key_10[73]' from pin 'nvm_inst10/rdata[73]'.
+Disconnecting net 'key_10[72]' from pin 'nvm_inst10/rdata[72]'.
+Disconnecting net 'key_10[71]' from pin 'nvm_inst10/rdata[71]'.
+Disconnecting net 'key_10[70]' from pin 'nvm_inst10/rdata[70]'.
+Disconnecting net 'key_10[69]' from pin 'nvm_inst10/rdata[69]'.
+Disconnecting net 'key_10[68]' from pin 'nvm_inst10/rdata[68]'.
+Disconnecting net 'key_10[67]' from pin 'nvm_inst10/rdata[67]'.
+Disconnecting net 'key_10[66]' from pin 'nvm_inst10/rdata[66]'.
+Disconnecting net 'key_10[65]' from pin 'nvm_inst10/rdata[65]'.
+Disconnecting net 'key_10[64]' from pin 'nvm_inst10/rdata[64]'.
+Disconnecting net 'key_10[63]' from pin 'nvm_inst10/rdata[63]'.
+Disconnecting net 'key_10[62]' from pin 'nvm_inst10/rdata[62]'.
+Disconnecting net 'key_10[61]' from pin 'nvm_inst10/rdata[61]'.
+Disconnecting net 'key_10[60]' from pin 'nvm_inst10/rdata[60]'.
+Disconnecting net 'key_10[59]' from pin 'nvm_inst10/rdata[59]'.
+Disconnecting net 'key_10[58]' from pin 'nvm_inst10/rdata[58]'.
+Disconnecting net 'key_10[57]' from pin 'nvm_inst10/rdata[57]'.
+Disconnecting net 'key_10[56]' from pin 'nvm_inst10/rdata[56]'.
+Disconnecting net 'key_10[55]' from pin 'nvm_inst10/rdata[55]'.
+Disconnecting net 'key_10[54]' from pin 'nvm_inst10/rdata[54]'.
+Disconnecting net 'key_10[53]' from pin 'nvm_inst10/rdata[53]'.
+Disconnecting net 'key_10[52]' from pin 'nvm_inst10/rdata[52]'.
+Disconnecting net 'key_10[51]' from pin 'nvm_inst10/rdata[51]'.
+Disconnecting net 'key_10[50]' from pin 'nvm_inst10/rdata[50]'.
+Disconnecting net 'key_10[49]' from pin 'nvm_inst10/rdata[49]'.
+Disconnecting net 'key_10[48]' from pin 'nvm_inst10/rdata[48]'.
+Disconnecting net 'key_10[47]' from pin 'nvm_inst10/rdata[47]'.
+Disconnecting net 'key_10[46]' from pin 'nvm_inst10/rdata[46]'.
+Disconnecting net 'key_10[45]' from pin 'nvm_inst10/rdata[45]'.
+Disconnecting net 'key_10[44]' from pin 'nvm_inst10/rdata[44]'.
+Disconnecting net 'key_10[43]' from pin 'nvm_inst10/rdata[43]'.
+Disconnecting net 'key_10[42]' from pin 'nvm_inst10/rdata[42]'.
+Disconnecting net 'key_10[41]' from pin 'nvm_inst10/rdata[41]'.
+Disconnecting net 'key_10[40]' from pin 'nvm_inst10/rdata[40]'.
+Disconnecting net 'key_10[39]' from pin 'nvm_inst10/rdata[39]'.
+Disconnecting net 'key_10[38]' from pin 'nvm_inst10/rdata[38]'.
+Disconnecting net 'key_10[37]' from pin 'nvm_inst10/rdata[37]'.
+Disconnecting net 'key_10[36]' from pin 'nvm_inst10/rdata[36]'.
+Disconnecting net 'key_10[35]' from pin 'nvm_inst10/rdata[35]'.
+Disconnecting net 'key_10[34]' from pin 'nvm_inst10/rdata[34]'.
+Disconnecting net 'key_10[33]' from pin 'nvm_inst10/rdata[33]'.
+Disconnecting net 'key_10[32]' from pin 'nvm_inst10/rdata[32]'.
+Disconnecting net 'key_10[31]' from pin 'nvm_inst10/rdata[31]'.
+Disconnecting net 'key_10[30]' from pin 'nvm_inst10/rdata[30]'.
+Disconnecting net 'key_10[29]' from pin 'nvm_inst10/rdata[29]'.
+Disconnecting net 'key_10[28]' from pin 'nvm_inst10/rdata[28]'.
+Disconnecting net 'key_10[27]' from pin 'nvm_inst10/rdata[27]'.
+Disconnecting net 'key_10[26]' from pin 'nvm_inst10/rdata[26]'.
+Disconnecting net 'key_10[25]' from pin 'nvm_inst10/rdata[25]'.
+Disconnecting net 'key_10[24]' from pin 'nvm_inst10/rdata[24]'.
+Disconnecting net 'key_10[23]' from pin 'nvm_inst10/rdata[23]'.
+Disconnecting net 'key_10[22]' from pin 'nvm_inst10/rdata[22]'.
+Disconnecting net 'key_10[21]' from pin 'nvm_inst10/rdata[21]'.
+Disconnecting net 'key_10[20]' from pin 'nvm_inst10/rdata[20]'.
+Disconnecting net 'key_10[19]' from pin 'nvm_inst10/rdata[19]'.
+Disconnecting net 'key_10[18]' from pin 'nvm_inst10/rdata[18]'.
+Disconnecting net 'key_10[17]' from pin 'nvm_inst10/rdata[17]'.
+Disconnecting net 'key_10[16]' from pin 'nvm_inst10/rdata[16]'.
+Disconnecting net 'key_10[15]' from pin 'nvm_inst10/rdata[15]'.
+Disconnecting net 'key_10[14]' from pin 'nvm_inst10/rdata[14]'.
+Disconnecting net 'key_10[13]' from pin 'nvm_inst10/rdata[13]'.
+Disconnecting net 'key_10[12]' from pin 'nvm_inst10/rdata[12]'.
+Disconnecting net 'key_10[11]' from pin 'nvm_inst10/rdata[11]'.
+Disconnecting net 'key_10[10]' from pin 'nvm_inst10/rdata[10]'.
+Disconnecting net 'key_10[9]' from pin 'nvm_inst10/rdata[9]'.
+Disconnecting net 'key_10[8]' from pin 'nvm_inst10/rdata[8]'.
+Disconnecting net 'key_10[7]' from pin 'nvm_inst10/rdata[7]'.
+Disconnecting net 'key_10[6]' from pin 'nvm_inst10/rdata[6]'.
+Disconnecting net 'key_10[5]' from pin 'nvm_inst10/rdata[5]'.
+Disconnecting net 'key_10[4]' from pin 'nvm_inst10/rdata[4]'.
+Disconnecting net 'key_10[3]' from pin 'nvm_inst10/rdata[3]'.
+Disconnecting net 'key_10[2]' from pin 'nvm_inst10/rdata[2]'.
+Disconnecting net 'key_10[1]' from pin 'nvm_inst10/rdata[1]'.
+Disconnecting net 'key_10[0]' from pin 'nvm_inst10/rdata[0]'.
+remove_cell nvm*
+Removing cell 'nvm_inst10' in design 'b14_C'.
+1
+current_design $design
+Current design is 'b14_C'.
+{b14_C}
+create_clock -name VCLK -period 10  -waveform {0 5}
+Warning: Creating virtual clock named 'VCLK' with no sources. (UID-348)
+1
+set input_ports  [all_inputs]
+{WR_REG_SCAN_IN DATAI_31_ DATAI_30_ DATAI_29_ DATAI_28_ DATAI_27_ DATAI_26_ DATAI_25_ DATAI_24_ DATAI_23_ DATAI_22_ DATAI_21_ DATAI_20_ DATAI_19_ DATAI_18_ DATAI_17_ DATAI_16_ DATAI_15_ DATAI_14_ DATAI_13_ DATAI_12_ DATAI_11_ DATAI_10_ DATAI_9_ DATAI_8_ DATAI_7_ DATAI_6_ DATAI_5_ DATAI_4_ DATAI_3_ DATAI_2_ DATAI_1_ DATAI_0_ RD_REG_SCAN_IN STATE_REG_SCAN_IN REG3_REG_7__SCAN_IN REG3_REG_27__SCAN_IN REG3_REG_14__SCAN_IN REG3_REG_23__SCAN_IN REG3_REG_10__SCAN_IN REG3_REG_3__SCAN_IN REG3_REG_19__SCAN_IN REG3_REG_28__SCAN_IN REG3_REG_8__SCAN_IN REG3_REG_1__SCAN_IN REG3_REG_21__SCAN_IN REG3_REG_12__SCAN_IN REG3_REG_25__SCAN_IN REG3_REG_16__SCAN_IN REG3_REG_5__SCAN_IN REG3_REG_17__SCAN_IN REG3_REG_24__SCAN_IN REG3_REG_4__SCAN_IN REG3_REG_9__SCAN_IN REG3_REG_0__SCAN_IN REG3_REG_20__SCAN_IN REG3_REG_13__SCAN_IN IR_REG_0__SCAN_IN IR_REG_1__SCAN_IN IR_REG_2__SCAN_IN IR_REG_3__SCAN_IN IR_REG_4__SCAN_IN IR_REG_5__SCAN_IN IR_REG_6__SCAN_IN IR_REG_7__SCAN_IN IR_REG_8__SCAN_IN IR_REG_9__SCAN_IN IR_REG_10__SCAN_IN IR_REG_11__SCAN_IN IR_REG_12__SCAN_IN IR_REG_13__SCAN_IN IR_REG_14__SCAN_IN IR_REG_15__SCAN_IN IR_REG_16__SCAN_IN IR_REG_17__SCAN_IN IR_REG_18__SCAN_IN IR_REG_19__SCAN_IN IR_REG_20__SCAN_IN IR_REG_21__SCAN_IN IR_REG_22__SCAN_IN IR_REG_23__SCAN_IN IR_REG_24__SCAN_IN IR_REG_25__SCAN_IN IR_REG_26__SCAN_IN IR_REG_27__SCAN_IN IR_REG_28__SCAN_IN IR_REG_29__SCAN_IN IR_REG_30__SCAN_IN IR_REG_31__SCAN_IN D_REG_0__SCAN_IN D_REG_1__SCAN_IN D_REG_2__SCAN_IN D_REG_3__SCAN_IN D_REG_4__SCAN_IN D_REG_5__SCAN_IN D_REG_6__SCAN_IN D_REG_7__SCAN_IN D_REG_8__SCAN_IN D_REG_9__SCAN_IN D_REG_10__SCAN_IN ...}
+set output_ports [all_outputs]
+{U3352 U3351 U3350 U3349 U3348 U3347 U3346 U3345 U3344 U3343 U3342 U3341 U3340 U3339 U3338 U3337 U3336 U3335 U3334 U3333 U3332 U3331 U3330 U3329 U3328 U3327 U3326 U3325 U3324 U3323 U3322 U3321 U3458 U3459 U3320 U3319 U3318 U3317 U3316 U3315 U3314 U3313 U3312 U3311 U3310 U3309 U3308 U3307 U3306 U3305 U3304 U3303 U3302 U3301 U3300 U3299 U3298 U3297 U3296 U3295 U3294 U3293 U3292 U3291 U3467 U3469 U3471 U3473 U3475 U3477 U3479 U3481 U3483 U3485 U3487 U3489 U3491 U3493 U3495 U3497 U3499 U3501 U3503 U3505 U3506 U3507 U3508 U3509 U3510 U3511 U3512 U3513 U3514 U3515 U3516 U3517 U3518 U3519 U3520 U3521 ...}
+set_input_delay -max 1 [get_ports $input_ports ] -clock VCLK
+1
+set_input_delay -min 0 [get_ports $input_ports ] -clock VCLK
+1
+set_output_delay -max 2 [get_ports $output_ports ] -clock VCLK
+1
+set_output_delay -min 1 [get_ports $output_ports ] -clock VCLK
+1
+ungroup -all -flatten
+Information: Updating graph... (UID-83)
+1
+compile_ultra -no_autoungroup -no_seq_output_inversion -no_boundary_optimization
+Warning: The value of variable 'compile_preserve_subdesign_interfaces' has been changed to true because '-no_boundary_optimization' is used. (OPT-133)
+Information: Starting from 2013.12 release, constant propagation is enabled even when boundary optimization is disabled. (OPT-1318)
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Loading db file '/opt/programs/synopsys/dc/libraries/syn/dw_foundation.sldb'
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | M-2016.12-DWBB_201612.2 |     *     |
+| Licensed DW Building Blocks        | M-2016.12-DWBB_201612.2 |     *     |
+============================================================================
+
+
+Information: There are 2 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'b14_C'
+
+Loaded alib file './alib-52/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db.alib'
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'b14_C'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'TIELO_X1M_A9TH' in the library 'sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'TIEHI_X1M_A9TH' in the library 'sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+Information: Added key list 'DesignWare' to design 'b14_C'. (DDB-72)
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:24    5362.9      0.00       0.0       0.1                              0.1835
+    0:00:24    5362.9      0.00       0.0       0.1                              0.1835
+    0:00:24    5362.9      0.00       0.0       0.1                              0.1835
+    0:00:24    5362.9      0.00       0.0       0.1                              0.1835
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:26    5325.1      0.00       0.0       0.1                              0.1794
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:27    5335.9      0.00       0.0       0.0                              0.1564
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+    0:00:28    5271.8      0.00       0.0       0.0                              0.1369
+    0:00:28    5271.8      0.00       0.0       0.0                              0.1369
+    0:00:28    5271.8      0.00       0.0       0.0                              0.1369
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:29    5270.4      0.00       0.0       0.0                              0.1361
+    0:00:30    5239.1      0.00       0.0       0.0                              0.1185
+    0:00:30    5239.1      0.00       0.0       0.0                              0.1185
+    0:00:30    5239.1      0.00       0.0       0.0                              0.1185
+    0:00:31    5244.8      0.00       0.0       0.0                              0.1179
+    0:00:31    5243.0      0.00       0.0       0.0                              0.1177
+    0:00:31    5243.0      0.00       0.0       0.0                              0.1177
+    0:00:31    5243.0      0.00       0.0       0.0                              0.1177
+    0:00:31    5243.0      0.00       0.0       0.0                              0.1177
+    0:00:32    5233.7      0.00       0.0       0.0                              0.1180
+Loading db file '/home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+write -output  ../../Results/$design/final/${design}_final_combo.v -hierarchy -format verilog
+Writing verilog file '/home/projects/aspdac18/Results/b14_C/final/b14_C_final_combo.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Warning: Changed instance name U3148 to U3148_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3149 to U3149_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3210 to U3210_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3211 to U3211_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3212 to U3212_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3213 to U3213_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3214 to U3214_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3215 to U3215_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3216 to U3216_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3217 to U3217_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3218 to U3218_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3219 to U3219_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3220 to U3220_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3221 to U3221_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3222 to U3222_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3223 to U3223_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3224 to U3224_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3225 to U3225_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3226 to U3226_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3227 to U3227_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3228 to U3228_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3229 to U3229_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3230 to U3230_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3231 to U3231_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3232 to U3232_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3233 to U3233_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3234 to U3234_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3235 to U3235_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3236 to U3236_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3237 to U3237_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3238 to U3238_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3239 to U3239_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3240 to U3240_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3241 to U3241_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3242 to U3242_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3243 to U3243_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3244 to U3244_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3245 to U3245_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3246 to U3246_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3247 to U3247_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3248 to U3248_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3249 to U3249_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3250 to U3250_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3251 to U3251_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3252 to U3252_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3253 to U3253_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3254 to U3254_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3255 to U3255_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3256 to U3256_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3257 to U3257_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3258 to U3258_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3259 to U3259_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3260 to U3260_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3261 to U3261_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3262 to U3262_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3263 to U3263_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3264 to U3264_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3265 to U3265_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3266 to U3266_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3267 to U3267_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3268 to U3268_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3269 to U3269_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3270 to U3270_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3271 to U3271_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3272 to U3272_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3273 to U3273_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3274 to U3274_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3275 to U3275_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3276 to U3276_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3277 to U3277_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3278 to U3278_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3279 to U3279_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3280 to U3280_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3281 to U3281_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3282 to U3282_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3283 to U3283_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3284 to U3284_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3285 to U3285_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3286 to U3286_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3287 to U3287_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3288 to U3288_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3289 to U3289_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3290 to U3290_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3291 to U3291_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3292 to U3292_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3293 to U3293_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3294 to U3294_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3295 to U3295_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3296 to U3296_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3297 to U3297_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3298 to U3298_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3299 to U3299_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3300 to U3300_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3301 to U3301_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3302 to U3302_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3303 to U3303_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3304 to U3304_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3305 to U3305_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3306 to U3306_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3307 to U3307_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3308 to U3308_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3309 to U3309_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3310 to U3310_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3311 to U3311_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3312 to U3312_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3313 to U3313_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3314 to U3314_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3315 to U3315_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3316 to U3316_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3317 to U3317_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3318 to U3318_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3319 to U3319_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3320 to U3320_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3321 to U3321_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3322 to U3322_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3323 to U3323_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3324 to U3324_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3325 to U3325_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3326 to U3326_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3327 to U3327_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3328 to U3328_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3329 to U3329_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3330 to U3330_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3331 to U3331_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3332 to U3332_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3333 to U3333_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3334 to U3334_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3335 to U3335_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3336 to U3336_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3337 to U3337_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3338 to U3338_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3339 to U3339_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3340 to U3340_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3341 to U3341_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3342 to U3342_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3343 to U3343_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3344 to U3344_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3345 to U3345_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3346 to U3346_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3347 to U3347_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3348 to U3348_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3349 to U3349_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3350 to U3350_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3351 to U3351_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3352 to U3352_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3354 to U3354_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3458 to U3458_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3459 to U3459_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3467 to U3467_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3469 to U3469_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3471 to U3471_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3473 to U3473_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3475 to U3475_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3477 to U3477_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3479 to U3479_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3481 to U3481_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3483 to U3483_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3485 to U3485_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3487 to U3487_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3489 to U3489_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3491 to U3491_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3493 to U3493_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3495 to U3495_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3497 to U3497_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3499 to U3499_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3501 to U3501_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3503 to U3503_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3505 to U3505_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3506 to U3506_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3507 to U3507_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3508 to U3508_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3509 to U3509_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3510 to U3510_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3511 to U3511_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3512 to U3512_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3513 to U3513_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3514 to U3514_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3515 to U3515_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3516 to U3516_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3517 to U3517_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3518 to U3518_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3519 to U3519_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3520 to U3520_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3521 to U3521_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3522 to U3522_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3523 to U3523_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3524 to U3524_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3525 to U3525_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3526 to U3526_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3527 to U3527_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3528 to U3528_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3529 to U3529_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3530 to U3530_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3531 to U3531_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3532 to U3532_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3533 to U3533_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3534 to U3534_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3535 to U3535_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3536 to U3536_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3537 to U3537_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3538 to U3538_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3539 to U3539_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3540 to U3540_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3541 to U3541_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3542 to U3542_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3543 to U3543_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3544 to U3544_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3545 to U3545_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3546 to U3546_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3547 to U3547_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3548 to U3548_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3549 to U3549_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3550 to U3550_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3551 to U3551_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3552 to U3552_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3553 to U3553_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3554 to U3554_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3555 to U3555_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3556 to U3556_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3557 to U3557_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3558 to U3558_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3559 to U3559_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3560 to U3560_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3561 to U3561_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3562 to U3562_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3563 to U3563_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3564 to U3564_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3565 to U3565_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3566 to U3566_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3567 to U3567_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3568 to U3568_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3569 to U3569_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3570 to U3570_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3571 to U3571_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3572 to U3572_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3573 to U3573_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3574 to U3574_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3575 to U3575_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3576 to U3576_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3577 to U3577_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3578 to U3578_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3579 to U3579_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3580 to U3580_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U3581 to U3581_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name U4043 to U4043_inst in module b14_C. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+1
+foreach_in_collection abc [get_ports key*] { 
+  set abc [get_attribute $abc full_name]
+  set pqr [split $abc "_"]
+  set key_val [lindex $pqr 3]
+   echo "add pin constraint $key_val $abc -Revised"
+} > ../../Results/$design/final/key_constraints.do
+exit
+
+Thank you...
+
