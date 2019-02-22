@@ -1,2 +1,1 @@
-sleep 3600
 ./fa $design | tee {$design}_log

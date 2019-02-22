@@ -1,0 +1,2922 @@
+#Version: 17.10-s240 (29-Sep-2017) (64 bit executable)
+ guiWinConfig . 740 690 257 92 
+ guiWinConfig .message 82 103 1921 394 
+ guiWinConfig .message 82 103 1920 366 
+ guiWinConfig .message 82 103 0 0 
+ guiWinConfig .message 82 103 1920 366 
+ guiWinConfig .message 82 103 1919 338 
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.a.pane.f1.middle.revised.fm.tree.vsb cget -activebackground]
+	.a.pane.f1.middle.revised.fm.tree.vsb configure -activebackground [.a.pane.f1.middle.revised.fm.tree.vsb cget -background]
+    }
+    .a.pane.f1.middle.revised.fm.tree.vsb activate [.a.pane.f1.middle.revised.fm.tree.vsb identify 4 183]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.a.pane.f1.middle.revised.fm.tree.vsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .a.pane.f1.middle.revised.fm.tree.vsb activate {}
+callback Gui_hlist_leave .a.pane.f1.middle.revised.fm.tree.f1.hlist
+         if { [ .icon.rrcmgr cget -state ] == "normal" } {
+            .icon.rrcmgr configure -relief groove
+        }
+    
+     tk::ButtonEnter .icon.rrcmgr
+ .icon.rrcmgr configure -relief flat 
+     tk::ButtonLeave .icon.rrcmgr
+         if { [ .icon.comp cget -state ] == "normal" } {
+            .icon.comp configure -relief groove
+        }
+    
+     tk::ButtonEnter .icon.comp
+ .icon.comp configure -relief flat 
+     tk::ButtonLeave .icon.comp
+     tk::MbEnter .v_menu.ltx
+     tk::MbMotion .v_menu.ltx up 534 122
+     tk::MbMotion .v_menu.ltx up 534 119
+     tk::MbMotion .v_menu.ltx up 537 113
+     tk::MbMotion .v_menu.ltx up 539 107
+     tk::MbMotion .v_menu.ltx up 540 103
+     tk::MbMotion .v_menu.ltx up 543 99
+     tk::MbMotion .v_menu.ltx up 544 96
+     tk::MbLeave .v_menu.ltx
+ guiWinConfig . 740 690 273 98 
+ guiWinConfig . 740 690 295 106 
+ guiWinConfig . 740 690 295 106 
+ guiWinConfig . 740 690 375 128 
+ guiWinConfig . 740 690 375 128 
+ guiWinConfig . 740 690 491 154 
+ guiWinConfig . 740 690 491 154 
+ guiWinConfig . 740 690 607 174 
+ guiWinConfig . 740 690 607 174 
+ guiWinConfig . 740 690 755 190 
+ guiWinConfig . 740 690 755 190 
+ guiWinConfig . 740 690 911 196 
+ guiWinConfig . 740 690 911 196 
+ guiWinConfig . 740 690 1061 190 
+ guiWinConfig . 740 690 1061 190 
+ guiWinConfig . 740 690 1225 190 
+ guiWinConfig . 740 690 1225 190 
+ guiWinConfig . 740 690 1363 190 
+ guiWinConfig . 740 690 1363 190 
+ guiWinConfig . 740 690 1481 188 
+ guiWinConfig . 740 690 1481 188 
+ guiWinConfig . 740 690 1481 188 
+ guiWinConfig . 740 690 590 188 
+ guiWinConfig . 740 690 646 188 
+ guiWinConfig . 740 690 646 188 
+ guiWinConfig . 740 690 750 188 
+ guiWinConfig . 740 690 750 188 
+ guiWinConfig . 740 690 848 188 
+ guiWinConfig . 740 690 848 188 
+ guiWinConfig . 740 690 940 182 
+ guiWinConfig . 740 690 940 182 
+ guiWinConfig . 740 690 1036 172 
+ guiWinConfig . 740 690 1036 172 
+ guiWinConfig . 740 690 1108 160 
+ guiWinConfig . 740 690 1164 144 
+ guiWinConfig . 740 690 1202 130 
+ guiWinConfig . 740 690 1256 114 
+ guiWinConfig . 740 690 1308 98 
+ guiWinConfig . 740 690 1362 82 
+ guiWinConfig . 740 690 1402 68 
+ guiWinConfig . 740 690 1402 68 
+ guiWinConfig . 740 690 1436 52 
+ guiWinConfig . 740 690 1436 52 
+ guiWinConfig . 740 690 1458 52 
+ guiWinConfig . 740 690 1458 52 
+ guiWinConfig . 740 690 1483 52 
+ guiWinConfig . 740 690 1483 52 
+ guiWinConfig . 740 690 1505 52 
+ guiWinConfig . 740 690 1505 52 
+ guiWinConfig . 740 690 1520 52 
+ guiWinConfig . 740 690 1531 52 
+ guiWinConfig . 740 690 1539 52 
+ guiWinConfig . 740 690 1559 52 
+ guiWinConfig . 740 690 1593 52 
+ guiWinConfig . 740 690 1644 52 
+ guiWinConfig . 740 690 1699 56 
+ guiWinConfig . 740 690 1699 56 
+ guiWinConfig . 740 690 1753 59 
+ guiWinConfig . 740 690 1753 59 
+ guiWinConfig . 740 690 1809 54 
+ guiWinConfig . 740 690 1809 54 
+ guiWinConfig . 740 690 1809 54 
+ guiWinConfig . 740 690 1891 52 
+ guiWinConfig . 740 690 1891 52 
+ guiWinConfig . 740 690 1947 52 
+ guiWinConfig . 740 690 1947 52 
+ guiWinConfig . 740 690 1981 52 
+ guiWinConfig . 740 690 1981 52 
+ guiWinConfig . 740 690 1997 52 
+ guiWinConfig . 740 690 2001 52 
+ guiWinConfig . 740 690 2004 52 
+ guiWinConfig . 740 690 2004 52 
+ guiWinConfig . 740 690 2030 52 
+ guiWinConfig . 740 690 2030 52 
+ guiWinConfig . 740 690 2101 52 
+ guiWinConfig . 740 690 2101 52 
+ guiWinConfig . 740 690 2181 52 
+ guiWinConfig . 740 690 2181 52 
+ guiWinConfig . 740 690 2253 52 
+ guiWinConfig . 740 690 2253 52 
+ guiWinConfig . 740 690 2253 52 
+ guiWinConfig . 740 690 2305 54 
+ guiWinConfig . 740 690 2305 54 
+ guiWinConfig . 740 690 2305 54 
+ guiWinConfig . 740 690 2345 52 
+ guiWinConfig . 740 690 2345 52 
+ guiWinConfig . 740 690 2365 52 
+ guiWinConfig . 740 690 2365 52 
+ guiWinConfig . 740 690 2385 52 
+ guiWinConfig . 740 690 2385 52 
+ guiWinConfig . 740 690 2417 54 
+ guiWinConfig . 740 690 2417 54 
+ guiWinConfig . 740 690 2459 52 
+ guiWinConfig . 740 690 2496 52 
+ guiWinConfig . 740 690 2512 52 
+ guiWinConfig . 740 690 2512 54 
+ guiWinConfig . 740 690 2512 54 
+ guiWinConfig . 740 690 2512 54 
+ guiWinConfig . 740 690 2512 54 
+ guiWinConfig . 740 690 2512 54 
+ guiWinConfig . 740 690 2512 54 
+ guiWinConfig . 740 690 2512 55 
+ guiWinConfig . 740 690 2512 55 
+ guiWinConfig . 740 690 2512 55 
+ guiWinConfig . 740 690 2512 96 
+ guiWinConfig . 740 690 2512 96 
+ guiWinConfig . 740 690 2504 110 
+ guiWinConfig . 740 690 2504 110 
+ guiWinConfig . 740 690 2483 137 
+ guiWinConfig . 740 690 2483 137 
+ guiWinConfig . 740 690 2439 179 
+ guiWinConfig . 740 690 2439 179 
+ guiWinConfig . 740 690 2385 213 
+ guiWinConfig . 740 690 2385 213 
+ guiWinConfig . 740 690 2321 239 
+ guiWinConfig . 740 690 2321 239 
+ guiWinConfig . 740 690 2251 259 
+ guiWinConfig . 740 690 2189 277 
+ guiWinConfig . 740 690 2149 293 
+ guiWinConfig . 740 690 2135 295 
+ guiWinConfig . 740 690 2138 292 
+ guiWinConfig . 740 690 2143 288 
+ guiWinConfig . 740 690 2143 288 
+ guiWinConfig . 740 690 2158 280 
+ guiWinConfig . 740 690 2158 280 
+ guiWinConfig . 740 690 2176 270 
+ guiWinConfig . 740 690 2176 270 
+ guiWinConfig . 740 690 2199 260 
+ guiWinConfig . 740 690 2199 260 
+ guiWinConfig . 740 690 2218 252 
+ guiWinConfig . 740 690 2218 252 
+ guiWinConfig . 740 690 2233 244 
+ guiWinConfig . 740 690 2233 244 
+ guiWinConfig . 740 690 2246 240 
+ guiWinConfig . 740 690 2246 240 
+ guiWinConfig . 740 690 2257 233 
+ guiWinConfig . 740 690 2257 233 
+ guiWinConfig . 740 690 2263 229 
+ guiWinConfig . 740 690 2263 229 
+ guiWinConfig . 740 690 2268 226 
+ guiWinConfig . 740 690 2268 226 
+ guiWinConfig . 740 690 2273 221 
+ guiWinConfig . 740 690 2273 221 
+ guiWinConfig . 740 690 2276 218 
+ guiWinConfig . 740 690 2277 217 
+ guiWinConfig . 740 690 2278 216 
+ guiWinConfig . 740 690 2280 214 
+ guiWinConfig . 740 690 2280 214 
+ guiWinConfig . 740 690 2282 212 
+ guiWinConfig . 740 690 2282 212 
+ guiWinConfig . 740 690 2283 208 
+ guiWinConfig . 740 690 2284 207 
+     tk::ButtonEnter .icon.lec
+     tk::ButtonLeave .icon.lec
+     tk::ButtonEnter .icon.setup
+     tk::ButtonLeave .icon.setup
+         if { [ .icon.stop cget -state ] == "normal" } {
+            .icon.stop configure -relief groove
+        }
+    
+     tk::ButtonEnter .icon.stop
+ .icon.stop configure -relief flat 
+     tk::ButtonLeave .icon.stop
+         if { [ .icon.gate cget -state ] == "normal" } {
+            .icon.gate configure -relief groove
+        }
+    
+     tk::ButtonEnter .icon.gate
+ .icon.gate configure -relief flat 
+     tk::ButtonLeave .icon.gate
+         if { [ .icon.modelmgr cget -state ] == "normal" } {
+            .icon.modelmgr configure -relief groove
+        }
+    
+     tk::ButtonEnter .icon.modelmgr
+ .icon.modelmgr configure -relief flat 
+     tk::ButtonLeave .icon.modelmgr
+     tk::MbEnter .v_menu.tool
+     tk::MbMotion .v_menu.tool up 2494 234
+     tk::MbMotion .v_menu.tool up 2490 232
+     tk::MbMotion .v_menu.tool up 2483 230
+     tk::MbMotion .v_menu.tool up 2480 229
+     tk::MbMotion .v_menu.tool up 2479 228
+     tk::MbLeave .v_menu.tool
+     tk::MbEnter .v_menu.compare
+     tk::MbMotion .v_menu.compare up 2474 227
+     tk::MbMotion .v_menu.compare up 2470 227
+     tk::MbMotion .v_menu.compare up 2466 227
+     tk::MbMotion .v_menu.compare up 2460 226
+     tk::MbMotion .v_menu.compare up 2453 226
+     tk::MbMotion .v_menu.compare up 2445 225
+     tk::MbLeave .v_menu.compare
+     tk::MbEnter .v_menu.report
+     tk::MbMotion .v_menu.report up 2434 222
+     tk::MbMotion .v_menu.report up 2423 220
+     tk::MbMotion .v_menu.report up 2414 219
+     tk::MbMotion .v_menu.report up 2402 216
+     tk::MbMotion .v_menu.report up 2394 213
+     tk::MbMotion .v_menu.report up 2382 211
+     tk::MbLeave .v_menu.report
+     tk::MbEnter .v_menu.set
+ guiWinConfig . 742 719 2283 179 
+ guiWinConfig . 742 719 1920 24 
+     tk::MbLeave .v_menu.set
+ guiWinConfig . 1920 1056 1920 24 
+ guiWinConfig . 1920 1056 1920 24 
+ guiWinConfig .v_menu 1920 34 0 0 
+ guiWinConfig .cdnBranding 1920 4 0 34 
+ guiWinConfig .icon 1920 34 0 38 
+ guiWinConfig .b 1920 32 0 1024 
+ guiWinConfig .a 1920 952 0 72 
+ guiWinConfig .v_menu.logo 97 34 1823 0 
+ guiWinConfig .icon.lec 55 32 1863 1 
+ guiWinConfig .icon.setup 70 32 1791 1 
+ guiWinConfig .b.met 202 23 1714 4 
+ guiWinConfig .b.frame 1702 24 4 4 
+ guiWinConfig .a.pane 1920 952 0 0 
+ guiWinConfig .a.pane.sep2 1920 2 0 551 
+ guiWinConfig .a.pane.sep1 1920 2 0 344 
+ guiWinConfig .a.pane.f1 1920 345 0 0 
+ guiWinConfig .a.pane.f2 1920 207 0 345 
+ guiWinConfig .a.pane.f3 1920 400 0 552 
+ guiWinConfig .a.pane.f1.middle 1920 345 0 0 
+ guiWinConfig .a.pane.f2.mesg 1920 207 0 0 
+ guiWinConfig .a.pane.f3.command 1920 400 0 0 
+ guiWinConfig .a.pane.btn2 9 9 1907 548 
+ guiWinConfig .a.pane.btn1 9 9 1907 341 
+ guiWinConfig .a.pane.f1.middle.golden 960 345 0 0 
+ guiWinConfig .a.pane.f1.middle.revised 960 345 960 0 
+ guiWinConfig .a.pane.f2.mesg.text 1920 207 0 0 
+ guiWinConfig .a.pane.f3.command.text 1918 398 1 1 
+ guiWinConfig .a.pane.f1.middle.golden.fm1 960 29 0 0 
+ guiWinConfig .a.pane.f1.middle.golden.fm 956 312 2 31 
+ guiWinConfig .a.pane.f1.middle.revised.fm1 960 29 0 0 
+ guiWinConfig .a.pane.f1.middle.revised.fm 956 312 2 31 
+ guiWinConfig .a.pane.f2.mesg.text.text 1907 207 0 0 
+ guiWinConfig .a.pane.f2.mesg.text.vsb 13 207 1907 0 
+ guiWinConfig .a.pane.f3.command.text.text 1905 398 0 0 
+ guiWinConfig .a.pane.f3.command.text.vsb 13 398 1905 0 
+callback Gui_hlist_leave .a.pane.f1.middle.revised.fm.tree.f1.hlist
+ guiWinConfig .a.pane.f1.middle.golden.fm1.label 55 21 452 4 
+ guiWinConfig .a.pane.f1.middle.golden.fm.tree 954 310 1 1 
+ guiWinConfig .a.pane.f1.middle.revised.fm1.label 60 21 450 4 
+ guiWinConfig .a.pane.f1.middle.revised.fm.tree 954 310 1 1 
+ guiWinConfig .a.pane.f1.middle.golden.fm.tree.f1 954 310 0 0 
+ guiWinConfig .a.pane.f1.middle.revised.fm.tree.f1 941 310 0 0 
+ guiWinConfig .a.pane.f1.middle.revised.fm.tree.vsb 13 310 941 0 
+ guiWinConfig .a.pane.f1.middle.golden.fm.tree.f1.hlist 952 308 1 1 
+ guiWinConfig .a.pane.f1.middle.revised.fm.tree.f1.hlist 939 308 1 1 
+callback Gui_hlist_leave .a.pane.f1.middle.golden.fm.tree.f1.hlist
+#Gui Step(0)===>(TixHList).a.pane.f1.middle.revised.fm.tree.f1.hlist <Button-1> nvm_instDFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_A9p2z4_reg__S__u_cortexm0_inst_u_logic_Wrjvx4_2(nv...
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 0:  (TixHList) <Button-1>\
+ nvm_instDFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_A9p2z4_reg__S__u_cortexm0_inst_u_logic_Wrjvx4_2(nv...} .a.pane.f1.middle.revised.fm.tree.f1.hlist } 
+set x [guiGetHListEntryX .a.pane.f1.middle.revised.fm.tree.f1.hlist {files/CORTEX_M0nvm_instDFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_A9p2z4_reg__S__u_cortexm0_inst_u_logic_Wrjvx4_2(nvmDFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_A9p2z4_reg__S__u_cortexm0_inst_u_logic_Wrjvx4_2_N146)}];set y [guiGetHListEntryY .a.pane.f1.middle.revised.fm.tree.f1.hlist {files/CORTEX_M0nvm_instDFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_A9p2z4_reg__S__u_cortexm0_inst_u_logic_Wrjvx4_2(nvmDFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_A9p2z4_reg__S__u_cortexm0_inst_u_logic_Wrjvx4_2_N146)}] 
+_tixRecordFlags <ButtonPress-1> % 10344 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379260159 ?? 193 45 ?? ?? 0 ?? ?? 0x000126 00000000 4 .a.pane.f1.middle.revised.fm.tree.f1.hlist 3077 174; 
+	 tixHList:Button-1 .a.pane.f1.middle.revised.fm.tree.f1.hlist  $x $y ""
+    ; _tixDeleteFlags;
+#Gui Step(1)===>(TixHList).a.pane.f1.middle.revised.fm.tree.f1.hlist <ButtonRelease-1> nvm_instDFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_A9p2z4_reg__S__u_cortexm0_inst_u_logic_Wrjvx4_2(nv...
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 1:  (TixHList) <ButtonRelease-1>\
+ nvm_instDFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_A9p2z4_reg__S__u_cortexm0_inst_u_logic_Wrjvx4_2(nv...} .a.pane.f1.middle.revised.fm.tree.f1.hlist } 
+set x [guiGetHListEntryX .a.pane.f1.middle.revised.fm.tree.f1.hlist {files/CORTEX_M0nvm_instDFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_A9p2z4_reg__S__u_cortexm0_inst_u_logic_Wrjvx4_2(nvmDFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_A9p2z4_reg__S__u_cortexm0_inst_u_logic_Wrjvx4_2_N146)}];set y [guiGetHListEntryY .a.pane.f1.middle.revised.fm.tree.f1.hlist {files/CORTEX_M0nvm_instDFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_A9p2z4_reg__S__u_cortexm0_inst_u_logic_Wrjvx4_2(nvmDFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_A9p2z4_reg__S__u_cortexm0_inst_u_logic_Wrjvx4_2_N146)}] 
+_tixRecordFlags <ButtonRelease-1> % 10540 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379260247 ?? 193 45 ?? ?? 0 ?? ?? 0x000126 00000000 5 .a.pane.f1.middle.revised.fm.tree.f1.hlist 3077 174; 
+	 tixHList:ButtonRelease-1 .a.pane.f1.middle.revised.fm.tree.f1.hlist  $x $y
+    ; _tixDeleteFlags;
+callback Gui_hlist_leave .a.pane.f1.middle.revised.fm.tree.f1.hlist
+#Gui Step(2)===>(TixHList).a.pane.f1.middle.golden.fm.tree.f1.hlist <Button-1> {{{38302 primitives}}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 2:  (TixHList) <Button-1>\
+ {{38302 primitives}}} .a.pane.f1.middle.golden.fm.tree.f1.hlist } 
+set x [guiGetHListEntryX .a.pane.f1.middle.golden.fm.tree.f1.hlist {files/CORTEX_M038302 primitives}];set y [guiGetHListEntryY .a.pane.f1.middle.golden.fm.tree.f1.hlist {files/CORTEX_M038302 primitives}] 
+_tixRecordFlags <ButtonPress-1> % 10658 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379261879 ?? 554 228 ?? ?? 0 ?? ?? 0x000126 00000000 4 .a.pane.f1.middle.golden.fm.tree.f1.hlist 2478 357; 
+	 tixHList:Button-1 .a.pane.f1.middle.golden.fm.tree.f1.hlist  $x $y ""
+    ; _tixDeleteFlags;
+#Gui Step(3)===>(TixHList).a.pane.f1.middle.golden.fm.tree.f1.hlist <ButtonRelease-1> {{{38302 primitives}}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 3:  (TixHList) <ButtonRelease-1>\
+ {{38302 primitives}}} .a.pane.f1.middle.golden.fm.tree.f1.hlist } 
+set x [guiGetHListEntryX .a.pane.f1.middle.golden.fm.tree.f1.hlist {files/CORTEX_M038302 primitives}];set y [guiGetHListEntryY .a.pane.f1.middle.golden.fm.tree.f1.hlist {files/CORTEX_M038302 primitives}] 
+_tixRecordFlags <ButtonRelease-1> % 10885 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379261999 ?? 554 228 ?? ?? 0 ?? ?? 0x000126 00000000 5 .a.pane.f1.middle.golden.fm.tree.f1.hlist 2478 357; 
+	 tixHList:ButtonRelease-1 .a.pane.f1.middle.golden.fm.tree.f1.hlist  $x $y
+    ; _tixDeleteFlags;
+callback Gui_hlist_leave .a.pane.f1.middle.golden.fm.tree.f1.hlist
+         if { [ .icon.gate cget -state ] == "normal" } {
+            .icon.gate configure -relief groove
+        }
+    
+     tk::ButtonEnter .icon.gate
+ .icon.gate configure -relief flat 
+     tk::ButtonLeave .icon.gate
+         if { [ .icon.comp cget -state ] == "normal" } {
+            .icon.comp configure -relief groove
+        }
+    
+     tk::ButtonEnter .icon.comp
+     tk::ButtonDown .icon.comp
+     tk::ButtonUp .icon.comp
+ .icon.comp configure -relief flat 
+     tk::ButtonLeave .icon.comp
+ guiWinConfig .keymgr 900 800 1921 52 
+     tk::ButtonEnter .keymgr.bt.sche
+     tk::ButtonLeave .keymgr.bt.sche
+callback Gui_hlist_leave .keymgr.pane.ump.golden.list.f1.hlist
+callback Gui_hlist_leave .keymgr.pane.map.golden.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.map.golden.list.hsb cget -activebackground]
+	.keymgr.pane.map.golden.list.hsb configure -activebackground [.keymgr.pane.map.golden.list.hsb cget -background]
+    }
+    .keymgr.pane.map.golden.list.hsb activate [.keymgr.pane.map.golden.list.hsb identify 388 0]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.map.golden.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.map.golden.list.hsb activate {}
+callback Gui_hlist_leave .keymgr.pane.com.golden.list.f1.hlist
+callback Gui_hlist_leave .keymgr.pane.com.revised.list.f1.hlist
+     tk::MbEnter .keymgr.pane.com.title.sort
+     tk::MbMotion .keymgr.pane.com.title.sort up 2618 511
+     tk::MbLeave .keymgr.pane.com.title.sort
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.map.revised.list.hsb cget -activebackground]
+	.keymgr.pane.map.revised.list.hsb configure -activebackground [.keymgr.pane.map.revised.list.hsb cget -background]
+    }
+    .keymgr.pane.map.revised.list.hsb activate [.keymgr.pane.map.revised.list.hsb identify 263 10]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.map.revised.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.map.revised.list.hsb activate {}
+callback Gui_hlist_leave .keymgr.pane.map.revised.list.f1.hlist
+     tk::MbEnter .keymgr.pane.com.title.sort
+     tk::MbMotion .keymgr.pane.com.title.sort up 2617 513
+     tk::MbLeave .keymgr.pane.com.title.sort
+callback Gui_hlist_leave .keymgr.pane.com.revised.list.f1.hlist
+     tk::ButtonEnter .keymgr.pane.com.title.find
+     tk::ButtonLeave .keymgr.pane.com.title.find
+     tk::ButtonEnter .keymgr.pane.com.title.find
+     tk::ButtonLeave .keymgr.pane.com.title.find
+     tk::ButtonEnter .keymgr.pane.com.title.filter
+     tk::ButtonLeave .keymgr.pane.com.title.filter
+     tk::MbEnter .keymgr.pane.com.title.sort
+     tk::MbMotion .keymgr.pane.com.title.sort up 2637 523
+     tk::MbMotion .keymgr.pane.com.title.sort up 2636 523
+     tk::MbMotion .keymgr.pane.com.title.sort up 2635 523
+     tk::MbMotion .keymgr.pane.com.title.sort up 2634 523
+     tk::MbMotion .keymgr.pane.com.title.sort up 2632 523
+     tk::MbMotion .keymgr.pane.com.title.sort up 2631 523
+     tk::MbMotion .keymgr.pane.com.title.sort up 2630 523
+     if {$tk::Priv(inMenubutton) ne ""} {
+	tk::MbPost $tk::Priv(inMenubutton) 2630 523
+    }
+     tk::MbButtonUp .keymgr.pane.com.title.sort
+     tk::MbMotion .keymgr.pane.com.title.sort up 2629 524
+     tk::MbMotion .keymgr.pane.com.title.sort up 2629 529
+     tk::MbLeave .keymgr.pane.com.title.sort
+     set tk::Priv(window) .keymgr.pane.com.title.sort.menu
+    if {[.keymgr.pane.com.title.sort.menu cget -type] eq "tearoff"} {
+	if {"NotifyNormal" ne "NotifyUngrab"} {
+	    if {[tk windowingsystem] eq "x11"} {
+		tk_menuSetFocus .keymgr.pane.com.title.sort.menu
+	    }
+	}
+    }
+    tk::MenuMotion .keymgr.pane.com.title.sort.menu 21 3 16
+#Gui Step(8)===>(Menu).keymgr.pane.com.title.sort.menu <Button> {(menu-item) "Sort by Support Size"}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 8:  (Menu) <Button>\
+ (menu-item) "Sort by Support Size"} .keymgr.pane.com.title.sort.menu } 
+set x [guiGetMenuX .keymgr.pane.com.title.sort.menu 0];set y [guiGetMenuY .keymgr.pane.com.title.sort.menu 0 ] 
+     tk::MenuMotion .keymgr.pane.com.title.sort.menu $x $y 0
+     tk::MenuButtonDown .keymgr.pane.com.title.sort.menu
+    tk::MenuInvoke .keymgr.pane.com.title.sort.menu 1
+#Gui Step(9)===>(TixHList).keymgr.pane.com.revised.list.f1.hlist <Button-1> {{{(+)   PO   1766    DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Eyg3z4_reg__S__n12871 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 9:  (TixHList) <Button-1>\
+ {{(+)   PO   1766    DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Eyg3z4_reg__S__n12871 }}} .keymgr.pane.com.revised.list.f1.hlist } 
+set x [guiGetHListEntryX .keymgr.pane.com.revised.list.f1.hlist {0}];set y [guiGetHListEntryY .keymgr.pane.com.revised.list.f1.hlist {0}] 
+_tixRecordFlags <ButtonPress-1> % 17821 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379269671 ?? 276 11 ?? ?? 0 ?? ?? 0x000126 00000000 4 .keymgr.pane.com.revised.list.f1.hlist 2641 547; 
+	 tixHList:Button-1 .keymgr.pane.com.revised.list.f1.hlist  $x $y ""
+    ; _tixDeleteFlags;
+#Gui Step(10)===>(TixHList).keymgr.pane.com.revised.list.f1.hlist <ButtonRelease-1> {{{(+)   PO   1766    DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Eyg3z4_reg__S__n12871 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 10:  (TixHList) <ButtonRelease-1>\
+ {{(+)   PO   1766    DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Eyg3z4_reg__S__n12871 }}} .keymgr.pane.com.revised.list.f1.hlist } 
+set x [guiGetHListEntryX .keymgr.pane.com.revised.list.f1.hlist {0}];set y [guiGetHListEntryY .keymgr.pane.com.revised.list.f1.hlist {0}] 
+_tixRecordFlags <ButtonRelease-1> % 17923 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379269823 ?? 276 11 ?? ?? 0 ?? ?? 0x000126 00000000 5 .keymgr.pane.com.revised.list.f1.hlist 2641 547; 
+	 tixHList:ButtonRelease-1 .keymgr.pane.com.revised.list.f1.hlist  $x $y
+    ; _tixDeleteFlags;
+scrollSelect keyMgrComList select 11
+show_cmp_point_class .keymgr.pane.com.revised.list.f1.hlist
+             #scrollSelect keyMgrComList select 11
+            pop_com_menu .keymgr.pane.com.revised.list.f1.hlist 2640 547
+        
+callback Gui_hlist_leave .keymgr.pane.com.revised.list.f1.hlist
+     set tk::Priv(window) .keymgr.pane.com.revised.list.f1.hlist.com.menu
+    if {[.keymgr.pane.com.revised.list.f1.hlist.com.menu cget -type] eq "tearoff"} {
+	if {"NotifyUngrab" ne "NotifyUngrab"} {
+	    if {[tk windowingsystem] eq "x11"} {
+		tk_menuSetFocus .keymgr.pane.com.revised.list.f1.hlist.com.menu
+	    }
+	}
+    }
+    tk::MenuMotion .keymgr.pane.com.revised.list.f1.hlist.com.menu 0 0 1040
+    tk::MenuInvoke .keymgr.pane.com.revised.list.f1.hlist.com.menu 1
+#Gui Step(13)===>(Menu).keymgr.pane.com.revised.list.f1.hlist.com.menu <Button> {(menu-item) "Diagnose"}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 13:  (Menu) <Button>\
+ (menu-item) "Diagnose"} .keymgr.pane.com.revised.list.f1.hlist.com.menu } 
+set x [guiGetMenuX .keymgr.pane.com.revised.list.f1.hlist.com.menu 1];set y [guiGetMenuY .keymgr.pane.com.revised.list.f1.hlist.com.menu 1 ] 
+     tk::MenuMotion .keymgr.pane.com.revised.list.f1.hlist.com.menu $x $y 0
+     tk::MenuButtonDown .keymgr.pane.com.revised.list.f1.hlist.com.menu
+    tk::MenuInvoke .keymgr.pane.com.revised.list.f1.hlist.com.menu 1
+callback Gui_hlist_leave .keymgr.pane.com.revised.list.f1.hlist
+ guiWinConfig .diagmgr 800 800 1921 52 
+ guiWinConfig .a.pane.f3.command.text.text.promt2 49 22 1 23 
+ guiWinConfig .diagmgr 800 800 1921 52 
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground [.diagmgr.pane.msup.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate [.diagmgr.pane.msup.core.rv.hbar identify 347 8]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.vbar cget -activebackground]
+	.diagmgr.pane.msup.core.vbar configure -activebackground [.diagmgr.pane.msup.core.vbar cget -background]
+    }
+    .diagmgr.pane.msup.core.vbar activate [.diagmgr.pane.msup.core.vbar identify 4 8]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.vbar activate {}
+     tk::ButtonEnter .diagmgr.pane.msup.title.find
+     tk::ButtonLeave .diagmgr.pane.msup.title.find
+ guiWinConfig .keymgr 900 800 1921 52 
+     tk::ButtonEnter .keymgr.pane.ump.title.rfind
+     tk::ButtonLeave .keymgr.pane.ump.title.rfind
+callback Gui_hlist_leave .keymgr.pane.ump.revised.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.revised.list.hsb cget -activebackground]
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground [.keymgr.pane.ump.revised.list.hsb cget -background]
+    }
+    .keymgr.pane.ump.revised.list.hsb activate [.keymgr.pane.ump.revised.list.hsb identify 360 5]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.revised.list.hsb activate {}
+     tk::MbEnter .keymgr.pane.map.title.cls
+     tk::MbMotion .keymgr.pane.map.title.cls up 2725 308
+     tk::MbLeave .keymgr.pane.map.title.cls
+callback Gui_hlist_leave .keymgr.pane.map.revised.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.map.revised.list.hsb cget -activebackground]
+	.keymgr.pane.map.revised.list.hsb configure -activebackground [.keymgr.pane.map.revised.list.hsb cget -background]
+    }
+    .keymgr.pane.map.revised.list.hsb activate [.keymgr.pane.map.revised.list.hsb identify 270 0]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.map.revised.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.map.revised.list.hsb activate {}
+     tk::MbEnter .keymgr.pane.com.title.sort
+     tk::MbMotion .keymgr.pane.com.title.sort up 2629 506
+     tk::MbMotion .keymgr.pane.com.title.sort up 2629 508
+     tk::MbMotion .keymgr.pane.com.title.sort up 2629 511
+     tk::MbMotion .keymgr.pane.com.title.sort up 2629 512
+     tk::MbMotion .keymgr.pane.com.title.sort up 2631 514
+     tk::MbMotion .keymgr.pane.com.title.sort up 2632 515
+     tk::MbMotion .keymgr.pane.com.title.sort up 2634 515
+     tk::MbMotion .keymgr.pane.com.title.sort up 2636 515
+     tk::MbMotion .keymgr.pane.com.title.sort up 2637 515
+     tk::MbLeave .keymgr.pane.com.title.sort
+     tk::ButtonEnter .keymgr.pane.com.title.filter
+     tk::ButtonLeave .keymgr.pane.com.title.filter
+     tk::ButtonEnter .keymgr.pane.com.title.find
+ guiWinConfig .b.frame.lab 4 22 1 1 
+     tk::ButtonDown .keymgr.pane.com.title.find
+     tk::ButtonUp .keymgr.pane.com.title.find
+ guiWinConfig .find 432 129 1921 385 
+     tk::ButtonLeave .keymgr.pane.com.title.find
+ guiWinConfig .keymgr 900 800 1921 52 
+     tk::ButtonEnter .keymgr.pane.com.title.find
+     tk::ButtonDown .keymgr.pane.com.title.find
+     tk::ButtonUp .keymgr.pane.com.title.find
+ guiWinConfig .find 432 129 1921 385 
+ guiWinConfig .find 432 129 1921 385 
+     tk::ButtonLeave .keymgr.pane.com.title.find
+     tk::ButtonEnter .keymgr.pane.com.title.filter
+     tk::ButtonDown .keymgr.pane.com.title.filter
+     tk::ButtonUp .keymgr.pane.com.title.filter
+ guiWinConfig .filter_Op1 351 109 1921 392 
+     tk::ButtonLeave .keymgr.pane.com.title.filter
+ guiWinConfig .keymgr 900 800 1921 52 
+     tk::ButtonEnter .keymgr.pane.com.title.filter
+     tk::ButtonDown .keymgr.pane.com.title.filter
+     tk::ButtonUp .keymgr.pane.com.title.filter
+ guiWinConfig .filter_Op1 351 109 1921 392 
+ guiWinConfig .filter_Op1 351 109 1921 392 
+     tk::ButtonLeave .keymgr.pane.com.title.filter
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.map.revised.list.hsb cget -activebackground]
+	.keymgr.pane.map.revised.list.hsb configure -activebackground [.keymgr.pane.map.revised.list.hsb cget -background]
+    }
+    .keymgr.pane.map.revised.list.hsb activate [.keymgr.pane.map.revised.list.hsb identify 255 1]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.map.revised.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.map.revised.list.hsb activate {}
+callback Gui_hlist_leave .keymgr.pane.map.revised.list.f1.hlist
+callback Gui_hlist_leave .keymgr.pane.map.golden.list.f1.hlist
+     tk::ButtonEnter .filter_Op1.bt.quit
+     tk::ButtonLeave .filter_Op1.bt.quit
+     tk::ButtonEnter .filter_Op1.bt.quit
+     tk::ButtonDown .filter_Op1.bt.quit
+     tk::ButtonUp .filter_Op1.bt.quit
+callback Gui_hlist_leave .keymgr.pane.map.golden.list.f1.hlist
+callback Gui_hlist_leave .keymgr.pane.map.revised.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.map.revised.list.hsb cget -activebackground]
+	.keymgr.pane.map.revised.list.hsb configure -activebackground [.keymgr.pane.map.revised.list.hsb cget -background]
+    }
+    .keymgr.pane.map.revised.list.hsb activate [.keymgr.pane.map.revised.list.hsb identify 227 8]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.map.revised.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.map.revised.list.hsb activate {}
+     tk::MbEnter .keymgr.pane.com.title.sort
+     tk::MbMotion .keymgr.pane.com.title.sort up 2617 506
+     tk::MbLeave .keymgr.pane.com.title.sort
+     tk::ButtonEnter .keymgr.pane.com.title.filter
+     tk::ButtonLeave .keymgr.pane.com.title.filter
+callback Gui_hlist_leave .keymgr.pane.com.revised.list.f1.hlist
+     tk::MbEnter .keymgr.pane.com.title.cls
+     tk::MbMotion .keymgr.pane.com.title.cls up 2734 530
+     tk::MbMotion .keymgr.pane.com.title.cls up 2734 529
+     tk::MbMotion .keymgr.pane.com.title.cls up 2734 527
+     tk::MbMotion .keymgr.pane.com.title.cls up 2734 525
+     tk::MbMotion .keymgr.pane.com.title.cls up 2734 524
+     tk::MbMotion .keymgr.pane.com.title.cls up 2734 521
+     tk::MbMotion .keymgr.pane.com.title.cls up 2734 520
+     tk::MbMotion .keymgr.pane.com.title.cls up 2735 519
+     tk::MbMotion .keymgr.pane.com.title.cls up 2736 518
+     tk::MbMotion .keymgr.pane.com.title.cls up 2736 516
+     tk::MbMotion .keymgr.pane.com.title.cls up 2736 515
+     tk::MbMotion .keymgr.pane.com.title.cls up 2738 514
+     if {$tk::Priv(inMenubutton) ne ""} {
+	tk::MbPost $tk::Priv(inMenubutton) 2738 514
+    }
+     tk::MbButtonUp .keymgr.pane.com.title.cls
+     tk::MbMotion .keymgr.pane.com.title.cls up 2742 515
+     tk::MbMotion .keymgr.pane.com.title.cls up 2752 524
+     tk::MbLeave .keymgr.pane.com.title.cls
+     set tk::Priv(window) .keymgr.pane.com.title.cls.menu
+    if {[.keymgr.pane.com.title.cls.menu cget -type] eq "tearoff"} {
+	if {"NotifyNormal" ne "NotifyUngrab"} {
+	    if {[tk windowingsystem] eq "x11"} {
+		tk_menuSetFocus .keymgr.pane.com.title.cls.menu
+	    }
+	}
+    }
+    tk::MenuMotion .keymgr.pane.com.title.cls.menu 36 9 16
+     tk::MbMotion .keymgr.pane.com.title.cls up 2823 722
+     tk::MbMotion .keymgr.pane.com.title.cls up 2823 725
+     tk::MbMotion .keymgr.pane.com.title.cls up 2823 723
+     tk::MbMotion .keymgr.pane.com.title.cls up 2823 722
+     tk::MbMotion .keymgr.pane.com.title.cls up 2823 721
+     tk::MbMotion .keymgr.pane.com.title.cls up 2823 719
+     tk::MbMotion .keymgr.pane.com.title.cls up 2823 717
+     set tk::Priv(window) .keymgr.pane.com.title.cls.menu
+    if {[.keymgr.pane.com.title.cls.menu cget -type] eq "tearoff"} {
+	if {"NotifyNormal" ne "NotifyUngrab"} {
+	    if {[tk windowingsystem] eq "x11"} {
+		tk_menuSetFocus .keymgr.pane.com.title.cls.menu
+	    }
+	}
+    }
+    tk::MenuMotion .keymgr.pane.com.title.cls.menu 91 183 16
+#Gui Step(26)===>(Menu).keymgr.pane.com.title.cls.menu <Button> {(menu-item) "Disable All"}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 26:  (Menu) <Button>\
+ (menu-item) "Disable All"} .keymgr.pane.com.title.cls.menu } 
+set x [guiGetMenuX .keymgr.pane.com.title.cls.menu 7];set y [guiGetMenuY .keymgr.pane.com.title.cls.menu 7 ] 
+     tk::MenuMotion .keymgr.pane.com.title.cls.menu $x $y 0
+     tk::MenuButtonDown .keymgr.pane.com.title.cls.menu
+    tk::MenuInvoke .keymgr.pane.com.title.cls.menu 1
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.com.vbar cget -activebackground]
+	.keymgr.pane.com.vbar configure -activebackground [.keymgr.pane.com.vbar cget -background]
+    }
+    .keymgr.pane.com.vbar activate [.keymgr.pane.com.vbar identify 12 104]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.com.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.com.vbar activate {}
+callback Gui_hlist_leave .keymgr.pane.com.revised.list.f1.hlist
+     tk::ButtonEnter .keymgr.pane.com.title.dall
+     tk::ButtonLeave .keymgr.pane.com.title.dall
+     tk::MbEnter .keymgr.pane.com.title.cls
+     tk::MbMotion .keymgr.pane.com.title.cls up 2756 525
+     tk::MbMotion .keymgr.pane.com.title.cls up 2754 523
+     tk::MbMotion .keymgr.pane.com.title.cls up 2752 520
+     tk::MbMotion .keymgr.pane.com.title.cls up 2751 519
+     tk::MbMotion .keymgr.pane.com.title.cls up 2750 517
+     tk::MbMotion .keymgr.pane.com.title.cls up 2749 516
+     tk::MbMotion .keymgr.pane.com.title.cls up 2749 514
+     tk::MbMotion .keymgr.pane.com.title.cls up 2748 512
+     tk::MbMotion .keymgr.pane.com.title.cls up 2747 511
+     tk::MbMotion .keymgr.pane.com.title.cls up 2746 510
+     if {$tk::Priv(inMenubutton) ne ""} {
+	tk::MbPost $tk::Priv(inMenubutton) 2746 510
+    }
+     tk::MbMotion .keymgr.pane.com.title.cls down 2745 510
+     tk::MbMotion .keymgr.pane.com.title.cls down 2744 510
+     tk::MbMotion .keymgr.pane.com.title.cls down 2744 510
+     tk::MbButtonUp .keymgr.pane.com.title.cls
+     tk::MbMotion .keymgr.pane.com.title.cls up 2743 511
+     tk::MbMotion .keymgr.pane.com.title.cls up 2743 513
+     tk::MbMotion .keymgr.pane.com.title.cls up 2744 519
+     tk::MbMotion .keymgr.pane.com.title.cls up 2748 524
+     tk::MbMotion .keymgr.pane.com.title.cls up 2751 530
+     tk::MbLeave .keymgr.pane.com.title.cls
+     set tk::Priv(window) .keymgr.pane.com.title.cls.menu
+    if {[.keymgr.pane.com.title.cls.menu cget -type] eq "tearoff"} {
+	if {"NotifyNormal" ne "NotifyUngrab"} {
+	    if {[tk windowingsystem] eq "x11"} {
+		tk_menuSetFocus .keymgr.pane.com.title.cls.menu
+	    }
+	}
+    }
+    tk::MenuMotion .keymgr.pane.com.title.cls.menu 25 5 16
+#Gui Step(29)===>(Menu).keymgr.pane.com.title.cls.menu <Button> {(menu-item) "Non-Equivalent"}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 29:  (Menu) <Button>\
+ (menu-item) "Non-Equivalent"} .keymgr.pane.com.title.cls.menu } 
+set x [guiGetMenuX .keymgr.pane.com.title.cls.menu 3];set y [guiGetMenuY .keymgr.pane.com.title.cls.menu 3 ] 
+     tk::MenuMotion .keymgr.pane.com.title.cls.menu $x $y 0
+     tk::MenuButtonDown .keymgr.pane.com.title.cls.menu
+    tk::MenuInvoke .keymgr.pane.com.title.cls.menu 1
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.com.vbar cget -activebackground]
+	.keymgr.pane.com.vbar configure -activebackground [.keymgr.pane.com.vbar cget -background]
+    }
+    .keymgr.pane.com.vbar activate [.keymgr.pane.com.vbar identify 6 77]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.com.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.com.vbar activate {}
+#Gui Step(30)===>(TixHList).keymgr.pane.com.revised.list.f1.hlist <Button-1> {{{(+)   PO   960     HWRITE }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 30:  (TixHList) <Button-1>\
+ {{(+)   PO   960     HWRITE }}} .keymgr.pane.com.revised.list.f1.hlist } 
+set x [guiGetHListEntryX .keymgr.pane.com.revised.list.f1.hlist {0}];set y [guiGetHListEntryY .keymgr.pane.com.revised.list.f1.hlist {0}] 
+_tixRecordFlags <ButtonPress-1> % 30131 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379288016 ?? 224 12 ?? ?? 0 ?? ?? 0x000126 00000000 4 .keymgr.pane.com.revised.list.f1.hlist 2589 548; 
+	 tixHList:Button-1 .keymgr.pane.com.revised.list.f1.hlist  $x $y ""
+    ; _tixDeleteFlags;
+#Gui Step(31)===>(TixHList).keymgr.pane.com.revised.list.f1.hlist <ButtonRelease-1> {{{(+)   PO   960     HWRITE }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 31:  (TixHList) <ButtonRelease-1>\
+ {{(+)   PO   960     HWRITE }}} .keymgr.pane.com.revised.list.f1.hlist } 
+set x [guiGetHListEntryX .keymgr.pane.com.revised.list.f1.hlist {0}];set y [guiGetHListEntryY .keymgr.pane.com.revised.list.f1.hlist {0}] 
+_tixRecordFlags <ButtonRelease-1> % 30228 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379288168 ?? 224 12 ?? ?? 0 ?? ?? 0x000126 00000000 5 .keymgr.pane.com.revised.list.f1.hlist 2589 548; 
+	 tixHList:ButtonRelease-1 .keymgr.pane.com.revised.list.f1.hlist  $x $y
+    ; _tixDeleteFlags;
+scrollSelect keyMgrComList select 12
+show_cmp_point_class .keymgr.pane.com.revised.list.f1.hlist
+             #scrollSelect keyMgrComList select 12
+            pop_com_menu .keymgr.pane.com.revised.list.f1.hlist 2589 548
+        
+callback Gui_hlist_leave .keymgr.pane.com.revised.list.f1.hlist
+     set tk::Priv(window) .keymgr.pane.com.revised.list.f1.hlist.com.menu
+    if {[.keymgr.pane.com.revised.list.f1.hlist.com.menu cget -type] eq "tearoff"} {
+	if {"NotifyUngrab" ne "NotifyUngrab"} {
+	    if {[tk windowingsystem] eq "x11"} {
+		tk_menuSetFocus .keymgr.pane.com.revised.list.f1.hlist.com.menu
+	    }
+	}
+    }
+    tk::MenuMotion .keymgr.pane.com.revised.list.f1.hlist.com.menu 0 0 1040
+    tk::MenuInvoke .keymgr.pane.com.revised.list.f1.hlist.com.menu 1
+#Gui Step(34)===>(Menu).keymgr.pane.com.revised.list.f1.hlist.com.menu <Button> {(menu-item) "Diagnose"}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 34:  (Menu) <Button>\
+ (menu-item) "Diagnose"} .keymgr.pane.com.revised.list.f1.hlist.com.menu } 
+set x [guiGetMenuX .keymgr.pane.com.revised.list.f1.hlist.com.menu 1];set y [guiGetMenuY .keymgr.pane.com.revised.list.f1.hlist.com.menu 1 ] 
+     tk::MenuMotion .keymgr.pane.com.revised.list.f1.hlist.com.menu $x $y 0
+     tk::MenuButtonDown .keymgr.pane.com.revised.list.f1.hlist.com.menu
+    tk::MenuInvoke .keymgr.pane.com.revised.list.f1.hlist.com.menu 1
+ guiWinConfig .diagmgr 800 800 1921 52 
+callback Gui_hlist_leave .keymgr.pane.com.revised.list.f1.hlist
+ guiWinConfig .diagmgr 800 800 1921 52 
+ guiWinConfig .a.pane.f3.command.text.text.promt3 49 22 1 45 
+ guiWinConfig .diagmgr.pane.cp.cad.list.listbox 371 160 0 0 
+ guiWinConfig .diagmgr.pane.cp.cad.list.vsb 13 160 371 0 
+ guiWinConfig .diagmgr.pane.cp.pat.list.grid 414 146 0 0 
+ guiWinConfig .diagmgr.pane.cp.pat.list.hsb 414 13 0 146 
+ guiWinConfig .diagmgr.pane.cp.cad.list.listbox 371 147 0 0 
+ guiWinConfig .diagmgr.pane.cp.cad.list.vsb 13 147 371 0 
+ guiWinConfig .diagmgr.pane.cp.cad.list.hsb 371 13 0 147 
+ guiWinConfig .diagmgr 800 800 1921 52 
+ guiWinConfig .diagmgr.pane.umsup.core.rv.list.f1 386 113 0 0 
+ guiWinConfig .diagmgr.pane.umsup.core.rv.list.vsb 13 113 386 0 
+ guiWinConfig .diagmgr.pane.umsup.core.rv.list.hsb 386 13 0 113 
+ guiWinConfig .diagmgr.pane.umsup.core.rv.list.f1.hlist 384 111 1 1 
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground [.diagmgr.pane.msup.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate [.diagmgr.pane.msup.core.rv.hbar identify 240 7]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.rv.hbar configure -activebackground [.diagmgr.pane.hid.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.rv.hbar activate [.diagmgr.pane.hid.core.rv.hbar identify 228 12]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.rv.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.rv.hbar configure -activebackground [.diagmgr.pane.hid.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.rv.hbar activate [.diagmgr.pane.hid.core.rv.hbar identify 235 4]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.rv.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground [.diagmgr.pane.msup.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate [.diagmgr.pane.msup.core.rv.hbar identify 282 0]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.hsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.hsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate [.diagmgr.pane.umsup.core.rv.list.hsb identify 275 8]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.hsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.hsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate [.diagmgr.pane.umsup.core.rv.list.hsb identify 135 10]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate {}
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.rv.hbar configure -activebackground [.diagmgr.pane.hid.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.rv.hbar activate [.diagmgr.pane.hid.core.rv.hbar identify 313 7]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.rv.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.diag.diagid.rid.hbar cget -activebackground]
+	.diagmgr.diag.diagid.rid.hbar configure -activebackground [.diagmgr.diag.diagid.rid.hbar cget -background]
+    }
+    .diagmgr.diag.diagid.rid.hbar activate [.diagmgr.diag.diagid.rid.hbar identify 334 1]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.diag.diagid.rid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.diag.diagid.rid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.com.comid.rid.hbar cget -activebackground]
+	.diagmgr.com.comid.rid.hbar configure -activebackground [.diagmgr.com.comid.rid.hbar cget -background]
+    }
+    .diagmgr.com.comid.rid.hbar activate [.diagmgr.com.comid.rid.hbar identify 340 3]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.com.comid.rid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.com.comid.rid.hbar activate {}
+     tk::ButtonEnter .diagmgr.bt.help
+     tk::ButtonLeave .diagmgr.bt.help
+     tk::MbEnter .diagmgr.bt.pref
+     tk::MbMotion .diagmgr.bt.pref up 2373 84
+     tk::MbMotion .diagmgr.bt.pref up 2361 84
+     tk::MbMotion .diagmgr.bt.pref up 2347 84
+     tk::MbMotion .diagmgr.bt.pref up 2335 84
+     tk::MbMotion .diagmgr.bt.pref up 2321 84
+     tk::MbMotion .diagmgr.bt.pref up 2305 84
+     tk::MbMotion .diagmgr.bt.pref up 2289 84
+     tk::MbLeave .diagmgr.bt.pref
+     tk::ButtonEnter .diagmgr.bt.sche
+     tk::ButtonLeave .diagmgr.bt.sche
+     tk::MbEnter .diagmgr.bt.win
+     tk::MbMotion .diagmgr.bt.win up 2147 84
+     tk::MbMotion .diagmgr.bt.win up 2132 84
+     tk::MbMotion .diagmgr.bt.win up 2121 84
+     tk::MbMotion .diagmgr.bt.win up 2111 84
+     tk::MbMotion .diagmgr.bt.win up 2106 84
+     tk::MbMotion .diagmgr.bt.win up 2099 84
+     tk::MbMotion .diagmgr.bt.win up 2095 84
+     tk::MbMotion .diagmgr.bt.win up 2091 84
+     tk::MbMotion .diagmgr.bt.win up 2086 84
+     tk::MbLeave .diagmgr.bt.win
+     tk::ButtonEnter .diagmgr.bt.ref
+     tk::ButtonLeave .diagmgr.bt.ref
+     tk::MbEnter .diagmgr.bt.win
+     tk::MbMotion .diagmgr.bt.win up 2093 70
+     tk::MbMotion .diagmgr.bt.win up 2115 65
+     tk::MbMotion .diagmgr.bt.win up 2140 63
+     tk::MbLeave .diagmgr.bt.win
+ guiWinConfig .diagmgr 800 800 1922 55 
+ guiWinConfig .diagmgr 800 800 1926 56 
+ guiWinConfig .diagmgr 800 800 1936 60 
+ guiWinConfig .diagmgr 800 800 1936 60 
+ guiWinConfig .diagmgr 800 800 1948 63 
+ guiWinConfig .diagmgr 800 800 1948 63 
+ guiWinConfig .diagmgr 800 800 1965 66 
+ guiWinConfig .diagmgr 800 800 1965 66 
+ guiWinConfig .diagmgr 800 800 1988 68 
+ guiWinConfig .diagmgr 800 800 1988 68 
+ guiWinConfig .diagmgr 800 800 2014 73 
+ guiWinConfig .diagmgr 800 800 2014 73 
+ guiWinConfig .diagmgr 800 800 2047 79 
+ guiWinConfig .diagmgr 800 800 2047 79 
+ guiWinConfig .diagmgr 800 800 2086 82 
+ guiWinConfig .diagmgr 800 800 2086 82 
+ guiWinConfig .diagmgr 800 800 2119 87 
+ guiWinConfig .diagmgr 800 800 2119 87 
+ guiWinConfig .diagmgr 800 800 2148 89 
+ guiWinConfig .diagmgr 800 800 2148 89 
+ guiWinConfig .diagmgr 800 800 2192 89 
+ guiWinConfig .diagmgr 800 800 2192 89 
+ guiWinConfig .diagmgr 800 800 2218 89 
+ guiWinConfig .diagmgr 800 800 2218 89 
+ guiWinConfig .diagmgr 800 800 2243 89 
+ guiWinConfig .diagmgr 800 800 2243 89 
+ guiWinConfig .diagmgr 800 800 2264 85 
+ guiWinConfig .diagmgr 800 800 2264 85 
+ guiWinConfig .diagmgr 800 800 2279 84 
+ guiWinConfig .diagmgr 800 800 2279 84 
+ guiWinConfig .diagmgr 800 800 2288 82 
+ guiWinConfig .diagmgr 800 800 2288 82 
+ guiWinConfig .diagmgr 800 800 2299 80 
+ guiWinConfig .diagmgr 800 800 2299 80 
+ guiWinConfig .diagmgr 800 800 2309 78 
+ guiWinConfig .diagmgr 800 800 2309 78 
+ guiWinConfig .diagmgr 800 800 2322 76 
+ guiWinConfig .diagmgr 800 800 2322 76 
+ guiWinConfig .diagmgr 800 800 2338 75 
+ guiWinConfig .diagmgr 800 800 2338 75 
+ guiWinConfig .diagmgr 800 800 2349 70 
+ guiWinConfig .diagmgr 800 800 2349 70 
+ guiWinConfig .diagmgr 800 800 2361 65 
+ guiWinConfig .diagmgr 800 800 2369 64 
+ guiWinConfig .diagmgr 800 800 2369 64 
+ guiWinConfig .diagmgr 800 800 2376 60 
+ guiWinConfig .diagmgr 800 800 2377 59 
+ guiWinConfig .diagmgr 800 800 2381 58 
+ guiWinConfig .diagmgr 800 800 2382 57 
+ guiWinConfig .diagmgr 800 800 2382 57 
+ guiWinConfig .diagmgr 800 800 2385 54 
+ guiWinConfig .diagmgr 800 800 2385 54 
+ guiWinConfig .diagmgr 800 800 2389 53 
+ guiWinConfig .diagmgr 800 800 2389 53 
+ guiWinConfig .diagmgr 800 800 2393 52 
+ guiWinConfig .diagmgr 800 800 2394 52 
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.diag.diagid.rid.hbar cget -activebackground]
+	.diagmgr.diag.diagid.rid.hbar configure -activebackground [.diagmgr.diag.diagid.rid.hbar cget -background]
+    }
+    .diagmgr.diag.diagid.rid.hbar activate [.diagmgr.diag.diagid.rid.hbar identify 280 3]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.diag.diagid.rid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.diag.diagid.rid.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground [.diagmgr.pane.msup.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate [.diagmgr.pane.msup.core.rv.hbar identify 355 8]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.hsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.hsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate [.diagmgr.pane.umsup.core.rv.list.hsb identify 352 5]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.cp.cad.list.vsb cget -activebackground]
+	.diagmgr.pane.cp.cad.list.vsb configure -activebackground [.diagmgr.pane.cp.cad.list.vsb cget -background]
+    }
+    .diagmgr.pane.cp.cad.list.vsb activate [.diagmgr.pane.cp.cad.list.vsb identify 2 38]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.cp.cad.list.vsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.cp.cad.list.vsb activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.vsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.vsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.vsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.vsb activate [.diagmgr.pane.umsup.core.rv.list.vsb identify 12 73]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.vsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.vsb activate {}
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground [.diagmgr.pane.msup.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate [.diagmgr.pane.msup.core.gd.hbar identify 388 5]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.gd.list
+callback Gui_hlist_leave .keymgr.pane.ump.revised.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.golden.vbar cget -activebackground]
+	.keymgr.pane.ump.golden.vbar configure -activebackground [.keymgr.pane.ump.golden.vbar cget -background]
+    }
+    .keymgr.pane.ump.golden.vbar activate [.keymgr.pane.ump.golden.vbar identify 11 46]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.golden.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.golden.vbar activate {}
+callback Gui_hlist_leave .keymgr.pane.ump.golden.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.golden.vbar cget -activebackground]
+	.keymgr.pane.ump.golden.vbar configure -activebackground [.keymgr.pane.ump.golden.vbar cget -background]
+    }
+    .keymgr.pane.ump.golden.vbar activate [.keymgr.pane.ump.golden.vbar identify 3 12]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.golden.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.golden.vbar activate {}
+callback Gui_hlist_leave .keymgr.pane.ump.revised.list.f1.hlist
+     tk::ButtonEnter .diagmgr.bt.ok
+     tk::ButtonLeave .diagmgr.bt.ok
+     tk::ButtonEnter .diagmgr.bt.ref
+     tk::ButtonLeave .diagmgr.bt.ref
+ guiWinConfig .diagmgr 800 800 2392 54 
+ guiWinConfig .diagmgr 800 800 2390 55 
+ guiWinConfig .diagmgr 800 800 2390 55 
+ guiWinConfig .diagmgr 800 800 2387 57 
+ guiWinConfig .diagmgr 800 800 2387 57 
+ guiWinConfig .diagmgr 800 800 2381 61 
+ guiWinConfig .diagmgr 800 800 2381 61 
+ guiWinConfig .diagmgr 800 800 2373 64 
+ guiWinConfig .diagmgr 800 800 2373 64 
+ guiWinConfig .diagmgr 800 800 2365 65 
+ guiWinConfig .diagmgr 800 800 2365 65 
+ guiWinConfig .diagmgr 800 800 2359 66 
+ guiWinConfig .diagmgr 800 800 2359 66 
+ guiWinConfig .diagmgr 800 800 2354 67 
+ guiWinConfig .diagmgr 800 800 2354 67 
+ guiWinConfig .diagmgr 800 800 2350 67 
+ guiWinConfig .diagmgr 800 800 2349 67 
+ guiWinConfig .diagmgr 800 800 2348 67 
+ guiWinConfig .diagmgr 800 800 2347 68 
+ guiWinConfig .diagmgr 800 800 2347 69 
+ guiWinConfig .diagmgr 800 800 2347 69 
+ guiWinConfig .diagmgr 800 800 2349 78 
+ guiWinConfig .diagmgr 800 800 2349 78 
+ guiWinConfig .diagmgr 800 800 2355 87 
+ guiWinConfig .diagmgr 800 800 2355 87 
+ guiWinConfig .diagmgr 800 800 2363 98 
+ guiWinConfig .diagmgr 800 800 2363 98 
+ guiWinConfig .diagmgr 800 800 2370 105 
+ guiWinConfig .diagmgr 800 800 2370 105 
+ guiWinConfig .diagmgr 800 800 2376 109 
+ guiWinConfig .diagmgr 800 800 2376 109 
+ guiWinConfig .diagmgr 800 800 2379 111 
+ guiWinConfig .diagmgr 800 800 2379 111 
+ guiWinConfig .diagmgr 800 800 2381 115 
+ guiWinConfig .diagmgr 800 800 2381 115 
+ guiWinConfig .diagmgr 800 800 2386 120 
+ guiWinConfig .diagmgr 800 800 2386 120 
+ guiWinConfig .diagmgr 800 800 2391 123 
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.golden.vbar cget -activebackground]
+	.keymgr.pane.ump.golden.vbar configure -activebackground [.keymgr.pane.ump.golden.vbar cget -background]
+    }
+    .keymgr.pane.ump.golden.vbar activate [.keymgr.pane.ump.golden.vbar identify 10 2]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.golden.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.golden.vbar activate {}
+callback Gui_hlist_leave .keymgr.pane.ump.golden.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.golden.vbar cget -activebackground]
+	.keymgr.pane.ump.golden.vbar configure -activebackground [.keymgr.pane.ump.golden.vbar cget -background]
+    }
+    .keymgr.pane.ump.golden.vbar activate [.keymgr.pane.ump.golden.vbar identify 1 52]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.golden.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.golden.vbar activate {}
+callback Gui_hlist_leave .keymgr.pane.ump.revised.list.f1.hlist
+     tk::ButtonEnter .diagmgr.bt.ok
+     tk::ButtonLeave .diagmgr.bt.ok
+     tk::ButtonEnter .diagmgr.bt.ref
+     tk::ButtonLeave .diagmgr.bt.ref
+ guiWinConfig .diagmgr 800 800 2396 123 
+ guiWinConfig .diagmgr 800 800 2400 123 
+ guiWinConfig .diagmgr 800 800 2400 123 
+ guiWinConfig .diagmgr 800 800 2411 125 
+ guiWinConfig .diagmgr 800 800 2411 125 
+ guiWinConfig .diagmgr 800 800 2429 131 
+ guiWinConfig .diagmgr 800 800 2429 131 
+ guiWinConfig .diagmgr 800 800 2452 137 
+ guiWinConfig .diagmgr 800 800 2452 137 
+ guiWinConfig .diagmgr 800 800 2480 148 
+ guiWinConfig .diagmgr 800 800 2480 148 
+ guiWinConfig .diagmgr 800 800 2514 163 
+ guiWinConfig .diagmgr 800 800 2514 163 
+ guiWinConfig .diagmgr 800 800 2548 179 
+ guiWinConfig .diagmgr 800 800 2548 179 
+ guiWinConfig .diagmgr 800 800 2576 190 
+ guiWinConfig .diagmgr 800 800 2576 190 
+ guiWinConfig .diagmgr 800 800 2587 195 
+ guiWinConfig .diagmgr 800 800 2587 195 
+ guiWinConfig .diagmgr 800 800 2596 201 
+ guiWinConfig .diagmgr 800 800 2596 201 
+callback Gui_hlist_leave .keymgr.pane.ump.revised.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.golden.vbar cget -activebackground]
+	.keymgr.pane.ump.golden.vbar configure -activebackground [.keymgr.pane.ump.golden.vbar cget -background]
+    }
+    .keymgr.pane.ump.golden.vbar activate [.keymgr.pane.ump.golden.vbar identify 8 25]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.golden.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.golden.vbar activate {}
+callback Gui_hlist_leave .keymgr.pane.ump.golden.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.golden.vbar cget -activebackground]
+	.keymgr.pane.ump.golden.vbar configure -activebackground [.keymgr.pane.ump.golden.vbar cget -background]
+    }
+    .keymgr.pane.ump.golden.vbar activate [.keymgr.pane.ump.golden.vbar identify 1 84]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.golden.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.golden.vbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.golden.vbar cget -activebackground]
+	.keymgr.pane.ump.golden.vbar configure -activebackground [.keymgr.pane.ump.golden.vbar cget -background]
+    }
+    .keymgr.pane.ump.golden.vbar activate [.keymgr.pane.ump.golden.vbar identify 10 75]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.golden.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.golden.vbar activate {}
+callback Gui_hlist_leave .keymgr.pane.ump.golden.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.golden.vbar cget -activebackground]
+	.keymgr.pane.ump.golden.vbar configure -activebackground [.keymgr.pane.ump.golden.vbar cget -background]
+    }
+    .keymgr.pane.ump.golden.vbar activate [.keymgr.pane.ump.golden.vbar identify 0 85]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.golden.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.golden.vbar activate {}
+callback Gui_hlist_leave .keymgr.pane.ump.revised.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.golden.vbar cget -activebackground]
+	.keymgr.pane.ump.golden.vbar configure -activebackground [.keymgr.pane.ump.golden.vbar cget -background]
+    }
+    .keymgr.pane.ump.golden.vbar activate [.keymgr.pane.ump.golden.vbar identify 10 64]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.golden.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.golden.vbar activate {}
+callback Gui_hlist_leave .keymgr.pane.ump.golden.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.golden.vbar cget -activebackground]
+	.keymgr.pane.ump.golden.vbar configure -activebackground [.keymgr.pane.ump.golden.vbar cget -background]
+    }
+    .keymgr.pane.ump.golden.vbar activate [.keymgr.pane.ump.golden.vbar identify 0 63]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.golden.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.golden.vbar activate {}
+callback Gui_hlist_leave .keymgr.pane.ump.golden.list.f1.hlist
+callback Gui_hlist_leave .keymgr.pane.ump.golden.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.golden.vbar cget -activebackground]
+	.keymgr.pane.ump.golden.vbar configure -activebackground [.keymgr.pane.ump.golden.vbar cget -background]
+    }
+    .keymgr.pane.ump.golden.vbar activate [.keymgr.pane.ump.golden.vbar identify 6 147]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.golden.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.golden.vbar activate {}
+callback Gui_hlist_leave .keymgr.pane.ump.revised.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.revised.list.hsb cget -activebackground]
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground [.keymgr.pane.ump.revised.list.hsb cget -background]
+    }
+    .keymgr.pane.ump.revised.list.hsb activate [.keymgr.pane.ump.revised.list.hsb identify 17 2]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.revised.list.hsb activate {}
+callback Gui_hlist_leave .keymgr.pane.ump.revised.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.revised.list.hsb cget -activebackground]
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground [.keymgr.pane.ump.revised.list.hsb cget -background]
+    }
+    .keymgr.pane.ump.revised.list.hsb activate [.keymgr.pane.ump.revised.list.hsb identify 65 4]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.revised.list.hsb activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.revised.list.hsb cget -activebackground]
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground [.keymgr.pane.ump.revised.list.hsb cget -background]
+    }
+    .keymgr.pane.ump.revised.list.hsb activate [.keymgr.pane.ump.revised.list.hsb identify 83 12]
+     # Prevents <Leave> binding from being invoked.
+ guiWinConfig .keymgr 900 800 1921 52 
+     # Prevents <Enter> binding from being invoked.
+     ::tk::ScrollToPos .keymgr.pane.ump.revised.list.hsb 0.0
+     # Prevents <Leave> binding from being invoked.
+     # Prevents <Enter> binding from being invoked.
+     # Prevents <Leave> binding from being invoked.
+     ::tk::ScrollToPos .keymgr.pane.ump.revised.list.hsb 0.0
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.revised.list.hsb activate {}
+callback Gui_hlist_leave .keymgr.pane.ump.revised.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.revised.list.hsb cget -activebackground]
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground [.keymgr.pane.ump.revised.list.hsb cget -background]
+    }
+    .keymgr.pane.ump.revised.list.hsb activate [.keymgr.pane.ump.revised.list.hsb identify 298 0]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.revised.list.hsb activate {}
+scrollSet .keymgr.pane.ump.revised.list.f1.hlist keyMgrUmpRList scroll -1 pages
+scrollSet .keymgr.pane.ump.revised.list.f1.hlist keyMgrUmpRList scroll -1 pages
+scrollSet .keymgr.pane.ump.revised.list.f1.hlist keyMgrUmpRList scroll -1 pages
+#Gui Step(37)===>(TixHList).keymgr.pane.ump.revised.list.f1.hlist <Button-1> {{{      Z(f) 2639    DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Cyq2z4_reg__S__u_cortexm0_inst_u_logic_n4902 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 37:  (TixHList) <Button-1>\
+ {{      Z(f) 2639    DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Cyq2z4_reg__S__u_cortexm0_inst_u_logic_n4902 }}} .keymgr.pane.ump.revised.list.f1.hlist } 
+set x [guiGetHListEntryX .keymgr.pane.ump.revised.list.f1.hlist {0}];set y [guiGetHListEntryY .keymgr.pane.ump.revised.list.f1.hlist {0}] 
+_tixRecordFlags <ButtonPress-1> % 59249 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379316057 ?? 374 11 ?? ?? 0 ?? ?? 0x000126 00000000 4 .keymgr.pane.ump.revised.list.f1.hlist 2746 137; 
+	 tixHList:Button-1 .keymgr.pane.ump.revised.list.f1.hlist  $x $y ""
+    ; _tixDeleteFlags;
+_tixRecordFlags <B1-Motion> % 59312 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 272 1379316065 ?? 373 11 ?? ?? 0 ?? ?? 0x000126 00000000 6 .keymgr.pane.ump.revised.list.f1.hlist 2745 137; 
+	set tkPriv(x) 373
+	set tkPriv(y) 11
+	set tkPriv(X) 2745
+	set tkPriv(Y) 137
+ 	tixHList:B1-Motion .keymgr.pane.ump.revised.list.f1.hlist 373 11
+    ; _tixDeleteFlags;
+scrollSelect keyMgrUmpRList select 11
+show_ump_point_class .keymgr.pane.ump.revised.list.f1.hlist
+#Gui Step(39)===>(TixHList).keymgr.pane.ump.revised.list.f1.hlist <ButtonRelease-1> {{{      Z(f) 2639    DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Cyq2z4_reg__S__u_cortexm0_inst_u_logic_n4902 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 39:  (TixHList) <ButtonRelease-1>\
+ {{      Z(f) 2639    DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Cyq2z4_reg__S__u_cortexm0_inst_u_logic_n4902 }}} .keymgr.pane.ump.revised.list.f1.hlist } 
+set x [guiGetHListEntryX .keymgr.pane.ump.revised.list.f1.hlist {0}];set y [guiGetHListEntryY .keymgr.pane.ump.revised.list.f1.hlist {0}] 
+_tixRecordFlags <ButtonRelease-1> % 59459 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379316201 ?? 373 11 ?? ?? 0 ?? ?? 0x000126 00000000 5 .keymgr.pane.ump.revised.list.f1.hlist 2745 137; 
+	 tixHList:ButtonRelease-1 .keymgr.pane.ump.revised.list.f1.hlist  $x $y
+    ; _tixDeleteFlags;
+callback Gui_hlist_leave .keymgr.pane.ump.revised.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.revised.vbar cget -activebackground]
+	.keymgr.pane.ump.revised.vbar configure -activebackground [.keymgr.pane.ump.revised.vbar cget -background]
+    }
+    .keymgr.pane.ump.revised.vbar activate [.keymgr.pane.ump.revised.vbar identify 1 98]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.revised.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.revised.vbar activate {}
+     tk::ButtonEnter .diagmgr.bt.sche
+     tk::ButtonLeave .diagmgr.bt.sche
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.com.comid.rid.hbar cget -activebackground]
+	.diagmgr.com.comid.rid.hbar configure -activebackground [.diagmgr.com.comid.rid.hbar cget -background]
+    }
+    .diagmgr.com.comid.rid.hbar activate [.diagmgr.com.comid.rid.hbar identify 68 0]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.com.comid.rid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.com.comid.rid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.rv.hbar configure -activebackground [.diagmgr.pane.hid.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.rv.hbar activate [.diagmgr.pane.hid.core.rv.hbar identify 151 6]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.rv.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+callback Gui_hlist_leave .diagmgr.pane.msup.core.gd.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground [.diagmgr.pane.hid.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate [.diagmgr.pane.hid.core.gd.hbar identify 260 9]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.map.vbar cget -activebackground]
+	.keymgr.pane.map.vbar configure -activebackground [.keymgr.pane.map.vbar cget -background]
+    }
+    .keymgr.pane.map.vbar activate [.keymgr.pane.map.vbar identify 10 111]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.map.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.map.vbar activate {}
+callback Gui_hlist_leave .keymgr.pane.map.revised.list.f1.hlist
+     tk::ButtonEnter .keymgr.pane.map.title.remp
+     tk::ButtonLeave .keymgr.pane.map.title.remp
+     tk::ButtonEnter .keymgr.pane.map.title.dall
+     tk::ButtonLeave .keymgr.pane.map.title.dall
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.revised.list.hsb cget -activebackground]
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground [.keymgr.pane.ump.revised.list.hsb cget -background]
+    }
+    .keymgr.pane.ump.revised.list.hsb activate [.keymgr.pane.ump.revised.list.hsb identify 384 10]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.revised.list.hsb activate {}
+#Gui Step(40)===>(TixHList).keymgr.pane.ump.revised.list.f1.hlist <Button-1> {{{      Z(f) 2643    DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_W5p2z4_reg__S__u_cortexm0_inst_u_logic_n4933 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 40:  (TixHList) <Button-1>\
+ {{      Z(f) 2643    DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_W5p2z4_reg__S__u_cortexm0_inst_u_logic_n4933 }}} .keymgr.pane.ump.revised.list.f1.hlist } 
+set x [guiGetHListEntryX .keymgr.pane.ump.revised.list.f1.hlist {4}];set y [guiGetHListEntryY .keymgr.pane.ump.revised.list.f1.hlist {4}] 
+_tixRecordFlags <ButtonPress-1> % 60022 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379317801 ?? 337 96 ?? ?? 0 ?? ?? 0x000126 00000000 4 .keymgr.pane.ump.revised.list.f1.hlist 2709 222; 
+	 tixHList:Button-1 .keymgr.pane.ump.revised.list.f1.hlist  $x $y ""
+    ; _tixDeleteFlags;
+scrollSelect keyMgrUmpRList select 96
+show_ump_point_class .keymgr.pane.ump.revised.list.f1.hlist
+#Gui Step(42)===>(TixHList).keymgr.pane.ump.revised.list.f1.hlist <ButtonRelease-1> {{{      Z(f) 2643    DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_W5p2z4_reg__S__u_cortexm0_inst_u_logic_n4933 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 42:  (TixHList) <ButtonRelease-1>\
+ {{      Z(f) 2643    DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_W5p2z4_reg__S__u_cortexm0_inst_u_logic_n4933 }}} .keymgr.pane.ump.revised.list.f1.hlist } 
+set x [guiGetHListEntryX .keymgr.pane.ump.revised.list.f1.hlist {4}];set y [guiGetHListEntryY .keymgr.pane.ump.revised.list.f1.hlist {4}] 
+_tixRecordFlags <ButtonRelease-1> % 60078 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379317857 ?? 337 96 ?? ?? 0 ?? ?? 0x000126 00000000 5 .keymgr.pane.ump.revised.list.f1.hlist 2709 222; 
+	 tixHList:ButtonRelease-1 .keymgr.pane.ump.revised.list.f1.hlist  $x $y
+    ; _tixDeleteFlags;
+callback Gui_hlist_leave .keymgr.pane.ump.revised.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.revised.list.hsb cget -activebackground]
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground [.keymgr.pane.ump.revised.list.hsb cget -background]
+    }
+    .keymgr.pane.ump.revised.list.hsb activate [.keymgr.pane.ump.revised.list.hsb identify 379 1]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.revised.list.hsb activate {}
+callback Gui_hlist_leave .keymgr.pane.map.revised.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.map.vbar cget -activebackground]
+	.keymgr.pane.map.vbar configure -activebackground [.keymgr.pane.map.vbar cget -background]
+    }
+    .keymgr.pane.map.vbar activate [.keymgr.pane.map.vbar identify 7 54]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.map.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.map.vbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.gd.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground [.diagmgr.pane.msup.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate [.diagmgr.pane.msup.core.gd.hbar identify 371 0]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate {}
+     tk::ButtonEnter .diagmgr.pane.umsup.title.lfind
+     tk::ButtonLeave .diagmgr.pane.umsup.title.lfind
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.hsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.hsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate [.diagmgr.pane.umsup.core.rv.list.hsb identify 122 0]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.hsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.hsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate [.diagmgr.pane.umsup.core.rv.list.hsb identify 145 2]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate {}
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.hsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.hsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate [.diagmgr.pane.umsup.core.rv.list.hsb identify 152 0]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.hsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.hsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate [.diagmgr.pane.umsup.core.rv.list.hsb identify 139 0]
+     # Prevents <Leave> binding from being invoked.
+ guiWinConfig .diagmgr 800 800 2596 202 
+     # Prevents <Enter> binding from being invoked.
+     ::tk::ScrollToPos .diagmgr.pane.umsup.core.rv.list.hsb 0.0
+     # Prevents <Leave> binding from being invoked.
+     ::tk::ScrollToPos .diagmgr.pane.umsup.core.rv.list.hsb 0.0
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate {}
+#Gui Step(45)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <Button-1> {{{(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 45:  (TixHList) <Button-1>\
+ {{(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }] 
+_tixRecordFlags <ButtonPress-1> % 73771 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379325081 ?? 38 17 ?? ?? 0 ?? ?? 0x000126 00000000 4 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3035 703; 
+	 tixHList:Button-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y ""
+    ; _tixDeleteFlags;
+_tixRecordFlags <B1-Motion> % 73820 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 272 1379325105 ?? 37 17 ?? ?? 0 ?? ?? 0x000126 00000000 6 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3034 703; 
+	set tkPriv(x) 37
+	set tkPriv(y) 17
+	set tkPriv(X) 3034
+	set tkPriv(Y) 703
+ 	tixHList:B1-Motion .diagmgr.pane.umsup.core.rv.list.f1.hlist 37 17
+    ; _tixDeleteFlags;
+diag_select_list .diagmgr.pane.umsup.core.rv.list.f1.hlist .diagmgr.pane.umsup.core.gd.list.f1.hlist 17 revised unmap
+#Gui Step(47)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <ButtonRelease-1> {{{(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 47:  (TixHList) <ButtonRelease-1>\
+ {{(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }] 
+_tixRecordFlags <ButtonRelease-1> % 73821 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379325161 ?? 37 17 ?? ?? 0 ?? ?? 0x000126 00000000 5 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3034 703; 
+	 tixHList:ButtonRelease-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y
+    ; _tixDeleteFlags;
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground [.diagmgr.pane.msup.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate [.diagmgr.pane.msup.core.rv.hbar identify 156 8]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground [.diagmgr.pane.msup.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate [.diagmgr.pane.msup.core.rv.hbar identify 184 0]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.diag.diagid.rid.hbar cget -activebackground]
+	.diagmgr.diag.diagid.rid.hbar configure -activebackground [.diagmgr.diag.diagid.rid.hbar cget -background]
+    }
+    .diagmgr.diag.diagid.rid.hbar activate [.diagmgr.diag.diagid.rid.hbar identify 323 4]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.diag.diagid.rid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.diag.diagid.rid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.com.comid.rid.hbar cget -activebackground]
+	.diagmgr.com.comid.rid.hbar configure -activebackground [.diagmgr.com.comid.rid.hbar cget -background]
+    }
+    .diagmgr.com.comid.rid.hbar activate [.diagmgr.com.comid.rid.hbar identify 312 8]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.com.comid.rid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.com.comid.rid.hbar activate {}
+     tk::MbEnter .diagmgr.bt.win
+     tk::MbMotion .diagmgr.bt.win up 2815 211
+     tk::MbMotion .diagmgr.bt.win up 2813 211
+     tk::MbMotion .diagmgr.bt.win up 2812 212
+     tk::MbMotion .diagmgr.bt.win up 2810 213
+     tk::MbMotion .diagmgr.bt.win up 2808 214
+     tk::MbMotion .diagmgr.bt.win up 2805 217
+     tk::MbMotion .diagmgr.bt.win up 2802 219
+     tk::MbMotion .diagmgr.bt.win up 2802 220
+     tk::MbMotion .diagmgr.bt.win up 2801 225
+     tk::MbMotion .diagmgr.bt.win up 2801 229
+     tk::MbLeave .diagmgr.bt.win
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.com.comid.gid.hbar cget -activebackground]
+	.diagmgr.com.comid.gid.hbar configure -activebackground [.diagmgr.com.comid.gid.hbar cget -background]
+    }
+    .diagmgr.com.comid.gid.hbar activate [.diagmgr.com.comid.gid.hbar identify 200 0]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.com.comid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.com.comid.gid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.diag.diagid.gid.hbar cget -activebackground]
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground [.diagmgr.diag.diagid.gid.hbar cget -background]
+    }
+    .diagmgr.diag.diagid.gid.hbar activate [.diagmgr.diag.diagid.gid.hbar identify 249 1]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.diag.diagid.gid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground [.diagmgr.pane.hid.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate [.diagmgr.pane.hid.core.gd.hbar identify 303 5]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.gd.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground [.diagmgr.pane.msup.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate [.diagmgr.pane.msup.core.gd.hbar identify 331 1]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground [.diagmgr.pane.msup.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate [.diagmgr.pane.msup.core.gd.hbar identify 293 11]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.gd.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground [.diagmgr.pane.hid.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate [.diagmgr.pane.hid.core.gd.hbar identify 63 1]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.diag.diagid.gid.hbar cget -activebackground]
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground [.diagmgr.diag.diagid.gid.hbar cget -background]
+    }
+    .diagmgr.diag.diagid.gid.hbar activate [.diagmgr.diag.diagid.gid.hbar identify 11 7]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.diag.diagid.gid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.revised.list.hsb cget -activebackground]
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground [.keymgr.pane.ump.revised.list.hsb cget -background]
+    }
+    .keymgr.pane.ump.revised.list.hsb activate [.keymgr.pane.ump.revised.list.hsb identify 210 2]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.revised.list.hsb activate {}
+callback Gui_hlist_leave .keymgr.pane.ump.revised.list.f1.hlist
+_tixRecordFlags <B1-Leave> % 75361 ?? ?? ?? NotifyAncestor 0 ?? ?? NotifyGrab ?? ?? 272 1379329545 ?? 163 53 ?? ?? 0 ?? ?? 0x000126 00000000 8 .keymgr.pane.ump.revised.list.f1.hlist 2535 179; 
+	set tkPriv(x) 163
+	set tkPriv(y) 53
+	set tkPriv(X) 2535
+	set tkPriv(Y) 179
+ 	tixHList:B1-Leave .keymgr.pane.ump.revised.list.f1.hlist
+    ; _tixDeleteFlags;
+ guiWinConfig .keymgr 900 800 1921 52 
+_tixRecordFlags <B1-Enter> % 75362 ?? ?? ?? NotifyAncestor 1 ?? ?? NotifyUngrab ?? ?? 272 1379329548 ?? 163 53 ?? ?? 0 ?? ?? 0x000126 00000000 7 .keymgr.pane.ump.revised.list.f1.hlist 2535 179; 
+	tixHList:B1-Enter .keymgr.pane.ump.revised.list.f1.hlist 163 53
+    ; _tixDeleteFlags;
+#Gui Step(48)===>(TixHList).keymgr.pane.ump.revised.list.f1.hlist <Button-1> {{{      Z(f) 2641    DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_W7z2z4_reg__S__u_cortexm0_inst_u_logic_Dghvx4 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 48:  (TixHList) <Button-1>\
+ {{      Z(f) 2641    DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_W7z2z4_reg__S__u_cortexm0_inst_u_logic_Dghvx4 }}} .keymgr.pane.ump.revised.list.f1.hlist } 
+set x [guiGetHListEntryX .keymgr.pane.ump.revised.list.f1.hlist {2}];set y [guiGetHListEntryY .keymgr.pane.ump.revised.list.f1.hlist {2}] 
+_tixRecordFlags <ButtonPress-1> % 75362 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379329545 ?? 163 53 ?? ?? 0 ?? ?? 0x000126 00000000 4 .keymgr.pane.ump.revised.list.f1.hlist 2535 179; 
+	 tixHList:Button-1 .keymgr.pane.ump.revised.list.f1.hlist  $x $y ""
+    ; _tixDeleteFlags;
+_tixRecordFlags <B1-Motion> % 75362 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 272 1379329545 ?? 161 53 ?? ?? 0 ?? ?? 0x000126 00000000 6 .keymgr.pane.ump.revised.list.f1.hlist 2533 179; 
+	set tkPriv(x) 161
+	set tkPriv(y) 53
+	set tkPriv(X) 2533
+	set tkPriv(Y) 179
+ 	tixHList:B1-Motion .keymgr.pane.ump.revised.list.f1.hlist 161 53
+    ; _tixDeleteFlags;
+_tixRecordFlags <B1-Motion> % 75366 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 272 1379329553 ?? 160 54 ?? ?? 0 ?? ?? 0x000126 00000000 6 .keymgr.pane.ump.revised.list.f1.hlist 2532 180; 
+	set tkPriv(x) 160
+	set tkPriv(y) 54
+	set tkPriv(X) 2532
+	set tkPriv(Y) 180
+ 	tixHList:B1-Motion .keymgr.pane.ump.revised.list.f1.hlist 160 54
+    ; _tixDeleteFlags;
+_tixRecordFlags <B1-Motion> % 75477 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 272 1379329569 ?? 158 55 ?? ?? 0 ?? ?? 0x000126 00000000 6 .keymgr.pane.ump.revised.list.f1.hlist 2530 181; 
+	set tkPriv(x) 158
+	set tkPriv(y) 55
+	set tkPriv(X) 2530
+	set tkPriv(Y) 181
+ 	tixHList:B1-Motion .keymgr.pane.ump.revised.list.f1.hlist 158 55
+    ; _tixDeleteFlags;
+_tixRecordFlags <B1-Motion> % 75583 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 272 1379329585 ?? 156 55 ?? ?? 0 ?? ?? 0x000126 00000000 6 .keymgr.pane.ump.revised.list.f1.hlist 2528 181; 
+	set tkPriv(x) 156
+	set tkPriv(y) 55
+	set tkPriv(X) 2528
+	set tkPriv(Y) 181
+ 	tixHList:B1-Motion .keymgr.pane.ump.revised.list.f1.hlist 156 55
+    ; _tixDeleteFlags;
+_tixRecordFlags <B1-Motion> % 75638 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 272 1379329601 ?? 155 56 ?? ?? 0 ?? ?? 0x000126 00000000 6 .keymgr.pane.ump.revised.list.f1.hlist 2527 182; 
+	set tkPriv(x) 155
+	set tkPriv(y) 56
+	set tkPriv(X) 2527
+	set tkPriv(Y) 182
+ 	tixHList:B1-Motion .keymgr.pane.ump.revised.list.f1.hlist 155 56
+    ; _tixDeleteFlags;
+scrollSelect keyMgrUmpRList select 56
+show_ump_point_class .keymgr.pane.ump.revised.list.f1.hlist
+#Gui Step(50)===>(TixHList).keymgr.pane.ump.revised.list.f1.hlist <ButtonRelease-1> {{{      Z(f) 2641    DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_W7z2z4_reg__S__u_cortexm0_inst_u_logic_Dghvx4 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 50:  (TixHList) <ButtonRelease-1>\
+ {{      Z(f) 2641    DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_W7z2z4_reg__S__u_cortexm0_inst_u_logic_Dghvx4 }}} .keymgr.pane.ump.revised.list.f1.hlist } 
+set x [guiGetHListEntryX .keymgr.pane.ump.revised.list.f1.hlist {2}];set y [guiGetHListEntryY .keymgr.pane.ump.revised.list.f1.hlist {2}] 
+_tixRecordFlags <ButtonRelease-1> % 75693 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379329689 ?? 155 56 ?? ?? 0 ?? ?? 0x000126 00000000 5 .keymgr.pane.ump.revised.list.f1.hlist 2527 182; 
+	 tixHList:ButtonRelease-1 .keymgr.pane.ump.revised.list.f1.hlist  $x $y
+    ; _tixDeleteFlags;
+callback Gui_hlist_leave .keymgr.pane.ump.revised.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.revised.vbar cget -activebackground]
+	.keymgr.pane.ump.revised.vbar configure -activebackground [.keymgr.pane.ump.revised.vbar cget -background]
+    }
+    .keymgr.pane.ump.revised.vbar activate [.keymgr.pane.ump.revised.vbar identify 0 26]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.revised.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.revised.vbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.revised.vbar cget -activebackground]
+	.keymgr.pane.ump.revised.vbar configure -activebackground [.keymgr.pane.ump.revised.vbar cget -background]
+    }
+    .keymgr.pane.ump.revised.vbar activate [.keymgr.pane.ump.revised.vbar identify 12 29]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.revised.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.revised.vbar activate {}
+callback Gui_hlist_leave .keymgr.pane.ump.revised.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.revised.list.hsb cget -activebackground]
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground [.keymgr.pane.ump.revised.list.hsb cget -background]
+    }
+    .keymgr.pane.ump.revised.list.hsb activate [.keymgr.pane.ump.revised.list.hsb identify 177 0]
+     ::tk::ScrollToPos .keymgr.pane.ump.revised.list.hsb 0.0
+     ::tk::ScrollToPos .keymgr.pane.ump.revised.list.hsb 0.553257
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.revised.list.hsb activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.revised.vbar cget -activebackground]
+	.keymgr.pane.ump.revised.vbar configure -activebackground [.keymgr.pane.ump.revised.vbar cget -background]
+    }
+    .keymgr.pane.ump.revised.vbar activate [.keymgr.pane.ump.revised.vbar identify 0 163]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.revised.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.revised.vbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.com.comid.gid.hbar cget -activebackground]
+	.diagmgr.com.comid.gid.hbar configure -activebackground [.diagmgr.com.comid.gid.hbar cget -background]
+    }
+    .diagmgr.com.comid.gid.hbar activate [.diagmgr.com.comid.gid.hbar identify 301 2]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.com.comid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.com.comid.gid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.diag.diagid.gid.hbar cget -activebackground]
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground [.diagmgr.diag.diagid.gid.hbar cget -background]
+    }
+    .diagmgr.diag.diagid.gid.hbar activate [.diagmgr.diag.diagid.gid.hbar identify 316 0]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.diag.diagid.gid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground [.diagmgr.pane.hid.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate [.diagmgr.pane.hid.core.gd.hbar identify 342 0]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.gd.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground [.diagmgr.pane.msup.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate [.diagmgr.pane.msup.core.rv.hbar identify 2 6]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.hsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.hsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate [.diagmgr.pane.umsup.core.rv.list.hsb identify 56 0]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.hsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.hsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate [.diagmgr.pane.umsup.core.rv.list.hsb identify 107 11]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate {}
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground [.diagmgr.pane.msup.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate [.diagmgr.pane.msup.core.rv.hbar identify 230 1]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.diag.diagid.rid.hbar cget -activebackground]
+	.diagmgr.diag.diagid.rid.hbar configure -activebackground [.diagmgr.diag.diagid.rid.hbar cget -background]
+    }
+    .diagmgr.diag.diagid.rid.hbar activate [.diagmgr.diag.diagid.rid.hbar identify 288 3]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.diag.diagid.rid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.diag.diagid.rid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.com.comid.rid.hbar cget -activebackground]
+	.diagmgr.com.comid.rid.hbar configure -activebackground [.diagmgr.com.comid.rid.hbar cget -background]
+    }
+    .diagmgr.com.comid.rid.hbar activate [.diagmgr.com.comid.rid.hbar identify 234 8]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.com.comid.rid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.com.comid.rid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.revised.vbar cget -activebackground]
+	.keymgr.pane.ump.revised.vbar configure -activebackground [.keymgr.pane.ump.revised.vbar cget -background]
+    }
+    .keymgr.pane.ump.revised.vbar activate [.keymgr.pane.ump.revised.vbar identify 3 74]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.revised.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.revised.vbar activate {}
+callback Gui_hlist_leave .keymgr.pane.ump.revised.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.revised.list.hsb cget -activebackground]
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground [.keymgr.pane.ump.revised.list.hsb cget -background]
+    }
+    .keymgr.pane.ump.revised.list.hsb activate [.keymgr.pane.ump.revised.list.hsb identify 288 6]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.revised.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.revised.list.hsb activate {}
+     tk::ButtonEnter .keymgr.pane.map.title.find
+     tk::ButtonLeave .keymgr.pane.map.title.find
+     tk::MbEnter .keymgr.pane.map.title.gateclass
+     tk::MbMotion .keymgr.pane.map.title.gateclass up 2689 322
+     tk::MbLeave .keymgr.pane.map.title.gateclass
+callback Gui_hlist_leave .keymgr.pane.map.revised.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.map.vbar cget -activebackground]
+	.keymgr.pane.map.vbar configure -activebackground [.keymgr.pane.map.vbar cget -background]
+    }
+    .keymgr.pane.map.vbar activate [.keymgr.pane.map.vbar identify 8 90]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.map.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.map.vbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground [.diagmgr.pane.hid.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate [.diagmgr.pane.hid.core.gd.hbar identify 291 1]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.gd.list
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.gd.list.f1.hlist
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+_tixRecordFlags <B1-Leave> % 80969 ?? ?? ?? NotifyAncestor 0 ?? ?? NotifyGrab ?? ?? 272 1379337377 ?? 153 49 ?? ?? 0 ?? ?? 0x000126 00000000 8 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3150 735; 
+	set tkPriv(x) 153
+	set tkPriv(y) 49
+	set tkPriv(X) 3150
+	set tkPriv(Y) 735
+ 	tixHList:B1-Leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+    ; _tixDeleteFlags;
+ guiWinConfig .diagmgr 800 800 2596 202 
+_tixRecordFlags <B1-Enter> % 80969 ?? ?? ?? NotifyAncestor 1 ?? ?? NotifyUngrab ?? ?? 272 1379337379 ?? 153 49 ?? ?? 0 ?? ?? 0x000126 00000000 7 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3150 735; 
+	tixHList:B1-Enter .diagmgr.pane.umsup.core.rv.list.f1.hlist 153 49
+    ; _tixDeleteFlags;
+#Gui Step(53)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <Button-1> {{{(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 53:  (TixHList) <Button-1>\
+ {{(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }] 
+_tixRecordFlags <ButtonPress-1> % 80969 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379337377 ?? 153 49 ?? ?? 0 ?? ?? 0x000126 00000000 4 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3150 735; 
+	 tixHList:Button-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y ""
+    ; _tixDeleteFlags;
+diag_select_list .diagmgr.pane.umsup.core.rv.list.f1.hlist .diagmgr.pane.umsup.core.gd.list.f1.hlist 49 revised unmap
+#Gui Step(55)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <ButtonRelease-1> {{{(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 55:  (TixHList) <ButtonRelease-1>\
+ {{(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }] 
+_tixRecordFlags <ButtonRelease-1> % 81084 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379337497 ?? 153 49 ?? ?? 0 ?? ?? 0x000126 00000000 5 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3150 735; 
+	 tixHList:ButtonRelease-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y
+    ; _tixDeleteFlags;
+#Gui Step(56)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <Button-1> {{{(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 56:  (TixHList) <Button-1>\
+ {{(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }] 
+_tixRecordFlags <ButtonPress-1> % 81527 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379338945 ?? 155 10 ?? ?? 0 ?? ?? 0x000126 00000000 4 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3152 696; 
+	 tixHList:Button-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y ""
+    ; _tixDeleteFlags;
+diag_select_list .diagmgr.pane.umsup.core.rv.list.f1.hlist .diagmgr.pane.umsup.core.gd.list.f1.hlist 10 revised unmap
+#Gui Step(58)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <ButtonRelease-1> {{{(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 58:  (TixHList) <ButtonRelease-1>\
+ {{(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }] 
+_tixRecordFlags <ButtonRelease-1> % 81571 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379339097 ?? 155 10 ?? ?? 0 ?? ?? 0x000126 00000000 5 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3152 696; 
+	 tixHList:ButtonRelease-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y
+    ; _tixDeleteFlags;
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground [.diagmgr.pane.msup.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate [.diagmgr.pane.msup.core.rv.hbar identify 362 2]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.vbar cget -activebackground]
+	.diagmgr.pane.msup.core.vbar configure -activebackground [.diagmgr.pane.msup.core.vbar cget -background]
+    }
+    .diagmgr.pane.msup.core.vbar activate [.diagmgr.pane.msup.core.vbar identify 7 35]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.vbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.vbar activate {}
+     tk::ButtonEnter .diagmgr.pane.hid.title.find
+     tk::ButtonLeave .diagmgr.pane.hid.title.find
+     tk::ButtonEnter .diagmgr.bt.ref
+     tk::ButtonLeave .diagmgr.bt.ref
+     tk::MbEnter .diagmgr.bt.win
+     tk::MbMotion .diagmgr.bt.win up 2779 209
+     tk::MbLeave .diagmgr.bt.win
+     tk::ButtonEnter .diagmgr.bt.ref
+     tk::ButtonLeave .diagmgr.bt.ref
+     tk::ButtonEnter .diagmgr.bt.ok
+     tk::ButtonLeave .diagmgr.bt.ok
+     tk::ButtonEnter .diagmgr.bt.ref
+     tk::ButtonLeave .diagmgr.bt.ref
+     tk::ButtonEnter .diagmgr.bt.ok
+ guiWinConfig .diagmgr 802 829 2595 174 
+ guiWinConfig .diagmgr 802 829 2595 174 
+ guiWinConfig .diagmgr.bt 800 38 1 1 
+ guiWinConfig .diagmgr.dsgnType 800 22 1 39 
+ guiWinConfig .diagmgr.com 800 56 1 65 
+ guiWinConfig .diagmgr.diag 800 56 1 129 
+ guiWinConfig .diagmgr.pane 800 639 1 189 
+     tk::ButtonLeave .diagmgr.bt.ok
+ guiWinConfig .diagmgr 1920 1056 1920 24 
+ guiWinConfig .diagmgr 1920 1056 1920 24 
+ guiWinConfig .diagmgr.bt.help 73 34 725 2 
+ guiWinConfig .diagmgr.dsgnType.left 396 22 0 0 
+ guiWinConfig .diagmgr.dsgnType.right 404 22 396 0 
+ guiWinConfig .diagmgr.com.frame 800 22 0 0 
+ guiWinConfig .diagmgr.com.comid 800 34 0 22 
+ guiWinConfig .diagmgr.diag.frame 800 22 0 0 
+ guiWinConfig .diagmgr.diag.diagid 800 34 0 22 
+ guiWinConfig .diagmgr.pane.sep3 800 2 0 419 
+ guiWinConfig .diagmgr.pane.sep2 800 2 0 259 
+ guiWinConfig .diagmgr.pane.sep1 800 2 0 99 
+ guiWinConfig .diagmgr.bt 1918 38 1 1 
+ guiWinConfig .diagmgr.dsgnType 1918 22 1 39 
+ guiWinConfig .diagmgr.com 1918 56 1 65 
+ guiWinConfig .diagmgr.diag 1918 56 1 129 
+ guiWinConfig .diagmgr.pane 1918 866 1 189 
+ guiWinConfig .diagmgr.dsgnType.left.glab 396 22 0 0 
+ guiWinConfig .diagmgr.dsgnType.right.rlab 404 22 0 0 
+ guiWinConfig .diagmgr.com.comid.gid 392 34 4 0 
+ guiWinConfig .diagmgr.com.comid.rid 392 34 404 0 
+ guiWinConfig .diagmgr.diag.diagid.gid 392 34 4 0 
+ guiWinConfig .diagmgr.diag.diagid.rid 392 34 404 0 
+ guiWinConfig .diagmgr.pane.hid 1918 100 0 0 
+ guiWinConfig .diagmgr.pane.msup 1918 160 0 100 
+ guiWinConfig .diagmgr.pane.umsup 1918 160 0 260 
+ guiWinConfig .diagmgr.pane.cp 1918 446 0 420 
+ guiWinConfig .diagmgr.bt.help 73 34 1843 2 
+ guiWinConfig .diagmgr.dsgnType.left 955 22 0 0 
+ guiWinConfig .diagmgr.dsgnType.right 963 22 955 0 
+ guiWinConfig .diagmgr.com.frame 1918 22 0 0 
+ guiWinConfig .diagmgr.com.comid 1918 34 0 22 
+ guiWinConfig .diagmgr.diag.frame 1918 22 0 0 
+ guiWinConfig .diagmgr.diag.diagid 1918 34 0 22 
+ guiWinConfig .diagmgr.pane.sep3 1918 2 0 419 
+ guiWinConfig .diagmgr.pane.btn3 9 9 1905 416 
+ guiWinConfig .diagmgr.pane.sep2 1918 2 0 259 
+ guiWinConfig .diagmgr.pane.btn2 9 9 1905 256 
+ guiWinConfig .diagmgr.pane.sep1 1918 2 0 99 
+ guiWinConfig .diagmgr.pane.btn1 9 9 1905 96 
+ guiWinConfig .diagmgr.com.comid.gid.ent 392 24 0 0 
+ guiWinConfig .diagmgr.com.comid.gid.hbar 392 10 0 24 
+ guiWinConfig .diagmgr.com.comid.rid.ent 392 24 0 0 
+ guiWinConfig .diagmgr.com.comid.rid.hbar 392 10 0 24 
+ guiWinConfig .diagmgr.diag.diagid.gid.ent 392 24 0 0 
+ guiWinConfig .diagmgr.diag.diagid.gid.hbar 392 10 0 24 
+ guiWinConfig .diagmgr.diag.diagid.rid.ent 392 24 0 0 
+ guiWinConfig .diagmgr.diag.diagid.rid.hbar 392 10 0 24 
+ guiWinConfig .diagmgr.pane.hid.title 1918 34 0 0 
+ guiWinConfig .diagmgr.pane.hid.core 1918 66 0 34 
+ guiWinConfig .diagmgr.pane.msup.title 1918 34 0 0 
+ guiWinConfig .diagmgr.pane.msup.core 1918 126 0 34 
+ guiWinConfig .diagmgr.pane.umsup.title 1918 34 0 0 
+ guiWinConfig .diagmgr.pane.umsup.core 1918 126 0 34 
+ guiWinConfig .diagmgr.pane.cp.pat 974 446 0 0 
+ guiWinConfig .diagmgr.pane.cp.cad 944 446 974 0 
+ guiWinConfig .diagmgr.dsgnType.left.glab 955 22 0 0 
+ guiWinConfig .diagmgr.dsgnType.right.rlab 963 22 0 0 
+ guiWinConfig .diagmgr.com.comid.gid 951 34 4 0 
+ guiWinConfig .diagmgr.com.comid.rid 951 34 963 0 
+ guiWinConfig .diagmgr.diag.diagid.gid 951 34 4 0 
+ guiWinConfig .diagmgr.diag.diagid.rid 951 34 963 0 
+ guiWinConfig .diagmgr.pane.hid.title.find 26 26 1891 4 
+ guiWinConfig .diagmgr.pane.hid.core.gd 951 64 1 1 
+ guiWinConfig .diagmgr.pane.hid.core.rv 952 64 952 1 
+ guiWinConfig .diagmgr.pane.hid.core.vbar 13 64 1904 1 
+ guiWinConfig .diagmgr.pane.msup.title.find 26 26 1891 4 
+ guiWinConfig .diagmgr.pane.msup.title.cls 26 26 1863 4 
+ guiWinConfig .diagmgr.pane.msup.core.gd 952 126 0 0 
+ guiWinConfig .diagmgr.pane.msup.core.rv 953 126 952 0 
+ guiWinConfig .diagmgr.pane.msup.core.vbar 13 126 1905 0 
+ guiWinConfig .diagmgr.pane.umsup.title.rfind 26 26 1891 4 
+ guiWinConfig .diagmgr.pane.umsup.core.gd 959 126 0 0 
+ guiWinConfig .diagmgr.pane.umsup.core.rv 959 126 959 0 
+ guiWinConfig .diagmgr.pane.cp.pat.title 974 31 0 0 
+ guiWinConfig .diagmgr.pane.cp.pat.list 974 415 0 31 
+ guiWinConfig .diagmgr.pane.cp.cad.title 944 30 0 0 
+ guiWinConfig .diagmgr.pane.cp.cad.list 944 416 0 30 
+ guiWinConfig .diagmgr.com.comid.gid.ent 951 24 0 0 
+ guiWinConfig .diagmgr.com.comid.gid.hbar 951 10 0 24 
+ guiWinConfig .diagmgr.com.comid.rid.ent 951 24 0 0 
+ guiWinConfig .diagmgr.com.comid.rid.hbar 951 10 0 24 
+ guiWinConfig .diagmgr.diag.diagid.gid.ent 951 24 0 0 
+ guiWinConfig .diagmgr.diag.diagid.gid.hbar 951 10 0 24 
+ guiWinConfig .diagmgr.diag.diagid.rid.ent 951 24 0 0 
+ guiWinConfig .diagmgr.diag.diagid.rid.hbar 951 10 0 24 
+ guiWinConfig .diagmgr.pane.hid.core.gd.list 951 51 0 0 
+ guiWinConfig .diagmgr.pane.hid.core.gd.hbar 951 13 0 51 
+ guiWinConfig .diagmgr.pane.hid.core.rv.list 952 51 0 0 
+ guiWinConfig .diagmgr.pane.hid.core.rv.hbar 952 13 0 51 
+ guiWinConfig .diagmgr.pane.msup.core.gd.list 952 113 0 0 
+ guiWinConfig .diagmgr.pane.msup.core.gd.hbar 952 13 0 113 
+ guiWinConfig .diagmgr.pane.msup.core.rv.list 953 113 0 0 
+ guiWinConfig .diagmgr.pane.msup.core.rv.hbar 953 13 0 113 
+ guiWinConfig .diagmgr.pane.umsup.core.gd.list 959 126 0 0 
+ guiWinConfig .diagmgr.pane.umsup.core.rv.list 959 126 0 0 
+ guiWinConfig .diagmgr.pane.cp.pat.list.grid 974 402 0 0 
+ guiWinConfig .diagmgr.pane.cp.pat.list.hsb 974 13 0 402 
+ guiWinConfig .diagmgr.pane.cp.cad.list.listbox 931 403 0 0 
+ guiWinConfig .diagmgr.pane.cp.cad.list.vsb 13 403 931 0 
+ guiWinConfig .diagmgr.pane.cp.cad.list.hsb 931 13 0 403 
+ guiWinConfig .diagmgr.pane.umsup.core.gd.list.f1 959 126 0 0 
+ guiWinConfig .diagmgr.pane.umsup.core.rv.list.f1 946 113 0 0 
+ guiWinConfig .diagmgr.pane.umsup.core.rv.list.vsb 13 113 946 0 
+ guiWinConfig .diagmgr.pane.umsup.core.rv.list.hsb 946 13 0 113 
+ guiWinConfig .diagmgr.pane.umsup.core.gd.list.f1.hlist 957 124 1 1 
+ guiWinConfig .diagmgr.pane.umsup.core.rv.list.f1.hlist 944 111 1 1 
+ guiWinConfig .diagmgr.pane.cp.cad.list.listbox 944 403 0 0 
+ guiWinConfig .diagmgr.pane.cp.cad.list.hsb 944 13 0 403 
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.diag.diagid.gid.hbar cget -activebackground]
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground [.diagmgr.diag.diagid.gid.hbar cget -background]
+    }
+    .diagmgr.diag.diagid.gid.hbar activate [.diagmgr.diag.diagid.gid.hbar identify 746 1]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.diag.diagid.gid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground [.diagmgr.pane.hid.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate [.diagmgr.pane.hid.core.gd.hbar identify 901 6]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground [.diagmgr.pane.msup.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate [.diagmgr.pane.msup.core.rv.hbar identify 462 5]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.gd.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground [.diagmgr.pane.msup.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate [.diagmgr.pane.msup.core.gd.hbar identify 851 11]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate {}
+#Gui Step(59)===>(TixHList).diagmgr.pane.msup.core.gd.list <Button-1> {{{(0)     PI   114     DFFRPQ_X1M_A9TH__u_cortexm0_inst_u_logic_Tki2z4_reg__R__u_cortexm0_inst_u_logic_Cn8vx4 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 59:  (TixHList) <Button-1>\
+ {{(0)     PI   114     DFFRPQ_X1M_A9TH__u_cortexm0_inst_u_logic_Tki2z4_reg__R__u_cortexm0_inst_u_logic_Cn8vx4 }}} .diagmgr.pane.msup.core.gd.list } 
+set x [guiGetHListEntryX .diagmgr.pane.msup.core.gd.list {(0)     PI   114     DFFRPQ_X1M_A9TH__u_cortexm0_inst_u_logic_Tki2z4_reg__R__u_cortexm0_inst_u_logic_Cn8vx4 }];set y [guiGetHListEntryY .diagmgr.pane.msup.core.gd.list {(0)     PI   114     DFFRPQ_X1M_A9TH__u_cortexm0_inst_u_logic_Tki2z4_reg__R__u_cortexm0_inst_u_logic_Cn8vx4 }] 
+_tixRecordFlags <ButtonPress-1> % 86140 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379347970 ?? 805 13 ?? ?? 0 ?? ?? 0x000126 00000000 4 .diagmgr.pane.msup.core.gd.list 2726 360; 
+	 tixHList:Button-1 .diagmgr.pane.msup.core.gd.list  $x $y ""
+    ; _tixDeleteFlags;
+diag_select_list .diagmgr.pane.msup.core.gd.list .diagmgr.pane.msup.core.rv.list 13 golden map
+#Gui Step(61)===>(TixHList).diagmgr.pane.msup.core.gd.list <ButtonRelease-1> {{{(0)     PI   114     DFFRPQ_X1M_A9TH__u_cortexm0_inst_u_logic_Tki2z4_reg__R__u_cortexm0_inst_u_logic_Cn8vx4 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 61:  (TixHList) <ButtonRelease-1>\
+ {{(0)     PI   114     DFFRPQ_X1M_A9TH__u_cortexm0_inst_u_logic_Tki2z4_reg__R__u_cortexm0_inst_u_logic_Cn8vx4 }}} .diagmgr.pane.msup.core.gd.list } 
+set x [guiGetHListEntryX .diagmgr.pane.msup.core.gd.list {(0)     PI   114     DFFRPQ_X1M_A9TH__u_cortexm0_inst_u_logic_Tki2z4_reg__R__u_cortexm0_inst_u_logic_Cn8vx4 }];set y [guiGetHListEntryY .diagmgr.pane.msup.core.gd.list {(0)     PI   114     DFFRPQ_X1M_A9TH__u_cortexm0_inst_u_logic_Tki2z4_reg__R__u_cortexm0_inst_u_logic_Cn8vx4 }] 
+_tixRecordFlags <ButtonRelease-1> % 86222 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379348106 ?? 805 13 ?? ?? 0 ?? ?? 0x000126 00000000 5 .diagmgr.pane.msup.core.gd.list 2726 360; 
+	 tixHList:ButtonRelease-1 .diagmgr.pane.msup.core.gd.list  $x $y
+    ; _tixDeleteFlags;
+callback Gui_hlist_leave .diagmgr.pane.msup.core.gd.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground [.diagmgr.pane.hid.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate [.diagmgr.pane.hid.core.gd.hbar identify 835 5]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground [.diagmgr.pane.hid.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate [.diagmgr.pane.hid.core.gd.hbar identify 916 9]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground [.diagmgr.pane.msup.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate [.diagmgr.pane.msup.core.rv.hbar identify 393 2]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground [.diagmgr.pane.msup.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate [.diagmgr.pane.msup.core.gd.hbar identify 802 7]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.gd.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground [.diagmgr.pane.msup.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate [.diagmgr.pane.msup.core.gd.hbar identify 883 1]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground [.diagmgr.pane.msup.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate [.diagmgr.pane.msup.core.rv.hbar identify 3 1]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate {}
+#Gui Step(62)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <Button-1> {{{(1)    PI   134     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Pdi2z4_reg__S__u_cortexm0_inst_u_logic_O8gvx4 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 62:  (TixHList) <Button-1>\
+ {{(1)    PI   134     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Pdi2z4_reg__S__u_cortexm0_inst_u_logic_O8gvx4 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(1)    PI   134     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Pdi2z4_reg__S__u_cortexm0_inst_u_logic_O8gvx4 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(1)    PI   134     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Pdi2z4_reg__S__u_cortexm0_inst_u_logic_O8gvx4 }] 
+_tixRecordFlags <ButtonPress-1> % 88303 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379357106 ?? 475 42 ?? ?? 0 ?? ?? 0x000126 00000000 4 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3356 550; 
+	 tixHList:Button-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y ""
+    ; _tixDeleteFlags;
+diag_select_list .diagmgr.pane.umsup.core.rv.list.f1.hlist .diagmgr.pane.umsup.core.gd.list.f1.hlist 42 revised unmap
+#Gui Step(64)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <ButtonRelease-1> {{{(1)    PI   134     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Pdi2z4_reg__S__u_cortexm0_inst_u_logic_O8gvx4 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 64:  (TixHList) <ButtonRelease-1>\
+ {{(1)    PI   134     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Pdi2z4_reg__S__u_cortexm0_inst_u_logic_O8gvx4 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(1)    PI   134     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Pdi2z4_reg__S__u_cortexm0_inst_u_logic_O8gvx4 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(1)    PI   134     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Pdi2z4_reg__S__u_cortexm0_inst_u_logic_O8gvx4 }] 
+_tixRecordFlags <ButtonRelease-1> % 88347 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379357226 ?? 475 42 ?? ?? 0 ?? ?? 0x000126 00000000 5 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3356 550; 
+	 tixHList:ButtonRelease-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y
+    ; _tixDeleteFlags;
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist}  1
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.hsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.hsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate [.diagmgr.pane.umsup.core.rv.list.hsb identify 241 3]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.hsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.hsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate [.diagmgr.pane.umsup.core.rv.list.hsb identify 276 9]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate {}
+#Gui Step(65)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <Button-1> {{{(1)    PI   886     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Cyq2z4_reg__S__u_cortexm0_inst_u_logic_Yo9vx4 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 65:  (TixHList) <Button-1>\
+ {{(1)    PI   886     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Cyq2z4_reg__S__u_cortexm0_inst_u_logic_Yo9vx4 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(1)    PI   886     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Cyq2z4_reg__S__u_cortexm0_inst_u_logic_Yo9vx4 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(1)    PI   886     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Cyq2z4_reg__S__u_cortexm0_inst_u_logic_Yo9vx4 }] 
+_tixRecordFlags <ButtonPress-1> % 92449 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379361554 ?? 250 103 ?? ?? 0 ?? ?? 0x000126 00000000 4 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3131 611; 
+	 tixHList:Button-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y ""
+    ; _tixDeleteFlags;
+diag_select_list .diagmgr.pane.umsup.core.rv.list.f1.hlist .diagmgr.pane.umsup.core.gd.list.f1.hlist 103 revised unmap
+#Gui Step(67)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <ButtonRelease-1> {{{(1)    PI   886     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Cyq2z4_reg__S__u_cortexm0_inst_u_logic_Yo9vx4 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 67:  (TixHList) <ButtonRelease-1>\
+ {{(1)    PI   886     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Cyq2z4_reg__S__u_cortexm0_inst_u_logic_Yo9vx4 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(1)    PI   886     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Cyq2z4_reg__S__u_cortexm0_inst_u_logic_Yo9vx4 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(1)    PI   886     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Cyq2z4_reg__S__u_cortexm0_inst_u_logic_Yo9vx4 }] 
+_tixRecordFlags <ButtonRelease-1> % 92492 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379361682 ?? 250 103 ?? ?? 0 ?? ?? 0x000126 00000000 5 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3131 611; 
+	 tixHList:ButtonRelease-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y
+    ; _tixDeleteFlags;
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+_tixRecordFlags <ButtonPress-1> % 96196 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379365626 ?? 465 63 ?? ?? 0 ?? ?? 0x000126 00000000 4 .diagmgr.pane.umsup.core.gd.list.f1.hlist 2387 571; 
+	tixHList:Button-1 .diagmgr.pane.umsup.core.gd.list.f1.hlist 465 63 ""
+    ; _tixDeleteFlags;
+diag_select_list .diagmgr.pane.umsup.core.gd.list.f1.hlist .diagmgr.pane.umsup.core.rv.list.f1.hlist 63 golden unmap
+_tixRecordFlags <ButtonRelease-1> % 96251 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379365730 ?? 465 63 ?? ?? 0 ?? ?? 0x000126 00000000 5 .diagmgr.pane.umsup.core.gd.list.f1.hlist 2387 571; 
+	tixHList:ButtonRelease-1 .diagmgr.pane.umsup.core.gd.list.f1.hlist 465 63
+    ; _tixDeleteFlags;
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.gd.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.hsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.hsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate [.diagmgr.pane.umsup.core.rv.list.hsb identify 374 11]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate {}
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+#Gui Step(71)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <Button-1> {{{(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 71:  (TixHList) <Button-1>\
+ {{(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }] 
+_tixRecordFlags <ButtonPress-1> % 97112 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379367554 ?? 393 59 ?? ?? 0 ?? ?? 0x000126 00000000 4 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3274 567; 
+	 tixHList:Button-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y ""
+    ; _tixDeleteFlags;
+diag_select_list .diagmgr.pane.umsup.core.rv.list.f1.hlist .diagmgr.pane.umsup.core.gd.list.f1.hlist 59 revised unmap
+#Gui Step(73)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <ButtonRelease-1> {{{(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 73:  (TixHList) <ButtonRelease-1>\
+ {{(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }] 
+_tixRecordFlags <ButtonRelease-1> % 97170 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379367682 ?? 393 59 ?? ?? 0 ?? ?? 0x000126 00000000 5 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3274 567; 
+	 tixHList:ButtonRelease-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y
+    ; _tixDeleteFlags;
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.vsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.vsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.vsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.vsb activate [.diagmgr.pane.umsup.core.rv.list.vsb identify 1 59]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.vsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.vsb activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.vsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.vsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.vsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.vsb activate [.diagmgr.pane.umsup.core.rv.list.vsb identify 12 30]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.vsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.vsb activate {}
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.vsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.vsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.vsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.vsb activate [.diagmgr.pane.umsup.core.rv.list.vsb identify 0 16]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.vsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.vsb activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.vsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.vsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.vsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.vsb activate [.diagmgr.pane.umsup.core.rv.list.vsb identify 12 13]
+     ::tk::ScrollToPos .diagmgr.pane.umsup.core.rv.list.vsb 0.0
+     ::tk::ScrollToPos .diagmgr.pane.umsup.core.rv.list.vsb 0.0
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.vsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.vsb activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.vsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.vsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.vsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.vsb activate [.diagmgr.pane.umsup.core.rv.list.vsb identify 12 10]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.vsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.vsb activate {}
+#Gui Step(76)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <Button-1> {{{(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 76:  (TixHList) <Button-1>\
+ {{(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }] 
+_tixRecordFlags <ButtonPress-1> % 100046 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379373739 ?? 474 16 ?? ?? 0 ?? ?? 0x000126 00000000 4 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3355 524; 
+	 tixHList:Button-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y ""
+    ; _tixDeleteFlags;
+diag_select_list .diagmgr.pane.umsup.core.rv.list.f1.hlist .diagmgr.pane.umsup.core.gd.list.f1.hlist 16 revised unmap
+#Gui Step(78)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <ButtonRelease-1> {{{(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 78:  (TixHList) <ButtonRelease-1>\
+ {{(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }] 
+_tixRecordFlags <ButtonRelease-1> % 100090 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379373851 ?? 474 16 ?? ?? 0 ?? ?? 0x000126 00000000 5 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3355 524; 
+	 tixHList:ButtonRelease-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y
+    ; _tixDeleteFlags;
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+multi_mousewheel {.diagmgr.pane.umsup.core.rv.list.f1.hlist} -1
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.umsup.core.rv.list.hsb cget -activebackground]
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground [.diagmgr.pane.umsup.core.rv.list.hsb cget -background]
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate [.diagmgr.pane.umsup.core.rv.list.hsb identify 936 7]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.umsup.core.rv.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.umsup.core.rv.list.hsb activate {}
+#Gui Step(79)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <Button-1> {{{(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 79:  (TixHList) <Button-1>\
+ {{(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }] 
+_tixRecordFlags <ButtonPress-1> % 101621 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379377195 ?? 509 45 ?? ?? 0 ?? ?? 0x000126 00000000 4 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3390 553; 
+	 tixHList:Button-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y ""
+    ; _tixDeleteFlags;
+diag_select_list .diagmgr.pane.umsup.core.rv.list.f1.hlist .diagmgr.pane.umsup.core.gd.list.f1.hlist 45 revised unmap
+#Gui Step(81)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <ButtonRelease-1> {{{(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 81:  (TixHList) <ButtonRelease-1>\
+ {{(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   136     DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_Dvy2z4_reg__S__u_cortexm0_inst_u_logic_Mc9vx4 }] 
+_tixRecordFlags <ButtonRelease-1> % 101665 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379377291 ?? 509 45 ?? ?? 0 ?? ?? 0x000126 00000000 5 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3390 553; 
+	 tixHList:ButtonRelease-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y
+    ; _tixDeleteFlags;
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground [.diagmgr.pane.msup.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate [.diagmgr.pane.msup.core.rv.hbar identify 499 5]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.rv.hbar configure -activebackground [.diagmgr.pane.hid.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.rv.hbar activate [.diagmgr.pane.hid.core.rv.hbar identify 315 8]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.rv.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.diag.diagid.gid.hbar cget -activebackground]
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground [.diagmgr.diag.diagid.gid.hbar cget -background]
+    }
+    .diagmgr.diag.diagid.gid.hbar activate [.diagmgr.diag.diagid.gid.hbar identify 259 8]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.diag.diagid.gid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.com.comid.gid.hbar cget -activebackground]
+	.diagmgr.com.comid.gid.hbar configure -activebackground [.diagmgr.com.comid.gid.hbar cget -background]
+    }
+    .diagmgr.com.comid.gid.hbar activate [.diagmgr.com.comid.gid.hbar identify 233 4]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.com.comid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.com.comid.gid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.com.comid.gid.hbar cget -activebackground]
+	.diagmgr.com.comid.gid.hbar configure -activebackground [.diagmgr.com.comid.gid.hbar cget -background]
+    }
+    .diagmgr.com.comid.gid.hbar activate [.diagmgr.com.comid.gid.hbar identify 118 1]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.com.comid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.com.comid.gid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.com.comid.gid.hbar cget -activebackground]
+	.diagmgr.com.comid.gid.hbar configure -activebackground [.diagmgr.com.comid.gid.hbar cget -background]
+    }
+    .diagmgr.com.comid.gid.hbar activate [.diagmgr.com.comid.gid.hbar identify 137 1]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.com.comid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.com.comid.gid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.diag.diagid.gid.hbar cget -activebackground]
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground [.diagmgr.diag.diagid.gid.hbar cget -background]
+    }
+    .diagmgr.diag.diagid.gid.hbar activate [.diagmgr.diag.diagid.gid.hbar identify 210 8]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.diag.diagid.gid.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.gd.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground [.diagmgr.pane.msup.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate [.diagmgr.pane.msup.core.gd.hbar identify 349 1]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.gd.list.f1.hlist
+_tixRecordFlags <ButtonPress-1> % 103358 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379381251 ?? 309 49 ?? ?? 0 ?? ?? 0x000126 00000000 4 .diagmgr.pane.umsup.core.gd.list.f1.hlist 2231 557; 
+	tixHList:Button-1 .diagmgr.pane.umsup.core.gd.list.f1.hlist 309 49 ""
+    ; _tixDeleteFlags;
+diag_select_list .diagmgr.pane.umsup.core.gd.list.f1.hlist .diagmgr.pane.umsup.core.rv.list.f1.hlist 49 golden unmap
+_tixRecordFlags <ButtonRelease-1> % 103416 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379381395 ?? 309 49 ?? ?? 0 ?? ?? 0x000126 00000000 5 .diagmgr.pane.umsup.core.gd.list.f1.hlist 2231 557; 
+	tixHList:ButtonRelease-1 .diagmgr.pane.umsup.core.gd.list.f1.hlist 309 49
+    ; _tixDeleteFlags;
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.gd.list.f1.hlist
+callback Gui_hlist_leave .diagmgr.pane.msup.core.gd.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground [.diagmgr.pane.hid.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate [.diagmgr.pane.hid.core.gd.hbar identify 422 7]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.diag.diagid.gid.hbar cget -activebackground]
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground [.diagmgr.diag.diagid.gid.hbar cget -background]
+    }
+    .diagmgr.diag.diagid.gid.hbar activate [.diagmgr.diag.diagid.gid.hbar identify 545 3]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.diag.diagid.gid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.com.comid.gid.hbar cget -activebackground]
+	.diagmgr.com.comid.gid.hbar configure -activebackground [.diagmgr.com.comid.gid.hbar cget -background]
+    }
+    .diagmgr.com.comid.gid.hbar activate [.diagmgr.com.comid.gid.hbar identify 610 7]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.com.comid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.com.comid.gid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.com.comid.gid.hbar cget -activebackground]
+	.diagmgr.com.comid.gid.hbar configure -activebackground [.diagmgr.com.comid.gid.hbar cget -background]
+    }
+    .diagmgr.com.comid.gid.hbar activate [.diagmgr.com.comid.gid.hbar identify 589 1]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.com.comid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.com.comid.gid.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.gd.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground [.diagmgr.pane.hid.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate [.diagmgr.pane.hid.core.gd.hbar identify 537 3]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.diag.diagid.gid.hbar cget -activebackground]
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground [.diagmgr.diag.diagid.gid.hbar cget -background]
+    }
+    .diagmgr.diag.diagid.gid.hbar activate [.diagmgr.diag.diagid.gid.hbar identify 394 8]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.diag.diagid.gid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.com.comid.gid.hbar cget -activebackground]
+	.diagmgr.com.comid.gid.hbar configure -activebackground [.diagmgr.com.comid.gid.hbar cget -background]
+    }
+    .diagmgr.com.comid.gid.hbar activate [.diagmgr.com.comid.gid.hbar identify 223 9]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.com.comid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.com.comid.gid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground [.diagmgr.pane.hid.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate [.diagmgr.pane.hid.core.gd.hbar identify 424 4]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.gd.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground [.diagmgr.pane.msup.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate [.diagmgr.pane.msup.core.gd.hbar identify 701 7]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.gd.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.gd.list.f1.hlist
+#Gui Step(85)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <Button-1> {{{(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 85:  (TixHList) <Button-1>\
+ {{(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }] 
+_tixRecordFlags <ButtonPress-1> % 104334 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379385051 ?? 503 15 ?? ?? 0 ?? ?? 0x000126 00000000 4 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3384 523; 
+	 tixHList:Button-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y ""
+    ; _tixDeleteFlags;
+diag_select_list .diagmgr.pane.umsup.core.rv.list.f1.hlist .diagmgr.pane.umsup.core.gd.list.f1.hlist 15 revised unmap
+#Gui Step(87)===>(TixHList).diagmgr.pane.umsup.core.rv.list.f1.hlist <ButtonRelease-1> {{{(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 87:  (TixHList) <ButtonRelease-1>\
+ {{(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }}} .diagmgr.pane.umsup.core.rv.list.f1.hlist } 
+set x [guiGetHListEntryX .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }];set y [guiGetHListEntryY .diagmgr.pane.umsup.core.rv.list.f1.hlist {(0)    PI   97      DFFSQ_X1M_A9TH__u_cortexm0_inst_u_logic_J773z4_reg__S__n18 }] 
+_tixRecordFlags <ButtonRelease-1> % 104392 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379385179 ?? 503 15 ?? ?? 0 ?? ?? 0x000126 00000000 5 .diagmgr.pane.umsup.core.rv.list.f1.hlist 3384 523; 
+	 tixHList:ButtonRelease-1 .diagmgr.pane.umsup.core.rv.list.f1.hlist  $x $y
+    ; _tixDeleteFlags;
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.com.comid.gid.hbar cget -activebackground]
+	.diagmgr.com.comid.gid.hbar configure -activebackground [.diagmgr.com.comid.gid.hbar cget -background]
+    }
+    .diagmgr.com.comid.gid.hbar activate [.diagmgr.com.comid.gid.hbar identify 666 9]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.com.comid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.com.comid.gid.hbar activate {}
+     tk::ButtonEnter .diagmgr.pane.cp.pat.title.find0
+     tk::ButtonLeave .diagmgr.pane.cp.pat.title.find0
+     tk::ButtonEnter .diagmgr.pane.cp.pat.title.find1
+     tk::ButtonLeave .diagmgr.pane.cp.pat.title.find1
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.gd.list.f1.hlist
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+ guiWinConfig .diagmgr 1920 1056 1920 24 
+ diag_sup_pop_command .diagmgr.pane.umsup.core.rv.list.f1.hlist 3197 527 1 .diagmgr.pane.umsup.core.rv.list.f1.hlist revised
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     set tk::Priv(window) .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu
+    if {[.diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu cget -type] eq "tearoff"} {
+	if {"NotifyUngrab" ne "NotifyUngrab"} {
+	    if {[tk windowingsystem] eq "x11"} {
+		tk_menuSetFocus .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu
+	    }
+	}
+    }
+    tk::MenuMotion .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu 0 0 1040
+    tk::MenuInvoke .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu 1
+     set tk::Priv(window) .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu
+    if {[.diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu cget -type] eq "tearoff"} {
+	if {"NotifyNormal" ne "NotifyUngrab"} {
+	    if {[tk windowingsystem] eq "x11"} {
+		tk_menuSetFocus .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu
+	    }
+	}
+    }
+    tk::MenuMotion .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu 24 0 16
+     set tk::Priv(window) .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu
+    if {[.diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu cget -type] eq "tearoff"} {
+	if {"NotifyNormal" ne "NotifyUngrab"} {
+	    if {[tk windowingsystem] eq "x11"} {
+		tk_menuSetFocus .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu
+	    }
+	}
+    }
+    tk::MenuMotion .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu 16 240 16
+#Gui Step(89)===>(Menu).diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu <Button> (menu-button)
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 89:  (Menu) <Button>\
+ (menu-button)} .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu } 
+     tk::MenuButtonDown .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu
+    tk::MenuInvoke .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu 1
+ diag_sup_pop_command .diagmgr.pane.umsup.core.rv.list.f1.hlist 3122 527 1 .diagmgr.pane.umsup.core.rv.list.f1.hlist revised
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     set tk::Priv(window) .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu
+    if {[.diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu cget -type] eq "tearoff"} {
+	if {"NotifyUngrab" ne "NotifyUngrab"} {
+	    if {[tk windowingsystem] eq "x11"} {
+		tk_menuSetFocus .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu
+	    }
+	}
+    }
+    tk::MenuMotion .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu 0 0 1040
+    tk::MenuInvoke .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu 1
+#Gui Step(91)===>(Menu).diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu <Button> (menu-button)
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 91:  (Menu) <Button>\
+ (menu-button)} .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu } 
+     tk::MenuButtonDown .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu
+    tk::MenuInvoke .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu 1
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.gd.list.f1.hlist
+     tk::ButtonEnter .diagmgr.pane.cp.pat.title.find0
+     tk::ButtonLeave .diagmgr.pane.cp.pat.title.find0
+     tk::ButtonEnter .diagmgr.pane.cp.pat.title.find1
+     tk::ButtonLeave .diagmgr.pane.cp.pat.title.find1
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.gd.list.f1.hlist
+     tk::ButtonEnter .diagmgr.pane.cp.pat.title.find1
+     tk::ButtonLeave .diagmgr.pane.cp.pat.title.find1
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.gd.list.f1.hlist
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+ guiWinConfig .diagmgr 1920 1056 1920 24 
+ diag_sup_pop_command .diagmgr.pane.umsup.core.rv.list.f1.hlist 3039 516 1 .diagmgr.pane.umsup.core.rv.list.f1.hlist revised
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     set tk::Priv(window) .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu
+    if {[.diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu cget -type] eq "tearoff"} {
+	if {"NotifyUngrab" ne "NotifyUngrab"} {
+	    if {[tk windowingsystem] eq "x11"} {
+		tk_menuSetFocus .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu
+	    }
+	}
+    }
+    tk::MenuMotion .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu 0 0 1040
+    tk::MenuInvoke .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu 1
+#Gui Step(93)===>(Menu).diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu <Button> (menu-button)
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 93:  (Menu) <Button>\
+ (menu-button)} .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu } 
+     tk::MenuButtonDown .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu
+    tk::MenuInvoke .diagmgr.pane.umsup.core.rv.list.f1.hlist.set.menu 1
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground [.diagmgr.pane.msup.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate [.diagmgr.pane.msup.core.rv.hbar identify 384 6]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.diag.diagid.gid.hbar cget -activebackground]
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground [.diagmgr.diag.diagid.gid.hbar cget -background]
+    }
+    .diagmgr.diag.diagid.gid.hbar activate [.diagmgr.diag.diagid.gid.hbar identify 330 9]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.diag.diagid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.diag.diagid.gid.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.com.comid.gid.hbar cget -activebackground]
+	.diagmgr.com.comid.gid.hbar configure -activebackground [.diagmgr.com.comid.gid.hbar cget -background]
+    }
+    .diagmgr.com.comid.gid.hbar activate [.diagmgr.com.comid.gid.hbar identify 377 1]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.com.comid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.com.comid.gid.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.gd.list
+callback Gui_hlist_leave .diagmgr.pane.msup.core.gd.list
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+_tixRecordFlags <B1-Leave> % 108486 ?? ?? ?? NotifyAncestor 0 ?? ?? NotifyGrab ?? ?? 272 1379452589 ?? 481 9 ?? ?? 0 ?? ?? 0x000126 00000000 8 .diagmgr.pane.msup.core.rv.list 3354 356; 
+	set tkPriv(x) 481
+	set tkPriv(y) 9
+	set tkPriv(X) 3354
+	set tkPriv(Y) 356
+ 	tixHList:B1-Leave .diagmgr.pane.msup.core.rv.list
+    ; _tixDeleteFlags;
+ guiWinConfig .diagmgr 1920 1056 1920 24 
+_tixRecordFlags <B1-Enter> % 108488 ?? ?? ?? NotifyAncestor 1 ?? ?? NotifyUngrab ?? ?? 272 1379452593 ?? 481 9 ?? ?? 0 ?? ?? 0x000126 00000000 7 .diagmgr.pane.msup.core.rv.list 3354 356; 
+	tixHList:B1-Enter .diagmgr.pane.msup.core.rv.list 481 9
+    ; _tixDeleteFlags;
+#Gui Step(94)===>(TixHList).diagmgr.pane.msup.core.rv.list <Button-1> {{{(0)     PI   114     DFFRPQ_X1M_A9TH__u_cortexm0_inst_u_logic_Tki2z4_reg__R__u_cortexm0_inst_u_logic_Cn8vx4 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 94:  (TixHList) <Button-1>\
+ {{(0)     PI   114     DFFRPQ_X1M_A9TH__u_cortexm0_inst_u_logic_Tki2z4_reg__R__u_cortexm0_inst_u_logic_Cn8vx4 }}} .diagmgr.pane.msup.core.rv.list } 
+set x [guiGetHListEntryX .diagmgr.pane.msup.core.rv.list {(0)     PI   114     DFFRPQ_X1M_A9TH__u_cortexm0_inst_u_logic_Tki2z4_reg__R__u_cortexm0_inst_u_logic_Cn8vx4 }];set y [guiGetHListEntryY .diagmgr.pane.msup.core.rv.list {(0)     PI   114     DFFRPQ_X1M_A9TH__u_cortexm0_inst_u_logic_Tki2z4_reg__R__u_cortexm0_inst_u_logic_Cn8vx4 }] 
+_tixRecordFlags <ButtonPress-1> % 108488 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 16 1379452589 ?? 481 9 ?? ?? 0 ?? ?? 0x000126 00000000 4 .diagmgr.pane.msup.core.rv.list 3354 356; 
+	 tixHList:Button-1 .diagmgr.pane.msup.core.rv.list  $x $y ""
+    ; _tixDeleteFlags;
+diag_select_list .diagmgr.pane.msup.core.rv.list .diagmgr.pane.msup.core.gd.list 9 revised map
+#Gui Step(96)===>(TixHList).diagmgr.pane.msup.core.rv.list <ButtonRelease-1> {{{(0)     PI   114     DFFRPQ_X1M_A9TH__u_cortexm0_inst_u_logic_Tki2z4_reg__R__u_cortexm0_inst_u_logic_Cn8vx4 }}}
+global guiReplayPause
+if {[info exists guiReplayPause] && $guiReplayPause == 1} { guiReplayBreakMsg {Step 96:  (TixHList) <ButtonRelease-1>\
+ {{(0)     PI   114     DFFRPQ_X1M_A9TH__u_cortexm0_inst_u_logic_Tki2z4_reg__R__u_cortexm0_inst_u_logic_Cn8vx4 }}} .diagmgr.pane.msup.core.rv.list } 
+set x [guiGetHListEntryX .diagmgr.pane.msup.core.rv.list {(0)     PI   114     DFFRPQ_X1M_A9TH__u_cortexm0_inst_u_logic_Tki2z4_reg__R__u_cortexm0_inst_u_logic_Cn8vx4 }];set y [guiGetHListEntryY .diagmgr.pane.msup.core.rv.list {(0)     PI   114     DFFRPQ_X1M_A9TH__u_cortexm0_inst_u_logic_Tki2z4_reg__R__u_cortexm0_inst_u_logic_Cn8vx4 }] 
+_tixRecordFlags <ButtonRelease-1> % 108583 ?? 1 ?? ?? ?? ?? ?? ?? ?? ?? 272 1379452653 ?? 481 9 ?? ?? 0 ?? ?? 0x000126 00000000 5 .diagmgr.pane.msup.core.rv.list 3354 356; 
+	 tixHList:ButtonRelease-1 .diagmgr.pane.msup.core.rv.list  $x $y
+    ; _tixDeleteFlags;
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground [.diagmgr.pane.msup.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate [.diagmgr.pane.msup.core.rv.hbar identify 365 0]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground [.diagmgr.pane.msup.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate [.diagmgr.pane.msup.core.rv.hbar identify 325 11]
+     ::tk::ScrollToPos .diagmgr.pane.msup.core.rv.hbar 0.0
+     # Prevents <Leave> binding from being invoked.
+     ::tk::ScrollToPos .diagmgr.pane.msup.core.rv.hbar 0.0
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+callback Gui_hlist_leave .diagmgr.pane.msup.core.rv.list
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.msup.core.rv.hbar cget -activebackground]
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground [.diagmgr.pane.msup.core.rv.hbar cget -background]
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate [.diagmgr.pane.msup.core.rv.hbar identify 371 10]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.msup.core.rv.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.msup.core.rv.hbar activate {}
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.rv.list.f1.hlist
+callback Gui_hlist_leave .diagmgr.pane.umsup.core.gd.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground [.diagmgr.pane.hid.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate [.diagmgr.pane.hid.core.gd.hbar identify 249 9]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.pane.hid.core.gd.hbar cget -activebackground]
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground [.diagmgr.pane.hid.core.gd.hbar cget -background]
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate [.diagmgr.pane.hid.core.gd.hbar identify 647 6]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.pane.hid.core.gd.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.pane.hid.core.gd.hbar activate {}
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.com.comid.gid.hbar cget -activebackground]
+	.diagmgr.com.comid.gid.hbar configure -activebackground [.diagmgr.com.comid.gid.hbar cget -background]
+    }
+    .diagmgr.com.comid.gid.hbar activate [.diagmgr.com.comid.gid.hbar identify 442 8]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.com.comid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.com.comid.gid.hbar activate {}
+     tk::ButtonEnter .diagmgr.bt.sche
+     tk::ButtonLeave .diagmgr.bt.sche
+     tk::ButtonEnter .diagmgr.bt.ok
+     tk::ButtonLeave .diagmgr.bt.ok
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.diagmgr.com.comid.gid.hbar cget -activebackground]
+	.diagmgr.com.comid.gid.hbar configure -activebackground [.diagmgr.com.comid.gid.hbar cget -background]
+    }
+    .diagmgr.com.comid.gid.hbar activate [.diagmgr.com.comid.gid.hbar identify 172 2]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.diagmgr.com.comid.gid.hbar configure -activebackground $tk::Priv(activeBg)
+    }
+    .diagmgr.com.comid.gid.hbar activate {}
+     set tk::Priv(x) 240
+    tk::EntryAutoScan .diagmgr.diag.diagid.gid.ent
+ guiWinConfig .diagmgr 1920 1056 1920 24 
+     tk::CancelRepeat
+     tk::EntryButton1 .diagmgr.diag.diagid.gid.ent 240
+    .diagmgr.diag.diagid.gid.ent selection clear
+     tk::CancelRepeat
+     tk::ButtonEnter .diagmgr.bt.ref
+     tk::ButtonLeave .diagmgr.bt.ref
+     tk::ButtonEnter .keymgr.bt.ref
+     tk::ButtonLeave .keymgr.bt.ref
+callback Gui_hlist_leave .keymgr.pane.ump.golden.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.golden.list.hsb cget -activebackground]
+	.keymgr.pane.ump.golden.list.hsb configure -activebackground [.keymgr.pane.ump.golden.list.hsb cget -background]
+    }
+    .keymgr.pane.ump.golden.list.hsb activate [.keymgr.pane.ump.golden.list.hsb identify 239 12]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.golden.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.golden.list.hsb activate {}
+callback Gui_hlist_leave .keymgr.pane.map.golden.list.f1.hlist
+callback Gui_hlist_leave .keymgr.pane.com.revised.list.f1.hlist
+callback Gui_hlist_leave .keymgr.pane.map.revised.list.f1.hlist
+callback Gui_hlist_leave .keymgr.pane.map.golden.list.f1.hlist
+     if {$tk_strictMotif} {
+	set tk::Priv(activeBg) [.keymgr.pane.ump.golden.list.hsb cget -activebackground]
+	.keymgr.pane.ump.golden.list.hsb configure -activebackground [.keymgr.pane.ump.golden.list.hsb cget -background]
+    }
+    .keymgr.pane.ump.golden.list.hsb activate [.keymgr.pane.ump.golden.list.hsb identify 346 7]
+     if {$tk_strictMotif && [info exists tk::Priv(activeBg)]} {
+	.keymgr.pane.ump.golden.list.hsb configure -activebackground $tk::Priv(activeBg)
+    }
+    .keymgr.pane.ump.golden.list.hsb activate {}
+callback Gui_hlist_leave .keymgr.pane.ump.golden.list.f1.hlist
+     tk::ButtonEnter .keymgr.bt.ok
+     tk::ButtonLeave .keymgr.bt.ok
+ guiWinConfig .keymgr 900 800 1921 52 
+callback Gui_destroy_dialog .keymgr
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.ump.title.gfind
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.ump.title.gfilter
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.ump.title.gunmapgateclass
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.ump.title.gunmapcls
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.ump.title.runmapgateclass
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.ump.title.runmapcls
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.ump.title.rfind
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.ump.title.rfilter
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.ump.title.repo
+tixPrimitive:Destructor .keymgr.pane.ump.golden.list
+tixPrimitive:Destructor .keymgr.pane.ump.revised.list
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.map.title.dall
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.map.title.aall
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.map.title.remp
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.map.title.find
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.map.title.filter
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.map.title.repo
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.map.title.gateclass
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.map.title.cls
+tixPrimitive:Destructor .keymgr.pane.map.golden.list
+tixPrimitive:Destructor .keymgr.pane.map.revised.list
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.com.title.dall
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.com.title.comp
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.com.title.find
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.com.title.filter
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.com.title.repo
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.com.title.sort
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.com.title.gateclass
+tixBalloon:ClientDestroy .icon.b .keymgr.pane.com.title.cls
+tixPrimitive:Destructor .keymgr.pane.com.golden.list
+tixPrimitive:Destructor .keymgr.pane.com.revised.list
+tixPrimitive:Destructor .keymgr.pane
+     tk::MbEnter .v_menu.read
+     tk::MbMotion .v_menu.read up 1935 40
+     tk::MbLeave .v_menu.read
+ guiWinConfig . 1920 1056 1920 24 
+     tk::MbEnter .v_menu.read
+     if {$tk::Priv(inMenubutton) ne ""} {
+	tk::MbPost $tk::Priv(inMenubutton) 1935 40
+    }
+     tk::MbMotion .v_menu.read down 1934 40
+     tk::MbButtonUp .v_menu.read
+     tk::MbMotion .v_menu.read up 1933 39
+     tk::MbMotion .v_menu.read up 1934 39
+     tk::MbMotion .v_menu.read up 1935 39
+     tk::MbMotion .v_menu.read up 1937 39
+     tk::MbMotion .v_menu.read up 1940 39
+     tk::MbMotion .v_menu.read up 1943 38
+     tk::MbMotion .v_menu.read up 1946 38
+     tk::MbMotion .v_menu.read up 1950 38
+     tk::MbMotion .v_menu.read up 1954 38
+     tk::MbLeave .v_menu.read
+     tk::MbMotion .v_menu.read up 1958 38
+     tk::MbMotion .v_menu.read up 1965 38
+     tk::MbMotion .v_menu.read up 1971 39
+     tk::MbMotion .v_menu.read up 1978 41
+     tk::MbMotion .v_menu.read up 1988 43
+     tk::MbMotion .v_menu.read up 1998 46
+     tk::MbMotion .v_menu.read up 2012 51
+     set tk::Priv(window) .v_menu.read.menu
+    if {[.v_menu.read.menu cget -type] eq "tearoff"} {
+	if {"NotifyNormal" ne "NotifyUngrab"} {
+	    if {[tk windowingsystem] eq "x11"} {
+		tk_menuSetFocus .v_menu.read.menu
+	    }
+	}
+    }
+    tk::MenuMotion .v_menu.read.menu 104 2 16
+     tk::MbMotion .v_menu.read up 2075 84
+     tk::MbMotion .v_menu.read up 2087 93
+     tk::MbMotion .v_menu.read up 2100 99
+     tk::MbMotion .v_menu.read up 2113 111
+     tk::MbMotion .v_menu.read up 2123 120
+     tk::MbMotion .v_menu.read up 2131 124
+     tk::MbMotion .v_menu.read up 2132 126
+     tk::MbMotion .v_menu.read up 2134 128
+     if {$tk::Priv(inMenubutton) ne ""} {
+	tk::MbPost $tk::Priv(inMenubutton) 2134 128
+    }
+     tk::MbButtonUp .v_menu.read
+         if { [ .icon.hierCmp cget -state ] == "normal" } {
+            .icon.hierCmp configure -relief groove
+        }
+    
+     tk::ButtonEnter .icon.hierCmp
+ .icon.hierCmp configure -relief flat 
+     tk::ButtonLeave .icon.hierCmp
+     tk::MbEnter .v_menu.set
+     tk::MbMotion .v_menu.set up 1996 54
+     tk::MbMotion .v_menu.set up 1988 50
+     tk::MbMotion .v_menu.set up 1981 45
+     tk::MbMotion .v_menu.set up 1978 42
+     tk::MbMotion .v_menu.set up 1973 39
+     tk::MbMotion .v_menu.set up 1973 37
+     tk::MbMotion .v_menu.set up 1972 36
+     tk::MbMotion .v_menu.set up 1970 34
+     tk::MbMotion .v_menu.set up 1970 32
+     tk::MbMotion .v_menu.set up 1969 31
+     tk::MbMotion .v_menu.set up 1968 30
+     tk::MbMotion .v_menu.set up 1967 29
+     tk::MbMotion .v_menu.set up 1966 28
+     tk::MbMotion .v_menu.set up 1965 28
+     tk::MbMotion .v_menu.set up 1964 27
+     tk::MbLeave .v_menu.set
+ guiWinConfig .find 432 129 1921 385 
+callback Gui_destroy_dialog .find
