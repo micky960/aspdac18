@@ -28,6 +28,21 @@
 bool comp(fault_c* lhs, fault_c* rhs){
 	return lhs->getOnePattCost() > rhs->getOnePattCost();
 }
+
+int fa_usage(const char* progname)
+{
+    std::cout << "Usage: " << progname << " [options] <bench-file>"
+              << std::endl;
+    std::cout << "Options may be one of the following." << std::endl;
+    std::cout << "    -h            : this message." << std::endl;
+    std::cout << "    -i            : benchfile name." << std::endl;
+//    std::cout << "    -o <filename> : output file." << std::endl;
+//    std::cout << "    -k <keys>     : number of keys to introduces (default=10% of num_gates)." << std::endl;
+//    std::cout << "    -c <value>    : CPU time limit (s)." << std::endl;
+//    std::cout << "    -m <value>    : mem usage limit (MB)." << std::endl;
+    return 0;
+}
+
 int main(int argc, char* argv[]){
 
 	auto start = std::chrono::system_clock::now();	
@@ -36,6 +51,20 @@ int main(int argc, char* argv[]){
 	std::vector<std::string> nodeList;
 	std::ifstream bench(("/home/projects/aspdac18/files/"+name+".bench").c_str());
 	
+	//if(name=="-help"){
+	//	std::cout<<"-i: provide design name or the benchfile name."<<std::endl;
+	//}
+	//
+	int c;
+	while ((c = getopt (argc, argv, "ih")) != -1) {
+        	switch (c) {
+            		case 'h':
+                		return fa_usage(argv[0]);
+                		break;
+	    		default:
+				break;
+		}
+	}        
 	if(bench.fail()){
 		std::cerr<<"BENCH FILE OPEN FAILED"<<std::endl;
 		exit(1);
@@ -48,26 +77,28 @@ int main(int argc, char* argv[]){
 			nodeList.push_back(node);
 		}
 	}
-
+	// create a new folder in Results with the bench file name
 	cmd =  "rm -rf /home/projects/aspdac18/Results/"+name+"/";
 	system(cmd.c_str());
 	cmd =  "mkdir -p /home/projects/aspdac18/Results/"+name+"/";
 	system(cmd.c_str());
 
 	std::cout<<"CREATING FOLDERS"<<std::endl;
-	
+	// create nodeList folders in each benchfile folder
 	for(int i=0; i<nodeList.size(); i++){
 		cmd = "mkdir -p /home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/";
 		system(cmd.c_str());
 		std::ofstream flt(("/home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/fault.flt").c_str());
+		// check only for stuck-at-0 fault. For sa1 fault change it to /1.
 		flt << nodeList[i] << " /0" << std::endl;
 	}
-	
+	// Atalanta begins and iterated over  all nodes in the benchfile
 	std::cout<<"ATALANTA START"<<std::endl;
 	for(int i=0; i<nodeList.size(); i++){
-		std::string path_link = "path_link"+boost::lexical_cast<std::string>(i);
+		std::string path_link = "/home/projects/aspdac18/Results/"+name+"/path_link"+boost::lexical_cast<std::string>(i);
 		cmd = "ln -s /home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+" "+path_link;
 		system(cmd.c_str());
+		// ************ run atalanta for 10 secs, so that around 1 million test patterns are already collected, which are enough. It generates fault and patterns file along with log file. If it takes more than 10 secs to generate all the test patterns, then log file will not be generated fro that node. 
 		cmd = "timeout 10 atalanta -A -f "+path_link+"/fault.flt -t "+path_link+"/patterns.pat /home/projects/aspdac18/files/"+name+".bench > "+path_link+"/log &";
 		//std::cout << cmd << std::endl;
 		//cmd = "timeout 10 atalanta -A -f /home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/fault.flt -t /home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/patterns.pat /home/projects/aspdac18/files/"+name+".bench > /home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/log &";
@@ -88,8 +119,10 @@ int main(int argc, char* argv[]){
 		std::cout<< (double)i/(double)nodeList.size()*100<< "\% node: " << nodeList[i] << std::endl;
 		std::ifstream log(("/home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/log").c_str());
 		std::ifstream patt(("/home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/patterns.pat").c_str());
+		// log.peek() checks if a log file was created for the node i...
 		if(log.peek() != std::ifstream::traits_type::eof() /*true*/){
 			fault_c *f = new fault_c(nodeList[i], patt);
+			// if f is greater than SEC <defined in constants.h file>, then f gets added to the validList and comes out of the loop.
 			if(f->getNumPatt() <= MAX_PAT && f->getSec() >= SEC){
 				validList.push_back(f);
 				break;
@@ -102,11 +135,11 @@ int main(int argc, char* argv[]){
 		//else std::cout << "skipped: no log file" <<std::endl;
 		std::cout<< "cur max sec: " << sec_max << std::endl;
 	}
-
+	// gives the valid nodes percentage whose security is above that of SEC
 	std::cout<<"% VALID: "<<validList.size()/(double)nodeList.size()*100<<std::endl;
 
 	//exit(0);
-
+	// the following for loop identifies optimized node which has the most security. But in our case its going to be the same, since there is only one element in the validList.
 	int max = 0, index = 0;
         for(int i=0; i<validList.size(); i++){
  	       if(validList[i]->getSec() > max){
@@ -127,13 +160,14 @@ int main(int argc, char* argv[]){
                 std::ofstream verilog((path+"/verilog.v").c_str());
 
                 std::ifstream orig(("/home/projects/aspdac18/files/"+name+".v").c_str());
-
+		// make sure the names of the benchfile and verilog match. Also the module name is same as that of the file name.
                 if(orig.fail()){
                         std::cerr<<"ORIG VERILOG OPEN FAILED"<<std::endl;
                         continue;
                 }
                 std::string line;
-                while(getline(orig, line)){
+                // the following code replaces the stuck at 0 locations with 1'b0... Removes the logic eg. c = a&b. Replaces it with assign c = 1'b0.
+		while(getline(orig, line)){
                         if(line.find("assign "+validList[i]->node+" =")!=std::string::npos){
                                 verilog << "assign "<<validList[i]->node<<" = 1'b0;"<<std::endl;
                         }
