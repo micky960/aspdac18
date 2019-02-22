@@ -1,7 +1,7 @@
 cd /home/projects/aspdac/src/cpp/
 1. make clean; make -j
-
-2. setenv design des3_top_RTL
+2a. rm -rf path_link*
+2b. setenv design des3_top_RTL
 
 3. run_fa
 
