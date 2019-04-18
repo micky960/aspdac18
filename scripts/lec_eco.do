@@ -1,17 +1,29 @@
 tclmode
 set design $::env(DESIGN)
+set node $::env(NODE)
 //set lib    $env(LIB)
 //read_library -Both -Lib /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/lib/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.lib
-read_design ../../Results/${design}/final/${design}.v  -golden
+//read_design ../../Results/${design}/final/${design}.v  -golden
+read_design ../../Results/${design}/${node}/${design}.v  -golden
+
 read_design ../../files/${design}.v -revised
 set_system_mode lec
 add_compared_points -all
 compare
-analyze_eco -Effort ultra -REPLACE ../../Results/${design}/final/${design}_patch.v
+//analyze_eco -Effort ultra -REPLACE ../../Results/${design}/final/${design}_patch.v
+analyze_eco -Effort ultra -REPLACE ../../Results/${design}/${node}/${design}_patch.v
+
 set_system_mode setup
-read_design ../../Results/${design}/final/${design}_patch.v  -Append
+//read_design ../../Results/${design}/final/${design}_patch.v  -Append
+read_design ../../Results/${design}/${node}/${design}_patch.v  -Append
+
 apply_patch ${design} ${design}_eco
-write_design -ALL ../../Results/${design}/final/${design}_eco.v -rep
+//write_design -ALL ../../Results/${design}/final/${design}_eco.v -rep
+write_design -ALL ../../Results/${design}/${node}/${design}_eco.v -rep
+
+//// Verifying whether the new design is 100 % same as the original
+
+
 //write_eco_design  -NEWFILE ../synth/netlist/CORTEX_M0_eco.v -Replace
 exit //-force
 
