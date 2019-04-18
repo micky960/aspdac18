@@ -260,24 +260,32 @@ void fault_c::synthFICkt(std::string name){
 	costOnePatt = /*_getFICost(name) +*/ pList[minSecIndex]->iIndex.size()*COMP_N;
 }
 
-void fault_c::doEco(std::string name){
-
+void fault_c::doEco(std::string name, std::string node_name){
+	std::cout<<"############ ENTERING ECO CHECING ################" << std::endl;
 	setenv("DESIGN", name.c_str(), 1);
-	
+	setenv("NODE", node_name.c_str(),2);
+
 	std::string cmd = "lec_64 -nogui -ecogxl -dofile ../scripts/lec_eco.do";
 	system(cmd.c_str());
+	std::cout <<"VERIFYING THE FINAL VERILOG FILE WITH ORIGINAL VERILOG FILE"<<std::endl;
+	cmd = "lec_64 -nogui -ecogxl -dofile ../scripts/lec_eco_verify.do";
+        system(cmd.c_str());
 
 }
 
-void fault_c::checkKeyConstraint(std::string name){
-
+void fault_c::checkKeyConstraint(std::string name, std::string node_name){
+	std::cout <<"############# ENTERING CHECK KEY CONSTRAINT ########### "<<std::endl;
 	int sec=0;
 	std::vector<std::string> kcCheckList;
 	setenv("DESIGN", name.c_str(), 1);
-	std::string cmd = "dc_shell-t -no_gui -64bit -output_log_file /home/projects/aspdac18/Results/"+name+"/final/stitch_dc_log -x \"source -echo -verbose ../scripts/stitch_dc.tcl \" ";
+	setenv("NODE", node_name.c_str(),2);
+	
+	std::string cmd = "dc_shell-t -no_gui -64bit -output_log_file /home/projects/aspdac18/Results/"+name+"/"+node_name+"/stitch_dc_log -x \"source -echo -verbose ../scripts/stitch_dc.tcl \" ";
 	system(cmd.c_str());
 
-	std::ifstream kc(("../../Results/"+name+"/final/key_constraints.do").c_str());
+//	std::ifstream kc(("../../Results/"+name+"/final/key_constraints.do").c_str());
+        std::ifstream kc(("../../Results/"+name+"/"+node_name+"/key_constraints.do").c_str());
+
 	if(kc.fail()){
 		std::cout << "key constraint file open failed!" << std::endl;
 		exit(1);
@@ -289,9 +297,11 @@ void fault_c::checkKeyConstraint(std::string name){
 	}	
 	
 	for(int i=0; i<kcList.size(); i++){
-		cmd = "rm ../../Results/"+name+"/final/new_key_contraint.do";
+		//cmd = "rm ../../Results/"+name+"/final/new_key_contraint.do";
+		cmd = "rm ../../Results/"+name+"/"+node_name+"/new_key_contraint.do";
 		system(cmd.c_str());
-		std::ofstream nkc(("../../Results/"+name+"/final/new_key_constraint.do").c_str());
+		//std::ofstream nkc(("../../Results/"+name+"/final/new_key_constraint.do").c_str());
+		std::ofstream nkc(("../../Results/"+name+"/"+node_name+"/new_key_constraint.do").c_str());
 		for(int j=0; j<kcList.size(); j++){
 			if(i!=j)
 				nkc << kcList[j] << std::endl;	
@@ -299,15 +309,17 @@ void fault_c::checkKeyConstraint(std::string name){
 		cmd = "lec_64 -nogui -ecogxl -dofile ../scripts/lec_check_final_combo.do";
 		system(cmd.c_str());
 
-		if(!_checkEqKey(name)){
+		if(!_checkEqKey(name, node_name)){
 			kcCheckList.push_back(kcList[i]);
 			sec++;
-			cmd = "rm ../../Results/"+name+"/final/lec_key_constraint_log";
+			std::cout<<"SEC: 	"<<sec<<std::endl;
+			//sec++;
+			cmd = "rm ../../Results/"+name+"/"+node_name+"/lec_key_constraint_log";
 			system(cmd.c_str());
 		}
 	}
 	numValidKey = sec;
-	std::ofstream finalKC(("../../Results/"+name+"/final/key_constraints_final.do").c_str());
+	std::ofstream finalKC(("../../Results/"+name+"/"+node_name+"/key_constraints_final.do").c_str());
 	if(finalKC.fail()){
 		std::cout << "final key constraint file open failed!" << std::endl;
 		exit(1);
@@ -375,9 +387,9 @@ void fault_c::_compOpFailList(){
 	}
 }
 
-bool fault_c::_checkEqKey(std::string name){
+bool fault_c::_checkEqKey(std::string name, std::string node_name){
 
-	std::ifstream kcLog(("../../Results/"+name+"/final/lec_key_constraint_log").c_str());	
+	std::ifstream kcLog(("../../Results/"+name+"/"+node_name+"/lec_key_constraint_log").c_str());	
 	std::string line;
 
 	while(getline(kcLog, line)){

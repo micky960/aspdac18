@@ -43,15 +43,15 @@ class fault_c{
         double getOnePattCost(){return costOnePatt;}//cost to correct the one pattern without FI ckt
         void recoverCkt(std::string path);
         void recoverOnePattCkt(std::string path);
-        void doEco(std::string name);
-        void checkKeyConstraint(std::string name);
+        void doEco(std::string name, std::string node_name);
+        void checkKeyConstraint(std::string name,std::string node_name);
 
 	private:
 		void _compSec();
 		void _getLeastSec();
 		void _compOpFailList();
 		double _getFICost(std::string name);
-		bool _checkEqKey(std::string name);
+		bool _checkEqKey(std::string name, std::string node_name);
 
 };
 

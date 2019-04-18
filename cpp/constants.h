@@ -1,4 +1,4 @@
-#define SEC 4
+#define SEC 128 
 #define NVM 1.46
 #define FF  9
 #define NVM_FF 10.46
