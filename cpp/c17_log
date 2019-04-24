@@ -8,7 +8,8 @@ max sec: 4 node: N2
 % COMPLETE 0 N2:0, SEC 4
 ABC command line: "read_verilog /home/projects/aspdac18/Results/c17/N2/verilog.v; sweep; strash; refactor; logic; sweep; write_verilog /home/projects/aspdac18/Results/c17/N2/abc_verilog.v".
 
-OPT NODE: N2 SEC:4 COST: 1.81964e+09
+OPT NODE: N2 SEC:4 COST: 8.28597e+08
+ELAPSED TIME:	10
 O23
   assign O23 = ~n9 & ~n10;
   assign O23_temp = ~n9 & ~n10;
@@ -24,7 +25,7 @@ This program is proprietary and confidential information belonging to
 Cadence Design Systems, Inc., and may be used and disclosed only as authorized
 in a license agreement controlling such use and disclosure.
 
-// Warning: This version is 283 days old. You can download the latest version from http://downloads.cadence.com.
+// Warning: This version is 511 days old. You can download the latest version from http://downloads.cadence.com.
 
 // Command: tclmode
 // Command: set design $::env(DESIGN)
@@ -270,35 +271,35 @@ Information: The target library(s) contains cell(s), other than black boxes, tha
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:09      24.5      0.00       0.0       0.0                              0.0006
-    0:00:09      24.5      0.00       0.0       0.0                              0.0006
-    0:00:09      24.5      0.00       0.0       0.0                              0.0006
+    0:00:08      24.5      0.00       0.0       0.0                              0.0006
+    0:00:08      24.5      0.00       0.0       0.0                              0.0006
+    0:00:08      24.5      0.00       0.0       0.0                              0.0006
     0:00:09      24.5      0.00       0.0       0.0                              0.0006
 
   Beginning WLM Backend Optimization
   --------------------------------------
     0:00:09      24.5      0.00       0.0       0.0                              0.0006
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
 
 
   Beginning Leakage Power Optimization  (max_leakage_power 0)
@@ -308,7 +309,7 @@ Information: The target library(s) contains cell(s), other than black boxes, tha
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
   Global Optimization (Phase 29)
   Global Optimization (Phase 30)
   Global Optimization (Phase 31)
@@ -319,10 +320,10 @@ Information: The target library(s) contains cell(s), other than black boxes, tha
   Global Optimization (Phase 36)
   Global Optimization (Phase 37)
   Global Optimization (Phase 38)
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
     0:00:10      24.5      0.00       0.0       0.0                              0.0004
     0:00:10      24.5      0.00       0.0       0.0                              0.0004
     0:00:10      24.5      0.00       0.0       0.0                              0.0004
@@ -347,14 +348,14 @@ Information: The target library(s) contains cell(s), other than black boxes, tha
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
     0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:11      24.5      0.00       0.0       0.0                              0.0004
-    0:00:11      24.5      0.00       0.0       0.0                              0.0004
-    0:00:11      24.5      0.00       0.0       0.0                              0.0004
-    0:00:11      24.5      0.00       0.0       0.0                              0.0004
-    0:00:11      24.5      0.00       0.0       0.0                              0.0004
-    0:00:11      24.5      0.00       0.0       0.0                              0.0004
-    0:00:11      24.5      0.00       0.0       0.0                              0.0004
-    0:00:11      24.5      0.00       0.0       0.0                              0.0004
+    0:00:10      24.5      0.00       0.0       0.0                              0.0004
+    0:00:10      24.5      0.00       0.0       0.0                              0.0004
+    0:00:10      24.5      0.00       0.0       0.0                              0.0004
+    0:00:10      24.5      0.00       0.0       0.0                              0.0004
+    0:00:10      24.5      0.00       0.0       0.0                              0.0004
+    0:00:10      24.5      0.00       0.0       0.0                              0.0004
+    0:00:10      24.5      0.00       0.0       0.0                              0.0004
+    0:00:10      24.5      0.00       0.0       0.0                              0.0004
 Loading db file '/home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db'
 
 
@@ -388,7 +389,7 @@ This program is proprietary and confidential information belonging to
 Cadence Design Systems, Inc., and may be used and disclosed only as authorized
 in a license agreement controlling such use and disclosure.
 
-// Warning: This version is 283 days old. You can download the latest version from http://downloads.cadence.com.
+// Warning: This version is 511 days old. You can download the latest version from http://downloads.cadence.com.
 
 // Command: tclmode
 // Command: set design $::env(DESIGN)
@@ -462,7 +463,7 @@ This program is proprietary and confidential information belonging to
 Cadence Design Systems, Inc., and may be used and disclosed only as authorized
 in a license agreement controlling such use and disclosure.
 
-// Warning: This version is 283 days old. You can download the latest version from http://downloads.cadence.com.
+// Warning: This version is 511 days old. You can download the latest version from http://downloads.cadence.com.
 
 // Command: tclmode
 // Command: set design $::env(DESIGN)
@@ -536,7 +537,7 @@ This program is proprietary and confidential information belonging to
 Cadence Design Systems, Inc., and may be used and disclosed only as authorized
 in a license agreement controlling such use and disclosure.
 
-// Warning: This version is 283 days old. You can download the latest version from http://downloads.cadence.com.
+// Warning: This version is 511 days old. You can download the latest version from http://downloads.cadence.com.
 
 // Command: tclmode
 // Command: set design $::env(DESIGN)
@@ -612,7 +613,7 @@ This program is proprietary and confidential information belonging to
 Cadence Design Systems, Inc., and may be used and disclosed only as authorized
 in a license agreement controlling such use and disclosure.
 
-// Warning: This version is 283 days old. You can download the latest version from http://downloads.cadence.com.
+// Warning: This version is 511 days old. You can download the latest version from http://downloads.cadence.com.
 
 // Command: tclmode
 // Command: set design $::env(DESIGN)
@@ -681,3 +682,4 @@ Not-compared         1         1
 // Command: exit -force
 key constraint check
 sec attained: 2
+ELAPSED TIME 2:	39

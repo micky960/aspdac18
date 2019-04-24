@@ -31,27 +31,30 @@ class fault_c{
         std::vector<faultRes*> fResList;
         std::vector<std::string> ipList, opList;
         std::string node;
-        int sec, minSecIndex, costOnePatt, numValidKey;
+        int sec, minSecIndex, maxSecIndex, costOnePatt, numValidKey;
 
 	fault_c(std::string n, std::ifstream& flt);
 	int getSec(){return sec;}
 	int getNumValidKey(){return numValidKey;}
 	int getLeastSec(){return pList[minSecIndex]->getSec();}
-        int getNumPatt(){return pList.size();}
+        int getMaxSec(){return pList[maxSecIndex]->getSec();}
+
+	int getNumPatt(){return pList.size();}
         bool checkEqv(std::string name);
         void synthFICkt(std::string name);
         double getOnePattCost(){return costOnePatt;}//cost to correct the one pattern without FI ckt
         void recoverCkt(std::string path);
         void recoverOnePattCkt(std::string path);
-        void doEco(std::string name, std::string node_name);
-        void checkKeyConstraint(std::string name,std::string node_name);
+        void doEco(std::string name);
+        void checkKeyConstraint(std::string name);
 
 	private:
 		void _compSec();
 		void _getLeastSec();
+		void _getMaxSec();
 		void _compOpFailList();
 		double _getFICost(std::string name);
-		bool _checkEqKey(std::string name, std::string node_name);
+		bool _checkEqKey(std::string name);
 
 };
 

@@ -48,6 +48,7 @@ int main(int argc, char* argv[]){
 	auto start = std::chrono::system_clock::now();	
 	
 	std::string name = argv[1], line, node, cmd;
+	bool flag = 0;
 	//int c;
 	//while ((c = getopt (argc, argv, "ihk")) != -1) {
         //	switch (c) {
@@ -64,7 +65,7 @@ int main(int argc, char* argv[]){
 	//}        
 	// This file inputs bench file.	
 	std::vector<std::string> nodeList;
-	std::ifstream bench(("/home/projects/aspdac18/files/"+name+".bench").c_str());
+	std::ifstream bench(("/home/projects/aspdac18/files/benchfiles/"+name+".bench").c_str());
 	
 	//if(name=="-help"){
 	//	std::cout<<"-i: provide design name or the benchfile name."<<std::endl;
@@ -119,7 +120,7 @@ int main(int argc, char* argv[]){
 		cmd = "ln -s /home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+" "+path_link;
 		system(cmd.c_str());
 		// ************ run atalanta for 10 secs, so that around 1 million test patterns are already collected, which are enough. It generates fault and patterns file along with log file. If it takes more than 10 secs to generate all the test patterns, then log file will not be generated fro that node. 
-		cmd = "timeout 10 atalanta -A -f "+path_link+"/fault.flt -t "+path_link+"/patterns.pat /home/projects/aspdac18/files/"+name+".bench > "+path_link+"/log &";
+		cmd = "timeout 10 atalanta -A -f "+path_link+"/fault.flt -t "+path_link+"/patterns.pat /home/projects/aspdac18/files/benchfiles/"+name+".bench > "+path_link+"/log &";
 		//std::cout << cmd << std::endl;
 		//cmd = "timeout 10 atalanta -A -f /home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/fault.flt -t /home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/patterns.pat /home/projects/aspdac18/files/"+name+".bench > /home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/log &";
 		system(cmd.c_str());
@@ -200,20 +201,25 @@ int main(int argc, char* argv[]){
 //		std::cout<<"ValidList Node:     "<<validList[i]->node<<std::endl;
 //	}
 //	exit(0);
+	int final_node_ind = 0;
 	for(int i=0; i<validList.size(); i++){
 		std::cout<<"\% COMPLETE "<< (double)i/(double)validList.size()*100<<" "<<validList[i]->node << ":" << i << ", SEC " << validList[i]->getSec() << std::endl;
 		std::cout<<"ValidList Node:	"<<validList[i]->node<<std::endl;
                 
                 std::string path = "/home/projects/aspdac18/Results/"+name+"/"+validList[i]->node;
-
+		std::string bench_path = "/home/projects/aspdac18/files/benchfiles/";
                 std::ofstream verilog((path+"/verilog.v").c_str());
+		//std::string cmd = "abc -c \"read_bench "+bench_path+name+".bench; write_verilog "+bench_path+name+".v\"";
 
-                std::ifstream orig(("/home/projects/aspdac18/files/"+name+".v").c_str());
+//		std::string cmd = "abc -c \"read_bench /home/projects/aspdac18/files/benchfiles/"+name+".bench; write_verilog /home/projects/aspdac18/files/benchfiles/"+name+".v\"";
+        	system(cmd.c_str());        
+		std::ifstream orig(("/home/projects/aspdac18/files/benchfiles/"+name+".v").c_str());
 		// make sure the names of the benchfile and verilog match. Also the module name is same as that of the file name.
                 if(orig.fail()){
                         std::cerr<<"ORIG VERILOG OPEN FAILED"<<std::endl;
                         continue;
                 }
+	//	exit(0);
                 std::string line;
                 // the following code replaces the stuck at 0 locations with 1'b0... Removes the logic eg. c = a&b. Replaces it with assign c = 1'b0.
 		while(getline(orig, line)){
@@ -243,23 +249,40 @@ int main(int argc, char* argv[]){
 	        
 //	        cmd = "cat /home/projects/aspdac18//Results/"+name+"/final/"+name+"_init.v | awk '{gsub(/\\\\files\\//,\"\"); print}' > /home/projects/aspdac18//Results/"+name+"/final/"+name+".v";
 	        system(cmd.c_str());
-		std::string node_name = validList[i]->node;	
+//		std::string node_name = validList[i]->node;	
 		bool check_eq = validList[i]->checkEqv(name);
 		std::cout << "check_equivalent: " << check_eq << std::endl;
 	        if(!validList[i]->checkEqv(name)){
-			validList[i]->doEco(name,node_name);
-	        	validList[i]->checkKeyConstraint(name,node_name);
+			validList[i]->doEco(name);
+	        	validList[i]->checkKeyConstraint(name);
 	 	        std::cout << "key constraint check" << std::endl;
 	       		std::cout << "sec attained: " << validList[i]->getNumValidKey() << std::endl;
 		
 //			std::cout<<"The NODE which attained 
-			if (validList[i]->getNumValidKey() > 127){
+			if (validList[i]->getNumValidKey() >= TARGET_SEC){
 				std::cout<<"The NODE which attained security is: 	"<<validList[i]->node<<std::endl;
+				//final_node_ind = i;
+				cmd = "mkdir ../../Results/"+name+"/final";
+				system(cmd.c_str());
+				cmd = "cp ../../Results/"+name+"/"+validList[i]->node+"/"+name+"_final_combo.v ../../Results/"+name+"/final/"+name+"_final_combo.v";
+			        system(cmd.c_str());
+				cmd = "cp ../../Results/"+name+"/"+validList[i]->node+"/"+name+"_final_combo.sdc ../../Results/"+name+"/final/"+name+"_final_combo.sdc";
+                                system(cmd.c_str());
+				cmd = "cp ../../Results/"+name+"/"+validList[i]->node+"/key.tcl ../../Results/"+name+"/final/key.tcl";
+                                system(cmd.c_str());
+				flag = 1;
 				break;
 			}
 		}else {
 			std::cout<<"================ THE FILES ARE EQUIVALENT =================="<<std::endl;
 		}
+	}
+	if (flag) {
+		cmd = "dc_shell-t -no_gui -64bit -output_log_file /home/projects/aspdac18/Results/"+name+"/final/apd_analysis.log -x \"source -echo -verbose ../scripts/generate_apd.tcl \" ";
+        	system(cmd.c_str());
+	}
+	else {
+		std::cout<<"============ 	NO NODE SATISFYING TARGET SECURITY FOUND 	==============="<<std::endl;
 	}
 
 //	exit(0)	;

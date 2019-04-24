@@ -1,14 +1,17 @@
 cd /home/projects/aspdac/src/cpp/
 1. make clean; make -j
 2a. rm -rf path_link*
-2b. setenv design des3_top_RTL
+2b. setenv design c17_new
 
-3. run_fa
+3. ./run_fa
 
 4. Output is in ../../Results/$design/final/
 
+5a. setenv DESIGN c17_new
+5b. run dc_shell-t -x "source -echo -verbose ./generate_apd.tcl" to generate the area, power, and delay of the design.
+
 
 vi /home/projects/aspdac18/src/cpp/constants.h 
-SEC     - for key lenght
+SEC     - for key length
 MAX_PAT - total number of failing pattern
 

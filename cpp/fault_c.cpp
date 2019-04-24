@@ -47,8 +47,9 @@ bool fault_c::checkEqv(std::string name){
 	setenv("NODE", node.c_str(), 1);
 
 	std::string cmd = "lec_64 -nogui -dofile ../scripts/lec_vts.do";
-	//system(cmd.c_str());
+	system(cmd.c_str());
 
+	
 	std::ifstream lec(("/home/projects/aspdac18/Results/"+name+"/"+node+"/lec_report").c_str());
 	std::string line;
 	while(getline(lec, line)){
@@ -170,7 +171,7 @@ void fault_c::recoverOnePattCkt(std::string path){
                 exit(1);
         }
 
-	pattern *p = pList[minSecIndex];
+	pattern *p = pList[maxSecIndex];
 
 	std::string line;
         while(getline(vFile, line)){
@@ -199,7 +200,7 @@ void fault_c::recoverOnePattCkt(std::string path){
 
 	std::vector<std::string> compList, keyList, nvmList;	
 
-	std::string comp = "wire ["+boost::lexical_cast<std::string>(p->iIndex.size()-1)+":0] compPatt_"+boost::lexical_cast<std::string>(minSecIndex)+ "= {";
+	std::string comp = "wire ["+boost::lexical_cast<std::string>(p->iIndex.size()-1)+":0] compPatt_"+boost::lexical_cast<std::string>(maxSecIndex)+ "= {";
 	for(int i=0; i<p->iIndex.size(); i++){
 		comp += ipList[p->iIndex[i]]+", ";
 	}
@@ -208,23 +209,28 @@ void fault_c::recoverOnePattCkt(std::string path){
 	compList.push_back(comp);
 	lockFile << comp << std::endl;
 
-	std::string key = "wire ["+boost::lexical_cast<std::string>(p->iIndex.size()-1)+":0] sfllKey_"+boost::lexical_cast<std::string>(minSecIndex)+";";
+	std::string key = "wire ["+boost::lexical_cast<std::string>(p->iIndex.size()-1)+":0] sfllKey_"+boost::lexical_cast<std::string>(maxSecIndex)+";";
 	keyList.push_back(key);
 	lockFile << key << std::endl;
 
-	std::string nvm = "nvm_"+boost::lexical_cast<std::string>(minSecIndex)+" #(.N("+boost::lexical_cast<std::string>(p->iIndex.size())+")) nvm_inst"+boost::lexical_cast<std::string>(minSecIndex)+"(";
-	nvm += ".rdata(sfllKey_"+boost::lexical_cast<std::string>(minSecIndex)+")";
+	std::string nvm = "nvm_"+boost::lexical_cast<std::string>(maxSecIndex)+" #(.N("+boost::lexical_cast<std::string>(p->iIndex.size())+")) nvm_inst"+boost::lexical_cast<std::string>(maxSecIndex)+"(";
+	nvm += ".rdata(sfllKey_"+boost::lexical_cast<std::string>(maxSecIndex)+")";
 	nvm += ");\n\n";
 	lockFile << nvm <<std::endl;
 
-	std::string nvm_def = "module nvm_"+boost::lexical_cast<std::string>(minSecIndex)+" #(parameter N = 1) (\n";
+	std::string nvm_def = "module nvm_"+boost::lexical_cast<std::string>(maxSecIndex)+" #(parameter N = 1) (\n";
 	nvm_def += "rdata\n";
 	nvm_def += ");\n\n";
 	nvm_def += "output [N-1:0] rdata;\n";
 	nvm_def += "assign rdata = "+boost::lexical_cast<std::string>(p->iIndex.size())+"'b";
+	std::ofstream key_file((path+"/"+node+"/key.tcl").c_str());
+	key_file << "set KEY {";
 	for(int i=0; i<p->iIndex.size(); i++){
 		nvm_def += p->ipPatt[p->iIndex[i]];
+		key_file << p->ipPatt[p->iIndex[i]]<<" ";
 	}
+	key_file << "}"<<std::endl;
+	
 	nvm_def += ";\nendmodule\n";
 
 	for(int i=0; i<p->oIndex.size(); i++){
@@ -233,7 +239,7 @@ void fault_c::recoverOnePattCkt(std::string path){
 
 		std::string always = "always @* begin\n";
 		always += "if(";
-		always += "sfllKey_"+boost::lexical_cast<std::string>(minSecIndex)+" == "+"compPatt_"+boost::lexical_cast<std::string>(minSecIndex)+")\n";
+		always += "sfllKey_"+boost::lexical_cast<std::string>(maxSecIndex)+" == "+"compPatt_"+boost::lexical_cast<std::string>(maxSecIndex)+")\n";
 		always += "\t"+opList[p->oIndex[i]]+" = 1'b"+p->opPatt[p->oIndex[i]]+";\n";
 		always += "else \t"+opList[p->oIndex[i]]+" = "+opList[p->oIndex[i]]+"_temp;\n";
 		always += "end\n";
@@ -257,13 +263,13 @@ void fault_c::synthFICkt(std::string name){
 
 	cmd = "dc_shell-t -no_gui -64bit -output_log_file /home/projects/aspdac18/Results/"+name+"/"+node+"/dc_log -x \"source -echo -verbose ../scripts/dc_vts_abc.tcl \" ";
 	system(cmd.c_str());
-	costOnePatt = /*_getFICost(name) +*/ pList[minSecIndex]->iIndex.size()*COMP_N;
+	costOnePatt = /*_getFICost(name) +*/ pList[maxSecIndex]->iIndex.size()*COMP_N;
 }
 
-void fault_c::doEco(std::string name, std::string node_name){
+void fault_c::doEco(std::string name){
 	std::cout<<"############ ENTERING ECO CHECING ################" << std::endl;
 	setenv("DESIGN", name.c_str(), 1);
-	setenv("NODE", node_name.c_str(),2);
+	setenv("NODE", node.c_str(),2);
 
 	std::string cmd = "lec_64 -nogui -ecogxl -dofile ../scripts/lec_eco.do";
 	system(cmd.c_str());
@@ -273,18 +279,18 @@ void fault_c::doEco(std::string name, std::string node_name){
 
 }
 
-void fault_c::checkKeyConstraint(std::string name, std::string node_name){
+void fault_c::checkKeyConstraint(std::string name){
 	std::cout <<"############# ENTERING CHECK KEY CONSTRAINT ########### "<<std::endl;
 	int sec=0;
 	std::vector<std::string> kcCheckList;
 	setenv("DESIGN", name.c_str(), 1);
-	setenv("NODE", node_name.c_str(),2);
+	//setenv("NODE", node_name.c_str(),2);
 	
-	std::string cmd = "dc_shell-t -no_gui -64bit -output_log_file /home/projects/aspdac18/Results/"+name+"/"+node_name+"/stitch_dc_log -x \"source -echo -verbose ../scripts/stitch_dc.tcl \" ";
+	std::string cmd = "dc_shell-t -no_gui -64bit -output_log_file /home/projects/aspdac18/Results/"+name+"/"+node+"/stitch_dc_log -x \"source -echo -verbose ../scripts/stitch_dc.tcl \" ";
 	system(cmd.c_str());
 
 //	std::ifstream kc(("../../Results/"+name+"/final/key_constraints.do").c_str());
-        std::ifstream kc(("../../Results/"+name+"/"+node_name+"/key_constraints.do").c_str());
+        std::ifstream kc(("../../Results/"+name+"/"+node+"/key_constraints.do").c_str());
 
 	if(kc.fail()){
 		std::cout << "key constraint file open failed!" << std::endl;
@@ -298,10 +304,10 @@ void fault_c::checkKeyConstraint(std::string name, std::string node_name){
 	
 	for(int i=0; i<kcList.size(); i++){
 		//cmd = "rm ../../Results/"+name+"/final/new_key_contraint.do";
-		cmd = "rm ../../Results/"+name+"/"+node_name+"/new_key_contraint.do";
+		cmd = "rm ../../Results/"+name+"/"+node+"/new_key_contraint.do";
 		system(cmd.c_str());
 		//std::ofstream nkc(("../../Results/"+name+"/final/new_key_constraint.do").c_str());
-		std::ofstream nkc(("../../Results/"+name+"/"+node_name+"/new_key_constraint.do").c_str());
+		std::ofstream nkc(("../../Results/"+name+"/"+node+"/new_key_constraint.do").c_str());
 		for(int j=0; j<kcList.size(); j++){
 			if(i!=j)
 				nkc << kcList[j] << std::endl;	
@@ -309,17 +315,21 @@ void fault_c::checkKeyConstraint(std::string name, std::string node_name){
 		cmd = "lec_64 -nogui -ecogxl -dofile ../scripts/lec_check_final_combo.do";
 		system(cmd.c_str());
 
-		if(!_checkEqKey(name, node_name)){
+		if(!_checkEqKey(name)){
 			kcCheckList.push_back(kcList[i]);
 			sec++;
+			if (sec > TARGET_SEC) {
+				break;
+			}
+			//sec++;
 			std::cout<<"SEC: 	"<<sec<<std::endl;
 			//sec++;
-			cmd = "rm ../../Results/"+name+"/"+node_name+"/lec_key_constraint_log";
+			cmd = "rm ../../Results/"+name+"/"+node+"/lec_key_constraint_log";
 			system(cmd.c_str());
 		}
 	}
 	numValidKey = sec;
-	std::ofstream finalKC(("../../Results/"+name+"/"+node_name+"/key_constraints_final.do").c_str());
+	std::ofstream finalKC(("../../Results/"+name+"/"+node+"/key_constraints_final.do").c_str());
 	if(finalKC.fail()){
 		std::cout << "final key constraint file open failed!" << std::endl;
 		exit(1);
@@ -360,14 +370,23 @@ void fault_c::_compSec(){
 void fault_c::_getLeastSec(){
 	
 	int /*SEC = 128,*/ min = 9999;
-
 	for(int i=0; i< pList.size(); i++){
-		if(pList[i]->getSec() >= SEC && pList[i]->getSec() < min){
+		if(pList[i]->getSec() >= TARGET_SEC && pList[i]->getSec() < min){
 			min = pList[i]->getSec();
 			minSecIndex = i;
 		}
 	}
 }
+void fault_c::_getMaxSec(){
+        int max = -1;
+	for(int i=0; i< pList.size(); i++){
+                if(pList[i]->getSec() >= TARGET_SEC && pList[i]->getSec() > max){
+                        max = pList[i]->getSec();
+                        maxSecIndex = i;
+                }
+        }
+}
+
 void fault_c::_compOpFailList(){
 
 	for(int i=0; i < opList.size(); i++){
@@ -387,9 +406,9 @@ void fault_c::_compOpFailList(){
 	}
 }
 
-bool fault_c::_checkEqKey(std::string name, std::string node_name){
+bool fault_c::_checkEqKey(std::string name){
 
-	std::ifstream kcLog(("../../Results/"+name+"/"+node_name+"/lec_key_constraint_log").c_str());	
+	std::ifstream kcLog(("../../Results/"+name+"/"+node+"/lec_key_constraint_log").c_str());	
 	std::string line;
 
 	while(getline(kcLog, line)){

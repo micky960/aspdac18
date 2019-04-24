@@ -3,12 +3,65 @@ ATALANTA START
 ATALANTA END
 COMPUTING VALIDLIST
 0% node: N2
-% VALID: 14.2857
-max sec: 4 node: N2
-% COMPLETE 0 N2:0, SEC 4
-ABC command line: "read_verilog /home/projects/aspdac18/Results/c17_new/N2/verilog.v; sweep; strash; refactor; logic; sweep; write_verilog /home/projects/aspdac18/Results/c17_new/N2/abc_verilog.v".
+ValidList Node:     N2
+cur max sec: 4
+14.2857% node: N4
+ValidList Node:     N4
+cur max sec: 4
+28.5714% node: N3
+ValidList Node:     N3
+cur max sec: 4
+42.8571% node: N1
+ValidList Node:     N1
+cur max sec: 4
+57.1429% node: N5
+ValidList Node:     N5
+cur max sec: 4
+71.4286% node: O22
+ValidList Node:     O22
+cur max sec: 4
+85.7143% node: O23
+ValidList Node:     O23
+cur max sec: 4
+ValidList Node:     0x1f70510
+ValidList Node:     0x1f74da0
+ValidList Node:     0x1f756b0
+ValidList Node:     0x1f75bf0
+ValidList Node:     0x1f75e30
+ValidList Node:     0x1f76280
+ValidList Node:     0x1f76af0
+% COMPLETE 14.2857 N4:1, SEC 4
+ValidList Node:	N4
+ABC command line: "read_verilog /home/projects/aspdac18/Results/c17_new/N4/verilog.v; sweep; strash; refactor; logic; sweep; write_verilog /home/projects/aspdac18/Results/c17_new/N4/abc_verilog.v".
 
-OPT NODE: N2 SEC:4 COST: 64
+i:	1
+% COMPLETE 28.5714 N3:2, SEC 4
+ValidList Node:	N3
+ABC command line: "read_verilog /home/projects/aspdac18/Results/c17_new/N3/verilog.v; sweep; strash; refactor; logic; sweep; write_verilog /home/projects/aspdac18/Results/c17_new/N3/abc_verilog.v".
+
+i:	2
+% COMPLETE 42.8571 N1:3, SEC 4
+ValidList Node:	N1
+ABC command line: "read_verilog /home/projects/aspdac18/Results/c17_new/N1/verilog.v; sweep; strash; refactor; logic; sweep; write_verilog /home/projects/aspdac18/Results/c17_new/N1/abc_verilog.v".
+
+i:	3
+% COMPLETE 57.1429 N5:4, SEC 4
+ValidList Node:	N5
+ABC command line: "read_verilog /home/projects/aspdac18/Results/c17_new/N5/verilog.v; sweep; strash; refactor; logic; sweep; write_verilog /home/projects/aspdac18/Results/c17_new/N5/abc_verilog.v".
+
+i:	4
+% COMPLETE 71.4286 O22:5, SEC 4
+ValidList Node:	O22
+ABC command line: "read_verilog /home/projects/aspdac18/Results/c17_new/O22/verilog.v; sweep; strash; refactor; logic; sweep; write_verilog /home/projects/aspdac18/Results/c17_new/O22/abc_verilog.v".
+
+i:	5
+% COMPLETE 85.7143 O23:6, SEC 4
+ValidList Node:	O23
+ABC command line: "read_verilog /home/projects/aspdac18/Results/c17_new/O23/verilog.v; sweep; strash; refactor; logic; sweep; write_verilog /home/projects/aspdac18/Results/c17_new/O23/abc_verilog.v".
+
+i:	6
+outside for loop
+OPT NODE: N3 SEC:4 COST: 0
 ELAPSED TIME:	10
 O23
   assign O23 = ~n9 & ~n10;
@@ -25,7 +78,7 @@ This program is proprietary and confidential information belonging to
 Cadence Design Systems, Inc., and may be used and disclosed only as authorized
 in a license agreement controlling such use and disclosure.
 
-// Warning: This version is 508 days old. You can download the latest version from http://downloads.cadence.com.
+// Warning: This version is 540 days old. You can download the latest version from http://downloads.cadence.com.
 
 // Command: tclmode
 // Command: set design $::env(DESIGN)
@@ -323,31 +376,31 @@ Information: The target library(s) contains cell(s), other than black boxes, tha
     0:00:09      24.5      0.00       0.0       0.0                              0.0004
     0:00:09      24.5      0.00       0.0       0.0                              0.0004
     0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
+    0:00:09      24.5      0.00       0.0       0.0                              0.0004
     0:00:10      24.5      0.00       0.0       0.0                              0.0004
     0:00:10      24.5      0.00       0.0       0.0                              0.0004
     0:00:10      24.5      0.00       0.0       0.0                              0.0004
@@ -371,12 +424,15 @@ write -output  ../../Results/$design/final/${design}_final_combo.v -hierarchy -f
 Writing verilog file '/home/projects/aspdac18/Results/c17_new/final/c17_new_final_combo.v'.
 Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
 1
+write_sdc "../../Results/$design/final/${design}_final_combo.sdc"
+1
 foreach_in_collection abc [get_ports sfllKey*] { 
   set abc [get_attribute $abc full_name]
   set pqr [split $abc "_"]
   set key_val [lindex $pqr 3]
    echo "add pin constraint $key_val $abc -Revised"
 } > ../../Results/$design/final/key_constraints.do
+#write_file -hierarchy -format verilog -output "$run_dir/netlist/$design.v"
 exit
 
 Thank you...
@@ -389,7 +445,7 @@ This program is proprietary and confidential information belonging to
 Cadence Design Systems, Inc., and may be used and disclosed only as authorized
 in a license agreement controlling such use and disclosure.
 
-// Warning: This version is 508 days old. You can download the latest version from http://downloads.cadence.com.
+// Warning: This version is 540 days old. You can download the latest version from http://downloads.cadence.com.
 
 // Command: tclmode
 // Command: set design $::env(DESIGN)
@@ -463,7 +519,7 @@ This program is proprietary and confidential information belonging to
 Cadence Design Systems, Inc., and may be used and disclosed only as authorized
 in a license agreement controlling such use and disclosure.
 
-// Warning: This version is 508 days old. You can download the latest version from http://downloads.cadence.com.
+// Warning: This version is 540 days old. You can download the latest version from http://downloads.cadence.com.
 
 // Command: tclmode
 // Command: set design $::env(DESIGN)
@@ -537,7 +593,7 @@ This program is proprietary and confidential information belonging to
 Cadence Design Systems, Inc., and may be used and disclosed only as authorized
 in a license agreement controlling such use and disclosure.
 
-// Warning: This version is 508 days old. You can download the latest version from http://downloads.cadence.com.
+// Warning: This version is 540 days old. You can download the latest version from http://downloads.cadence.com.
 
 // Command: tclmode
 // Command: set design $::env(DESIGN)
@@ -613,7 +669,7 @@ This program is proprietary and confidential information belonging to
 Cadence Design Systems, Inc., and may be used and disclosed only as authorized
 in a license agreement controlling such use and disclosure.
 
-// Warning: This version is 508 days old. You can download the latest version from http://downloads.cadence.com.
+// Warning: This version is 540 days old. You can download the latest version from http://downloads.cadence.com.
 
 // Command: tclmode
 // Command: set design $::env(DESIGN)
@@ -682,4 +738,4 @@ Not-compared         1         1
 // Command: exit -force
 key constraint check
 sec attained: 2
-ELAPSED TIME 2:	38
+ELAPSED TIME 2:	39

@@ -58,15 +58,15 @@ foreach_in_collection abc [get_ports sfllKey*] {
 
 ########### BEGIN AREA, POWER, AND DELAY CALCULATION ##############
 #read_verilog -netlist ../../Results/$design/final/${design}_final_combo.v
-read_verilog -netlist ../../Results/$design/${node}/${design}_final_combo.v
+#read_verilog -netlist ../../Results/$design/${node}/${design}_final_combo.v
 
-set_dont_touch $design
+#set_dont_touch $design
 #source ../../Results/$design/final/${design}_final_combo.sdc
-source ../../Results/$design/${node}/${design}_final_combo.sdc
+#source ../../Results/$design/${node}/${design}_final_combo.sdc
 
-compile_ultra 
-report_timing
-report_area > ../../Results/$design/${node}/area.rpt
-report_power
+#compile_ultra 
+#report_timing
+#report_area > ../../Results/$design/${node}/area.rpt
+#report_power
 
 exit

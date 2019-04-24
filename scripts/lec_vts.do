@@ -11,3 +11,4 @@ read_design ../../files/${design}.v -revised
 set_system_mode lec
 add_compared_points -all
 compare > /home/projects/aspdac18/Results/$design/$node/lec_report
+exit
