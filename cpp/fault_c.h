@@ -24,8 +24,6 @@
 #include "constants.h"
 #include "pattern.h"
 
-//just a test comment
-
 class fault_c{
         public:
 
