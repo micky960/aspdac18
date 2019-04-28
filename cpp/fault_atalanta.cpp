@@ -138,9 +138,9 @@ int main(int argc, char* argv[]){
 	int sec_max = 0;
 // Find all the valid/secure nodes above the said security SEC
 
-	omp_lock_t writelock;
-        omp_init_lock(&writelock);
-        #pragma omp parallel for schedule(dynamic) num_threads(10)
+//	omp_lock_t writelock;
+//       omp_init_lock(&writelock);
+//        #pragma omp parallel for schedule(dynamic) num_threads(5)
 
 	for(int i=0; i<nodeList.size(); i++){
 		std::cout<< (double)i/(double)nodeList.size()*100<< "\% node: " << nodeList[i] << std::endl;
@@ -241,6 +241,7 @@ int main(int argc, char* argv[]){
 	//	i = i+1;
 	
 		validList[i]->recoverOnePattCkt("/home/projects/aspdac18/Results/"+name);
+		//exit(0);
 	       // cmd = "mkdir -p /home/projects/aspdac18/Results/"+name+"/final/";
 	        //system(cmd.c_str());
 //	        cmd = "cp /home/projects/aspdac18/Results/"+name+"/"+validList[i]->node+"/lockOnePatt_verilog.v /home/projects/aspdac18/Results/"+name+"/final/"+name+"_init.v";
@@ -257,8 +258,10 @@ int main(int argc, char* argv[]){
 	        	validList[i]->checkKeyConstraint(name);
 	 	        std::cout << "key constraint check" << std::endl;
 	       		std::cout << "sec attained: " << validList[i]->getNumValidKey() << std::endl;
-		
-//			std::cout<<"The NODE which attained 
+//			exit(1);	
+			cmd = "dc_shell-t -no_gui -64bit -output_log_file /home/projects/aspdac18/Results/"+name+"/final/locked_verilog.log -x \"source -echo -verbose ../scripts/locked_verilog.tcl \" ";
+                	system(cmd.c_str());
+
 			if (validList[i]->getNumValidKey() >= TARGET_SEC){
 				std::cout<<"The NODE which attained security is: 	"<<validList[i]->node<<std::endl;
 				//final_node_ind = i;
@@ -277,6 +280,7 @@ int main(int argc, char* argv[]){
 			std::cout<<"================ THE FILES ARE EQUIVALENT =================="<<std::endl;
 		}
 	}
+
 	if (flag) {
 		cmd = "dc_shell-t -no_gui -64bit -output_log_file /home/projects/aspdac18/Results/"+name+"/final/apd_analysis.log -x \"source -echo -verbose ../scripts/generate_apd.tcl \" ";
         	system(cmd.c_str());

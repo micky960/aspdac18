@@ -39,6 +39,7 @@ fault_c::fault_c(std::string n, std::ifstream& flt){
 	 _compSec();
          _compOpFailList();
          _getLeastSec();
+	_getMaxSec();
 }
 
 bool fault_c::checkEqv(std::string name){
@@ -199,7 +200,11 @@ void fault_c::recoverOnePattCkt(std::string path){
 	}
 
 	std::vector<std::string> compList, keyList, nvmList;	
-
+	
+	
+	//if (p->iIndex.size() > TARGET_SEC){
+	//	p->iIndex.size() = TARGET_SEC;
+	std::cout<<"		NEW INDEX SIZE IS:	"<<p->iIndex.size()<<std::endl;
 	std::string comp = "wire ["+boost::lexical_cast<std::string>(p->iIndex.size()-1)+":0] compPatt_"+boost::lexical_cast<std::string>(maxSecIndex)+ "= {";
 	for(int i=0; i<p->iIndex.size(); i++){
 		comp += ipList[p->iIndex[i]]+", ";
@@ -208,23 +213,43 @@ void fault_c::recoverOnePattCkt(std::string path){
 	boost::replace_all(comp, ", }","}");
 	compList.push_back(comp);
 	lockFile << comp << std::endl;
-
+	
 	std::string key = "wire ["+boost::lexical_cast<std::string>(p->iIndex.size()-1)+":0] sfllKey_"+boost::lexical_cast<std::string>(maxSecIndex)+";";
 	keyList.push_back(key);
 	lockFile << key << std::endl;
-
+	
 	std::string nvm = "nvm_"+boost::lexical_cast<std::string>(maxSecIndex)+" #(.N("+boost::lexical_cast<std::string>(p->iIndex.size())+")) nvm_inst"+boost::lexical_cast<std::string>(maxSecIndex)+"(";
 	nvm += ".rdata(sfllKey_"+boost::lexical_cast<std::string>(maxSecIndex)+")";
 	nvm += ");\n\n";
 	lockFile << nvm <<std::endl;
-
+	std::ofstream key_file((path+"/"+node+"/key.tcl").c_str());
+	key_file << "set KEY {";
+	
 	std::string nvm_def = "module nvm_"+boost::lexical_cast<std::string>(maxSecIndex)+" #(parameter N = 1) (\n";
 	nvm_def += "rdata\n";
 	nvm_def += ");\n\n";
 	nvm_def += "output [N-1:0] rdata;\n";
+	/// Added by Nimisha 24/04/19
+//	if (p->iIndex.size() > TARGET_SEC){
+//		nvm_def += "assign rdata = 128'b";
+//		for(int i=0; i<TARGET_SEC; i++){
+//	  	        nvm_def += p->ipPatt[p->iIndex[i]];
+//	                key_file << p->ipPatt[p->iIndex[i]]<<" ";
+//	        }
+//	 		 key_file << "}"<<std::endl;
+//	}
+//	else {
+//		nvm_def += "assign rdata = "+boost::lexical_cast<std::string>(p->iIndex.size())+"'b";
+//		for(int i=0; i<p->iIndex.size(); i++){
+//	         		nvm_def += p->ipPatt[p->iIndex[i]];
+//	          	key_file << p->ipPatt[p->iIndex[i]]<<" ";
+//	        }
+//	  	key_file << "}"<<std::endl;
+//	
+//	}
+	// Addition END
+	
 	nvm_def += "assign rdata = "+boost::lexical_cast<std::string>(p->iIndex.size())+"'b";
-	std::ofstream key_file((path+"/"+node+"/key.tcl").c_str());
-	key_file << "set KEY {";
 	for(int i=0; i<p->iIndex.size(); i++){
 		nvm_def += p->ipPatt[p->iIndex[i]];
 		key_file << p->ipPatt[p->iIndex[i]]<<" ";
@@ -232,11 +257,11 @@ void fault_c::recoverOnePattCkt(std::string path){
 	key_file << "}"<<std::endl;
 	
 	nvm_def += ";\nendmodule\n";
-
+	
 	for(int i=0; i<p->oIndex.size(); i++){
-
+	
 		lockFile << "reg " << opList[p->oIndex[i]] <<";"<<std::endl;
-
+	
 		std::string always = "always @* begin\n";
 		always += "if(";
 		always += "sfllKey_"+boost::lexical_cast<std::string>(maxSecIndex)+" == "+"compPatt_"+boost::lexical_cast<std::string>(maxSecIndex)+")\n";
@@ -246,11 +271,83 @@ void fault_c::recoverOnePattCkt(std::string path){
 		lockFile << always << std::endl;
 	
 	}
-
 	lockFile << "endmodule\n" << std::endl;
 	
 	lockFile << nvm_def << std::endl;
 
+//	}
+//	else {
+//		std::string comp = "wire ["+boost::lexical_cast<std::string>(p->iIndex.size()-1)+":0] compPatt_"+boost::lexical_cast<std::string>(maxSecIndex)+ "= {";
+//		for(int i=0; i<p->iIndex.size(); i++){
+//			comp += ipList[p->iIndex[i]]+", ";
+//		}
+//		comp += "};";
+//		boost::replace_all(comp, ", }","}");
+//		compList.push_back(comp);
+//		lockFile << comp << std::endl;
+//	
+//		std::string key = "wire ["+boost::lexical_cast<std::string>(p->iIndex.size()-1)+":0] sfllKey_"+boost::lexical_cast<std::string>(maxSecIndex)+";";
+//		keyList.push_back(key);
+//		lockFile << key << std::endl;
+//	
+//		std::string nvm = "nvm_"+boost::lexical_cast<std::string>(maxSecIndex)+" #(.N("+boost::lexical_cast<std::string>(p->iIndex.size())+")) nvm_inst"+boost::lexical_cast<std::string>(maxSecIndex)+"(";
+//		nvm += ".rdata(sfllKey_"+boost::lexical_cast<std::string>(maxSecIndex)+")";
+//		nvm += ");\n\n";
+//		lockFile << nvm <<std::endl;
+//		std::ofstream key_file((path+"/"+node+"/key.tcl").c_str());
+//	        key_file << "set KEY {";
+//	
+//		std::string nvm_def = "module nvm_"+boost::lexical_cast<std::string>(maxSecIndex)+" #(parameter N = 1) (\n";
+//		nvm_def += "rdata\n";
+//		nvm_def += ");\n\n";
+//		nvm_def += "output [N-1:0] rdata;\n";
+//		/// Added by Nimisha 24/04/19
+//		//if (p->iIndex.size() > TARGET_SEC){
+//		//	nvm_def += "assign rdata = 128'b";
+//		//	for(int i=0; i<TARGET_SEC; i++){
+//	        //	        nvm_def += p->ipPatt[p->iIndex[i]];
+//		//                key_file << p->ipPatt[p->iIndex[i]]<<" ";
+//		//        }
+//	       	//	 key_file << "}"<<std::endl;
+//		//}
+//		//else {
+//		//	nvm_def += "assign rdata = "+boost::lexical_cast<std::string>(p->iIndex.size())+"'b";
+//		//	for(int i=0; i<p->iIndex.size(); i++){
+//	        //       		nvm_def += p->ipPatt[p->iIndex[i]];
+//	        //        	key_file << p->ipPatt[p->iIndex[i]]<<" ";
+//		//        }
+//	        //	key_file << "}"<<std::endl;
+//	
+//		//}
+//		// Addition END
+//		
+//		nvm_def += "assign rdata = "+boost::lexical_cast<std::string>(p->iIndex.size())+"'b";
+//		for(int i=0; i<p->iIndex.size(); i++){
+//			nvm_def += p->ipPatt[p->iIndex[i]];
+//			key_file << p->ipPatt[p->iIndex[i]]<<" ";
+//		}
+//		key_file << "}"<<std::endl;
+//		
+//		nvm_def += ";\nendmodule\n";
+//	
+//		for(int i=0; i<p->oIndex.size(); i++){
+//	
+//			lockFile << "reg " << opList[p->oIndex[i]] <<";"<<std::endl;
+//	
+//			std::string always = "always @* begin\n";
+//			always += "if(";
+//			always += "sfllKey_"+boost::lexical_cast<std::string>(maxSecIndex)+" == "+"compPatt_"+boost::lexical_cast<std::string>(maxSecIndex)+")\n";
+//			always += "\t"+opList[p->oIndex[i]]+" = 1'b"+p->opPatt[p->oIndex[i]]+";\n";
+//			always += "else \t"+opList[p->oIndex[i]]+" = "+opList[p->oIndex[i]]+"_temp;\n";
+//			always += "end\n";
+//			lockFile << always << std::endl;
+//		
+//		}
+//	
+//		lockFile << "endmodule\n" << std::endl;
+//	
+//		lockFile << nvm_def << std::endl;
+//	}
 }	
 
 void fault_c::synthFICkt(std::string name){
@@ -317,15 +414,16 @@ void fault_c::checkKeyConstraint(std::string name){
 
 		if(!_checkEqKey(name)){
 			kcCheckList.push_back(kcList[i]);
+//			std::cout<<"Security is:	"<<sec<<std::endl;
 			sec++;
-			if (sec > TARGET_SEC) {
-				break;
-			}
-			//sec++;
 			std::cout<<"SEC: 	"<<sec<<std::endl;
-			//sec++;
 			cmd = "rm ../../Results/"+name+"/"+node+"/lec_key_constraint_log";
 			system(cmd.c_str());
+			if (sec == TARGET_SEC) {
+                                std::cout<<"    TARGET SECURITY ACHIEVED        "<<std::endl;
+                                break;
+                        }
+	
 		}
 	}
 	numValidKey = sec;
@@ -374,6 +472,8 @@ void fault_c::_getLeastSec(){
 		if(pList[i]->getSec() >= TARGET_SEC && pList[i]->getSec() < min){
 			min = pList[i]->getSec();
 			minSecIndex = i;
+			std::cout<<"    MIN SECURITY IS         "<<minSecIndex<<std::endl;
+
 		}
 	}
 }
@@ -383,6 +483,7 @@ void fault_c::_getMaxSec(){
                 if(pList[i]->getSec() >= TARGET_SEC && pList[i]->getSec() > max){
                         max = pList[i]->getSec();
                         maxSecIndex = i;
+			std::cout<<"	MAX SECURITY IS		"<<maxSecIndex<<std::endl;
                 }
         }
 }
