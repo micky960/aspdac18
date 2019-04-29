@@ -97,11 +97,10 @@ int main(int argc, char* argv[]){
 
 	//omp_lock_t writelock;
 	//omp_init_lock(&writelock);
-
-	//#pragma omp parallel for schedule(dynamic) num_threads(10)
+	#pragma omp parallel for schedule(dynamic) num_threads(32)
 	for(int i=0; i<nodeList.size(); i++){
-		cmd = "mkdir -p /home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/";
-		system(cmd.c_str());
+        std::string cmd1 = "mkdir -p /home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/";
+		system(cmd1.c_str());
 		std::ofstream flt(("/home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/fault.flt").c_str());
 		// check only for stuck-at-0 fault. For sa1 fault change it to /1.
 	
@@ -113,17 +112,18 @@ int main(int argc, char* argv[]){
 
 	//omp_lock_t writelock;
         //omp_init_lock(&writelock);
-       // #pragma omp parallel for schedule(dynamic) num_threads(10)
 
+    #pragma omp parallel for schedule(dynamic) num_threads(32)
 	for(int i=0; i<nodeList.size(); i++){
+		std::cout<<"i:	"<<i<<std::endl;
 		std::string path_link = "/home/projects/aspdac18/Results/"+name+"/path_link"+boost::lexical_cast<std::string>(i);
-		cmd = "ln -s /home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+" "+path_link;
-		system(cmd.c_str());
+        std::string cmd2 = "ln -s /home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+" "+path_link;
+		system(cmd2.c_str());
 		// ************ run atalanta for 10 secs, so that around 1 million test patterns are already collected, which are enough. It generates fault and patterns file along with log file. If it takes more than 10 secs to generate all the test patterns, then log file will not be generated fro that node. 
-		cmd = "timeout 10 atalanta -A -f "+path_link+"/fault.flt -t "+path_link+"/patterns.pat /home/projects/aspdac18/files/benchfiles/"+name+".bench > "+path_link+"/log &";
+		cmd2 = "timeout 10 atalanta -A -f "+path_link+"/fault.flt -t "+path_link+"/patterns.pat /home/projects/aspdac18/files/benchfiles/"+name+".bench > "+path_link+"/log ";
 		//std::cout << cmd << std::endl;
 		//cmd = "timeout 10 atalanta -A -f /home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/fault.flt -t /home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/patterns.pat /home/projects/aspdac18/files/"+name+".bench > /home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/log &";
-		system(cmd.c_str());
+		system(cmd2.c_str());
         }
 
         std::cout<<"ATALANTA END"<<std::endl;
