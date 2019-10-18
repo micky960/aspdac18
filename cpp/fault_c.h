@@ -40,14 +40,17 @@ class fault_c{
         int getMaxSec(){return pList[maxSecIndex]->getSec();}
 
 	int getNumPatt(){return pList.size();}
-        bool checkEqv(std::string name);
-        void synthFICkt(std::string name);
-        double getOnePattCost(){return costOnePatt;}//cost to correct the one pattern without FI ckt
-        void recoverCkt(std::string path);
-        void recoverOnePattCkt(std::string path);
-        void doEco(std::string name);
-        void checkKeyConstraint(std::string name);
-
+    bool checkEqv(std::string name);
+	void synthFICkt(std::string name);
+    double getOnePattCost(){return costOnePatt;}//cost to correct the one pattern without FI ckt
+    void recoverCkt(std::string path);
+    void recoverOnePattCkt(std::string path);
+    void doEco(std::string name);
+    bool checkKeyConstraint(std::string name);
+	void postProcesslockedVerilog(std::string name);
+	void checkEqvOrigLock(std::string name); 
+    void removeNode(std::string name);
+	void generateAPD(std::string name); 
 	private:
 		void _compSec();
 		void _getLeastSec();
