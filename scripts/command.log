@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version M-2016.12-SP2 for linux64 -- Feb 23, 2017
-#@ # Date:   Wed Apr 24 12:19:39 2019
+#@ # Date:   Sat Aug 10 09:20:43 2019
 #@ # Run by: nsl278@aduae260-lap
 #@ 
 
@@ -6518,37 +6518,46 @@ source /opt/programs/synopsys/dc/admin/setup/.synopsys_dc.setup
 
 #@ # -- End source /opt/programs/synopsys/dc/admin/setup/.synopsys_dc.setup
 
-source -echo -verbose ./generate_apd_orig.tcl
-#@ # -- Starting source ./generate_apd_orig.tcl
-
-#@ ## ORIGINAL DESIGN SYNTHESIS
-#@ set design   [getenv DESIGN]
-#@ 
-#@ set target_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/ccs/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db}
-#@ 
-#@ set link_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/ccs/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db                     /home/projects/vlsi/libraries/65lpe/ref_lib/aragio/io_pads/timing_lib/nldm/db/rgo_csm65_25v33_lpe_50c_ss_108_297_125.db                         /home/projects/vlsi/libraries/65lpe/ref_lib/arm/memories/sram_sp_hde/timing_lib/USERLIB_ccs_ss_1p08v_1p08v_125c.db                    }
-#@ 
-#@ puts "THE ORIGINAL DESIGN SYNTHESIS"
-#@ read_verilog -rtl ../../files/benchfiles/${design}.v
-#@ current_design $design
-#@ 
-#@ create_clock -name VCLK -period 10  -waveform {0 5}
-#@ #create_clock -name VCLK [get_ports CK] -period 10 -waveform {0 5}
-#@ 
-#@ set input_ports  [all_inputs]
-#@ set output_ports [all_outputs]
-#@ 
-#@ set_input_delay -max 1 [get_ports $input_ports ] -clock VCLK
-#@ set_input_delay -min 0 [get_ports $input_ports ] -clock VCLK
-#@ 
-#@ set_output_delay -max 1 [get_ports $output_ports ] -clock VCLK
-#@ set_output_delay -min 0 [get_ports $output_ports ] -clock VCLK
-#@ 
-#@ compile_ultra
-#@ write -format verilog -output ../../files/benchfiles/${design}_syn.v
-#@ read_verilog -netlist ../../files/benchfiles/${design}_syn.v
-#@ report_timing
-#@ report_area
-#@ report_power
-#@ 
-#@ exit
+set target_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db}
+set link_library   { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db }
+read_verilog -netlist ../../files/benchfiles/c432_v1_syn.v
+all_outputs
+set fanin [get_attribute [all_fanin -to G223GAT] full_name]
+set fanin [get_attribute [all_fanin -to G223GAT -only_cells ] full_name]
+report_cell
+report_cell -cell_list
+report_cell -cell_list -only_physical
+report_cell cell_list -only_physical
+report_cell -help
+set fanin [get_attribute [all_fanin -to G223GAT -only_cells ] full_name]
+set OUTPUT G223GAT
+set all_fanin_output [get_attribute [all_fanin -to $OUTPUT -only_cells] full_name]
+foreach_in_collection rem_cell [get_pins  * -filter "direction==out"] {
+                set cel_name [get_attribute [get_cells -of_objects $rem_cell] full_name]
+                set fout [all_fanout -from [get_attribute $rem_cell full_name] -endpoints_only -flat ]
+                set fout_name [get_attribute $fout full_name]
+                set flag_fanin 0
+                foreach fanin_out $all_fanin_output {
+                        if {$cel_name == $fanin_out} {
+                                set flag_fanin 1
+                        }
+                }
+                if {$flag_fanin == 0} {
+                        remove_cell $cel_name
+                }
+        }
+foreach_in_collection rem_port [all_inputs ] {
+          set siz [sizeof_collection [all_fanout -from [get_attribute $rem_port full_name] -flat -endpoints_only]]
+          if {$siz == 0} {
+              remove_port [get_attribute $rem_port full_name]
+           }
+        }
+foreach_in_collection rem_net [get_nets *] {
+          set siz [sizeof_collection [all_connected [get_attribute $rem_net full_name]]]
+          if {$siz == 0} {
+            remove_net [get_attribute $rem_net full_name]
+          }
+        }
+write -format verilog -hierarchy -output ../../files/benchfiles/c432_singlecone.v
+history
+exit

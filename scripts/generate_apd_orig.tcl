@@ -9,7 +9,10 @@ set target_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/h
                    }
 
 puts "THE ORIGINAL DESIGN SYNTHESIS"
-read_verilog -rtl ../../files/benchfiles/${design}.v
+#read_verilog -rtl ../../files/benchfiles/${design}.v
+analyze -library WORK -format sverilog ../../files/benchfiles/$design.v
+elaborate $design
+
 current_design $design
 
 create_clock -name VCLK -period 10  -waveform {0 5}
@@ -31,9 +34,9 @@ check_design
 
 compile_ultra
 write -format verilog -output ../../files/benchfiles/${design}_syn.v
-read_verilog -netlist ../../files/benchfiles/${design}_syn.v
+#read_verilog -netlist ../../files/benchfiles/${design}_syn.v
 report_timing
 report_area
 report_power
 
-#exit
+exit

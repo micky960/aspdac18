@@ -1,0 +1,832 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version M-2016.12-SP2 for linux64 - Feb 23, 2017 
+
+                    Copyright (c) 1988 - 2017 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+set design [getenv "DESIGN"]
+b14_C
+set node [getenv "NODE"]
+U3147
+set compile_seqmap_propagate_constants     false
+false
+#set search_path [concat * $search_path]
+#sh rm -rf ./work/work_${design}
+#define_design_lib WORK -path ./work/work_${design}
+set target_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db}
+ /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db
+set link_library   { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db }
+ /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db 
+#read_verilog -rtl ../../Results/${design}/final/${design}_eco.v
+read_verilog -rtl ../../Results/${design}/${node}/${design}_eco.v
+Loading db file '/home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db'
+Loading db file '/opt/programs/synopsys/dc/libraries/syn/gtech.db'
+Loading db file '/opt/programs/synopsys/dc/libraries/syn/standard.sldb'
+  Loading link library 'sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c'
+  Loading link library 'gtech'
+Loading verilog file '/home/projects/aspdac18/Results/b14_C/U3147/b14_C_eco.v'
+Running PRESTO HDLC
+Compiling source file /home/projects/aspdac18/Results/b14_C/U3147/b14_C_eco.v
+Warning:  /home/projects/aspdac18/Results/b14_C/U3147/b14_C_eco.v:11044: the undeclared symbol 'N1' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  /home/projects/aspdac18/Results/b14_C/U3147/b14_C_eco.v:11045: the undeclared symbol 'N2' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  /home/projects/aspdac18/Results/b14_C/U3147/b14_C_eco.v:11046: the undeclared symbol 'N3' assumed to have the default net type, which is 'wire'. (VER-936)
+Presto compilation completed successfully.
+Current design is now '/home/projects/aspdac18/Results/b14_C/U3147/VDW_LEQ_152.db:VDW_LEQ_152'
+Loaded 5 designs.
+Current design is 'VDW_LEQ_152'.
+VDW_LEQ_152 nvm_22_N152 b14_C_eco b14_C _HMUX
+current_design $design
+Current design is 'b14_C'.
+{b14_C}
+set x 0
+0
+foreach_in_collection pqr [get_nets *sfllKey*] {
+#     if {$x < 128} {
+        set x [expr $x + 1]
+	set net_name [get_attribute $pqr full_name]
+     	set tie_net  [get_attribute [all_fanin -to  $net_name -flat] full_name]
+     	set tie_net_split [split $tie_net "\*\*"]
+     	set tie_net_val   [lindex $tie_net_split 2]
+     	create_port sfllKey_${x}_${tie_net_val}
+     	connect_net $net_name sfllKey_${x}_${tie_net_val}
+#     	} else {
+#	break
+#     }
+}
+Creating port 'sfllKey_1_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[151]' to port 'sfllKey_1_logic_1'.
+Creating port 'sfllKey_2_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[150]' to port 'sfllKey_2_logic_1'.
+Creating port 'sfllKey_3_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[149]' to port 'sfllKey_3_logic_1'.
+Creating port 'sfllKey_4_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[148]' to port 'sfllKey_4_logic_1'.
+Creating port 'sfllKey_5_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[147]' to port 'sfllKey_5_logic_1'.
+Creating port 'sfllKey_6_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[146]' to port 'sfllKey_6_logic_1'.
+Creating port 'sfllKey_7_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[145]' to port 'sfllKey_7_logic_1'.
+Creating port 'sfllKey_8_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[144]' to port 'sfllKey_8_logic_0'.
+Creating port 'sfllKey_9_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[143]' to port 'sfllKey_9_logic_0'.
+Creating port 'sfllKey_10_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[142]' to port 'sfllKey_10_logic_0'.
+Creating port 'sfllKey_11_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[141]' to port 'sfllKey_11_logic_1'.
+Creating port 'sfllKey_12_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[140]' to port 'sfllKey_12_logic_1'.
+Creating port 'sfllKey_13_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[139]' to port 'sfllKey_13_logic_0'.
+Creating port 'sfllKey_14_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[138]' to port 'sfllKey_14_logic_1'.
+Creating port 'sfllKey_15_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[137]' to port 'sfllKey_15_logic_0'.
+Creating port 'sfllKey_16_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[136]' to port 'sfllKey_16_logic_0'.
+Creating port 'sfllKey_17_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[135]' to port 'sfllKey_17_logic_0'.
+Creating port 'sfllKey_18_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[134]' to port 'sfllKey_18_logic_0'.
+Creating port 'sfllKey_19_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[133]' to port 'sfllKey_19_logic_0'.
+Creating port 'sfllKey_20_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[132]' to port 'sfllKey_20_logic_1'.
+Creating port 'sfllKey_21_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[131]' to port 'sfllKey_21_logic_0'.
+Creating port 'sfllKey_22_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[130]' to port 'sfllKey_22_logic_0'.
+Creating port 'sfllKey_23_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[129]' to port 'sfllKey_23_logic_0'.
+Creating port 'sfllKey_24_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[128]' to port 'sfllKey_24_logic_0'.
+Creating port 'sfllKey_25_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[127]' to port 'sfllKey_25_logic_0'.
+Creating port 'sfllKey_26_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[126]' to port 'sfllKey_26_logic_1'.
+Creating port 'sfllKey_27_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[125]' to port 'sfllKey_27_logic_0'.
+Creating port 'sfllKey_28_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[124]' to port 'sfllKey_28_logic_0'.
+Creating port 'sfllKey_29_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[123]' to port 'sfllKey_29_logic_0'.
+Creating port 'sfllKey_30_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[122]' to port 'sfllKey_30_logic_0'.
+Creating port 'sfllKey_31_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[121]' to port 'sfllKey_31_logic_0'.
+Creating port 'sfllKey_32_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[120]' to port 'sfllKey_32_logic_0'.
+Creating port 'sfllKey_33_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[119]' to port 'sfllKey_33_logic_1'.
+Creating port 'sfllKey_34_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[118]' to port 'sfllKey_34_logic_1'.
+Creating port 'sfllKey_35_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[117]' to port 'sfllKey_35_logic_1'.
+Creating port 'sfllKey_36_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[116]' to port 'sfllKey_36_logic_1'.
+Creating port 'sfllKey_37_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[115]' to port 'sfllKey_37_logic_1'.
+Creating port 'sfllKey_38_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[114]' to port 'sfllKey_38_logic_1'.
+Creating port 'sfllKey_39_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[113]' to port 'sfllKey_39_logic_0'.
+Creating port 'sfllKey_40_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[112]' to port 'sfllKey_40_logic_1'.
+Creating port 'sfllKey_41_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[111]' to port 'sfllKey_41_logic_1'.
+Creating port 'sfllKey_42_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[110]' to port 'sfllKey_42_logic_1'.
+Creating port 'sfllKey_43_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[109]' to port 'sfllKey_43_logic_1'.
+Creating port 'sfllKey_44_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[108]' to port 'sfllKey_44_logic_0'.
+Creating port 'sfllKey_45_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[107]' to port 'sfllKey_45_logic_1'.
+Creating port 'sfllKey_46_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[106]' to port 'sfllKey_46_logic_0'.
+Creating port 'sfllKey_47_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[105]' to port 'sfllKey_47_logic_0'.
+Creating port 'sfllKey_48_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[104]' to port 'sfllKey_48_logic_0'.
+Creating port 'sfllKey_49_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[103]' to port 'sfllKey_49_logic_0'.
+Creating port 'sfllKey_50_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[102]' to port 'sfllKey_50_logic_0'.
+Creating port 'sfllKey_51_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[101]' to port 'sfllKey_51_logic_0'.
+Creating port 'sfllKey_52_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[100]' to port 'sfllKey_52_logic_0'.
+Creating port 'sfllKey_53_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[99]' to port 'sfllKey_53_logic_0'.
+Creating port 'sfllKey_54_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[98]' to port 'sfllKey_54_logic_0'.
+Creating port 'sfllKey_55_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[97]' to port 'sfllKey_55_logic_0'.
+Creating port 'sfllKey_56_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[96]' to port 'sfllKey_56_logic_0'.
+Creating port 'sfllKey_57_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[95]' to port 'sfllKey_57_logic_0'.
+Creating port 'sfllKey_58_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[94]' to port 'sfllKey_58_logic_0'.
+Creating port 'sfllKey_59_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[93]' to port 'sfllKey_59_logic_0'.
+Creating port 'sfllKey_60_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[92]' to port 'sfllKey_60_logic_0'.
+Creating port 'sfllKey_61_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[91]' to port 'sfllKey_61_logic_0'.
+Creating port 'sfllKey_62_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[90]' to port 'sfllKey_62_logic_0'.
+Creating port 'sfllKey_63_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[89]' to port 'sfllKey_63_logic_0'.
+Creating port 'sfllKey_64_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[88]' to port 'sfllKey_64_logic_0'.
+Creating port 'sfllKey_65_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[87]' to port 'sfllKey_65_logic_1'.
+Creating port 'sfllKey_66_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[86]' to port 'sfllKey_66_logic_1'.
+Creating port 'sfllKey_67_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[85]' to port 'sfllKey_67_logic_0'.
+Creating port 'sfllKey_68_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[84]' to port 'sfllKey_68_logic_0'.
+Creating port 'sfllKey_69_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[83]' to port 'sfllKey_69_logic_0'.
+Creating port 'sfllKey_70_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[82]' to port 'sfllKey_70_logic_1'.
+Creating port 'sfllKey_71_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[81]' to port 'sfllKey_71_logic_0'.
+Creating port 'sfllKey_72_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[80]' to port 'sfllKey_72_logic_1'.
+Creating port 'sfllKey_73_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[79]' to port 'sfllKey_73_logic_0'.
+Creating port 'sfllKey_74_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[78]' to port 'sfllKey_74_logic_1'.
+Creating port 'sfllKey_75_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[77]' to port 'sfllKey_75_logic_0'.
+Creating port 'sfllKey_76_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[76]' to port 'sfllKey_76_logic_0'.
+Creating port 'sfllKey_77_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[75]' to port 'sfllKey_77_logic_0'.
+Creating port 'sfllKey_78_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[74]' to port 'sfllKey_78_logic_0'.
+Creating port 'sfllKey_79_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[73]' to port 'sfllKey_79_logic_0'.
+Creating port 'sfllKey_80_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[72]' to port 'sfllKey_80_logic_0'.
+Creating port 'sfllKey_81_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[71]' to port 'sfllKey_81_logic_0'.
+Creating port 'sfllKey_82_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[70]' to port 'sfllKey_82_logic_0'.
+Creating port 'sfllKey_83_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[69]' to port 'sfllKey_83_logic_0'.
+Creating port 'sfllKey_84_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[68]' to port 'sfllKey_84_logic_0'.
+Creating port 'sfllKey_85_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[67]' to port 'sfllKey_85_logic_0'.
+Creating port 'sfllKey_86_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[66]' to port 'sfllKey_86_logic_0'.
+Creating port 'sfllKey_87_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[65]' to port 'sfllKey_87_logic_0'.
+Creating port 'sfllKey_88_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[64]' to port 'sfllKey_88_logic_0'.
+Creating port 'sfllKey_89_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[63]' to port 'sfllKey_89_logic_0'.
+Creating port 'sfllKey_90_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[62]' to port 'sfllKey_90_logic_0'.
+Creating port 'sfllKey_91_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[61]' to port 'sfllKey_91_logic_0'.
+Creating port 'sfllKey_92_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[60]' to port 'sfllKey_92_logic_0'.
+Creating port 'sfllKey_93_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[59]' to port 'sfllKey_93_logic_0'.
+Creating port 'sfllKey_94_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[58]' to port 'sfllKey_94_logic_0'.
+Creating port 'sfllKey_95_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[57]' to port 'sfllKey_95_logic_0'.
+Creating port 'sfllKey_96_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[56]' to port 'sfllKey_96_logic_0'.
+Creating port 'sfllKey_97_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[55]' to port 'sfllKey_97_logic_0'.
+Creating port 'sfllKey_98_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[54]' to port 'sfllKey_98_logic_0'.
+Creating port 'sfllKey_99_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[53]' to port 'sfllKey_99_logic_0'.
+Creating port 'sfllKey_100_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[52]' to port 'sfllKey_100_logic_0'.
+Creating port 'sfllKey_101_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[51]' to port 'sfllKey_101_logic_0'.
+Creating port 'sfllKey_102_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[50]' to port 'sfllKey_102_logic_0'.
+Creating port 'sfllKey_103_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[49]' to port 'sfllKey_103_logic_0'.
+Creating port 'sfllKey_104_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[48]' to port 'sfllKey_104_logic_0'.
+Creating port 'sfllKey_105_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[47]' to port 'sfllKey_105_logic_0'.
+Creating port 'sfllKey_106_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[46]' to port 'sfllKey_106_logic_0'.
+Creating port 'sfllKey_107_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[45]' to port 'sfllKey_107_logic_0'.
+Creating port 'sfllKey_108_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[44]' to port 'sfllKey_108_logic_0'.
+Creating port 'sfllKey_109_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[43]' to port 'sfllKey_109_logic_0'.
+Creating port 'sfllKey_110_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[42]' to port 'sfllKey_110_logic_0'.
+Creating port 'sfllKey_111_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[41]' to port 'sfllKey_111_logic_0'.
+Creating port 'sfllKey_112_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[40]' to port 'sfllKey_112_logic_0'.
+Creating port 'sfllKey_113_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[39]' to port 'sfllKey_113_logic_0'.
+Creating port 'sfllKey_114_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[38]' to port 'sfllKey_114_logic_0'.
+Creating port 'sfllKey_115_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[37]' to port 'sfllKey_115_logic_0'.
+Creating port 'sfllKey_116_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[36]' to port 'sfllKey_116_logic_0'.
+Creating port 'sfllKey_117_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[35]' to port 'sfllKey_117_logic_0'.
+Creating port 'sfllKey_118_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[34]' to port 'sfllKey_118_logic_0'.
+Creating port 'sfllKey_119_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[33]' to port 'sfllKey_119_logic_0'.
+Creating port 'sfllKey_120_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[32]' to port 'sfllKey_120_logic_0'.
+Creating port 'sfllKey_121_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[31]' to port 'sfllKey_121_logic_0'.
+Creating port 'sfllKey_122_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[30]' to port 'sfllKey_122_logic_0'.
+Creating port 'sfllKey_123_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[29]' to port 'sfllKey_123_logic_1'.
+Creating port 'sfllKey_124_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[28]' to port 'sfllKey_124_logic_0'.
+Creating port 'sfllKey_125_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[27]' to port 'sfllKey_125_logic_0'.
+Creating port 'sfllKey_126_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[26]' to port 'sfllKey_126_logic_0'.
+Creating port 'sfllKey_127_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[25]' to port 'sfllKey_127_logic_0'.
+Creating port 'sfllKey_128_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[24]' to port 'sfllKey_128_logic_0'.
+Creating port 'sfllKey_129_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[23]' to port 'sfllKey_129_logic_1'.
+Creating port 'sfllKey_130_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[22]' to port 'sfllKey_130_logic_0'.
+Creating port 'sfllKey_131_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[21]' to port 'sfllKey_131_logic_0'.
+Creating port 'sfllKey_132_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[20]' to port 'sfllKey_132_logic_0'.
+Creating port 'sfllKey_133_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[19]' to port 'sfllKey_133_logic_0'.
+Creating port 'sfllKey_134_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[18]' to port 'sfllKey_134_logic_0'.
+Creating port 'sfllKey_135_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[17]' to port 'sfllKey_135_logic_1'.
+Creating port 'sfllKey_136_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[16]' to port 'sfllKey_136_logic_0'.
+Creating port 'sfllKey_137_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[15]' to port 'sfllKey_137_logic_1'.
+Creating port 'sfllKey_138_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[14]' to port 'sfllKey_138_logic_1'.
+Creating port 'sfllKey_139_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[13]' to port 'sfllKey_139_logic_0'.
+Creating port 'sfllKey_140_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[12]' to port 'sfllKey_140_logic_0'.
+Creating port 'sfllKey_141_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[11]' to port 'sfllKey_141_logic_0'.
+Creating port 'sfllKey_142_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[10]' to port 'sfllKey_142_logic_1'.
+Creating port 'sfllKey_143_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[9]' to port 'sfllKey_143_logic_1'.
+Creating port 'sfllKey_144_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[8]' to port 'sfllKey_144_logic_1'.
+Creating port 'sfllKey_145_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[7]' to port 'sfllKey_145_logic_1'.
+Creating port 'sfllKey_146_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[6]' to port 'sfllKey_146_logic_1'.
+Creating port 'sfllKey_147_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[5]' to port 'sfllKey_147_logic_1'.
+Creating port 'sfllKey_148_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[4]' to port 'sfllKey_148_logic_1'.
+Creating port 'sfllKey_149_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[3]' to port 'sfllKey_149_logic_0'.
+Creating port 'sfllKey_150_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[2]' to port 'sfllKey_150_logic_1'.
+Creating port 'sfllKey_151_logic_0' in design 'b14_C'.
+Connecting net 'sfllKey_22[1]' to port 'sfllKey_151_logic_0'.
+Creating port 'sfllKey_152_logic_1' in design 'b14_C'.
+Connecting net 'sfllKey_22[0]' to port 'sfllKey_152_logic_1'.
+set x 0
+0
+foreach_in_collection nvm_pins [get_pins nvm*/*] {
+	set x [expr $x + 1]
+	set port [get_attribute [get_ports sfllKey_${x}_*] full_name]
+	disconnect_net [all_connected $port] $nvm_pins
+}
+Disconnecting net 'sfllKey_22[151]' from pin 'nvm_inst22/rdata[151]'.
+Disconnecting net 'sfllKey_22[150]' from pin 'nvm_inst22/rdata[150]'.
+Disconnecting net 'sfllKey_22[149]' from pin 'nvm_inst22/rdata[149]'.
+Disconnecting net 'sfllKey_22[148]' from pin 'nvm_inst22/rdata[148]'.
+Disconnecting net 'sfllKey_22[147]' from pin 'nvm_inst22/rdata[147]'.
+Disconnecting net 'sfllKey_22[146]' from pin 'nvm_inst22/rdata[146]'.
+Disconnecting net 'sfllKey_22[145]' from pin 'nvm_inst22/rdata[145]'.
+Disconnecting net 'sfllKey_22[144]' from pin 'nvm_inst22/rdata[144]'.
+Disconnecting net 'sfllKey_22[143]' from pin 'nvm_inst22/rdata[143]'.
+Disconnecting net 'sfllKey_22[142]' from pin 'nvm_inst22/rdata[142]'.
+Disconnecting net 'sfllKey_22[141]' from pin 'nvm_inst22/rdata[141]'.
+Disconnecting net 'sfllKey_22[140]' from pin 'nvm_inst22/rdata[140]'.
+Disconnecting net 'sfllKey_22[139]' from pin 'nvm_inst22/rdata[139]'.
+Disconnecting net 'sfllKey_22[138]' from pin 'nvm_inst22/rdata[138]'.
+Disconnecting net 'sfllKey_22[137]' from pin 'nvm_inst22/rdata[137]'.
+Disconnecting net 'sfllKey_22[136]' from pin 'nvm_inst22/rdata[136]'.
+Disconnecting net 'sfllKey_22[135]' from pin 'nvm_inst22/rdata[135]'.
+Disconnecting net 'sfllKey_22[134]' from pin 'nvm_inst22/rdata[134]'.
+Disconnecting net 'sfllKey_22[133]' from pin 'nvm_inst22/rdata[133]'.
+Disconnecting net 'sfllKey_22[132]' from pin 'nvm_inst22/rdata[132]'.
+Disconnecting net 'sfllKey_22[131]' from pin 'nvm_inst22/rdata[131]'.
+Disconnecting net 'sfllKey_22[130]' from pin 'nvm_inst22/rdata[130]'.
+Disconnecting net 'sfllKey_22[129]' from pin 'nvm_inst22/rdata[129]'.
+Disconnecting net 'sfllKey_22[128]' from pin 'nvm_inst22/rdata[128]'.
+Disconnecting net 'sfllKey_22[127]' from pin 'nvm_inst22/rdata[127]'.
+Disconnecting net 'sfllKey_22[126]' from pin 'nvm_inst22/rdata[126]'.
+Disconnecting net 'sfllKey_22[125]' from pin 'nvm_inst22/rdata[125]'.
+Disconnecting net 'sfllKey_22[124]' from pin 'nvm_inst22/rdata[124]'.
+Disconnecting net 'sfllKey_22[123]' from pin 'nvm_inst22/rdata[123]'.
+Disconnecting net 'sfllKey_22[122]' from pin 'nvm_inst22/rdata[122]'.
+Disconnecting net 'sfllKey_22[121]' from pin 'nvm_inst22/rdata[121]'.
+Disconnecting net 'sfllKey_22[120]' from pin 'nvm_inst22/rdata[120]'.
+Disconnecting net 'sfllKey_22[119]' from pin 'nvm_inst22/rdata[119]'.
+Disconnecting net 'sfllKey_22[118]' from pin 'nvm_inst22/rdata[118]'.
+Disconnecting net 'sfllKey_22[117]' from pin 'nvm_inst22/rdata[117]'.
+Disconnecting net 'sfllKey_22[116]' from pin 'nvm_inst22/rdata[116]'.
+Disconnecting net 'sfllKey_22[115]' from pin 'nvm_inst22/rdata[115]'.
+Disconnecting net 'sfllKey_22[114]' from pin 'nvm_inst22/rdata[114]'.
+Disconnecting net 'sfllKey_22[113]' from pin 'nvm_inst22/rdata[113]'.
+Disconnecting net 'sfllKey_22[112]' from pin 'nvm_inst22/rdata[112]'.
+Disconnecting net 'sfllKey_22[111]' from pin 'nvm_inst22/rdata[111]'.
+Disconnecting net 'sfllKey_22[110]' from pin 'nvm_inst22/rdata[110]'.
+Disconnecting net 'sfllKey_22[109]' from pin 'nvm_inst22/rdata[109]'.
+Disconnecting net 'sfllKey_22[108]' from pin 'nvm_inst22/rdata[108]'.
+Disconnecting net 'sfllKey_22[107]' from pin 'nvm_inst22/rdata[107]'.
+Disconnecting net 'sfllKey_22[106]' from pin 'nvm_inst22/rdata[106]'.
+Disconnecting net 'sfllKey_22[105]' from pin 'nvm_inst22/rdata[105]'.
+Disconnecting net 'sfllKey_22[104]' from pin 'nvm_inst22/rdata[104]'.
+Disconnecting net 'sfllKey_22[103]' from pin 'nvm_inst22/rdata[103]'.
+Disconnecting net 'sfllKey_22[102]' from pin 'nvm_inst22/rdata[102]'.
+Disconnecting net 'sfllKey_22[101]' from pin 'nvm_inst22/rdata[101]'.
+Disconnecting net 'sfllKey_22[100]' from pin 'nvm_inst22/rdata[100]'.
+Disconnecting net 'sfllKey_22[99]' from pin 'nvm_inst22/rdata[99]'.
+Disconnecting net 'sfllKey_22[98]' from pin 'nvm_inst22/rdata[98]'.
+Disconnecting net 'sfllKey_22[97]' from pin 'nvm_inst22/rdata[97]'.
+Disconnecting net 'sfllKey_22[96]' from pin 'nvm_inst22/rdata[96]'.
+Disconnecting net 'sfllKey_22[95]' from pin 'nvm_inst22/rdata[95]'.
+Disconnecting net 'sfllKey_22[94]' from pin 'nvm_inst22/rdata[94]'.
+Disconnecting net 'sfllKey_22[93]' from pin 'nvm_inst22/rdata[93]'.
+Disconnecting net 'sfllKey_22[92]' from pin 'nvm_inst22/rdata[92]'.
+Disconnecting net 'sfllKey_22[91]' from pin 'nvm_inst22/rdata[91]'.
+Disconnecting net 'sfllKey_22[90]' from pin 'nvm_inst22/rdata[90]'.
+Disconnecting net 'sfllKey_22[89]' from pin 'nvm_inst22/rdata[89]'.
+Disconnecting net 'sfllKey_22[88]' from pin 'nvm_inst22/rdata[88]'.
+Disconnecting net 'sfllKey_22[87]' from pin 'nvm_inst22/rdata[87]'.
+Disconnecting net 'sfllKey_22[86]' from pin 'nvm_inst22/rdata[86]'.
+Disconnecting net 'sfllKey_22[85]' from pin 'nvm_inst22/rdata[85]'.
+Disconnecting net 'sfllKey_22[84]' from pin 'nvm_inst22/rdata[84]'.
+Disconnecting net 'sfllKey_22[83]' from pin 'nvm_inst22/rdata[83]'.
+Disconnecting net 'sfllKey_22[82]' from pin 'nvm_inst22/rdata[82]'.
+Disconnecting net 'sfllKey_22[81]' from pin 'nvm_inst22/rdata[81]'.
+Disconnecting net 'sfllKey_22[80]' from pin 'nvm_inst22/rdata[80]'.
+Disconnecting net 'sfllKey_22[79]' from pin 'nvm_inst22/rdata[79]'.
+Disconnecting net 'sfllKey_22[78]' from pin 'nvm_inst22/rdata[78]'.
+Disconnecting net 'sfllKey_22[77]' from pin 'nvm_inst22/rdata[77]'.
+Disconnecting net 'sfllKey_22[76]' from pin 'nvm_inst22/rdata[76]'.
+Disconnecting net 'sfllKey_22[75]' from pin 'nvm_inst22/rdata[75]'.
+Disconnecting net 'sfllKey_22[74]' from pin 'nvm_inst22/rdata[74]'.
+Disconnecting net 'sfllKey_22[73]' from pin 'nvm_inst22/rdata[73]'.
+Disconnecting net 'sfllKey_22[72]' from pin 'nvm_inst22/rdata[72]'.
+Disconnecting net 'sfllKey_22[71]' from pin 'nvm_inst22/rdata[71]'.
+Disconnecting net 'sfllKey_22[70]' from pin 'nvm_inst22/rdata[70]'.
+Disconnecting net 'sfllKey_22[69]' from pin 'nvm_inst22/rdata[69]'.
+Disconnecting net 'sfllKey_22[68]' from pin 'nvm_inst22/rdata[68]'.
+Disconnecting net 'sfllKey_22[67]' from pin 'nvm_inst22/rdata[67]'.
+Disconnecting net 'sfllKey_22[66]' from pin 'nvm_inst22/rdata[66]'.
+Disconnecting net 'sfllKey_22[65]' from pin 'nvm_inst22/rdata[65]'.
+Disconnecting net 'sfllKey_22[64]' from pin 'nvm_inst22/rdata[64]'.
+Disconnecting net 'sfllKey_22[63]' from pin 'nvm_inst22/rdata[63]'.
+Disconnecting net 'sfllKey_22[62]' from pin 'nvm_inst22/rdata[62]'.
+Disconnecting net 'sfllKey_22[61]' from pin 'nvm_inst22/rdata[61]'.
+Disconnecting net 'sfllKey_22[60]' from pin 'nvm_inst22/rdata[60]'.
+Disconnecting net 'sfllKey_22[59]' from pin 'nvm_inst22/rdata[59]'.
+Disconnecting net 'sfllKey_22[58]' from pin 'nvm_inst22/rdata[58]'.
+Disconnecting net 'sfllKey_22[57]' from pin 'nvm_inst22/rdata[57]'.
+Disconnecting net 'sfllKey_22[56]' from pin 'nvm_inst22/rdata[56]'.
+Disconnecting net 'sfllKey_22[55]' from pin 'nvm_inst22/rdata[55]'.
+Disconnecting net 'sfllKey_22[54]' from pin 'nvm_inst22/rdata[54]'.
+Disconnecting net 'sfllKey_22[53]' from pin 'nvm_inst22/rdata[53]'.
+Disconnecting net 'sfllKey_22[52]' from pin 'nvm_inst22/rdata[52]'.
+Disconnecting net 'sfllKey_22[51]' from pin 'nvm_inst22/rdata[51]'.
+Disconnecting net 'sfllKey_22[50]' from pin 'nvm_inst22/rdata[50]'.
+Disconnecting net 'sfllKey_22[49]' from pin 'nvm_inst22/rdata[49]'.
+Disconnecting net 'sfllKey_22[48]' from pin 'nvm_inst22/rdata[48]'.
+Disconnecting net 'sfllKey_22[47]' from pin 'nvm_inst22/rdata[47]'.
+Disconnecting net 'sfllKey_22[46]' from pin 'nvm_inst22/rdata[46]'.
+Disconnecting net 'sfllKey_22[45]' from pin 'nvm_inst22/rdata[45]'.
+Disconnecting net 'sfllKey_22[44]' from pin 'nvm_inst22/rdata[44]'.
+Disconnecting net 'sfllKey_22[43]' from pin 'nvm_inst22/rdata[43]'.
+Disconnecting net 'sfllKey_22[42]' from pin 'nvm_inst22/rdata[42]'.
+Disconnecting net 'sfllKey_22[41]' from pin 'nvm_inst22/rdata[41]'.
+Disconnecting net 'sfllKey_22[40]' from pin 'nvm_inst22/rdata[40]'.
+Disconnecting net 'sfllKey_22[39]' from pin 'nvm_inst22/rdata[39]'.
+Disconnecting net 'sfllKey_22[38]' from pin 'nvm_inst22/rdata[38]'.
+Disconnecting net 'sfllKey_22[37]' from pin 'nvm_inst22/rdata[37]'.
+Disconnecting net 'sfllKey_22[36]' from pin 'nvm_inst22/rdata[36]'.
+Disconnecting net 'sfllKey_22[35]' from pin 'nvm_inst22/rdata[35]'.
+Disconnecting net 'sfllKey_22[34]' from pin 'nvm_inst22/rdata[34]'.
+Disconnecting net 'sfllKey_22[33]' from pin 'nvm_inst22/rdata[33]'.
+Disconnecting net 'sfllKey_22[32]' from pin 'nvm_inst22/rdata[32]'.
+Disconnecting net 'sfllKey_22[31]' from pin 'nvm_inst22/rdata[31]'.
+Disconnecting net 'sfllKey_22[30]' from pin 'nvm_inst22/rdata[30]'.
+Disconnecting net 'sfllKey_22[29]' from pin 'nvm_inst22/rdata[29]'.
+Disconnecting net 'sfllKey_22[28]' from pin 'nvm_inst22/rdata[28]'.
+Disconnecting net 'sfllKey_22[27]' from pin 'nvm_inst22/rdata[27]'.
+Disconnecting net 'sfllKey_22[26]' from pin 'nvm_inst22/rdata[26]'.
+Disconnecting net 'sfllKey_22[25]' from pin 'nvm_inst22/rdata[25]'.
+Disconnecting net 'sfllKey_22[24]' from pin 'nvm_inst22/rdata[24]'.
+Disconnecting net 'sfllKey_22[23]' from pin 'nvm_inst22/rdata[23]'.
+Disconnecting net 'sfllKey_22[22]' from pin 'nvm_inst22/rdata[22]'.
+Disconnecting net 'sfllKey_22[21]' from pin 'nvm_inst22/rdata[21]'.
+Disconnecting net 'sfllKey_22[20]' from pin 'nvm_inst22/rdata[20]'.
+Disconnecting net 'sfllKey_22[19]' from pin 'nvm_inst22/rdata[19]'.
+Disconnecting net 'sfllKey_22[18]' from pin 'nvm_inst22/rdata[18]'.
+Disconnecting net 'sfllKey_22[17]' from pin 'nvm_inst22/rdata[17]'.
+Disconnecting net 'sfllKey_22[16]' from pin 'nvm_inst22/rdata[16]'.
+Disconnecting net 'sfllKey_22[15]' from pin 'nvm_inst22/rdata[15]'.
+Disconnecting net 'sfllKey_22[14]' from pin 'nvm_inst22/rdata[14]'.
+Disconnecting net 'sfllKey_22[13]' from pin 'nvm_inst22/rdata[13]'.
+Disconnecting net 'sfllKey_22[12]' from pin 'nvm_inst22/rdata[12]'.
+Disconnecting net 'sfllKey_22[11]' from pin 'nvm_inst22/rdata[11]'.
+Disconnecting net 'sfllKey_22[10]' from pin 'nvm_inst22/rdata[10]'.
+Disconnecting net 'sfllKey_22[9]' from pin 'nvm_inst22/rdata[9]'.
+Disconnecting net 'sfllKey_22[8]' from pin 'nvm_inst22/rdata[8]'.
+Disconnecting net 'sfllKey_22[7]' from pin 'nvm_inst22/rdata[7]'.
+Disconnecting net 'sfllKey_22[6]' from pin 'nvm_inst22/rdata[6]'.
+Disconnecting net 'sfllKey_22[5]' from pin 'nvm_inst22/rdata[5]'.
+Disconnecting net 'sfllKey_22[4]' from pin 'nvm_inst22/rdata[4]'.
+Disconnecting net 'sfllKey_22[3]' from pin 'nvm_inst22/rdata[3]'.
+Disconnecting net 'sfllKey_22[2]' from pin 'nvm_inst22/rdata[2]'.
+Disconnecting net 'sfllKey_22[1]' from pin 'nvm_inst22/rdata[1]'.
+Disconnecting net 'sfllKey_22[0]' from pin 'nvm_inst22/rdata[0]'.
+remove_cell nvm*
+Removing cell 'nvm_inst22' in design 'b14_C'.
+1
+current_design $design
+Current design is 'b14_C'.
+{b14_C}
+check_design
+ 
+****************************************
+check_design summary:
+Version:     M-2016.12-SP2
+Date:        Thu Apr 25 12:19:47 2019
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      2
+    Unconnected ports (LINT-28)                                     2
+
+Cells                                                              20
+    Connected to power or ground (LINT-32)                         20
+--------------------------------------------------------------------------------
+
+Warning: In design 'b14_C', port 'WR_REG_SCAN_IN' is not connected to any nets. (LINT-28)
+Warning: In design 'b14_C', port 'RD_REG_SCAN_IN' is not connected to any nets. (LINT-28)
+Warning: In design 'b14_C', a pin on submodule 'U$9067' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9202' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9203' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9204' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9205' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9206' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9207' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9208' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9209' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9216' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9217' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9220' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9231' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9242' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9396' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9399' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9408' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9409' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9410' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+Warning: In design 'b14_C', a pin on submodule 'U$9413' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'I1' is connected to logic 1. 
+1
+create_clock -name VCLK -period 10  -waveform {0 5}
+Warning: Creating virtual clock named 'VCLK' with no sources. (UID-348)
+1
+set input_ports  [all_inputs]
+{WR_REG_SCAN_IN DATAI_31_ DATAI_30_ DATAI_29_ DATAI_28_ DATAI_27_ DATAI_26_ DATAI_25_ DATAI_24_ DATAI_23_ DATAI_22_ DATAI_21_ DATAI_20_ DATAI_19_ DATAI_18_ DATAI_17_ DATAI_16_ DATAI_15_ DATAI_14_ DATAI_13_ DATAI_12_ DATAI_11_ DATAI_10_ DATAI_9_ DATAI_8_ DATAI_7_ DATAI_6_ DATAI_5_ DATAI_4_ DATAI_3_ DATAI_2_ DATAI_1_ DATAI_0_ RD_REG_SCAN_IN STATE_REG_SCAN_IN REG3_REG_7__SCAN_IN REG3_REG_27__SCAN_IN REG3_REG_14__SCAN_IN REG3_REG_23__SCAN_IN REG3_REG_10__SCAN_IN REG3_REG_3__SCAN_IN REG3_REG_19__SCAN_IN REG3_REG_28__SCAN_IN REG3_REG_8__SCAN_IN REG3_REG_1__SCAN_IN REG3_REG_21__SCAN_IN REG3_REG_12__SCAN_IN REG3_REG_25__SCAN_IN REG3_REG_16__SCAN_IN REG3_REG_5__SCAN_IN REG3_REG_17__SCAN_IN REG3_REG_24__SCAN_IN REG3_REG_4__SCAN_IN REG3_REG_9__SCAN_IN REG3_REG_0__SCAN_IN REG3_REG_20__SCAN_IN REG3_REG_13__SCAN_IN IR_REG_0__SCAN_IN IR_REG_1__SCAN_IN IR_REG_2__SCAN_IN IR_REG_3__SCAN_IN IR_REG_4__SCAN_IN IR_REG_5__SCAN_IN IR_REG_6__SCAN_IN IR_REG_7__SCAN_IN IR_REG_8__SCAN_IN IR_REG_9__SCAN_IN IR_REG_10__SCAN_IN IR_REG_11__SCAN_IN IR_REG_12__SCAN_IN IR_REG_13__SCAN_IN IR_REG_14__SCAN_IN IR_REG_15__SCAN_IN IR_REG_16__SCAN_IN IR_REG_17__SCAN_IN IR_REG_18__SCAN_IN IR_REG_19__SCAN_IN IR_REG_20__SCAN_IN IR_REG_21__SCAN_IN IR_REG_22__SCAN_IN IR_REG_23__SCAN_IN IR_REG_24__SCAN_IN IR_REG_25__SCAN_IN IR_REG_26__SCAN_IN IR_REG_27__SCAN_IN IR_REG_28__SCAN_IN IR_REG_29__SCAN_IN IR_REG_30__SCAN_IN IR_REG_31__SCAN_IN D_REG_0__SCAN_IN D_REG_1__SCAN_IN D_REG_2__SCAN_IN D_REG_3__SCAN_IN D_REG_4__SCAN_IN D_REG_5__SCAN_IN D_REG_6__SCAN_IN D_REG_7__SCAN_IN D_REG_8__SCAN_IN D_REG_9__SCAN_IN D_REG_10__SCAN_IN ...}
+set output_ports [all_outputs]
+{U3352 U3351 U3350 U3349 U3348 U3347 U3346 U3345 U3344 U3343 U3342 U3341 U3340 U3339 U3338 U3337 U3336 U3335 U3334 U3333 U3332 U3331 U3330 U3329 U3328 U3327 U3326 U3325 U3324 U3323 U3322 U3321 U3458 U3459 U3320 U3319 U3318 U3317 U3316 U3315 U3314 U3313 U3312 U3311 U3310 U3309 U3308 U3307 U3306 U3305 U3304 U3303 U3302 U3301 U3300 U3299 U3298 U3297 U3296 U3295 U3294 U3293 U3292 U3291 U3467 U3469 U3471 U3473 U3475 U3477 U3479 U3481 U3483 U3485 U3487 U3489 U3491 U3493 U3495 U3497 U3499 U3501 U3503 U3505 U3506 U3507 U3508 U3509 U3510 U3511 U3512 U3513 U3514 U3515 U3516 U3517 U3518 U3519 U3520 U3521 ...}
+set_input_delay -max 1 [get_ports $input_ports ] -clock VCLK
+1
+set_input_delay -min 0 [get_ports $input_ports ] -clock VCLK
+1
+set_output_delay -max 2 [get_ports $output_ports ] -clock VCLK
+1
+set_output_delay -min 1 [get_ports $output_ports ] -clock VCLK
+1
+ungroup -all -flatten
+Information: Updating graph... (UID-83)
+1
+compile_ultra -no_autoungroup -no_seq_output_inversion -no_boundary_optimization
+Warning: The value of variable 'compile_preserve_subdesign_interfaces' has been changed to true because '-no_boundary_optimization' is used. (OPT-133)
+Information: Starting from 2013.12 release, constant propagation is enabled even when boundary optimization is disabled. (OPT-1318)
+Information: Performing power optimization. (PWR-850)
+Analyzing: "/home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db"
+Library analysis succeeded.
+Loading db file '/opt/programs/synopsys/dc/libraries/syn/dw_foundation.sldb'
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | M-2016.12-DWBB_201612.2 |     *     |
+| Licensed DW Building Blocks        | M-2016.12-DWBB_201612.2 |     *     |
+============================================================================
+
+
+Information: There are 2 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'b14_C'
+
+Loaded alib file './alib-52/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db.alib'
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'b14_C'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'TIELO_X1M_A9TH' in the library 'sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'TIEHI_X1M_A9TH' in the library 'sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+Information: Added key list 'DesignWare' to design 'b14_C'. (DDB-72)
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:23    5463.7      0.00       0.0       0.0                              0.1903
+    0:00:23    5463.7      0.00       0.0       0.0                              0.1903
+    0:00:23    5463.7      0.00       0.0       0.0                              0.1903
+    0:00:23    5463.7      0.00       0.0       0.0                              0.1903
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:25    5408.3      0.00       0.0       0.0                              0.1851
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:26    5419.1      0.00       0.0       0.0                              0.1650
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+    0:00:28    5384.2      0.00       0.0       0.0                              0.1455
+    0:00:28    5384.2      0.00       0.0       0.0                              0.1455
+    0:00:28    5384.2      0.00       0.0       0.0                              0.1455
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:28    5383.1      0.00       0.0       0.0                              0.1451
+    0:00:29    5341.7      0.00       0.0       0.0                              0.1297
+    0:00:29    5341.7      0.00       0.0       0.0                              0.1297
+    0:00:29    5341.7      0.00       0.0       0.0                              0.1297
+    0:00:30    5353.6      0.00       0.0       0.0                              0.1284
+    0:00:30    5348.9      0.00       0.0       0.0                              0.1281
+    0:00:30    5348.9      0.00       0.0       0.0                              0.1281
+    0:00:30    5348.9      0.00       0.0       0.0                              0.1281
+    0:00:30    5348.9      0.00       0.0       0.0                              0.1281
+    0:00:31    5328.4      0.00       0.0       0.0                              0.1285
+Loading db file '/home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+#write -output  ../../Results/$design/final/${design}_final_combo.v -hierarchy -format verilog
+#Uncommented 25/04
+#write -output  ../../Results/$design/${node}/${design}_final_combo.v -hierarchy -format verilog
+#write_sdc "../../Results/$design/final/${design}_final_combo.sdc"
+#Uncommented 25/04
+#write_sdc "../../Results/$design/${node}/${design}_final_combo.sdc"
+foreach_in_collection abc [get_ports sfllKey*] { 
+  set abc [get_attribute $abc full_name]
+  set pqr [split $abc "_"]
+  set key_val [lindex $pqr 3]
+   echo "add pin constraint $key_val $abc -Revised"
+} > ../../Results/$design/${node}/key_constraints.do
+#write_file -hierarchy -format verilog -output "$run_dir/netlist/$design.v"
+########### BEGIN AREA, POWER, AND DELAY CALCULATION ##############
+#read_verilog -netlist ../../Results/$design/final/${design}_final_combo.v
+#read_verilog -netlist ../../Results/$design/${node}/${design}_final_combo.v
+#set_dont_touch $design
+#source ../../Results/$design/final/${design}_final_combo.sdc
+#source ../../Results/$design/${node}/${design}_final_combo.sdc
+#compile_ultra 
+#report_timing
+#report_area > ../../Results/$design/${node}/area.rpt
+#report_power
+exit
+
+Thank you...
