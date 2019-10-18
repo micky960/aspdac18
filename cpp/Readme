@@ -1,3 +1,9 @@
+make clean
+make -j8
+./fa b14_C |tee b14_40bits.log
+
+
+
 cd /home/projects/aspdac/src/cpp/
 1. make clean; make -j
 2a. rm -rf path_link*

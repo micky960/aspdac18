@@ -1,741 +1,0 @@
-CREATING FOLDERS
-ATALANTA START
-ATALANTA END
-COMPUTING VALIDLIST
-0% node: N2
-ValidList Node:     N2
-cur max sec: 4
-14.2857% node: N4
-ValidList Node:     N4
-cur max sec: 4
-28.5714% node: N3
-ValidList Node:     N3
-cur max sec: 4
-42.8571% node: N1
-ValidList Node:     N1
-cur max sec: 4
-57.1429% node: N5
-ValidList Node:     N5
-cur max sec: 4
-71.4286% node: O22
-ValidList Node:     O22
-cur max sec: 4
-85.7143% node: O23
-ValidList Node:     O23
-cur max sec: 4
-ValidList Node:     0x1f70510
-ValidList Node:     0x1f74da0
-ValidList Node:     0x1f756b0
-ValidList Node:     0x1f75bf0
-ValidList Node:     0x1f75e30
-ValidList Node:     0x1f76280
-ValidList Node:     0x1f76af0
-% COMPLETE 14.2857 N4:1, SEC 4
-ValidList Node:	N4
-ABC command line: "read_verilog /home/projects/aspdac18/Results/c17_new/N4/verilog.v; sweep; strash; refactor; logic; sweep; write_verilog /home/projects/aspdac18/Results/c17_new/N4/abc_verilog.v".
-
-i:	1
-% COMPLETE 28.5714 N3:2, SEC 4
-ValidList Node:	N3
-ABC command line: "read_verilog /home/projects/aspdac18/Results/c17_new/N3/verilog.v; sweep; strash; refactor; logic; sweep; write_verilog /home/projects/aspdac18/Results/c17_new/N3/abc_verilog.v".
-
-i:	2
-% COMPLETE 42.8571 N1:3, SEC 4
-ValidList Node:	N1
-ABC command line: "read_verilog /home/projects/aspdac18/Results/c17_new/N1/verilog.v; sweep; strash; refactor; logic; sweep; write_verilog /home/projects/aspdac18/Results/c17_new/N1/abc_verilog.v".
-
-i:	3
-% COMPLETE 57.1429 N5:4, SEC 4
-ValidList Node:	N5
-ABC command line: "read_verilog /home/projects/aspdac18/Results/c17_new/N5/verilog.v; sweep; strash; refactor; logic; sweep; write_verilog /home/projects/aspdac18/Results/c17_new/N5/abc_verilog.v".
-
-i:	4
-% COMPLETE 71.4286 O22:5, SEC 4
-ValidList Node:	O22
-ABC command line: "read_verilog /home/projects/aspdac18/Results/c17_new/O22/verilog.v; sweep; strash; refactor; logic; sweep; write_verilog /home/projects/aspdac18/Results/c17_new/O22/abc_verilog.v".
-
-i:	5
-% COMPLETE 85.7143 O23:6, SEC 4
-ValidList Node:	O23
-ABC command line: "read_verilog /home/projects/aspdac18/Results/c17_new/O23/verilog.v; sweep; strash; refactor; logic; sweep; write_verilog /home/projects/aspdac18/Results/c17_new/O23/abc_verilog.v".
-
-i:	6
-outside for loop
-OPT NODE: N3 SEC:4 COST: 0
-ELAPSED TIME:	10
-O23
-  assign O23 = ~n9 & ~n10;
-  assign O23_temp = ~n9 & ~n10;
-O22
-  assign O22 = 1'b1;
-  assign O22_temp = 1'b1;
-                          CONFORMAL (R)
-                   Version 17.10-s240 (29-Sep-2017) (64 bit executable)
-   Copyright (c) Cadence Design Systems, Inc., 1997-2017. All Rights Reserved
-
-
-This program is proprietary and confidential information belonging to
-Cadence Design Systems, Inc., and may be used and disclosed only as authorized
-in a license agreement controlling such use and disclosure.
-
-// Warning: This version is 540 days old. You can download the latest version from http://downloads.cadence.com.
-
-// Command: tclmode
-// Command: set design $::env(DESIGN)
-c17_new
-// Command: read_design ../../Results/${design}/final/${design}.v  -golden
-// Parsing file ../../Results/c17_new/final/c17_new.v ...
-// Golden root module is set to 'c17_new'
-// Note: Read VERILOG design successfully
-0
-// Command: read_design ../../files/${design}.v -revised
-// Parsing file ../../files/c17_new.v ...
-// Revised root module is set to 'c17_new'
-// Note: Read VERILOG design successfully
-0
-// Command: set_system_mode lec
-// Processing Golden ...
-//  13% completed//  50% completed//  74% completed// 100% completed// Modeling Golden ...
-//   0% completed//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed// 100% completed// Processing Revised ...
-//  17% completed// 100% completed// Modeling Revised ...
-//   0% completed//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed// 100% completed// Mapping key points ...
-//  14% completed//  28% completed//  42% completed//  57% completed//  71% completed//  85% completed// 100% completed================================================================================
-Mapped points: SYSTEM class
---------------------------------------------------------------------------------
-Mapped points     PI     PO        Total   
---------------------------------------------------------------------------------
-Golden            5      2         7       
---------------------------------------------------------------------------------
-Revised           5      2         7       
-================================================================================
-0
-// Command: add_compared_points -all
-// 2 compared points added to compare list
-0
-// Command: compare
-//   0% Comparing 0 out of 2 points, 0 Non-equivalent//  50% Comparing 1 out of 2 points, 1 Non-equivalent// 100% Comparing 2 out of 2 points, 1 Non-equivalent================================================================================
-Compared points      PO        Total   
---------------------------------------------------------------------------------
-Equivalent           1         1       
---------------------------------------------------------------------------------
-Non-equivalent       1         1       
-================================================================================
-0
-// Command: analyze_eco -Effort ultra -REPLACE ../../Results/${design}/final/${design}_patch.v
-// Grouping
-//  30% completed//  33% completed//  38% completed//  42% completed//  46% completed//  50% completed// 100% completed// Note: 1 group(s) added
-//  54% completed//  64% completed//  74% completed//  84% completed//  89% completed//  92% completed//  89% completed//  92% completed//  89% completed//  92% completed// Post Optimization
-//   0% completed//  25% completed//  50% completed//  75% completed//  99% completed// 100% completed// Note: 0 library cell(s) is in the patch
-// Note: 8 primitive(s) are in the patch
-0
-// Command: set_system_mode setup
-0
-// Command: read_design ../../Results/${design}/final/${design}_patch.v  -Append
-// Parsing file ../../Results/c17_new/final/c17_new_patch.v ...
-// Note: Read VERILOG design successfully
-0
-// Command: apply_patch ${design} ${design}_eco
-// Note: 0 library cell is in the patch
-// Note: 8 primitives are in the patch
-// Note: No library cells were freed
-// Note: 1 primitive was freed
-// Note: No library cells were recycled
-0
-// Command: write_design -ALL ../../Results/${design}/final/${design}_eco.v -rep
-// Note: Wrote VERILOG design successfully
-0
-// Command: exit //-force
-
-                           Design Compiler Graphical 
-                                 DC Ultra (TM)
-                                  DFTMAX (TM)
-                              Power Compiler (TM)
-                                 DesignWare (R)
-                                 DC Expert (TM)
-                               Design Vision (TM)
-                               HDL Compiler (TM)
-                               VHDL Compiler (TM)
-                                  DFT Compiler
-                               Design Compiler(R)
-
-               Version M-2016.12-SP2 for linux64 - Feb 23, 2017 
-
-                    Copyright (c) 1988 - 2017 Synopsys, Inc.
-   This software and the associated documentation are proprietary to Synopsys,
- Inc. This software may only be used in accordance with the terms and conditions
- of a written license agreement with Synopsys, Inc. All other use, reproduction,
-            or distribution of this software is strictly prohibited.
-Initializing...
-set design [getenv "DESIGN"]
-c17_new
-set compile_seqmap_propagate_constants     false
-false
-#set search_path [concat * $search_path]
-#sh rm -rf ./work/work_${design}
-#define_design_lib WORK -path ./work/work_${design}
-set target_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db}
- /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db
-set link_library   { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db }
- /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db 
-read_verilog -rtl ../../Results/${design}/final/${design}_eco.v
-Loading db file '/home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db'
-Loading db file '/opt/programs/synopsys/dc/libraries/syn/gtech.db'
-Loading db file '/opt/programs/synopsys/dc/libraries/syn/standard.sldb'
-  Loading link library 'sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c'
-  Loading link library 'gtech'
-Loading verilog file '/home/projects/aspdac18/Results/c17_new/final/c17_new_eco.v'
-Running PRESTO HDLC
-Compiling source file /home/projects/aspdac18/Results/c17_new/final/c17_new_eco.v
-Presto compilation completed successfully.
-Current design is now '/home/projects/aspdac18/Results/c17_new/final/VDW_LEQ_4.db:VDW_LEQ_4'
-Loaded 4 designs.
-Current design is 'VDW_LEQ_4'.
-VDW_LEQ_4 nvm_1_N4 c17_new_eco c17_new
-current_design $design
-Current design is 'c17_new'.
-{c17_new}
-set x 0
-0
-foreach_in_collection pqr [get_nets *sfllKey*] {
-  set net_name [get_attribute $pqr full_name]
-  set tie_net  [get_attribute [all_fanin -to  $net_name -flat] full_name]
-  set tie_net_split [split $tie_net "\*\*"]
-  set tie_net_val   [lindex $tie_net_split 2]
-  create_port sfllKey_${x}_${tie_net_val}
-  connect_net $net_name sfllKey_${x}_${tie_net_val}
-  set x [expr $x + 1]
-}
-Creating port 'sfllKey_0_logic_0' in design 'c17_new'.
-Connecting net 'sfllKey_1[3]' to port 'sfllKey_0_logic_0'.
-Creating port 'sfllKey_1_logic_1' in design 'c17_new'.
-Connecting net 'sfllKey_1[2]' to port 'sfllKey_1_logic_1'.
-Creating port 'sfllKey_2_logic_1' in design 'c17_new'.
-Connecting net 'sfllKey_1[1]' to port 'sfllKey_2_logic_1'.
-Creating port 'sfllKey_3_logic_1' in design 'c17_new'.
-Connecting net 'sfllKey_1[0]' to port 'sfllKey_3_logic_1'.
-foreach_in_collection nvm_pins [get_pins nvm*/*] {
-  disconnect_net [all_connected $nvm_pins] $nvm_pins
-}
-Disconnecting net 'sfllKey_1[3]' from pin 'nvm_inst1/rdata[3]'.
-Disconnecting net 'sfllKey_1[2]' from pin 'nvm_inst1/rdata[2]'.
-Disconnecting net 'sfllKey_1[1]' from pin 'nvm_inst1/rdata[1]'.
-Disconnecting net 'sfllKey_1[0]' from pin 'nvm_inst1/rdata[0]'.
-remove_cell nvm*
-Removing cell 'nvm_inst1' in design 'c17_new'.
-1
-current_design $design
-Current design is 'c17_new'.
-{c17_new}
-create_clock -name VCLK -period 10  -waveform {0 5}
-Warning: Creating virtual clock named 'VCLK' with no sources. (UID-348)
-1
-set input_ports  [all_inputs]
-{I1 I2 I3 I6 I7 sfllKey_0_logic_0 sfllKey_1_logic_1 sfllKey_2_logic_1 sfllKey_3_logic_1}
-set output_ports [all_outputs]
-{O22 O23}
-set_input_delay -max 1 [get_ports $input_ports ] -clock VCLK
-1
-set_input_delay -min 0 [get_ports $input_ports ] -clock VCLK
-1
-set_output_delay -max 2 [get_ports $output_ports ] -clock VCLK
-1
-set_output_delay -min 1 [get_ports $output_ports ] -clock VCLK
-1
-ungroup -all -flatten
-Information: Updating graph... (UID-83)
-1
-compile_ultra -no_autoungroup -no_seq_output_inversion -no_boundary_optimization
-Warning: The value of variable 'compile_preserve_subdesign_interfaces' has been changed to true because '-no_boundary_optimization' is used. (OPT-133)
-Information: Starting from 2013.12 release, constant propagation is enabled even when boundary optimization is disabled. (OPT-1318)
-Information: Performing power optimization. (PWR-850)
-Alib files are up-to-date.
-Loading db file '/opt/programs/synopsys/dc/libraries/syn/dw_foundation.sldb'
-Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
-Information: Evaluating DesignWare library utilization. (UISN-27)
-
-============================================================================
-| DesignWare Building Block Library  |         Version         | Available |
-============================================================================
-| Basic DW Building Blocks           | M-2016.12-DWBB_201612.2 |     *     |
-| Licensed DW Building Blocks        | M-2016.12-DWBB_201612.2 |     *     |
-============================================================================
-
-  Simplifying Design 'c17_new'
-
-Loaded alib file './alib-52/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db.alib'
-Information: State dependent leakage is now switched from on to off.
-
-  Beginning Pass 1 Mapping
-  ------------------------
-  Processing 'c17_new'
-
-  Updating timing information
-Information: Updating design information... (UID-85)
-Information: The library cell 'TIELO_X1M_A9TH' in the library 'sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c' is not characterized for internal power. (PWR-536)
-Information: The library cell 'TIEHI_X1M_A9TH' in the library 'sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c' is not characterized for internal power. (PWR-536)
-Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
-
-  Beginning Mapping Optimizations  (Ultra High effort)
-  -------------------------------
-
-  Beginning Constant Register Removal
-  -----------------------------------
-
-  Beginning Global Optimizations
-  ------------------------------
-  Numerical Synthesis (Phase 1)
-  Numerical Synthesis (Phase 2)
-  Global Optimization (Phase 1)
-  Global Optimization (Phase 2)
-  Global Optimization (Phase 3)
-  Global Optimization (Phase 4)
-  Global Optimization (Phase 5)
-  Global Optimization (Phase 6)
-  Global Optimization (Phase 7)
-  Global Optimization (Phase 8)
-  Global Optimization (Phase 9)
-  Global Optimization (Phase 10)
-  Global Optimization (Phase 11)
-  Global Optimization (Phase 12)
-  Global Optimization (Phase 13)
-  Global Optimization (Phase 14)
-  Global Optimization (Phase 15)
-  Global Optimization (Phase 16)
-  Global Optimization (Phase 17)
-  Global Optimization (Phase 18)
-  Global Optimization (Phase 19)
-  Global Optimization (Phase 20)
-  Global Optimization (Phase 21)
-  Global Optimization (Phase 22)
-  Global Optimization (Phase 23)
-  Global Optimization (Phase 24)
-  Global Optimization (Phase 25)
-  Global Optimization (Phase 26)
-  Global Optimization (Phase 27)
-  Global Optimization (Phase 28)
-
-  Beginning Isolate Ports
-  -----------------------
-
-  Beginning Delay Optimization
-  ----------------------------
-
-                                  TOTAL                                                
-   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
-    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
-  --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:08      24.5      0.00       0.0       0.0                              0.0006
-    0:00:08      24.5      0.00       0.0       0.0                              0.0006
-    0:00:08      24.5      0.00       0.0       0.0                              0.0006
-    0:00:09      24.5      0.00       0.0       0.0                              0.0006
-
-  Beginning WLM Backend Optimization
-  --------------------------------------
-    0:00:09      24.5      0.00       0.0       0.0                              0.0006
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-
-
-  Beginning Leakage Power Optimization  (max_leakage_power 0)
-  ------------------------------------
-
-                                  TOTAL                                                
-   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
-    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
-  --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-  Global Optimization (Phase 29)
-  Global Optimization (Phase 30)
-  Global Optimization (Phase 31)
-  Global Optimization (Phase 32)
-  Global Optimization (Phase 33)
-  Global Optimization (Phase 34)
-  Global Optimization (Phase 35)
-  Global Optimization (Phase 36)
-  Global Optimization (Phase 37)
-  Global Optimization (Phase 38)
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-
-                                  TOTAL                                                
-   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
-    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
-  --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:09      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-    0:00:10      24.5      0.00       0.0       0.0                              0.0004
-Loading db file '/home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db'
-
-
-Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
-
-
-  Optimization Complete
-  ---------------------
-Information: State dependent leakage is now switched from off to on.
-Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
-1
-write -output  ../../Results/$design/final/${design}_final_combo.v -hierarchy -format verilog
-Writing verilog file '/home/projects/aspdac18/Results/c17_new/final/c17_new_final_combo.v'.
-Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
-1
-write_sdc "../../Results/$design/final/${design}_final_combo.sdc"
-1
-foreach_in_collection abc [get_ports sfllKey*] { 
-  set abc [get_attribute $abc full_name]
-  set pqr [split $abc "_"]
-  set key_val [lindex $pqr 3]
-   echo "add pin constraint $key_val $abc -Revised"
-} > ../../Results/$design/final/key_constraints.do
-#write_file -hierarchy -format verilog -output "$run_dir/netlist/$design.v"
-exit
-
-Thank you...
-                          CONFORMAL (R)
-                   Version 17.10-s240 (29-Sep-2017) (64 bit executable)
-   Copyright (c) Cadence Design Systems, Inc., 1997-2017. All Rights Reserved
-
-
-This program is proprietary and confidential information belonging to
-Cadence Design Systems, Inc., and may be used and disclosed only as authorized
-in a license agreement controlling such use and disclosure.
-
-// Warning: This version is 540 days old. You can download the latest version from http://downloads.cadence.com.
-
-// Command: tclmode
-// Command: set design $::env(DESIGN)
-c17_new
-// Command: read_library -Revised -Lib /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/lib/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.lib
-// Parsing file /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/lib/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.lib ...
-// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:23)
-// Warning: (UDP3.2) Primitive has unspecified term(s) (occurrence:6)
-// Warning: (IGN5.5) Redefined Liberty attributes are detected. Subsequent definitions are ignored (occurrence:10)
-// Note: Read Liberty library successfully
-0
-// Command: read_design ../../files/$design.v        			-golden
-// Parsing file ../../files/c17_new.v ...
-// Golden root module is set to 'c17_new'
-// Note: Read VERILOG design successfully
-0
-// Command: read_design ../../Results/$design/final/${design}_final_combo.v -revised
-// Parsing file ../../Results/c17_new/final/c17_new_final_combo.v ...
-// Revised root module is set to 'c17_new'
-// Note: Read VERILOG design successfully
-0
-// Command: vpxmode
-// Command: dofile ../../Results/$design/final/new_key_constraint.do
-// Command: add pin constraint 1 sfllKey_1_logic_1 -Revised
-// Command: add pin constraint 1 sfllKey_2_logic_1 -Revised
-// Command: add pin constraint 1 sfllKey_3_logic_1 -Revised
-// Command: set system mode lec
-// Processing Golden ...
-//  17% completed// 100% completed// Modeling Golden ...
-//   0% completed//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed// 100% completed// Processing Revised ...
-//  12% completed//  15% completed//  18% completed//  23% completed//  27% completed//  30% completed//  37% completed//  47% completed//  57% completed//  67% completed//  77% completed//  87% completed//  95% completed// 100% completed// Modeling Revised ...
-//   0% completed//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed// 100% completed// Warning: Golden and Revised have different numbers of key points:
-// Golden  key points = 7
-// Revised key points = 8
-// Mapping key points ...
-//  14% completed//  28% completed//  42% completed//  57% completed//  71% completed//  85% completed// 100% completed// Warning: Primary input 'sfllKey_0_logic_0' in Revised has no correspondence in Golden
-================================================================================
-Mapped points: SYSTEM class
---------------------------------------------------------------------------------
-Mapped points     PI     PO        Total   
---------------------------------------------------------------------------------
-Golden            5      2         7       
---------------------------------------------------------------------------------
-Revised           5      2         7       
-================================================================================
-Unmapped points:
-================================================================================
-Revised:
---------------------------------------------------------------------------------
-Unmapped points   PI        Total   
---------------------------------------------------------------------------------
-Extra             1         1       
-================================================================================
-// Command: add compared points -all
-// 2 compared points added to compare list
-// Command: compare -NONEQ_stop 1
-// Compare will stop on the 1st non-equivalent point
-//   0% Comparing 0 out of 2 points, 0 Non-equivalent// 100% Comparing 2 out of 2 points, 0 Non-equivalent================================================================================
-Compared points      PO        Total   
---------------------------------------------------------------------------------
-Equivalent           2         2       
-================================================================================
-// Command: report compare data  -Summary > ../../Results/$design/final/lec_key_constraint_log
-// Command: exit -force
-                          CONFORMAL (R)
-                   Version 17.10-s240 (29-Sep-2017) (64 bit executable)
-   Copyright (c) Cadence Design Systems, Inc., 1997-2017. All Rights Reserved
-
-
-This program is proprietary and confidential information belonging to
-Cadence Design Systems, Inc., and may be used and disclosed only as authorized
-in a license agreement controlling such use and disclosure.
-
-// Warning: This version is 540 days old. You can download the latest version from http://downloads.cadence.com.
-
-// Command: tclmode
-// Command: set design $::env(DESIGN)
-c17_new
-// Command: read_library -Revised -Lib /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/lib/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.lib
-// Parsing file /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/lib/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.lib ...
-// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:23)
-// Warning: (UDP3.2) Primitive has unspecified term(s) (occurrence:6)
-// Warning: (IGN5.5) Redefined Liberty attributes are detected. Subsequent definitions are ignored (occurrence:10)
-// Note: Read Liberty library successfully
-0
-// Command: read_design ../../files/$design.v        			-golden
-// Parsing file ../../files/c17_new.v ...
-// Golden root module is set to 'c17_new'
-// Note: Read VERILOG design successfully
-0
-// Command: read_design ../../Results/$design/final/${design}_final_combo.v -revised
-// Parsing file ../../Results/c17_new/final/c17_new_final_combo.v ...
-// Revised root module is set to 'c17_new'
-// Note: Read VERILOG design successfully
-0
-// Command: vpxmode
-// Command: dofile ../../Results/$design/final/new_key_constraint.do
-// Command: add pin constraint 0 sfllKey_0_logic_0 -Revised
-// Command: add pin constraint 1 sfllKey_2_logic_1 -Revised
-// Command: add pin constraint 1 sfllKey_3_logic_1 -Revised
-// Command: set system mode lec
-// Processing Golden ...
-//  17% completed// 100% completed// Modeling Golden ...
-//   0% completed//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed// 100% completed// Processing Revised ...
-//  12% completed//  15% completed//  18% completed//  23% completed//  27% completed//  30% completed//  37% completed//  47% completed//  57% completed//  67% completed//  77% completed//  87% completed//  95% completed// 100% completed// Modeling Revised ...
-//   0% completed//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed// 100% completed// Warning: Golden and Revised have different numbers of key points:
-// Golden  key points = 7
-// Revised key points = 8
-// Mapping key points ...
-//  14% completed//  28% completed//  42% completed//  57% completed//  71% completed//  85% completed// 100% completed// Warning: Primary input 'sfllKey_1_logic_1' in Revised has no correspondence in Golden
-================================================================================
-Mapped points: SYSTEM class
---------------------------------------------------------------------------------
-Mapped points     PI     PO        Total   
---------------------------------------------------------------------------------
-Golden            5      2         7       
---------------------------------------------------------------------------------
-Revised           5      2         7       
-================================================================================
-Unmapped points:
-================================================================================
-Revised:
---------------------------------------------------------------------------------
-Unmapped points   PI        Total   
---------------------------------------------------------------------------------
-Extra             1         1       
-================================================================================
-// Command: add compared points -all
-// 2 compared points added to compare list
-// Command: compare -NONEQ_stop 1
-// Compare will stop on the 1st non-equivalent point
-//   0% Comparing 0 out of 2 points, 0 Non-equivalent// 100% Comparing 2 out of 2 points, 0 Non-equivalent================================================================================
-Compared points      PO        Total   
---------------------------------------------------------------------------------
-Equivalent           2         2       
-================================================================================
-// Command: report compare data  -Summary > ../../Results/$design/final/lec_key_constraint_log
-// Command: exit -force
-                          CONFORMAL (R)
-                   Version 17.10-s240 (29-Sep-2017) (64 bit executable)
-   Copyright (c) Cadence Design Systems, Inc., 1997-2017. All Rights Reserved
-
-
-This program is proprietary and confidential information belonging to
-Cadence Design Systems, Inc., and may be used and disclosed only as authorized
-in a license agreement controlling such use and disclosure.
-
-// Warning: This version is 540 days old. You can download the latest version from http://downloads.cadence.com.
-
-// Command: tclmode
-// Command: set design $::env(DESIGN)
-c17_new
-// Command: read_library -Revised -Lib /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/lib/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.lib
-// Parsing file /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/lib/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.lib ...
-// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:23)
-// Warning: (UDP3.2) Primitive has unspecified term(s) (occurrence:6)
-// Warning: (IGN5.5) Redefined Liberty attributes are detected. Subsequent definitions are ignored (occurrence:10)
-// Note: Read Liberty library successfully
-0
-// Command: read_design ../../files/$design.v        			-golden
-// Parsing file ../../files/c17_new.v ...
-// Golden root module is set to 'c17_new'
-// Note: Read VERILOG design successfully
-0
-// Command: read_design ../../Results/$design/final/${design}_final_combo.v -revised
-// Parsing file ../../Results/c17_new/final/c17_new_final_combo.v ...
-// Revised root module is set to 'c17_new'
-// Note: Read VERILOG design successfully
-0
-// Command: vpxmode
-// Command: dofile ../../Results/$design/final/new_key_constraint.do
-// Command: add pin constraint 0 sfllKey_0_logic_0 -Revised
-// Command: add pin constraint 1 sfllKey_1_logic_1 -Revised
-// Command: add pin constraint 1 sfllKey_3_logic_1 -Revised
-// Command: set system mode lec
-// Processing Golden ...
-//  17% completed// 100% completed// Modeling Golden ...
-//   0% completed//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed// 100% completed// Processing Revised ...
-//  12% completed//  15% completed//  18% completed//  23% completed//  27% completed//  30% completed//  37% completed//  47% completed//  57% completed//  67% completed//  77% completed//  87% completed//  95% completed// 100% completed// Modeling Revised ...
-//   0% completed//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed// 100% completed// Warning: Golden and Revised have different numbers of key points:
-// Golden  key points = 7
-// Revised key points = 8
-// Mapping key points ...
-//  14% completed//  28% completed//  42% completed//  57% completed//  71% completed//  85% completed// 100% completed// Warning: Primary input 'sfllKey_2_logic_1' in Revised has no correspondence in Golden
-================================================================================
-Mapped points: SYSTEM class
---------------------------------------------------------------------------------
-Mapped points     PI     PO        Total   
---------------------------------------------------------------------------------
-Golden            5      2         7       
---------------------------------------------------------------------------------
-Revised           5      2         7       
-================================================================================
-Unmapped points:
-================================================================================
-Revised:
---------------------------------------------------------------------------------
-Unmapped points   PI        Total   
---------------------------------------------------------------------------------
-Extra             1         1       
-================================================================================
-// Command: add compared points -all
-// 2 compared points added to compare list
-// Command: compare -NONEQ_stop 1
-// Compare will stop on the 1st non-equivalent point
-//   0% Comparing 0 out of 2 points, 0 Non-equivalent//  50% Comparing 1 out of 2 points, 0 Non-equivalent================================================================================
-Compared points      PO        Total   
---------------------------------------------------------------------------------
-Non-equivalent       1         1       
---------------------------------------------------------------------------------
-Not-compared         1         1       
-================================================================================
-// Command: report compare data  -Summary > ../../Results/$design/final/lec_key_constraint_log
-// Command: exit -force
-                          CONFORMAL (R)
-                   Version 17.10-s240 (29-Sep-2017) (64 bit executable)
-   Copyright (c) Cadence Design Systems, Inc., 1997-2017. All Rights Reserved
-
-
-This program is proprietary and confidential information belonging to
-Cadence Design Systems, Inc., and may be used and disclosed only as authorized
-in a license agreement controlling such use and disclosure.
-
-// Warning: This version is 540 days old. You can download the latest version from http://downloads.cadence.com.
-
-// Command: tclmode
-// Command: set design $::env(DESIGN)
-c17_new
-// Command: read_library -Revised -Lib /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/lib/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.lib
-// Parsing file /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/lib/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.lib ...
-// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:23)
-// Warning: (UDP3.2) Primitive has unspecified term(s) (occurrence:6)
-// Warning: (IGN5.5) Redefined Liberty attributes are detected. Subsequent definitions are ignored (occurrence:10)
-// Note: Read Liberty library successfully
-0
-// Command: read_design ../../files/$design.v        			-golden
-// Parsing file ../../files/c17_new.v ...
-// Golden root module is set to 'c17_new'
-// Note: Read VERILOG design successfully
-0
-// Command: read_design ../../Results/$design/final/${design}_final_combo.v -revised
-// Parsing file ../../Results/c17_new/final/c17_new_final_combo.v ...
-// Revised root module is set to 'c17_new'
-// Note: Read VERILOG design successfully
-0
-// Command: vpxmode
-// Command: dofile ../../Results/$design/final/new_key_constraint.do
-// Command: add pin constraint 0 sfllKey_0_logic_0 -Revised
-// Command: add pin constraint 1 sfllKey_1_logic_1 -Revised
-// Command: add pin constraint 1 sfllKey_2_logic_1 -Revised
-// Command: set system mode lec
-// Processing Golden ...
-//  17% completed// 100% completed// Modeling Golden ...
-//   0% completed//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed// 100% completed// Processing Revised ...
-//  12% completed//  15% completed//  18% completed//  23% completed//  27% completed//  30% completed//  37% completed//  47% completed//  57% completed//  67% completed//  77% completed//  87% completed//  95% completed// 100% completed// Modeling Revised ...
-//   0% completed//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed// 100% completed// Warning: Golden and Revised have different numbers of key points:
-// Golden  key points = 7
-// Revised key points = 8
-// Mapping key points ...
-//  14% completed//  28% completed//  42% completed//  57% completed//  71% completed//  85% completed// 100% completed// Warning: Primary input 'sfllKey_3_logic_1' in Revised has no correspondence in Golden
-================================================================================
-Mapped points: SYSTEM class
---------------------------------------------------------------------------------
-Mapped points     PI     PO        Total   
---------------------------------------------------------------------------------
-Golden            5      2         7       
---------------------------------------------------------------------------------
-Revised           5      2         7       
-================================================================================
-Unmapped points:
-================================================================================
-Revised:
---------------------------------------------------------------------------------
-Unmapped points   PI        Total   
---------------------------------------------------------------------------------
-Extra             1         1       
-================================================================================
-// Command: add compared points -all
-// 2 compared points added to compare list
-// Command: compare -NONEQ_stop 1
-// Compare will stop on the 1st non-equivalent point
-//   0% Comparing 0 out of 2 points, 0 Non-equivalent//  50% Comparing 1 out of 2 points, 0 Non-equivalent================================================================================
-Compared points      PO        Total   
---------------------------------------------------------------------------------
-Non-equivalent       1         1       
---------------------------------------------------------------------------------
-Not-compared         1         1       
-================================================================================
-// Command: report compare data  -Summary > ../../Results/$design/final/lec_key_constraint_log
-// Command: exit -force
-key constraint check
-sec attained: 2
-ELAPSED TIME 2:	39

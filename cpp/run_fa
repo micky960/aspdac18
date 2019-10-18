@@ -1,1 +1,1 @@
-./fa -i $design | tee ${design}_log
+./fa $design | tee ${design}.log

@@ -1,5 +1,5 @@
-#define TARGET_SEC 32
-#define SEC 35
+#define TARGET_SEC 8
+#define SEC 10
 #define KEY_BUFF 20 
 #define NVM 1.46
 #define FF  9

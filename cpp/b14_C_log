@@ -1,554 +1,0 @@
-CREATING FOLDERS
-ATALANTA START
-ATALANTA END
-COMPUTING VALIDLIST
-0% node: U3014
-cur max sec: 0
-0.0102386% node: U3015
-cur max sec: 0
-0.0204771% node: U3016
-cur max sec: 0
-0.0307157% node: U3017
-cur max sec: 0
-0.0409542% node: U3018
-cur max sec: 0
-0.0511928% node: U3019
-cur max sec: 0
-0.0614314% node: U3020
-cur max sec: 0
-0.0716699% node: U3021
-cur max sec: 0
-0.0819085% node: U3022
-cur max sec: 0
-0.092147% node: U3023
-cur max sec: 0
-0.102386% node: U3024
-cur max sec: 0
-0.112624% node: U3025
-cur max sec: 0
-0.122863% node: U3026
-cur max sec: 0
-0.133101% node: U3027
-cur max sec: 0
-0.14334% node: U3028
-cur max sec: 0
-0.153578% node: U3029
-cur max sec: 33
-0.163817% node: U3030
-cur max sec: 33
-0.174055% node: U3031
-cur max sec: 33
-0.184294% node: U3032
-cur max sec: 33
-0.194533% node: U3033
-cur max sec: 33
-0.204771% node: U3034
-cur max sec: 33
-0.21501% node: U3035
-cur max sec: 93
-0.225248% node: U3036
-cur max sec: 93
-0.235487% node: U3037
-cur max sec: 93
-0.245725% node: U3038
-cur max sec: 93
-0.255964% node: U3039
-cur max sec: 93
-0.266203% node: U3040
-cur max sec: 93
-0.276441% node: U3041
-cur max sec: 93
-0.28668% node: U3042
-cur max sec: 93
-0.296918% node: U3043
-cur max sec: 93
-0.307157% node: U3044
-cur max sec: 93
-0.317395% node: U3045
-cur max sec: 93
-0.327634% node: U3046
-cur max sec: 93
-0.337872% node: U3047
-cur max sec: 93
-0.348111% node: U3048
-cur max sec: 93
-0.35835% node: U3049
-cur max sec: 93
-0.368588% node: U3050
-cur max sec: 93
-0.378827% node: U3051
-cur max sec: 93
-0.389065% node: U3052
-cur max sec: 93
-0.399304% node: U3053
-cur max sec: 93
-0.409542% node: U3054
-cur max sec: 93
-0.419781% node: U3055
-cur max sec: 93
-0.430019% node: U3056
-cur max sec: 93
-0.440258% node: U3057
-cur max sec: 93
-0.450497% node: U3058
-cur max sec: 93
-0.460735% node: U3059
-cur max sec: 93
-0.470974% node: U3060
-cur max sec: 93
-0.481212% node: U3061
-cur max sec: 93
-0.491451% node: U3062
-cur max sec: 93
-0.501689% node: U3063
-cur max sec: 93
-0.511928% node: U3064
-cur max sec: 93
-0.522166% node: U3065
-cur max sec: 99
-0.532405% node: U3066
-cur max sec: 99
-0.542644% node: U3067
-cur max sec: 99
-0.552882% node: U3068
-cur max sec: 99
-0.563121% node: U3069
-cur max sec: 99
-0.573359% node: U3070
-cur max sec: 99
-0.583598% node: U3071
-cur max sec: 99
-0.593836% node: U3072
-cur max sec: 99
-0.604075% node: U3073
-cur max sec: 99
-0.614314% node: U3074
-cur max sec: 99
-0.624552% node: U3075
-cur max sec: 99
-0.634791% node: U3076
-cur max sec: 99
-0.645029% node: U3077
-cur max sec: 99
-0.655268% node: U3078
-cur max sec: 99
-0.665506% node: U3079
-cur max sec: 99
-0.675745% node: U3080
-cur max sec: 99
-0.685983% node: U3081
-cur max sec: 99
-0.696222% node: U3082
-cur max sec: 99
-0.706461% node: U3083
-cur max sec: 99
-0.716699% node: U3084
-cur max sec: 99
-0.726938% node: U3085
-cur max sec: 99
-0.737176% node: U3086
-cur max sec: 99
-0.747415% node: U3087
-cur max sec: 99
-0.757653% node: U3088
-cur max sec: 99
-0.767892% node: U3089
-cur max sec: 99
-0.77813% node: U3090
-cur max sec: 99
-0.788369% node: U3091
-cur max sec: 99
-0.798608% node: U3092
-cur max sec: 99
-0.808846% node: U3093
-cur max sec: 99
-0.819085% node: U3094
-cur max sec: 99
-0.829323% node: U3095
-cur max sec: 99
-0.839562% node: U3096
-cur max sec: 99
-0.8498% node: U3097
-cur max sec: 99
-0.860039% node: U3098
-cur max sec: 99
-0.870277% node: U3099
-cur max sec: 99
-0.880516% node: U3100
-cur max sec: 99
-0.890755% node: U3101
-cur max sec: 99
-0.900993% node: U3102
-cur max sec: 99
-0.911232% node: U3103
-cur max sec: 99
-0.92147% node: U3104
-cur max sec: 99
-0.931709% node: U3105
-cur max sec: 99
-0.941947% node: U3106
-% VALID: 0.0102386
-max sec: 132 node: U3106
-% COMPLETE 0 U3106:0, SEC 132
-ABC command line: "read_verilog /home/projects/aspdac18/Results/b14_C/U3106/verilog.v; sweep; strash; refactor; logic; sweep; write_verilog /home/projects/aspdac18/Results/b14_C/U3106/abc_verilog.v".
-
-OPT NODE: U3106 SEC:128 COST: 5.42002e+08
-ELAPSED TIME:	469
-U3352
-  assign U3352 = n521 | n522;
-  assign U3352_temp = n521 | n522;
-U3351
-  assign U3351 = n528 | n529;
-  assign U3351_temp = n528 | n529;
-U3350
-  assign U3350 = n536 | n537;
-  assign U3350_temp = n536 | n537;
-U3349
-  assign U3349 = n543 | n544;
-  assign U3349_temp = n543 | n544;
-U3348
-  assign U3348 = n552 | n553;
-  assign U3348_temp = n552 | n553;
-U3347
-  assign U3347 = n559 | n560;
-  assign U3347_temp = n559 | n560;
-U3346
-  assign U3346 = n570 | n571;
-  assign U3346_temp = n570 | n571;
-U3345
-  assign U3345 = n578 | n579;
-  assign U3345_temp = n578 | n579;
-U3344
-  assign U3344 = n586 | n587;
-  assign U3344_temp = n586 | n587;
-U3343
-  assign U3343 = n593 | n594;
-  assign U3343_temp = n593 | n594;
-U3342
-  assign U3342 = n602 | n603;
-  assign U3342_temp = n602 | n603;
-U3341
-  assign U3341 = n610 | n611;
-  assign U3341_temp = n610 | n611;
-U3340
-  assign U3340 = n618 | n619;
-  assign U3340_temp = n618 | n619;
-U3339
-  assign U3339 = n625 | n626;
-  assign U3339_temp = n625 | n626;
-U3338
-  assign U3338 = n640 | n641;
-  assign U3338_temp = n640 | n641;
-U3337
-  assign U3337 = n648 | n649;
-  assign U3337_temp = n648 | n649;
-U3336
-  assign U3336 = n656 | n657;
-  assign U3336_temp = n656 | n657;
-U3335
-  assign U3335 = n663 | n664;
-  assign U3335_temp = n663 | n664;
-U3334
-  assign U3334 = n673 | n674;
-  assign U3334_temp = n673 | n674;
-U3333
-  assign U3333 = n684 | n685;
-  assign U3333_temp = n684 | n685;
-U3332
-  assign U3332 = n692 | n693;
-  assign U3332_temp = n692 | n693;
-U3331
-  assign U3331 = n699 | n700;
-  assign U3331_temp = n699 | n700;
-U3330
-  assign U3330 = n708 | n709;
-  assign U3330_temp = n708 | n709;
-U3329
-  assign U3329 = n716 | n717;
-  assign U3329_temp = n716 | n717;
-U3324
-  assign U3324 = n755 | n756;
-  assign U3324_temp = n755 | n756;
-U3323
-  assign U3323 = n764 | n765;
-  assign U3323_temp = n764 | n765;
-U3322
-  assign U3322 = n772 | n773;
-  assign U3322_temp = n772 | n773;
-U3321
-  assign U3321 = n777 | n778;
-  assign U3321_temp = n777 | n778;
-U3483
-  assign U3483 = n1227 | n1267;
-  assign U3483_temp = n1227 | n1267;
-U3485
-  assign U3485 = n1269 | n1312;
-  assign U3485_temp = n1269 | n1312;
-U3487
-  assign U3487 = n1314 | n1359;
-  assign U3487_temp = n1314 | n1359;
-U3489
-  assign U3489 = n1361 | n1406;
-  assign U3489_temp = n1361 | n1406;
-U3491
-  assign U3491 = n1408 | n1453;
-  assign U3491_temp = n1408 | n1453;
-U3493
-  assign U3493 = n1455 | n1500;
-  assign U3493_temp = n1455 | n1500;
-U3495
-  assign U3495 = n1502 | n1546;
-  assign U3495_temp = n1502 | n1546;
-U3497
-  assign U3497 = n1548 | n1591;
-  assign U3497_temp = n1548 | n1591;
-U3499
-  assign U3499 = n1593 | n1639;
-  assign U3499_temp = n1593 | n1639;
-U3516
-  assign U3516 = n2218 | n2233;
-  assign U3516_temp = n2218 | n2233;
-U3517
-  assign U3517 = n2235 | n2244;
-  assign U3517_temp = n2235 | n2244;
-U3523
-  assign U3523 = n2262 | n2263;
-  assign U3523_temp = n2262 | n2263;
-U3524
-  assign U3524 = n2265 | n2266;
-  assign U3524_temp = n2265 | n2266;
-U3525
-  assign U3525 = n2268 | n2269;
-  assign U3525_temp = n2268 | n2269;
-U3526
-  assign U3526 = n2271 | n2272;
-  assign U3526_temp = n2271 | n2272;
-U3527
-  assign U3527 = n2274 | n2275;
-  assign U3527_temp = n2274 | n2275;
-U3528
-  assign U3528 = n2277 | n2278;
-  assign U3528_temp = n2277 | n2278;
-U3529
-  assign U3529 = n2280 | n2281;
-  assign U3529_temp = n2280 | n2281;
-U3530
-  assign U3530 = n2283 | n2284;
-  assign U3530_temp = n2283 | n2284;
-U3531
-  assign U3531 = n2286 | n2287;
-  assign U3531_temp = n2286 | n2287;
-U3532
-  assign U3532 = n2289 | n2290;
-  assign U3532_temp = n2289 | n2290;
-U3533
-  assign U3533 = n2292 | n2293;
-  assign U3533_temp = n2292 | n2293;
-U3534
-  assign U3534 = n2295 | n2296;
-  assign U3534_temp = n2295 | n2296;
-U3535
-  assign U3535 = n2298 | n2299;
-  assign U3535_temp = n2298 | n2299;
-U3536
-  assign U3536 = n2301 | n2302;
-  assign U3536_temp = n2301 | n2302;
-U3537
-  assign U3537 = n2304 | n2305;
-  assign U3537_temp = n2304 | n2305;
-U3538
-  assign U3538 = n2307 | n2308;
-  assign U3538_temp = n2307 | n2308;
-U3539
-  assign U3539 = n2310 | n2311;
-  assign U3539_temp = n2310 | n2311;
-U3540
-  assign U3540 = n2313 | n2314;
-  assign U3540_temp = n2313 | n2314;
-U3541
-  assign U3541 = n2316 | n2317;
-  assign U3541_temp = n2316 | n2317;
-U3542
-  assign U3542 = n2319 | n2320;
-  assign U3542_temp = n2319 | n2320;
-U3543
-  assign U3543 = n2322 | n2323;
-  assign U3543_temp = n2322 | n2323;
-U3544
-  assign U3544 = n2325 | n2326;
-  assign U3544_temp = n2325 | n2326;
-U3545
-  assign U3545 = n2328 | n2329;
-  assign U3545_temp = n2328 | n2329;
-U3546
-  assign U3546 = n2331 | n2332;
-  assign U3546_temp = n2331 | n2332;
-U3547
-  assign U3547 = n2334 | n2335;
-  assign U3547_temp = n2334 | n2335;
-U3548
-  assign U3548 = n2337 | n2338;
-  assign U3548_temp = n2337 | n2338;
-U3549
-  assign U3549 = n2340 | n2341;
-  assign U3549_temp = n2340 | n2341;
-U3282
-  assign U3282 = n2435 | n2436;
-  assign U3282_temp = n2435 | n2436;
-U3281
-  assign U3281 = n2445 | ~n2444;
-  assign U3281_temp = n2445 | ~n2444;
-U3280
-  assign U3280 = n2454 | ~n2451;
-  assign U3280_temp = n2454 | ~n2451;
-U3279
-  assign U3279 = n2462 | n2463;
-  assign U3279_temp = n2462 | n2463;
-U3278
-  assign U3278 = n2471 | n2472;
-  assign U3278_temp = n2471 | n2472;
-U3277
-  assign U3277 = n2481 | ~n2480;
-  assign U3277_temp = n2481 | ~n2480;
-U3276
-  assign U3276 = n2486 | ~n2491;
-  assign U3276_temp = n2486 | ~n2491;
-U3275
-  assign U3275 = ~n2497 | ~n2500;
-  assign U3275_temp = ~n2497 | ~n2500;
-U3274
-  assign U3274 = n2508 | n2509;
-  assign U3274_temp = n2508 | n2509;
-U3271
-  assign U3271 = n2538 | n2539;
-  assign U3271_temp = n2538 | n2539;
-U3270
-  assign U3270 = n2548 | ~n2547;
-  assign U3270_temp = n2548 | ~n2547;
-U3269
-  assign U3269 = n2556 | n2557;
-  assign U3269_temp = n2556 | n2557;
-U3268
-  assign U3268 = n2561 | ~n2566;
-  assign U3268_temp = n2561 | ~n2566;
-U3267
-  assign U3267 = n2570 | ~n2575;
-  assign U3267_temp = n2570 | ~n2575;
-U3266
-  assign U3266 = n2584 | n2585;
-  assign U3266_temp = n2584 | n2585;
-U3265
-  assign U3265 = n2589 | ~n2594;
-  assign U3265_temp = n2589 | ~n2594;
-U3264
-  assign U3264 = n2598 | ~n2603;
-  assign U3264_temp = n2598 | ~n2603;
-U3263
-  assign U3263 = n2607 | ~n2612;
-  assign U3263_temp = n2607 | ~n2612;
-U3262
-  assign U3262 = n2616 | ~n2621;
-  assign U3262_temp = n2616 | ~n2621;
-U3261
-  assign U3261 = n2632 | ~n2635;
-  assign U3261_temp = n2632 | ~n2635;
-U3260
-  assign U3260 = n2637 | ~n2640;
-  assign U3260_temp = n2637 | ~n2640;
-U3259
-  assign U3259 = n2851 | ~n2849;
-  assign U3259_temp = n2851 | ~n2849;
-U3256
-  assign U3256 = n2890 | ~n2887;
-  assign U3256_temp = n2890 | ~n2887;
-U3255
-  assign U3255 = n2903 | ~n2902;
-  assign U3255_temp = n2903 | ~n2902;
-U3254
-  assign U3254 = n2916 | ~n2913;
-  assign U3254_temp = n2916 | ~n2913;
-U3253
-  assign U3253 = n2929 | ~n2928;
-  assign U3253_temp = n2929 | ~n2928;
-U3252
-  assign U3252 = n2942 | ~n2939;
-  assign U3252_temp = n2942 | ~n2939;
-U3251
-  assign U3251 = n2955 | ~n2952;
-  assign U3251_temp = n2955 | ~n2952;
-U3250
-  assign U3250 = n2968 | ~n2965;
-  assign U3250_temp = n2968 | ~n2965;
-U3249
-  assign U3249 = n2981 | ~n2978;
-  assign U3249_temp = n2981 | ~n2978;
-U3248
-  assign U3248 = n2994 | ~n2991;
-  assign U3248_temp = n2994 | ~n2991;
-U4043
-  assign U4043 = n781 & n782;
-  assign U4043_temp = n781 & n782;
-U3239
-  assign U3239 = n3367 | n3373;
-  assign U3239_temp = n3367 | n3373;
-U3148
-  assign U3148 = ~n2846 & ~U4043;
-  assign U3148_temp = ~n2846 & ~U4043;
-U3149
-  assign U3149 = ~STATE_REG_SCAN_IN;
-  assign U3149_temp = ~STATE_REG_SCAN_IN;
-                          CONFORMAL (R)
-                   Version 17.10-s240 (29-Sep-2017) (64 bit executable)
-   Copyright (c) Cadence Design Systems, Inc., 1997-2017. All Rights Reserved
-
-
-This program is proprietary and confidential information belonging to
-Cadence Design Systems, Inc., and may be used and disclosed only as authorized
-in a license agreement controlling such use and disclosure.
-
-// Warning: This version is 499 days old. You can download the latest version from http://downloads.cadence.com.
-
-// Command: tclmode
-// Command: set design $::env(DESIGN)
-b14_C
-// Command: read_design ../../Results/${design}/final/${design}.v  -golden
-// Parsing file ../../Results/b14_C/final/b14_C.v ...
-// Golden root module is set to 'b14_C'
-// Note: Read VERILOG design successfully
-0
-// Command: read_design ../../files/${design}.v -revised
-// Parsing file ../../files/b14_C.v ...
-// Revised root module is set to 'b14_C'
-// Note: Read VERILOG design successfully
-0
-// Command: set_system_mode lec
-// Processing Golden ...
-//   3% completed//  52% completed//  55% completed// 100% completed// Modeling Golden ...
-//   0% completed//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed// 100% completed// Processing Revised ...
-//   2% completed// 100% completed// Modeling Revised ...
-//   0% completed//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed// 100% completed// Mapping key points ...
-//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   6% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  13% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  19% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  26% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  33% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  39% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  46% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  53% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  59% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  66% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  73% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  79% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  86% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  93% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed//  99% completed// 100% completed================================================================================
-Mapped points: SYSTEM class
---------------------------------------------------------------------------------
-Mapped points     PI     PO        Total   
---------------------------------------------------------------------------------
-Golden            275    245       520     
---------------------------------------------------------------------------------
-Revised           275    245       520     
-================================================================================
-0
-// Command: add_compared_points -all
-// 245 compared points added to compare list
-0
-// Command: compare
-//   0% Comparing 0 out of 245 points, 0 Non-equivalent//  68% Comparing 167 out of 245 points, 0 Non-equivalent// 100% Comparing 245 out of 245 points, 0 Non-equivalent================================================================================
-Compared points      PO        Total   
---------------------------------------------------------------------------------
-Equivalent           245       245     
-================================================================================
-0
-// Command: analyze_eco -Effort ultra -REPLACE ../../Results/${design}/final/${design}_patch.v
-// Grouping
-// Error: Cannot find any diff key point
-1
-// 'dofile /home/projects/aspdac18/src/cpp/../scripts/lec_eco.do' is aborted at line 10
