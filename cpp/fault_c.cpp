@@ -47,20 +47,39 @@ bool fault_c::checkEqv(std::string name){
 	setenv("DESIGN", name.c_str(), 1);
 	setenv("NODE", node.c_str(), 1);
 
-	std::string cmd = "lec_64 -nogui -dofile ../scripts/lec_vts.do";
+	std::string cmd = "lec_64 -nogui -dofile ../scripts/lec_compare.do";
 	system(cmd.c_str());
 
 	
 	std::ifstream lec(("/home/projects/aspdac18/Results/"+name+"/"+node+"/lec_report").c_str());
 	std::string line;
 	while(getline(lec, line)){
-		if(line.find("Non-eq") != std::string::npos)
+		if(line.find("Non-equivalent ") != std::string::npos)
 			return false;
 	}	
 
 	return true;
 
 }
+
+//bool fault_c::key_dist(std::string name) {
+//	setenv("DESIGN", name.c_str(), 1);
+//        setenv("NODE", node.c_str(), 1);
+//
+//        std::string cmd = "dc_shell-t -no_gui -64bit -x \"source -echo -verbose ../scripts/key_distribution_check.tcl \" ";
+//        system(cmd.c_str());
+//	std::ifstream lec(("/home/projects/aspdac18/Results/"+name+"/"+node+"/key_dist_rpt").c_str());
+//        std::string line;
+//        while(getline(lec, line)){
+//                if(line.find("NOT") != std::string::npos)
+//                        return false;
+//        }
+//
+//        return true;
+//
+//}
+
+
 void fault_c::recoverCkt(std::string path){
 
 	std::ifstream vFile((path+"/"+node+"/abc_verilog.v").c_str());
@@ -253,13 +272,24 @@ void fault_c::recoverOnePattCkt(std::string path){
 	for(int i=0; i<p->iIndex.size(); i++){
 		nvm_def += p->ipPatt[p->iIndex[i]];
 		key_file << p->ipPatt[p->iIndex[i]]<<" ";
+		// ADDED BY NIMISHA 30th JULY
+		//if (p->ipPatt[p->iIndex[i]] == "0") {
+		//	cnt_zero ++;
+		//}
+		//if (p->ipPatt[p->iIndex[i]] == "1") {
+                //        cnt_one ++;
+                //}
 	}
 	key_file << "}"<<std::endl;
 	
 	nvm_def += ";\nendmodule\n";
 	
 	for(int i=0; i<p->oIndex.size(); i++){
-	
+		//if(opList[p->oIndex[i]].find("_SCAN_IN") != std::string::npos){	
+		//	continue;
+		//	std::cout<<"SCAN_IN found!!"<<std::endl;
+		//}
+		//else {
 		lockFile << "reg " << opList[p->oIndex[i]] <<";"<<std::endl;
 	
 		std::string always = "always @* begin\n";
@@ -269,11 +299,18 @@ void fault_c::recoverOnePattCkt(std::string path){
 		always += "else \t"+opList[p->oIndex[i]]+" = "+opList[p->oIndex[i]]+"_temp;\n";
 		always += "end\n";
 		lockFile << always << std::endl;
-	
+		//}
 	}
 	lockFile << "endmodule\n" << std::endl;
 	
 	lockFile << nvm_def << std::endl;
+
+
+	// ADDED BY NIMISHA 30TH JULY 2019
+	//if (cnt_zero >= 20 && cnt_one >= 20){
+	//	break;
+        //}
+	//ADDITION ENDS
 
 //	}
 //	else {
@@ -376,34 +413,38 @@ void fault_c::doEco(std::string name){
 
 }
 
-void fault_c::checkKeyConstraint(std::string name){
-	std::cout <<"############# ENTERING CHECK KEY CONSTRAINT ########### "<<std::endl;
+bool fault_c::checkKeyConstraint(std::string name){
 	int sec=0;
 	std::vector<std::string> kcCheckList;
 	setenv("DESIGN", name.c_str(), 1);
-	//setenv("NODE", node_name.c_str(),2);
 	
-	std::string cmd = "dc_shell-t -no_gui -64bit -output_log_file /home/projects/aspdac18/Results/"+name+"/"+node+"/stitch_dc_log -x \"source -echo -verbose ../scripts/stitch_dc.tcl \" ";
+	std::string cmd = "dc_shell-t -no_gui -64bit -output_log_file /home/projects/aspdac18/Results/"+name+"/"+node+"/dc_key_constraints_log -x \"source -echo -verbose ../scripts/dc_key_constraints.tcl \" ";
 	system(cmd.c_str());
 
-//	std::ifstream kc(("../../Results/"+name+"/final/key_constraints.do").c_str());
-        std::ifstream kc(("../../Results/"+name+"/"+node+"/key_constraints.do").c_str());
-
+    std::ifstream kc(("../../Results/"+name+"/"+node+"/key_constraints.do").c_str());
+    std::ifstream kcValue(("../../Results/"+name+"/"+node+"/key_values.do").c_str());
+ 
 	if(kc.fail()){
 		std::cout << "key constraint file open failed!" << std::endl;
 		exit(1);
 	}
-	std::vector<std::string> kcList;
+	if(kcValue.fail()){
+		std::cout << "key constraint value file open failed!" << std::endl;
+		exit(1);
+	}
+	std::vector<std::string> kcList, kcValueList;
 	std::string line;
 	while(getline(kc, line)){
 		kcList.push_back(line);
 	}	
-	
+	while(getline(kcValue, line)){
+		kcValueList.push_back(line);
+	}
+
+    int cntZero=0, cntOne=0;
 	for(int i=0; i<kcList.size(); i++){
-		//cmd = "rm ../../Results/"+name+"/final/new_key_contraint.do";
 		cmd = "rm ../../Results/"+name+"/"+node+"/new_key_contraint.do";
 		system(cmd.c_str());
-		//std::ofstream nkc(("../../Results/"+name+"/final/new_key_constraint.do").c_str());
 		std::ofstream nkc(("../../Results/"+name+"/"+node+"/new_key_constraint.do").c_str());
 		for(int j=0; j<kcList.size(); j++){
 			if(i!=j)
@@ -413,16 +454,24 @@ void fault_c::checkKeyConstraint(std::string name){
 		system(cmd.c_str());
 
 		if(!_checkEqKey(name)){
-			kcCheckList.push_back(kcList[i]);
-//			std::cout<<"Security is:	"<<sec<<std::endl;
-			sec++;
-			std::cout<<"SEC: 	"<<sec<<std::endl;
+            if(kcValueList[i] == "0" && cntZero < TARGET_SEC/2 + KEY_BUFF){
+                cntZero++;
+                sec++;
+                kcCheckList.push_back(kcList[i]);
+            }
+            else if(kcValueList[i] == "1" && cntOne < TARGET_SEC/2 + KEY_BUFF){
+                cntOne++;
+                sec++;
+                kcCheckList.push_back(kcList[i]);
+            }
+			//kcCheckList.push_back(kcList[i]);
+			//sec++;
 			cmd = "rm ../../Results/"+name+"/"+node+"/lec_key_constraint_log";
 			system(cmd.c_str());
 			if (sec == TARGET_SEC) {
-                                std::cout<<"    TARGET SECURITY ACHIEVED        "<<std::endl;
-                                break;
-                        }
+                std::cout<<"    TARGET SECURITY ACHIEVED        "<<std::endl;
+                break;
+            }
 	
 		}
 	}
@@ -432,10 +481,46 @@ void fault_c::checkKeyConstraint(std::string name){
 		std::cout << "final key constraint file open failed!" << std::endl;
 		exit(1);
 	}
-	
-	for(int i=0; i<kcCheckList.size(); i++){
-		finalKC << kcCheckList[i] << std::endl;
+	if(sec == TARGET_SEC) {
+		for(int i=0; i<kcCheckList.size(); i++){
+			finalKC << kcCheckList[i] << std::endl;
+		}
+        return true;
 	}
+    else
+        return false;
+}
+
+void fault_c::postProcesslockedVerilog(std::string name){
+        std::cout <<"############# ENTERING LOCKED VERILOG ########### "<<std::endl;
+        setenv("DESIGN", name.c_str(), 1);
+        std::string cmd = "dc_shell-t -no_gui -64bit -output_log_file /home/projects/aspdac18/Results/"+name+"/final/locked_verilog.log -x \"source -echo -verbose ../scripts/locked_verilog.tcl \" ";
+        system(cmd.c_str());
+ 	
+}      
+
+void fault_c::generateAPD(std::string name){
+        std::cout <<"############# GENERATING APD ########### "<<std::endl;
+        setenv("DESIGN", name.c_str(), 1);
+        std::string cmd = "dc_shell-t -no_gui -64bit -output_log_file /home/projects/aspdac18/Results/"+name+"/final/apd_analysis.log -x \"source -echo -verbose ../scripts/generate_apd.tcl \" ";
+	system(cmd.c_str());
+                        
+}
+
+
+void fault_c::checkEqvOrigLock(std::string name){
+    std::cout<<"############ ENTERING LEC EQUIVALENT CHECKING ################" << std::endl;
+    setenv("DESIGN", name.c_str(), 1);
+        
+	std::string cmd = "lec_64 -nogui -ecogxl -dofile ../scripts/lec_equivalent_check.do";
+    system(cmd.c_str());
+
+}
+
+void fault_c::removeNode(std::string name){
+    std::string cmd = "rm -rf /home/projects/aspdac18/Results/"+name+"/"+node+"/";
+    system(cmd.c_str());
+
 }
 
 double fault_c::_getFICost(std::string name){
@@ -472,7 +557,7 @@ void fault_c::_getLeastSec(){
 		if(pList[i]->getSec() >= TARGET_SEC && pList[i]->getSec() < min){
 			min = pList[i]->getSec();
 			minSecIndex = i;
-			std::cout<<"    MIN SECURITY IS         "<<minSecIndex<<std::endl;
+			//std::cout<<"    MIN SECURITY IS         "<<min<<std::endl;
 
 		}
 	}
@@ -483,7 +568,7 @@ void fault_c::_getMaxSec(){
                 if(pList[i]->getSec() >= TARGET_SEC && pList[i]->getSec() > max){
                         max = pList[i]->getSec();
                         maxSecIndex = i;
-			std::cout<<"	MAX SECURITY IS		"<<maxSecIndex<<std::endl;
+//			std::cout<<"	MAX SECURITY IS		"<<max<<std::endl;
                 }
         }
 }
@@ -518,4 +603,3 @@ bool fault_c::_checkEqKey(std::string name){
 	}
 	return true;
 }
-
