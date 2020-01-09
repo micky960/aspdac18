@@ -1,128 +1,0 @@
-CREATING FOLDERS
-ATALANTA START
-ATALANTA END
-COMPUTING VALIDLIST
-0% node: N2
-% VALID: 14.2857
-max sec: 4 node: N2
-% COMPLETE 0 N2:0, SEC 4
-ABC command line: "read_verilog /home/projects/aspdac18/Results/c17_new/N2/verilog.v; sweep; strash; refactor; logic; sweep; write_verilog /home/projects/aspdac18/Results/c17_new/N2/abc_verilog.v".
-
-OPT NODE: N2 SEC:4 COST: 64
-ELAPSED TIME:	10
-O23
-  assign O23 = ~n9 & ~n10;
-  assign O23_temp = ~n9 & ~n10;
-O22
-  assign O22 = 1'b1;
-  assign O22_temp = 1'b1;
-                          CONFORMAL (R)
-                   Version 17.10-s240 (29-Sep-2017) (64 bit executable)
-   Copyright (c) Cadence Design Systems, Inc., 1997-2017. All Rights Reserved
-
-
-This program is proprietary and confidential information belonging to
-Cadence Design Systems, Inc., and may be used and disclosed only as authorized
-in a license agreement controlling such use and disclosure.
-
-// Warning: This version is 539 days old. You can download the latest version from http://downloads.cadence.com.
-
-// Command: tclmode
-// Command: set design $::env(DESIGN)
-c17_new
-// Command: read_design ../../Results/${design}/final/${design}.v  -golden
-// Parsing file ../../Results/c17_new/final/c17_new.v ...
-// Golden root module is set to 'c17_new'
-// Note: Read VERILOG design successfully
-0
-// Command: read_design ../../files/${design}.v -revised
-// Parsing file ../../files/c17_new.v ...
-// Revised root module is set to 'c17_new'
-// Note: Read VERILOG design successfully
-0
-// Command: set_system_mode lec
-// Processing Golden ...
-//  13% completed//  50% completed//  74% completed// 100% completed// Modeling Golden ...
-//   0% completed//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed// 100% completed// Processing Revised ...
-//  17% completed// 100% completed// Modeling Revised ...
-//   0% completed//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed// 100% completed// Mapping key points ...
-//  14% completed//  28% completed//  42% completed//  57% completed//  71% completed//  85% completed// 100% completed================================================================================
-Mapped points: SYSTEM class
---------------------------------------------------------------------------------
-Mapped points     PI     PO        Total   
---------------------------------------------------------------------------------
-Golden            5      2         7       
---------------------------------------------------------------------------------
-Revised           5      2         7       
-================================================================================
-0
-// Command: add_compared_points -all
-// 2 compared points added to compare list
-0
-// Command: compare
-//   0% Comparing 0 out of 2 points, 0 Non-equivalent//  50% Comparing 1 out of 2 points, 1 Non-equivalent// 100% Comparing 2 out of 2 points, 1 Non-equivalent================================================================================
-Compared points      PO        Total   
---------------------------------------------------------------------------------
-Equivalent           1         1       
---------------------------------------------------------------------------------
-Non-equivalent       1         1       
-================================================================================
-0
-// Command: analyze_eco -Effort ultra -REPLACE ../../Results/${design}/final/${design}_patch.v
-// Grouping
-//  30% completed//  33% completed//  38% completed//  42% completed//  46% completed//  50% completed// 100% completed// Note: 1 group(s) added
-//  54% completed//  64% completed//  74% completed//  84% completed//  89% completed//  92% completed//  89% completed//  92% completed//  89% completed//  92% completed// Post Optimization
-//   0% completed//  25% completed//  50% completed//  75% completed//  99% completed// 100% completed// Note: 0 library cell(s) is in the patch
-// Note: 8 primitive(s) are in the patch
-0
-// Command: set_system_mode setup
-0
-// Command: read_design ../../Results/${design}/final/${design}_patch.v  -Append
-// Parsing file ../../Results/c17_new/final/c17_new_patch.v ...
-// Note: Read VERILOG design successfully
-0
-// Command: apply_patch ${design} ${design}_eco
-// Note: 0 library cell is in the patch
-// Note: 8 primitives are in the patch
-// Note: No library cells were freed
-// Note: 1 primitive was freed
-// Note: No library cells were recycled
-0
-// Command: write_design -ALL ../../Results/${design}/final/${design}_eco.v -rep
-// Note: Wrote VERILOG design successfully
-0
-// Command: exit //-force
-
-                           Design Compiler Graphical 
-                                 DC Ultra (TM)
-                                  DFTMAX (TM)
-                              Power Compiler (TM)
-                                 DesignWare (R)
-                                 DC Expert (TM)
-                               Design Vision (TM)
-                               HDL Compiler (TM)
-                               VHDL Compiler (TM)
-                                  DFT Compiler
-                               Design Compiler(R)
-
-               Version M-2016.12-SP2 for linux64 - Feb 23, 2017 
-
-                    Copyright (c) 1988 - 2017 Synopsys, Inc.
-   This software and the associated documentation are proprietary to Synopsys,
- Inc. This software may only be used in accordance with the terms and conditions
- of a written license agreement with Synopsys, Inc. All other use, reproduction,
-            or distribution of this software is strictly prohibited.
-Initializing...
-set design [getenv "DESIGN"]
-c17_new
-set compile_seqmap_propagate_constants     false
-false
-#set search_path [concat * $search_path]
-#sh rm -rf ./work/work_${design}
-#define_design_lib WORK -path ./work/work_${design}
-set target_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db}
- /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db
-set link_library   { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db }
- /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db 
-read_verilog -rtl ../../Results/${design}/final/${design}_eco.v
-Loading db file '/home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db'

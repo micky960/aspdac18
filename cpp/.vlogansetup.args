@@ -1,6 +1,0 @@
-1
-867216879
-../../Results/CORTEX_M0/n7561/lockOnePatt_verilog.v 
-../../Results/CORTEX_M0/n7561/lockOnePatt_verilog.v
-   /opt/programs/synopsys/vcs-mxi/linux/bin/vcs1 -Mcc=gcc -Mcplusplus=g++ -Masflags= -Mcfl=' -pipe -O -I/opt/programs/synopsys/vcs-mxi/include ' -Mldflags="-m32 -Wl,-E,-rpath /opt/programs/synopsys/vcs-mxi//linux/lib " -Mout=simv -Mamsrun="" -Mvcsaceobjs="" -Mobjects=" " -Msaverestoreobj= -Mcrt0="" -Mcrtn="" -Mcsrc="" -Msyslibs="-lncurses -L/usr/X11R6/lib -ldl /opt/programs/synopsys/vcs-mxi/linux/lib/ctype-stubs_32.a -ldl "
--Xvlogan=0x1  "../../Results/CORTEX_M0/n7561/lockOnePatt_verilog.v"  +mixedhdl2    
