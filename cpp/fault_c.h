@@ -48,7 +48,7 @@ class fault_c{
     void doEco(std::string name);
     bool checkKeyConstraint(std::string name);
 	void postProcesslockedVerilog(std::string name);
-	void checkEqvOrigLock(std::string name); 
+	bool checkEqvOrigLock(std::string name); 
     void removeNode(std::string name);
 	void generateAPD(std::string name); 
 	private:
