@@ -162,6 +162,7 @@ int main(int argc, char* argv[]){
 		std::cout << "i: " << i << std::endl;
 	
 		validList[i]->recoverOnePattCkt("/home/projects/aspdac18/Results/"+name);
+		//validList[i]->recoverCkt("/home/projects/aspdac18/Results/"+name);
         // Parse the module name to remove leading ../../ etc.
 		cmd = "cat /home/projects/aspdac18/Results/"+name+"/"+validList[i]->node+"/lockOnePatt_verilog.v | awk '{gsub(/\\\\files\\//,\"\"); print}' > /home/projects/aspdac18/Results/"+name+"/"+validList[i]->node+"/"+name+".v";
 	        
@@ -170,7 +171,8 @@ int main(int argc, char* argv[]){
 		std::cout << "check_equivalent: " << check_eq << std::endl;
 	        if(!check_eq){
                 validList[i]->doEco(name);
-
+                //std::cout << "Node for ECO:" << validList[i]->node<< std::endl;
+                //exit(0);
                 if (validList[i]->checkKeyConstraint(name)){
                     end = std::chrono::system_clock::now();
                     elapsed = std::chrono::duration_cast<std::chrono::seconds>(end - start);
