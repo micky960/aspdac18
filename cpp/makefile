@@ -1,11 +1,14 @@
 CC=g++-7
-CXXFLAGS= -std=c++17 -g -fopenmp
-
-#-O3
+CXXFLAGS=-g -I.
+LIBS = -fopenmp
+DEPS = constants.h pattern.h fault_c.h
 OBJ = fault_atalanta.o fault_c.o pattern.o
 
+%.o: %.cpp $(DEPS)
+	$(CC) -c -o $@ $< $(CXXFLAGS) $(LIBS)
+
 fa: $(OBJ)
-	$(CC) $(CXXFLAGS) -o fa fault_atalanta.o fault_c.o pattern.o -I.
+	$(CC) -o $@ $^ $(CXXFLAGS) $(LIBS) 
 
 clean:
 	rm -f $(binaries) *.o
