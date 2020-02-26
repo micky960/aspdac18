@@ -1,7 +1,7 @@
 #@ # 
 #@ # Running dc_shell Version M-2016.12-SP2 for linux64 -- Feb 23, 2017
-#@ # Date:   Sat Aug 10 09:20:43 2019
-#@ # Run by: nsl278@aduae260-lap
+#@ # Date:   Wed Feb 26 15:32:20 2020
+#@ # Run by: as9397@aduae260-lap
 #@ 
 
 source /opt/programs/synopsys/dc/admin/setup/.synopsys_dc.setup
@@ -6518,46 +6518,45 @@ source /opt/programs/synopsys/dc/admin/setup/.synopsys_dc.setup
 
 #@ # -- End source /opt/programs/synopsys/dc/admin/setup/.synopsys_dc.setup
 
-set target_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db}
-set link_library   { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db }
-read_verilog -netlist ../../files/benchfiles/c432_v1_syn.v
-all_outputs
-set fanin [get_attribute [all_fanin -to G223GAT] full_name]
-set fanin [get_attribute [all_fanin -to G223GAT -only_cells ] full_name]
-report_cell
-report_cell -cell_list
-report_cell -cell_list -only_physical
-report_cell cell_list -only_physical
-report_cell -help
-set fanin [get_attribute [all_fanin -to G223GAT -only_cells ] full_name]
-set OUTPUT G223GAT
-set all_fanin_output [get_attribute [all_fanin -to $OUTPUT -only_cells] full_name]
-foreach_in_collection rem_cell [get_pins  * -filter "direction==out"] {
-                set cel_name [get_attribute [get_cells -of_objects $rem_cell] full_name]
-                set fout [all_fanout -from [get_attribute $rem_cell full_name] -endpoints_only -flat ]
-                set fout_name [get_attribute $fout full_name]
-                set flag_fanin 0
-                foreach fanin_out $all_fanin_output {
-                        if {$cel_name == $fanin_out} {
-                                set flag_fanin 1
-                        }
-                }
-                if {$flag_fanin == 0} {
-                        remove_cell $cel_name
-                }
-        }
-foreach_in_collection rem_port [all_inputs ] {
-          set siz [sizeof_collection [all_fanout -from [get_attribute $rem_port full_name] -flat -endpoints_only]]
-          if {$siz == 0} {
-              remove_port [get_attribute $rem_port full_name]
-           }
-        }
-foreach_in_collection rem_net [get_nets *] {
-          set siz [sizeof_collection [all_connected [get_attribute $rem_net full_name]]]
-          if {$siz == 0} {
-            remove_net [get_attribute $rem_net full_name]
-          }
-        }
-write -format verilog -hierarchy -output ../../files/benchfiles/c432_singlecone.v
-history
-exit
+source -echo -verbose ./ecoCompile.tcl
+#@ # -- Starting source ./ecoCompile.tcl
+
+#@ set_host_options -max_cores 8
+#@ set compile_seqmap_propagate_constants     false
+#@ set compile_seqmap_propagate_high_effort   false
+#@ set compile_enable_register_merging        false
+#@ set write_sdc_output_net_resistance        false
+#@ set timing_separate_clock_gating_group     true
+#@ 
+#@ set design     [getenv DESIGN]
+#@ set node [getenv NODE]
+#@ 
+#@ define_design_lib WORK -path ./work
+#@ set target_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/ccs/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db}
+#@ set link_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/ccs/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db }
+#@ 
+#@ analyze -format sverilog  ../../Results/$design/$node/${design}_eco.v
+#@ elaborate $design
+#@ 
+#@ create_clock -name VCLK  -period 4  -waveform {0 2}
+#@ 
+#@ set input_ports  [all_inputs]
+#@ set output_ports [all_outputs]
+#@ 
+#@ set_input_delay -max 1 [get_ports $input_ports ] -clock VCLK
+#@ set_input_delay -min 0 [get_ports $input_ports ] -clock VCLK
+#@ 
+#@ set_output_delay -max 1 [get_ports $output_ports ] -clock VCLK
+#@ set_output_delay -min 3 [get_ports $output_ports ] -clock VCLK
+#@ 
+#@ ungroup -all -flatten
+#@ compile
+#@ 
+#@ change_name -rules verilog -hierarchy
+#@ set bus_naming_style "%s_%d"
+#@ define_name_rules verilog -target_bus_naming_style "%s_%d" -remove_port_bus
+#@ change_names -rules verilog -hier
+#@ 
+#@ write_file -hierarchy -format verilog -output ../../Results/$design/$node/${design}_eco_compile.v
+#@ 
+#@ exit

@@ -254,6 +254,184 @@ void fault_c::recoverOnePattCkt(std::string path){
 	lockFile << nvm_def << std::endl;
 }	
 
+void fault_c::modifyOrigWithOnePatt(std::string name, std::string path){
+
+	std::ifstream vFile(("../../files/benchfiles/"+name+".v").c_str());
+	//std::ifstream vFile((path+"/"+node+"/verilog.v").c_str());
+    std::ofstream lockFile((path+"/"+node+"/"+name+".v").c_str());
+
+    if(vFile.fail()){
+            std::cerr<<"ORIG FILE OPEN FAILED"<<std::endl;
+            exit(1);
+    }
+    if(lockFile.fail()){
+            std::cerr<<"LOCK FILE OPEN FAILED"<<std::endl;
+            exit(1);
+    }
+
+	pattern *p = pList[maxSecIndex];
+
+	std::string line;
+        while(getline(vFile, line)){
+                if(line.find("assign")!=std::string::npos){
+			for(int i=0; i<p->oIndex.size(); i++){
+				if(line.find("assign "+opList[p->oIndex[i]]+" ") != std::string::npos){
+					std::cout << opList[p->oIndex[i]] << std::endl;
+					std::cout << line << std::endl;
+					boost::replace_all(line, opList[p->oIndex[i]], opList[p->oIndex[i]]+"_temp");
+					std::cout << line << std::endl;
+				}
+				else if(line.find("assign "+opList[p->oIndex[i]]+" ") != std::string::npos){
+					boost::replace_all(line, opList[p->oIndex[i]], opList[p->oIndex[i]]+"_temp");
+				}
+				else if(line.find("assign "+opList[p->oIndex[i]]+" ") != std::string::npos){
+					boost::replace_all(line, opList[p->oIndex[i]], opList[p->oIndex[i]]+"_temp");
+				}
+				else if(line.find("assign "+opList[p->oIndex[i]]+" ") != std::string::npos){
+					boost::replace_all(line, opList[p->oIndex[i]], opList[p->oIndex[i]]+"_temp");
+				}
+			}		
+		}	
+		if(line.find("endmodule")==std::string::npos)
+                        lockFile<<line<<std::endl;
+	}
+
+	std::vector<std::string> compList, keyList, nvmList;	
+	
+	
+	std::cout<<"NEW INDEX SIZE IS:	"<<p->iIndex.size()<<std::endl;
+	std::string comp = "wire ["+boost::lexical_cast<std::string>(p->iIndex.size()-1)+":0] compPatt_"+boost::lexical_cast<std::string>(maxSecIndex)+ "= {";
+	for(int i=0; i<p->iIndex.size(); i++){
+		comp += ipList[p->iIndex[i]]+", ";
+	}
+	comp += "};";
+	boost::replace_all(comp, ", }","}");
+	compList.push_back(comp);
+	lockFile << comp << std::endl;
+	
+	std::string key = "wire ["+boost::lexical_cast<std::string>(p->iIndex.size()-1)+":0] sfllKey_"+boost::lexical_cast<std::string>(maxSecIndex)+";";
+	keyList.push_back(key);
+	lockFile << key << std::endl;
+	
+	std::string nvm = "nvm_"+boost::lexical_cast<std::string>(maxSecIndex)+" #(.N("+boost::lexical_cast<std::string>(p->iIndex.size())+")) nvm_inst"+boost::lexical_cast<std::string>(maxSecIndex)+"(";
+	nvm += ".rdata(sfllKey_"+boost::lexical_cast<std::string>(maxSecIndex)+")";
+	nvm += ");\n\n";
+	lockFile << nvm <<std::endl;
+	std::ofstream key_file((path+"/"+node+"/key.tcl").c_str());
+	key_file << "set KEY {";
+	
+	std::string nvm_def = "module nvm_"+boost::lexical_cast<std::string>(maxSecIndex)+" #(parameter N = 1) (\n";
+	nvm_def += "rdata\n";
+	nvm_def += ");\n\n";
+	nvm_def += "output [N-1:0] rdata;\n";
+	
+	nvm_def += "assign rdata = "+boost::lexical_cast<std::string>(p->iIndex.size())+"'b";
+	for(int i=0; i<p->iIndex.size(); i++){
+		nvm_def += p->ipPatt[p->iIndex[i]];
+		key_file << p->ipPatt[p->iIndex[i]]<<" ";
+	}
+	key_file << "}"<<std::endl;
+	
+	nvm_def += ";\nendmodule\n";
+	
+	for(int i=0; i<p->oIndex.size(); i++){
+		lockFile << "reg " << opList[p->oIndex[i]] <<";"<<std::endl;
+	
+		std::string always = "always @* begin\n";
+		always += "if(";
+		always += "sfllKey_"+boost::lexical_cast<std::string>(maxSecIndex)+" == "+"compPatt_"+boost::lexical_cast<std::string>(maxSecIndex)+")\n";
+		//always += "\t"+opList[p->oIndex[i]]+" = 1'b"+p->opPatt[p->oIndex[i]]+";\n";
+		always += "\t"+opList[p->oIndex[i]]+" = ~"+opList[p->oIndex[i]]+"_temp;\n";
+		always += "else \t"+opList[p->oIndex[i]]+" = "+opList[p->oIndex[i]]+"_temp;\n";
+		always += "end\n";
+		lockFile << always << std::endl;
+	}
+	lockFile << "endmodule\n" << std::endl;
+	
+	lockFile << nvm_def << std::endl;
+}	
+
+void fault_c::addRestoreCkt(std::string name, std::string path){
+
+	std::ifstream vFile((path+"/"+node+"/"+name+"_eco_compile.v").c_str());
+	//std::ifstream vFile((path+"/"+node+"/verilog.v").c_str());
+    std::ofstream lockFile((path+"/"+node+"/"+name+"_lock_final_combo.v").c_str());
+
+    if(vFile.fail()){
+            std::cerr<<"ORIG FILE OPEN FAILED"<<std::endl;
+            exit(1);
+    }
+    if(lockFile.fail()){
+            std::cerr<<"LOCK FILE OPEN FAILED"<<std::endl;
+            exit(1);
+    }
+
+	pattern *p = pList[maxSecIndex];
+
+	std::string line;
+    while(getline(vFile, line)){
+        for(int i=0; i<p->oIndex.size(); i++){
+            if(line.find(opList[p->oIndex[i]]) != std::string::npos){
+                boost::replace_all(line, opList[p->oIndex[i]], opList[p->oIndex[i]]+"_temp");
+            }
+        }		
+		if(line.find("endmodule")==std::string::npos)
+            lockFile<<line<<std::endl;
+	}
+
+	std::vector<std::string> compList, keyList, nvmList;	
+	
+	std::cout<<"NEW INDEX SIZE IS:	"<<p->iIndex.size()<<std::endl;
+	std::string comp = "wire ["+boost::lexical_cast<std::string>(p->iIndex.size()-1)+":0] compPatt_"+boost::lexical_cast<std::string>(maxSecIndex)+ "= {";
+	for(int i=0; i<p->iIndex.size(); i++){
+		comp += ipList[p->iIndex[i]]+", ";
+	}
+	comp += "};";
+	boost::replace_all(comp, ", }","}");
+	compList.push_back(comp);
+	lockFile << comp << std::endl;
+	
+	std::string key = "wire ["+boost::lexical_cast<std::string>(p->iIndex.size()-1)+":0] sfllKey_"+boost::lexical_cast<std::string>(maxSecIndex)+";";
+	keyList.push_back(key);
+	lockFile << key << std::endl;
+	
+	std::string nvm = "nvm_"+boost::lexical_cast<std::string>(maxSecIndex)+" #(.N("+boost::lexical_cast<std::string>(p->iIndex.size())+")) nvm_inst"+boost::lexical_cast<std::string>(maxSecIndex)+"(";
+	nvm += ".rdata(sfllKey_"+boost::lexical_cast<std::string>(maxSecIndex)+")";
+	nvm += ");\n\n";
+	lockFile << nvm <<std::endl;
+	std::ofstream key_file((path+"/"+node+"/key.tcl").c_str());
+	key_file << "set KEY {";
+	
+	std::string nvm_def = "module nvm_"+boost::lexical_cast<std::string>(maxSecIndex)+" #(parameter N = 1) (\n";
+	nvm_def += "rdata\n";
+	nvm_def += ");\n\n";
+	nvm_def += "output [N-1:0] rdata;\n";
+	
+	nvm_def += "assign rdata = "+boost::lexical_cast<std::string>(p->iIndex.size())+"'b";
+	for(int i=0; i<p->iIndex.size(); i++){
+		nvm_def += p->ipPatt[p->iIndex[i]];
+		key_file << p->ipPatt[p->iIndex[i]]<<" ";
+	}
+	key_file << "}"<<std::endl;
+	
+	nvm_def += ";\nendmodule\n";
+	
+	for(int i=0; i<p->oIndex.size(); i++){
+		lockFile << "reg " << opList[p->oIndex[i]] <<";"<<std::endl;
+	
+		std::string always = "always @* begin\n";
+		always += "if(";
+		always += "sfllKey_"+boost::lexical_cast<std::string>(maxSecIndex)+" == "+"compPatt_"+boost::lexical_cast<std::string>(maxSecIndex)+")\n";
+		//always += "\t"+opList[p->oIndex[i]]+" = 1'b"+p->opPatt[p->oIndex[i]]+";\n";
+		always += "\t"+opList[p->oIndex[i]]+" = ~"+opList[p->oIndex[i]]+"_temp;\n";
+		always += "else \t"+opList[p->oIndex[i]]+" = "+opList[p->oIndex[i]]+"_temp;\n";
+		always += "end\n";
+		lockFile << always << std::endl;
+	}
+	lockFile << "endmodule\n" << std::endl;
+	
+	lockFile << nvm_def << std::endl;
+}	
 void fault_c::synthFICkt(std::string name){
 
 	setenv("DESIGN", name.c_str(), 1);
@@ -267,16 +445,25 @@ void fault_c::synthFICkt(std::string name){
 	costOnePatt = /*_getFICost(name) +*/ pList[maxSecIndex]->iIndex.size()*COMP_N;
 }
 
+void fault_c::ecoCompile(std::string name){
+	std::cout<<"############ ENTERING ECO COMPILE################" << std::endl;
+	setenv("DESIGN", name.c_str(), 1);
+	setenv("NODE", node.c_str(), 1);
+
+    std::string cmd = "dc_shell-t -no_gui -64bit -output_log_file /home/projects/aspdac18/Results/"+name+"/"+node+"/ecoCompile.log -x \"source -echo -verbose ../scripts/ecoCompile.tcl \" ";
+	system(cmd.c_str());
+}
+
 void fault_c::doEco(std::string name){
 	std::cout<<"############ ENTERING ECO CHECING ################" << std::endl;
 	setenv("DESIGN", name.c_str(), 1);
-	setenv("NODE", node.c_str(),2);
+	setenv("NODE", node.c_str(), 1);
 
 	std::string cmd = "lec_64 -nogui -ecogxl -dofile ../scripts/lec_eco.do";
 	system(cmd.c_str());
-	std::cout <<"VERIFYING THE FINAL VERILOG FILE WITH ORIGINAL VERILOG FILE"<<std::endl;
-	cmd = "lec_64 -nogui -ecogxl -dofile ../scripts/lec_eco_verify.do";
-        system(cmd.c_str());
+	//std::cout <<"VERIFYING THE FINAL VERILOG FILE WITH ORIGINAL VERILOG FILE"<<std::endl;
+	//cmd = "lec_64 -nogui -ecogxl -dofile ../scripts/lec_eco_verify.do";
+    //system(cmd.c_str());
 
 }
 
@@ -284,9 +471,12 @@ bool fault_c::checkKeyConstraint(std::string name){
 	int sec=0;
 	std::vector<std::string> kcCheckList;
 	setenv("DESIGN", name.c_str(), 1);
+	setenv("NODE", node.c_str(), 1);
 	
 	std::string cmd = "dc_shell-t -no_gui -64bit -output_log_file /home/projects/aspdac18/Results/"+name+"/"+node+"/dc_key_constraints_log -x \"source -echo -verbose ../scripts/dc_key_constraints.tcl \" ";
 	system(cmd.c_str());
+
+    exit(0);
 
     std::ifstream kc(("../../Results/"+name+"/"+node+"/key_constraints.do").c_str());
     std::ifstream kcValue(("../../Results/"+name+"/"+node+"/key_values.do").c_str());
@@ -321,19 +511,19 @@ bool fault_c::checkKeyConstraint(std::string name){
 		system(cmd.c_str());
 
 		if(!_checkEqKey(name)){
-            if(kcValueList[i] == "0" && cntZero < TARGET_SEC/2 + KEY_BUFF){
+            if(kcValueList[i] == "0" && cntZero < SEC/2 + KEY_BUFF){
                 cntZero++;
                 sec++;
                 kcCheckList.push_back(kcList[i]);
             }
-            else if(kcValueList[i] == "1" && cntOne < TARGET_SEC/2 + KEY_BUFF){
+            else if(kcValueList[i] == "1" && cntOne < SEC/2 + KEY_BUFF){
                 cntOne++;
                 sec++;
                 kcCheckList.push_back(kcList[i]);
             }
 			cmd = "rm ../../Results/"+name+"/"+node+"/lec_key_constraint_log";
 			system(cmd.c_str());
-			if (sec == TARGET_SEC) {
+			if (sec == SEC) {
                 std::cout<<"    TARGET SECURITY ACHIEVED        "<<std::endl;
                 break;
             }
@@ -346,7 +536,7 @@ bool fault_c::checkKeyConstraint(std::string name){
 		std::cout << "final key constraint file open failed!" << std::endl;
 		exit(1);
 	}
-	if(sec == TARGET_SEC) {
+	if(sec == SEC) {
 		for(int i=0; i<kcCheckList.size(); i++){
 			finalKC << kcCheckList[i] << std::endl;
 		}

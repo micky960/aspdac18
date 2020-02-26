@@ -161,46 +161,51 @@ int main(int argc, char* argv[]){
 
 		std::cout << "i: " << i << std::endl;
 	
-		validList[i]->recoverOnePattCkt("/home/projects/aspdac18/Results/"+name);
-		//validList[i]->recoverCkt("/home/projects/aspdac18/Results/"+name);
+		//validList[i]->recoverOnePattCkt("/home/projects/aspdac18/Results/"+name);
+		validList[i]->modifyOrigWithOnePatt(name, "/home/projects/aspdac18/Results/"+name);
         // Parse the module name to remove leading ../../ etc.
-		cmd = "cat /home/projects/aspdac18/Results/"+name+"/"+validList[i]->node+"/lockOnePatt_verilog.v | awk '{gsub(/\\\\files\\//,\"\"); print}' > /home/projects/aspdac18/Results/"+name+"/"+validList[i]->node+"/"+name+".v";
+		//cmd = "cat /home/projects/aspdac18/Results/"+name+"/"+validList[i]->node+"/lockOnePatt_verilog.v | awk '{gsub(/\\\\files\\//,\"\"); print}' > /home/projects/aspdac18/Results/"+name+"/"+validList[i]->node+"/"+name+".v";
 	        
-        system(cmd.c_str());
-		bool check_eq = validList[i]->checkEqv(name);
-		std::cout << "check_equivalent: " << check_eq << std::endl;
-	        if(!check_eq){
-                validList[i]->doEco(name);
-                //std::cout << "Node for ECO:" << validList[i]->node<< std::endl;
-                //exit(0);
-                if (validList[i]->checkKeyConstraint(name)){
-                    end = std::chrono::system_clock::now();
-                    elapsed = std::chrono::duration_cast<std::chrono::seconds>(end - start);
-                    std::cout << "Fault search end: " << elapsed.count() << std::endl;
-                    std::cout<<"The NODE which attained security is: 	"<<validList[i]->node<<std::endl;
-                    final_node_ind = i;
-                    cmd = "mkdir ../../Results/"+name+"/final";
-                    system(cmd.c_str());
-                    cmd = "cp ../../Results/"+name+"/"+validList[i]->node+"/* ../../Results/"+name+"/final/";
-                    system(cmd.c_str());
+        //system(cmd.c_str());
+		//bool check_eq = validList[i]->checkEqv(name);
+		//std::cout << "check_equivalent: " << check_eq << std::endl;
+        if(!validList[i]->checkEqv(name)){
+            validList[i]->doEco(name);
+            validList[i]->ecoCompile(name);
+            validList[i]->addRestoreCkt(name, "/home/projects/aspdac18/Results/"+name);
+        } 
+	    //if(!check_eq){
+        //    validList[i]->doEco(name);
+        //    //std::cout << "Node for ECO:" << validList[i]->node<< std::endl;
+        //    //exit(0);
+        //    if (validList[i]->checkKeyConstraint(name)){
+        //        end = std::chrono::system_clock::now();
+        //        elapsed = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+        //        std::cout << "Fault search end: " << elapsed.count() << std::endl;
+        //        std::cout<<"The NODE which attained security is: 	"<<validList[i]->node<<std::endl;
+        //        final_node_ind = i;
+        //        cmd = "mkdir ../../Results/"+name+"/final";
+        //        system(cmd.c_str());
+        //        cmd = "cp ../../Results/"+name+"/"+validList[i]->node+"/* ../../Results/"+name+"/final/";
+        //        system(cmd.c_str());
 
-                    validList[i]->postProcesslockedVerilog(name);
-        
-                    std::cout<<"EQUIVALENCE BETWEEN LOCKED AND ORIGINAL CHECK"<<std::endl;	
-                    flag = validList[i]->checkEqvOrigLock(name);
-                    if(flag) 
-                        break;
-                    else 
-                        std::cout<<"================ LOCKED FILE IS NON-EQUIVALENT =================="<<std::endl;
-                    
-                } 
-                else{
-                    validList[i]->removeNode(name);
-                }
-            }
-            else {
-                std::cout<<"================ THE FILES ARE EQUIVALENT =================="<<std::endl;
-            }
+        //        validList[i]->postProcesslockedVerilog(name);
+        //
+        //        std::cout<<"EQUIVALENCE BETWEEN LOCKED AND ORIGINAL CHECK"<<std::endl;	
+        //        flag = validList[i]->checkEqvOrigLock(name);
+        //        if(flag) 
+        //            break;
+        //        else 
+        //            std::cout<<"================ LOCKED FILE IS NON-EQUIVALENT =================="<<std::endl;
+        //        
+        //    } 
+        //    else{
+        //        validList[i]->removeNode(name);
+        //    }
+        //}
+        //else {
+        //    std::cout<<"================ THE FILES ARE EQUIVALENT =================="<<std::endl;
+        //}
 	}
 
 	if (flag) {

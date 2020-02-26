@@ -8,8 +8,8 @@ set node $::env(NODE)
 //read_design ../../Results/${design}/final/${design}.v  -golden
 
 //read_design ../../files/benchfiles/${design}.v -golden
-read_design ../../Results/${design}/${node}/${design}.v  -golden
-read_design ../../files/benchfiles/${design}.v -revised
+read_design ../../Results/${design}/${node}/abc_verilog.v -gold
+read_design ../../Results/${design}/${node}/${design}.v  -rev
 
 set_system_mode lec
 add_compared_points -all

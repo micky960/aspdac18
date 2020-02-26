@@ -45,7 +45,10 @@ class fault_c{
     double getOnePattCost(){return costOnePatt;}//cost to correct the one pattern without FI ckt
     void recoverCkt(std::string path);
     void recoverOnePattCkt(std::string path);
+    void modifyOrigWithOnePatt(std::string name, std::string path);
+    void addRestoreCkt(std::string name, std::string path);
     void doEco(std::string name);
+    void ecoCompile(std::string name);
     bool checkKeyConstraint(std::string name);
 	void postProcesslockedVerilog(std::string name);
 	bool checkEqvOrigLock(std::string name); 
