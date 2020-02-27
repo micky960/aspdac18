@@ -9,7 +9,7 @@ set target_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/h
 set link_library   { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db }
 
 #read_verilog -rtl ../../Results/${design}/final/${design}_eco.v
-read_verilog -rtl ../../Results/${design}/${node}/${design}_eco.v
+read_verilog -rtl ../../Results/${design}/${node}/${design}_pre_lock_restore.v
 
 current_design $design
 set x 0

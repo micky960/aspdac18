@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version M-2016.12-SP2 for linux64 -- Feb 23, 2017
-#@ # Date:   Wed Feb 26 15:32:20 2020
+#@ # Date:   Thu Feb 27 16:18:07 2020
 #@ # Run by: as9397@aduae260-lap
 #@ 
 
@@ -6518,8 +6518,8 @@ source /opt/programs/synopsys/dc/admin/setup/.synopsys_dc.setup
 
 #@ # -- End source /opt/programs/synopsys/dc/admin/setup/.synopsys_dc.setup
 
-source -echo -verbose ./ecoCompile.tcl
-#@ # -- Starting source ./ecoCompile.tcl
+source -echo -verbose ../scripts/changeOP.tcl 
+#@ # -- Starting source ../scripts/changeOP.tcl
 
 #@ set_host_options -max_cores 8
 #@ set compile_seqmap_propagate_constants     false
@@ -6528,17 +6528,17 @@ source -echo -verbose ./ecoCompile.tcl
 #@ set write_sdc_output_net_resistance        false
 #@ set timing_separate_clock_gating_group     true
 #@ 
-#@ set design     [getenv DESIGN]
-#@ set node [getenv NODE]
+#@ set design      [getenv DESIGN]
+#@ set node        [getenv NODE]
 #@ 
 #@ define_design_lib WORK -path ./work
 #@ set target_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/ccs/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db}
 #@ set link_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/ccs/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db }
 #@ 
-#@ analyze -format sverilog  ../../Results/$design/$node/${design}_eco.v
+#@ analyze -format sverilog  ../../Results/$design/$node/${design}_eco_compile.v
 #@ elaborate $design
 #@ 
-#@ create_clock -name VCLK  -period 4  -waveform {0 2}
+#@ create_clock -name VCLK  -period 10  -waveform {0 5}
 #@ 
 #@ set input_ports  [all_inputs]
 #@ set output_ports [all_outputs]
@@ -6547,16 +6547,23 @@ source -echo -verbose ./ecoCompile.tcl
 #@ set_input_delay -min 0 [get_ports $input_ports ] -clock VCLK
 #@ 
 #@ set_output_delay -max 1 [get_ports $output_ports ] -clock VCLK
-#@ set_output_delay -min 3 [get_ports $output_ports ] -clock VCLK
+#@ set_output_delay -min 0 [get_ports $output_ports ] -clock VCLK
 #@ 
-#@ ungroup -all -flatten
-#@ compile
+#@ source ../../Results/$design/$node/opList.txt
+#@ # -- Starting source ../../Results/c17/POO2/opList.txt
+
+#@ set opList {POO2 }
+#@ # -- End source ../../Results/c17/POO2/opList.txt
+
+#@ echo $opList
 #@ 
-#@ change_name -rules verilog -hierarchy
-#@ set bus_naming_style "%s_%d"
-#@ define_name_rules verilog -target_bus_naming_style "%s_%d" -remove_port_bus
-#@ change_names -rules verilog -hier
+#@ #foreach op $opList {
+#@ #    set pin [get_pins [all_fanin -to $op -level 1] -filter "direction == out"]
+#@ #    disconnect_net $op $pin
+#@ #    create_net ${op}_temp 
+#@ #    connect_net ${op}_temp $pin
+#@ #}
 #@ 
-#@ write_file -hierarchy -format verilog -output ../../Results/$design/$node/${design}_eco_compile.v
+#@ write_file -hierarchy -format verilog -output ../../Results/$design/$node/${design}_pre_lock.v
 #@ 
 #@ exit

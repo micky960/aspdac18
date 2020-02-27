@@ -353,31 +353,41 @@ void fault_c::modifyOrigWithOnePatt(std::string name, std::string path){
 
 void fault_c::addRestoreCkt(std::string name, std::string path){
 
-	std::ifstream vFile((path+"/"+node+"/"+name+"_eco_compile.v").c_str());
+    std::ofstream opFile((path+"/"+node+"/opList.txt").c_str());
+	std::string line;
+    opFile << "set opList {";
+
+	pattern *p = pList[maxSecIndex];
+
+    for(int i=0; i<p->oIndex.size(); i++){
+        opFile << opList[p->oIndex[i]]+" ";
+    }		
+    opFile << "}";
+
+    opFile.close();
+
+	setenv("DESIGN", name.c_str(), 1);
+	setenv("NODE", node.c_str(), 1);
+    std::string cmd = "dc_shell-t -no_gui -64bit -x \"source -echo -verbose ../scripts/changeOP.tcl \" ";
+    system(cmd.c_str());
+
+	std::ifstream vFile((path+"/"+node+"/"+name+"_pre_lock.v").c_str());
 	//std::ifstream vFile((path+"/"+node+"/verilog.v").c_str());
-    std::ofstream lockFile((path+"/"+node+"/"+name+"_lock_final_combo.v").c_str());
 
     if(vFile.fail()){
             std::cerr<<"ORIG FILE OPEN FAILED"<<std::endl;
             exit(1);
     }
+
+    std::ofstream lockFile((path+"/"+node+"/"+name+"_pre_lock_restore.v").c_str());
     if(lockFile.fail()){
-            std::cerr<<"LOCK FILE OPEN FAILED"<<std::endl;
+            std::cerr<<"PRE LOCK FILE OPEN FAILED"<<std::endl;
             exit(1);
     }
 
-	pattern *p = pList[maxSecIndex];
-
-	std::string line;
-    while(getline(vFile, line)){
-        for(int i=0; i<p->oIndex.size(); i++){
-            if(line.find(opList[p->oIndex[i]]) != std::string::npos){
-                boost::replace_all(line, opList[p->oIndex[i]], opList[p->oIndex[i]]+"_temp");
-            }
-        }		
-		if(line.find("endmodule")==std::string::npos)
-            lockFile<<line<<std::endl;
-	}
+    while(getline(vFile, line))
+        if(line.find("endmodule")==std::string::npos)
+            lockFile << line << std::endl;
 
 	std::vector<std::string> compList, keyList, nvmList;	
 	
@@ -476,7 +486,7 @@ bool fault_c::checkKeyConstraint(std::string name){
 	std::string cmd = "dc_shell-t -no_gui -64bit -output_log_file /home/projects/aspdac18/Results/"+name+"/"+node+"/dc_key_constraints_log -x \"source -echo -verbose ../scripts/dc_key_constraints.tcl \" ";
 	system(cmd.c_str());
 
-    exit(0);
+    return 0;
 
     std::ifstream kc(("../../Results/"+name+"/"+node+"/key_constraints.do").c_str());
     std::ifstream kcValue(("../../Results/"+name+"/"+node+"/key_values.do").c_str());
