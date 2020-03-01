@@ -1,6 +1,4 @@
 tclmode
-//set design $env(DESIGN)
-//set lib    $env(LIB)
 
 set design $::env(DESIGN)
 set node $::env(NODE)

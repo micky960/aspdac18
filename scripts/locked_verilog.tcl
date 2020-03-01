@@ -18,13 +18,13 @@ set_attribute [get_lib_cells sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c/DF
 
 
 #read_verilog -netlist ../../Results/${design}/${node}/${design}_temp.v
-read_verilog -netlist ../../Results/${design}/final/${design}_temp.v
+read_verilog -netlist ../../Results/${design}/$node/${design}_temp.v
 
 
 set sfll_inp [get_attribute [get_ports *sfllKey*] full_name]
 
 #set myfile ../../Results/$design/$node/key_constraints_final.do
-set myfile ../../Results/$design/final/key_constraints_final.do
+set myfile ../../Results/$design/$node/key_constraints_final.do
 set a [open $myfile]
 set lines [split [read $a] "\n"]
 close $a
@@ -53,14 +53,14 @@ set not_keys [lreplace $not_keys 0 0]
 #remove_port $not_keys
 
 #set verilog_file ../../Results/${design}/${node}/${design}_temp.v
-set verilog_file ../../Results/${design}/final/${design}_temp.v
+set verilog_file ../../Results/${design}/$node/${design}_temp.v
 set b [open $verilog_file r]
 set verilog_lines [split [read $b] "\n"]
 close $b
 
 
 #set verilog_write ../../Results/$design/${node}/${design}_temp_v1.v
-set verilog_write ../../Results/$design/final/${design}_temp_v1.v
+set verilog_write ../../Results/$design/$node/${design}_temp_v1.v
 set c [open $verilog_write "a"]
 
 foreach ver $verilog_lines {
@@ -84,7 +84,7 @@ foreach ver $verilog_lines {
 close $c
 
 #read_verilog -netlist ../../Results/${design}/${node}/${design}_temp_v1.v
-read_verilog -netlist ../../Results/${design}/final/${design}_temp_v1.v
+read_verilog -netlist ../../Results/${design}/$node/${design}_temp_v1.v
 
 remove_port $not_keys
 
@@ -103,8 +103,8 @@ set_output_delay -min 1 [get_ports $output_ports ] -clock VCLK
 ungroup -all -flatten
 compile_ultra -no_autoungroup -no_seq_output_inversion -no_boundary_optimization
 #write -output  ../../Results/$design/${node}/${design}_final_combo.v -hierarchy -format verilog
-write -output  ../../Results/$design/final/${design}_final_combo.v -hierarchy -format verilog
+write -output  ../../Results/$design/$node/${design}_final_combo.v -hierarchy -format verilog
 #write_sdc "../../Results/$design/${node}/${design}_final_combo.sdc"
-write_sdc "../../Results/$design/final/${design}_final_combo.sdc"
+write_sdc "../../Results/$design/$node/${design}_final_combo.sdc"
 
 exit

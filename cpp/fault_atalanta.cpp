@@ -174,8 +174,10 @@ int main(int argc, char* argv[]){
             validList[i]->ecoCompile(name);
             validList[i]->addRestoreCkt(name, "/home/projects/aspdac18/Results/"+name);
             if(validList[i]->checkKeyConstraint(name)){
-                std::cout<<"The NODE which attained security is: 	"<<validList[i]->node<<std::endl;
-                //validList[i]->postProcesslockedVerilog(name);
+                std::cout<<"THE NODE WHICH ATTAINED SECURITY IS: 	"<<validList[i]->node<<std::endl;
+                validList[i]->postProcesslockedVerilog(name);
+                flag = true;
+                break;
             }
         } 
 	    //if(!check_eq){

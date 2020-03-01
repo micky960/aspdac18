@@ -1,6 +1,6 @@
-#define TARGET_SEC 4
-#define SEC 1
-#define KEY_BUFF 4 
+#define TARGET_SEC 32
+#define SEC 20
+#define KEY_BUFF 32
 #define NVM 1.46
 #define FF  9
 #define NVM_FF 10.46

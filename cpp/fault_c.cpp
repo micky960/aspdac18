@@ -486,8 +486,6 @@ bool fault_c::checkKeyConstraint(std::string name){
 	std::string cmd = "dc_shell-t -no_gui -64bit -output_log_file /home/projects/aspdac18/Results/"+name+"/"+node+"/dc_key_constraints_log -x \"source -echo -verbose ../scripts/dc_key_constraints.tcl \" ";
 	system(cmd.c_str());
 
-    return 0;
-
     std::ifstream kc(("../../Results/"+name+"/"+node+"/key_constraints.do").c_str());
     std::ifstream kcValue(("../../Results/"+name+"/"+node+"/key_values.do").c_str());
  
@@ -517,6 +515,7 @@ bool fault_c::checkKeyConstraint(std::string name){
 			if(i!=j)
 				nkc << kcList[j] << std::endl;	
 		}
+		//std::cout << "CHECK KEY CONSTRAINT RUNNING" << std::endl;
 		cmd = "lec_64 -nogui -ecogxl -dofile ../scripts/lec_check_final_combo.do";
 		system(cmd.c_str());
 
@@ -537,7 +536,6 @@ bool fault_c::checkKeyConstraint(std::string name){
                 std::cout<<"    TARGET SECURITY ACHIEVED        "<<std::endl;
                 break;
             }
-	
 		}
 	}
 	numValidKey = sec;
@@ -669,8 +667,9 @@ bool fault_c::_checkEqKey(std::string name){
 	std::string line;
 
 	while(getline(kcLog, line)){
-		if(line.find("Non-eq") != std::string::npos)
+		if(line.find("Non-eq") != std::string::npos){
 			return false;
+        }
 	}
 	return true;
 }

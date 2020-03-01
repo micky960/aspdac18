@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version M-2016.12-SP2 for linux64 -- Feb 23, 2017
-#@ # Date:   Thu Feb 27 16:18:07 2020
+#@ # Date:   Thu Feb 27 17:08:34 2020
 #@ # Run by: as9397@aduae260-lap
 #@ 
 
@@ -6518,52 +6518,64 @@ source /opt/programs/synopsys/dc/admin/setup/.synopsys_dc.setup
 
 #@ # -- End source /opt/programs/synopsys/dc/admin/setup/.synopsys_dc.setup
 
-source -echo -verbose ../scripts/changeOP.tcl 
-#@ # -- Starting source ../scripts/changeOP.tcl
-
-#@ set_host_options -max_cores 8
-#@ set compile_seqmap_propagate_constants     false
-#@ set compile_seqmap_propagate_high_effort   false
-#@ set compile_enable_register_merging        false
-#@ set write_sdc_output_net_resistance        false
-#@ set timing_separate_clock_gating_group     true
-#@ 
-#@ set design      [getenv DESIGN]
-#@ set node        [getenv NODE]
-#@ 
-#@ define_design_lib WORK -path ./work
-#@ set target_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/ccs/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db}
-#@ set link_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/ccs/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db }
-#@ 
-#@ analyze -format sverilog  ../../Results/$design/$node/${design}_eco_compile.v
-#@ elaborate $design
-#@ 
-#@ create_clock -name VCLK  -period 10  -waveform {0 5}
-#@ 
-#@ set input_ports  [all_inputs]
-#@ set output_ports [all_outputs]
-#@ 
-#@ set_input_delay -max 1 [get_ports $input_ports ] -clock VCLK
-#@ set_input_delay -min 0 [get_ports $input_ports ] -clock VCLK
-#@ 
-#@ set_output_delay -max 1 [get_ports $output_ports ] -clock VCLK
-#@ set_output_delay -min 0 [get_ports $output_ports ] -clock VCLK
-#@ 
-#@ source ../../Results/$design/$node/opList.txt
-#@ # -- Starting source ../../Results/c17/POO2/opList.txt
-
-#@ set opList {POO2 }
-#@ # -- End source ../../Results/c17/POO2/opList.txt
-
-#@ echo $opList
-#@ 
-#@ #foreach op $opList {
-#@ #    set pin [get_pins [all_fanin -to $op -level 1] -filter "direction == out"]
-#@ #    disconnect_net $op $pin
-#@ #    create_net ${op}_temp 
-#@ #    connect_net ${op}_temp $pin
-#@ #}
-#@ 
-#@ write_file -hierarchy -format verilog -output ../../Results/$design/$node/${design}_pre_lock.v
-#@ 
-#@ exit
+set design [getenv "DESIGN"]
+set node [getenv "NODE"]
+set compile_seqmap_propagate_constants     false
+#set search_path [concat * $search_path]
+#sh rm -rf ./work/work_${design}
+#define_design_lib WORK -path ./work/work_${design}
+set target_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db}
+set link_library   { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db }
+#read_verilog -rtl ../../Results/${design}/final/${design}_eco.v
+read_verilog -rtl ../../Results/${design}/${node}/${design}_pre_lock_restore.v
+current_design $design
+set x 0
+get_nets *sfllKey*
+set pqr sfllKey_1[0]
+set x [expr $x + 1]
+set net_name [get_attribute $pqr full_name]
+set tie_net  [get_attribute [all_fanin -to  $net_name -flat] full_name]
+set tie_net_split [split $tie_net "\*\*"]
+set tie_net_split [split $tie_net "/*/*"]
+set tie_net_val   [lindex $tie_net_split 2]
+set tie_net_val   [lindex $tie_net_split 1]
+link
+set net_name [get_attribute $pqr full_name]
+remove_design -hier *
+set design [getenv "DESIGN"]
+set node [getenv "NODE"]
+set compile_seqmap_propagate_constants     false
+#set search_path [concat * $search_path]
+#sh rm -rf ./work/work_${design}
+#define_design_lib WORK -path ./work/work_${design}
+set target_library { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db}
+set link_library   { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db }
+#read_verilog -rtl ../../Results/${design}/final/${design}_eco.v
+read_verilog -rtl ../../Results/${design}/${node}/${design}_pre_lock_restore.v
+current_design $design
+link
+read_verilog -rtl ../../Results/${design}/${node}/${design}_pre_lock_restore.v
+link
+$current_design
+echo $current_design
+link
+remove_design -hier *
+set link_library   { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db }
+set target_library   { /home/projects/vlsi/libraries/65lpe/ref_lib/arm/std_cells/hvt/timing_lib/nldm/db/sc9_cmos10lpe_base_hvt_ss_nominal_max_1p08v_125c.db }
+link
+read_verilog -rtl ../../Results/${design}/${node}/${design}_pre_lock_restore.v
+link
+remove_design -hier *
+analyze -format sverilog ../../Results/${design}/${node}/${design}_pre_lock_restore.v
+elaborate c17
+link
+get_nets *sfllKey*
+set pqr sfllKey_1[0]
+set x 0
+set x [expr $x + 1]
+set net_name [get_attribute $pqr full_name]
+set tie_net  [get_attribute [all_fanin -to  $net_name -flat] full_name]
+set tie_net_split [split $tie_net "\*\*"]
+set tie_net_val   [lindex $tie_net_split 2]
+create_port sfllKey_${x}_${tie_net_val}
+connect_net $net_name sfllKey_${x}_${tie_net_val}
