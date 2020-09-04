@@ -40,7 +40,7 @@ int main(int argc, char* argv[]){
 	// This file inputs bench file.	
 	std::vector<std::string> nodeList;
 	std::ifstream bench(("/home/projects/aspdac18/files/benchfiles/"+name+".bench").c_str());
-	std::cout<<"benchfile name: "<<name<<std::endl;	
+	std::cout<<"BENCHFILE NAME: "<<name<<std::endl;	
     cmd = "cd /home/projects/aspdac18/files/benchfiles/; abc -c \"read_bench "+name+".bench; write_verilog "+name+".v\"";
     system(cmd.c_str());        
 	if(bench.fail()){
@@ -110,7 +110,7 @@ int main(int argc, char* argv[]){
     omp_init_lock(&writelock);
     #pragma omp parallel for schedule(dynamic) num_threads(10)
 	for(int i=0; i<nodeList.size(); i++){
-		std::cout<< (double)i/(double)nodeList.size()*100<< "\% node: " << nodeList[i] << std::endl;
+		std::cout<< (double)i/(double)nodeList.size()*100<< "\% NODE: " << nodeList[i] << std::endl;
 		std::ifstream log(("/home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/log").c_str());
 		std::ifstream patt(("/home/projects/aspdac18/Results/"+name+"/"+nodeList[i]+"/patterns.pat").c_str());
 			
@@ -119,7 +119,7 @@ int main(int argc, char* argv[]){
 			if(f->getSec() >= SEC) {
                 omp_set_lock(&writelock);
 				validList.push_back(f);
-                std::cout<<"ValidList Node: "<<nodeList[i]<<", Security: "<<f->getSec()<<std::endl;
+                std::cout<<"VALIDlIST NODE: "<<nodeList[i]<<", SECURITY: "<<f->getSec()<<std::endl;
                 omp_unset_lock(&writelock);
 			}
             else{
@@ -129,12 +129,11 @@ int main(int argc, char* argv[]){
             }
 		}
 	}
-	std::cout<<"Valid List Size:	"<<validList.size()<<std::endl;
+	std::cout<<"VALID LIST SIZE:	"<<validList.size()<<std::endl;
 
 	int final_node_ind = 0;
 	for(int i=0; i<validList.size(); i++){
-		std::cout<<"\% COMPLETE "<< (double)i/(double)validList.size()*100<<" "<<validList[i]->node << ":" << i << ", SEC " << validList[i]->getSec() << std::endl;
-		std::cout<<"ValidList Node:	"<<validList[i]->node<<std::endl;
+		std::cout<<"\% COMPLETE "<< (double)i/(double)validList.size()*100<<", NODE:"<<validList[i]->node << ", SEC: " << validList[i]->getSec() << std::endl;
                 
         std::string path = "/home/projects/aspdac18/Results/"+name+"/"+validList[i]->node;
 		std::string bench_path = "/home/projects/aspdac18/files/benchfiles/";
@@ -159,10 +158,10 @@ int main(int argc, char* argv[]){
 		std::string cmd = "abc -c \"read_verilog "+path+ "/verilog.v; sweep; strash; refactor; logic; sweep; write_verilog "+path+"/abc_verilog.v\"";
         system(cmd.c_str());
 
-		std::cout << "i: " << i << std::endl;
-	
 		//validList[i]->recoverOnePattCkt("/home/projects/aspdac18/Results/"+name);
+		//std::cout << "MODIFYORIGWITHONEPATT STARTED"<< std::endl;
 		validList[i]->modifyOrigWithOnePatt(name, "/home/projects/aspdac18/Results/"+name);
+		//std::cout << "MODIFYORIGWITHONEPATT COMPLETED"<< std::endl;
         // Parse the module name to remove leading ../../ etc.
 		//cmd = "cat /home/projects/aspdac18/Results/"+name+"/"+validList[i]->node+"/lockOnePatt_verilog.v | awk '{gsub(/\\\\files\\//,\"\"); print}' > /home/projects/aspdac18/Results/"+name+"/"+validList[i]->node+"/"+name+".v";
 	        
@@ -175,7 +174,11 @@ int main(int argc, char* argv[]){
             validList[i]->addRestoreCkt(name, "/home/projects/aspdac18/Results/"+name);
             if(validList[i]->checkKeyConstraint(name)){
                 std::cout<<"THE NODE WHICH ATTAINED SECURITY IS: 	"<<validList[i]->node<<std::endl;
-                validList[i]->postProcesslockedVerilog(name);
+                cmd = "mkdir ../../Results/"+name+"/final";
+                system(cmd.c_str());
+                cmd = "cp ../../Results/"+name+"/"+validList[i]->node+"/* ../../Results/"+name+"/final/";
+                system(cmd.c_str());
+                final_node_ind = i;
                 flag = true;
                 break;
             }
@@ -215,6 +218,7 @@ int main(int argc, char* argv[]){
 	}
 
 	if (flag) {
+        validList[final_node_ind]->postProcesslockedVerilog(name);
 		validList[final_node_ind]->generateAPD(name);
 	}
 	else {
